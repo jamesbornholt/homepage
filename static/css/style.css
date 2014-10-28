@@ -1,0 +1,90 @@
+body {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.4;
+    background: #eeeeee;
+    color: #333333;
+}
+.pure-g > div {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+}
+b, strong, h1, h2, h3 {
+    font-weight: 600;
+}
+h1, h2, h3 {
+    line-height: 1.0;
+}
+#container {
+    max-width: 48em;
+    margin-right: auto;
+    margin-left: auto;
+}
+#header {
+    padding-bottom: 0.83em;
+    border-bottom: 1px solid #d3d3d3;
+    margin: 0 0.83em;
+}
+#header p {
+    margin-bottom: 0;
+}
+#header-text {
+    padding: 0;
+}
+@media screen and (min-width: 48em) {
+    #header h1 {
+        margin: 0;
+    }
+    #header-text {
+        padding: 0 16px !important;
+    }
+}
+#content {
+    margin: 0.83em;
+    margin-top: 0.41em;
+}
+#content p {
+    margin-top: 0;
+}
+a {
+    color: #0365C0;
+    text-decoration: none;
+}
+a:hover {
+    color: #0A4C8B;
+    text-decoration: underline;
+}
+#content h3 {
+    margin: 1.2em 0 0.8em 0;
+}
+.paper-title {
+    font-style: italic;
+}
+ul.paper-list {
+    padding: 0;
+    margin: 0;
+}
+ul.paper-list li {
+    list-style: none;
+    margin-bottom: 0.8em;
+}
+ul.paper-links {
+    padding: 0;
+    margin: 0;
+    margin-left: 2em;
+}
+ul.paper-links li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: inline;
+}
+ul.paper-links li + li::before {
+    content: ", ";
+}
