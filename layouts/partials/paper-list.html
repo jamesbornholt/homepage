@@ -1,0 +1,32 @@
+<h3>Conference Papers</h3>
+<ul class="paper-list">
+    {{ range where .Data.Pages "Section" "paper" }}
+    <li><a class="paper-title" href="{{ .Params.paper_url }}">{{ .Title }}</a>. {{ .Params.paper_authors }}. In {{ if .Params.paper_venue_url }}<a href="{{ .Params.paper_venue_url }}">{{ .Params.paper_venue }}</a>{{ else }}{{ .Params.paper_venue }}{{ end }}{{ if .Params.paper_colocated_venue }}, colocated with {{ if .Params.paper_colocated_url }}<a href="{{ .Params.paper_colocated_url }}">{{ .Params.paper_colocated_venue }}</a>{{ else }}{{ .Params.paper_colocated_venue }}{{ end }}{{ end }}.{{ if .Params.paper_notes }} {{ .Params.paper_notes | safeHtml }}.{{ end }}
+    {{ .Content }}
+    </li>
+    {{ end }}
+</ul>
+<h3>Workshop Papers</h3>
+<ul class="paper-list">
+    {{ range where .Data.Pages "Section" "wspaper" }}
+    <li><a class="paper-title" href="{{ .Params.paper_url }}">{{ .Title }}</a>. {{ .Params.paper_authors }}. In {{ if .Params.paper_venue_url }}<a href="{{ .Params.paper_venue_url }}">{{ .Params.paper_venue }}</a>{{ else }}{{ .Params.paper_venue }}{{ end }}{{ if .Params.paper_colocated_venue }}, colocated with {{ if .Params.paper_colocated_url }}<a href="{{ .Params.paper_colocated_url }}">{{ .Params.paper_colocated_venue }}</a>{{ else }}{{ .Params.paper_colocated_venue }}{{ end }}{{ end }}.{{ if .Params.paper_notes }} {{ .Params.paper_notes | safeHtml  }}.{{ end }}
+    {{ .Content }}
+    </li>
+    {{ end }}
+</ul>
+<h3>Posters & Talks</h3>
+<ul class="paper-list">
+    {{ range where .Data.Pages "Section" "poster" }}
+    <li><a class="paper-title" href="{{ .Params.paper_url }}">{{ .Title }}</a>. {{ .Params.paper_authors }}. In {{ if .Params.paper_venue_url }}<a href="{{ .Params.paper_venue_url }}">{{ .Params.paper_venue }}</a>{{ else }}{{ .Params.paper_venue }}{{ end }}{{ if .Params.paper_colocated_venue }}, colocated with {{ if .Params.paper_colocated_url }}<a href="{{ .Params.paper_colocated_url }}">{{ .Params.paper_colocated_venue }}</a>{{ else }}{{ .Params.paper_colocated_venue }}{{ end }}{{ end }}.{{ if .Params.paper_notes }} {{ .Params.paper_notes | safeHtml  }}.{{ end }}
+    {{ .Content }}
+    </li>
+    {{ end }}
+</ul>
+<h3>Theses</h3>
+<ul class="paper-list">
+    {{ range where .Data.Pages "Section" "thesis" }}
+    <li><a class="paper-title" href="{{ .Params.paper_url }}">{{ .Title }}</a>. {{ .Params.paper_authors }}.{{ if .Params.paper_notes }} {{ .Params.paper_notes | safeHtml  }}.{{ end }}
+    {{ .Content }}
+    </li>
+    {{ end }}
+</ul>

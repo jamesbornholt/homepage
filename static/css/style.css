@@ -74,17 +74,19 @@ ul.paper-list li {
     list-style: none;
     margin-bottom: 0.8em;
 }
-ul.paper-links {
+ul.paper-list ul {
     padding: 0;
     margin: 0;
-    margin-left: 2em;
+    margin-left: 24pt;
+    font-size: 0pt;
 }
-ul.paper-links li {
+ul.paper-list ul li {
     padding: 0;
     margin: 0;
     list-style: none;
     display: inline;
+    font-size: 16px;
 }
-ul.paper-links li + li::before {
+ul.paper-list ul li + li::before {
     content: ", ";
 }
