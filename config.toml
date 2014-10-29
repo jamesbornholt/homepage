@@ -1,5 +1,7 @@
-baseurl = "https://homes.cs.washington.edu/~bornholt/"
+baseurl = ""
 title = "James Bornholt – University of Washington"
 builddrafts = true
 canonifyurls = false
 uglyurls = true
+disablesitemap = true
+disablerss = true
