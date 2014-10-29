@@ -63,6 +63,18 @@ a:hover {
 #content h3 {
     margin: 1.2em 0 0.8em 0;
 }
+ul.blog-posts {
+    padding: 0;
+    margin: 0;
+}
+ul.blog-posts li {
+    list-style: none;
+    margin-bottom: 0.8em;
+}
+ul.blog-posts li blockquote {
+    margin: 0 40px;
+    font-style: italic;
+}
 .paper-title {
     font-style: italic;
 }
@@ -89,4 +101,17 @@ ul.paper-list ul li {
 }
 ul.paper-list ul li + li::before {
     content: ", ";
+}
+h2.blog-title {
+    margin-bottom: 0.2em;
+}
+h3.blog-date {
+    color: #666666;
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 0 !important;
+}
+blockquote.blog-summary {
+    font-style: italic;
+    margin: 0.7em 40px;
 }

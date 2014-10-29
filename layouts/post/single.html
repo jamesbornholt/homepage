@@ -1,0 +1,12 @@
+{{ partial "header.html" . }}
+
+<h2 class="blog-title">{{ .Title }}</h2>
+<h3 class="blog-date">{{ .Date.Format "2 January 2006" }}</h3>
+
+{{ if .Description }}
+<blockquote class="blog-summary">{{ .Description | safeHtml }}</blockquote>
+{{ end }}
+
+{{ .Content }}
+
+{{ partial "footer.html" . }}
