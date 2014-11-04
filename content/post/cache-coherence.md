@@ -1,8 +1,8 @@
-+++
-date = "2014-10-29T11:41:23-07:00"
-title = "My love [for cache coherence] is as a fever, longing still"
-description = "This week for assigned readings in <a href='http://cs.uw.edu/548'>our architecture class</a>, we read about cache coherence. I love cache coherence and wrote about why."
-+++
+---
+date: "2014-10-29T11:41:23-07:00"
+title: "My love [for cache coherence] is as a fever, longing still"
+description: "This week for assigned readings in <a href='http://cs.uw.edu/548'>our architecture class</a>, we read about cache coherence. I love cache coherence and wrote about why."
+---
 
 I really love cache coherence. It sits atop the pyramid of
 abstraction-preserving techniques that enable compilers to be awful at

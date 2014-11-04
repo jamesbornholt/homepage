@@ -1,6 +1,6 @@
 .PHONY: clean site deploy
 
-HOST := recycle.cs.washington.edu
+HOST := bornholt@recycle.cs.washington.edu
 
 clean:
 	rm -rf public

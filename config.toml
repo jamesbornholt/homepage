@@ -5,3 +5,4 @@ canonifyurls = false
 uglyurls = true
 disablesitemap = true
 disablerss = true
+metadataformat = "yaml"
