@@ -22,10 +22,10 @@
 <div id="container">
     <div id="header" class="pure-g">
         <div id="header-img" class="pure-u-1 pure-u-md-5-8">
-            <a href="{{ .Site.BaseUrl }}"><img class="pure-img" src="img/me.jpg" alt="Me." /></a>
+            {{ if .IsPage }}<a href="{{ .Site.BaseUrl }}">{{ end }}<img class="pure-img" src="img/me.jpg" alt="Me." />{{ if .IsPage }}</a>{{ end }}
         </div><!--
         --><div id="header-text" class="pure-u-1 pure-u-md-3-8">
-            <h1><a href="{{ .Site.BaseUrl }}">James Bornholt</a></h1>
+            <h1>{{ if .IsPage }}<a href="{{ .Site.BaseUrl }}">{{ end }}James Bornholt{{ if .IsPage }}</a>{{ end }}</h1>
             <p>PhD Student, Computer Science<br />University of Washington</p>
             <p><i class="fa fa-envelope"></i>&nbsp;&nbsp;<a target="_blank" id="contact"
                href="http://www.google.com/recaptcha/mailhide/d?k=018LlPIxwBJBGEA_-iI3ZNKA==&c=p7ZC8Co1Y_3uvMJaqz5Gng==">born<span style="display:none">DEL</span>holt@u<span style="display:none">ETE</span>w.edu</a><br />
