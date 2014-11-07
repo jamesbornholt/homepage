@@ -1,6 +1,8 @@
 <ul class="blog-posts">
 {{ range where .Data.Pages "Section" "post" }}
+    {{ if (not .Draft) }}
     <li>{{ .Date.Format "2 January" }}: <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     <blockquote>{{ if .Description }}{{ .Description | safeHtml }}{{ else }}{{ .Summary }}{{ end }}</blockquote></li>
+    {{ end }}
 {{ end }}
 </ul>
