@@ -75,6 +75,9 @@ ul.blog-posts li blockquote {
     margin: 0 40px;
     font-style: italic;
 }
+ul.blog-posts p {
+    display: inline;
+}
 .paper-title {
     font-style: italic;
 }
