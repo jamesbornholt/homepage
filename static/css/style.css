@@ -52,6 +52,12 @@ h1, h2, h3 {
 #content p {
     margin-top: 0;
 }
+#content img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%;
+}
 a {
     color: #0365C0;
     text-decoration: none;
