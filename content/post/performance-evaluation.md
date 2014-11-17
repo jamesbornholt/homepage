@@ -44,7 +44,7 @@ What should we do about these sources of bias? It's probably not practical to ex
 
 I think there's an important distinction between variables we don't immediately *expect* to cause bias (like linking order or environment size) and variables we *would* expect to cause bias but just don't control well. 
 
-In the garbage collection world, heap size was one of these variables for a very long time. Researchers often ran their garbage collector comparisons at a single heap size, ignoring the time-space trade-off that garbage collection explores. Only in the last decade or so have we started seeing graphs like this one in garbage collection papers (this one from [*Wake Up and Smell the Coffee: Evaluation Methodology for the 21st Century*][dacapo-cacm]):
+In the garbage collection world, heap size was one of these variables for a very long time. Researchers often ran their garbage collector comparisons at a single heap size, ignoring the time-space trade-off that garbage collection explores. Only in the last decade or so have garbage collector papers started showing graphs like this one, from [*Wake Up and Smell the Coffee: Evaluation Methodology for the 21st Century*][dacapo-cacm] (an excellent paper you should certainly read):
 
 ![time-space trade-off][heapsize]
 
