@@ -12,6 +12,8 @@ I collaborate frequently with [Kathryn McKinley][mckinley] and [Todd Mytkowicz][
 
 In 2013 I graduated with a [Bachelor of Philosophy][phb] from the [Australian National University][anu], advised by [Steve Blackburn][steveb]. I earned first-class honours and the University Medal in computer science.
 
+[Here's my CV][cv].
+
 [sampa]: https://sampa.cs.washington.edu
 [uw]: https://www.cs.washington.edu
 [luisceze]: http://homes.cs.washington.edu/~luisceze/
@@ -23,3 +25,4 @@ In 2013 I graduated with a [Bachelor of Philosophy][phb] from the [Australian Na
 [phb]: http://programsandcourses.anu.edu.au/program/APHSC
 [anu]: http://www.anu.edu.au
 [steveb]: http://users.cecs.anu.edu.au/~steveb/
+[cv]: files/cv.pdf
