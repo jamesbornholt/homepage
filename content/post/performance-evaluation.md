@@ -1,7 +1,7 @@
 ---
 date: 2014-11-17T12:00:00-08:00
 draft: false
-title: How Not to Measure Computer Systems
+title: How Not to Measure Computer System Performance
 description: In a recent <a href="https://sampa.cs.washington.edu">Sampa</a> group meeting, I spoke about the many pitfalls in measuring computer system performance.
 ---
 
