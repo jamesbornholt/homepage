@@ -3,8 +3,9 @@
         {{ if (or (eq .RelPermalink "/~bornholt/index.html") (eq .RelPermalink "index.html")) }} {{ .Content }} {{ end }}
     {{ end }}
 
-    <h2>Blog</h2>
+    <h2>Blog <p class="rss-link">[<a href="{{ .Site.BaseUrl }}/post.xml">Subscribe</a>]</p></h2>
     {{ partial "blog-list.html" . }}
+
 
     <h2>Research</h2>
     {{ partial "paper-list.html" . }}

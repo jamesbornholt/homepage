@@ -21,6 +21,11 @@ b, strong, h1, h2, h3 {
 h1, h2, h3 {
     line-height: 1.0;
 }
+p.rss-link {
+    display: inline;
+    font-size: 16px;
+    font-weight: 300;
+}
 #container {
     max-width: 48em;
     margin-right: auto;

@@ -1,0 +1,28 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>http:{{ .Permalink }}</id>
+  <title>{{ .Site.Title }}</title>
+  <updated>{{ .Date.Format "2006-01-02T15:04:05-07:00" }}</updated>
+  <link rel="self" href="{{ .Permalink }}" />
+  <link rel="alternate" href="{{ .Site.BaseUrl }}" />
+  {{ if isset .Site "Author" }}
+  <author>
+    <name>{{ .Site.Author.name }}</name>
+    <uri>{{ .Site.BaseUrl }}</uri>
+  </author>
+  {{ end }}
+
+  {{ $author := .Site.Author.name }}
+  {{ range first 15 .Data.Pages }}
+  <entry>
+    <id>http:{{ .Permalink }}</id>
+    <title type="html">{{ .Title }}</title>
+    <author><name>{{ $author }}</name></author>
+    <updated>{{ .Date.Format "2006-01-02T15:04:05-07:00"  }}</updated>
+    <link rel="alternate" href="{{ .Permalink }}" />
+    {{ if .Description }}
+    <summary type="html">{{ .Description }}</summary>
+    {{ end }}
+    <content type="html">{{ .Content | html }}</content>
+  </entry>
+  {{ end }}
+</feed>

@@ -4,5 +4,8 @@ builddrafts = true
 canonifyurls = false
 uglyurls = true
 disablesitemap = true
-disablerss = true
+disablerss = false
 metadataformat = "yaml"
+
+[author]
+    name = "James Bornholt"
