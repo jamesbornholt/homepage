@@ -1,4 +1,4 @@
-baseurl = "//homes.cs.washington.edu/~bornholt/"
+baseurl = "https://homes.cs.washington.edu/~bornholt/"
 title = "James Bornholt – University of Washington"
 builddrafts = true
 canonifyurls = false

@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>http:{{ .Permalink }}</id>
+  <id>{{ .Permalink }}</id>
   <title>{{ .Site.Title }}</title>
   <updated>{{ .Date.Format "2006-01-02T15:04:05-07:00" }}</updated>
   <link rel="self" href="{{ .Permalink }}" />
@@ -14,7 +14,7 @@
   {{ $author := .Site.Author.name }}
   {{ range first 15 .Data.Pages }}
   <entry>
-    <id>http:{{ .Permalink }}</id>
+    <id>{{ .Permalink }}</id>
     <title type="html">{{ .Title }}</title>
     <author><name>{{ $author }}</name></author>
     <updated>{{ .Date.Format "2006-01-02T15:04:05-07:00"  }}</updated>
