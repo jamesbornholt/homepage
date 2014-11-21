@@ -9,4 +9,4 @@ site:
 	hugo
 
 deploy: clean site
-	rsync --compress --recursive --checksum --itemize-changes --delete -e ssh public/ $(HOST):public_html/website
+	rsync --compress --recursive --checksum --itemize-changes --delete --filter='- .DS_Store' -e ssh public/ $(HOST):public_html/website
