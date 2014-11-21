@@ -10,6 +10,6 @@ paper_notes = "<b>SIGPLAN Research Highlight, November 2014</b>"
 +++
 
 * [Paper](papers/2014-asplos-uncertaint.pdf)
-* [Slides](papers/2014-asplos-uncertaint.lightning.pdf)
+* [Slides](papers/2014-asplos-uncertaint.slides.pdf)
 * [Lightning Session Slides](papers/2014-asplos-uncertaint.lightning.pdf)
 * [Poster](papers/2014-asplos-uncertaint.poster.pdf)
