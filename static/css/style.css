@@ -1,5 +1,4 @@
 body {
-    margin-top: 20px;
     font-size: 16px;
     line-height: 1.4;
     background: #eeeeee;
@@ -30,6 +29,8 @@ p.rss-link {
     max-width: 48em;
     margin-right: auto;
     margin-left: auto;
+    padding: 0.83em 0 1px 0;
+    background: #f7f7f7;
 }
 #header {
     padding-bottom: 0.83em;
