@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .Title }}</title>
+    <title>{{ if .Title }}{{ .Title }} — {{ end }}James Bornholt — University of Washington</title>
     <base href="{{ .Site.BaseUrl }}/" />
     <link rel="stylesheet" href="css/base-min.css" type="text/css">
     <link rel="stylesheet" href="css/grids-responsive-min.css" type="text/css">
