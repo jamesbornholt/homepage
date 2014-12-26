@@ -136,3 +136,6 @@ hr.footnotes {
     color: #999;
     background-color: #999;
 }
+pre {
+    margin: 0.7em 40px;
+}
