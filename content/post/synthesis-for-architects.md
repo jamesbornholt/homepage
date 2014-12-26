@@ -9,7 +9,7 @@ Professor [Luis Ceze][luisceze] is an awesome adviser, but he has one well-hidde
 
 ### Synthesis?
 
-Synthesis is one of the hot computer science buzzwords right now, like [big data][], [deep learning][], and [Ke$ha][]. But what is program synthesis?
+Synthesis is one of the hot computer science buzzwords right now, like [deep learning][], [big data][], and [Ke$ha][]. But what is program synthesis?
 
 It's a little odd that the way we program computers is by giving them explicit instructions. Of course, instructions are what computers are good at following, but they're not necessarily what humans are good at writing. Surely it would be more efficient for us to tell the computer *what* we want the program to do, and leave the details of *how* to the computer to figure out. It's the ultimate abstraction: a programmer who only tells the computer what they want, rather than how to do it, is completely absolved from any implementation details. This is the promise of program synthesis.
 
@@ -119,6 +119,9 @@ ala TRANSIT
 [djg]: http://homes.cs.washington.edu/~djg/
 [emina]: http://homes.cs.washington.edu/~emina/
 [dragon]: http://en.wikipedia.org/wiki/Compilers:_Principles,_Techniques,_and_Tools
+[deep learning]: http://www.digitalstrategyconsulting.com/netimperative/news/google%20ai1.jpg
+[big data]: http://www.adrants.com/images/sxswcats_bigdatacruncher.jpg
+[Ke$ha]: http://i.dailymail.co.uk/i/pix/2012/08/30/article-2195779-14BE2A44000005DC-690_468x625.jpg
 [fol]: http://en.wikipedia.org/wiki/First-order_logic
 [cse507]: http://courses.cs.washington.edu/courses/cse507/14wi/
 [denali]: http://dl.acm.org/citation.cfm?id=512566
