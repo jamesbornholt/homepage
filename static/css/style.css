@@ -130,3 +130,9 @@ blockquote.blog-summary {
     font-style: italic;
     margin: 0.7em 40px;
 }
+hr.footnotes {
+    border: 0;
+    height: 1px;
+    color: #999;
+    background-color: #999;
+}
