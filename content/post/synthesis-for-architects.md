@@ -51,11 +51,13 @@ I'm going to describe three very different inductive program synthesis technique
 
 ### Oracle-guided synthesis
 
-Jha et al's [*oracle-guided* synthesis][oracle] assumes that you already have an implementation of the program you want to synthesise, which they call the *oracle* program. That's a strong assumption I'll talk more about later, but let's go with it for now. This implementation is the **specification** for oracle-guided synthesis. We also start with a collection of *test cases*, which are input-output pairs. Notice that because we have an oracle, we can generate a set of test cases by just generating random inputs and asking the oracle for the correct answer.
+Jha et al's [*oracle-guided* synthesis][oracle] assumes that you already have an implementation of the program you want to synthesise, which they call the *oracle* program. That's a strong assumption I'll talk more about later, but let's go with it for now. This implementation is the **specification** for oracle-guided synthesis. We treat the oracle as a black box we can execute on arbitrary inputs; we do not need to inspect the oracle's implementation.
+
+We also start with a collection of *test cases*, which are input-output pairs. Notice that because we have an oracle, we can generate a set of test cases by just generating random inputs and asking the oracle for the correct answer for each.
 
 #### Synthesis step
 
-We provide oracle-guided synthesis with a library of *components*, which form the basis of the synthesised programs it considers. The **synthesis** step is going to arrange these components into a program in [static single assignment form][ssa]; in essence, it's going to take all the components, and decide how to connect their inputs and outputs together to form a program.
+We provide oracle-guided synthesis with a library of *components*, which form the basis of the synthesised programs it considers. The **synthesis** step is going to arrange these components into a program in [static single assignment form][ssa]; in essence, it's going to take all the components, and decide how to connect their inputs and outputs together to form a program. (This formulation disallows loops, so the programs we generate will always be loop-free).
 
 For example, here is a library of three components -- two adds and a square root -- and a possible way to connect them together:
 
@@ -95,13 +97,47 @@ In the example, that next trip around the loop will be the last: the only way to
 
 To be completely correct, Jha et al note that we must also have some kind of *validation oracle*, which we consult after finishing the CEGIS loop to make sure the final program is actually the right one. This is necessary because the verification step doesn't actually consider the target program specification at all. While the program the loop produces is the only possible one that uses the components to produce the test cases seen in the loop, it might be that the components were actually insufficient, and we just got lucky by not finding a test case demonstrating the insufficiency before we found a unique program.
 
+#### Starting with an existing program
+
+Oracle-guided synthesis assumes you have an *oracle*, an existing implementation of the program to synthesise. As I mentioned above, we don't actually need to inspect the implementation; we need only treat it as a black box that provides outputs when we supply inputs. But even this seems a little absurd: why synthesise a program we already have? 
+
+The authors use two domains to illustrate why their technique is useful. The first is the traditional suite of bitvector benchmarks from [Hacker's Delight][hackers]. Many synthesis papers use these benchmarks because they illustrate small non-intuitive programs. The suggestion is that programmers will write an implementation of a bitvector manipulation that is simple but inefficient, and the role of program synthesis is to synthesise an optimal program. The second domain is program deobfuscation -- taking an obfuscated program and synthesising a new, simpler program that matches its behaviour.
+
+It's worth noting that [a follow-up paper][loopfree] to this one takes basically the same approach, but instead of requiring an oracle, requires a logical specification of the desired behaviour. 
+
 ### Stochastic superoptimisation
 
-We can view stochastic superoptimisation as inductive program synthesis.
+Schkufza et al's [*stochastic superoptimisation*][stoke] is a completely different approach to program synthesis that I'll attempt to beat into the CEGIS mold. Again, it assumes you have an existing implementation as the **specification** to compare against. This isn't a problem for them, because as the name suggests, the problem they're tackling is *superoptimisation*: finding the optimal instruction sequence for a given piece of code. Stochastic superoptimisation searches the space of programs to find a new program that matches the original's behaviour but is faster or more efficient. It's the search aspect that makes it a form of program synthesis.
 
-* Synthesise: by mutating the last program we tried
-* Verify: by testcases and then a verifier
-* Feedback: use the last program's cost to decide where to go next (the cost ratio guides the selection of the next program, though non-deterministically)
+#### Searching the space of programs
+
+What's the simplest way to search the space of programs? Suppose we start with a randomly generated program. To decide which program to try next, we could just randomly mutate one of the instructions in the program. Assuming the mutations satisfy some basic properties, this search will eventually find the optimal program (for example, if the optimal program has an `add` instruction, the mutations obviously must be able to generate an `add` instruction for this to work). But this will probably take a very long time; there's no guidance to decide if we're on the right track, or "near" an answer.
+
+Stochastic superoptimisation uses [Markov-chain Monte Carlo (MCMC) sampling][mcmc] to search the space of programs in a more guided way. Essentially, stochastic superoptimisation defines a cost function that measures how "good" a candidate program is, and uses MCMC (in particular, the [Metropolis algorithm][metropolis]) to sample from programs highly weighted by that function. Rather than searching randomly, the MCMC search is more likely to visit programs with higher cost functions, which correspond to programs nearer to optimal. So long as the search is set up correctly, MCMC provides a fairly weak but sufficient guarantee, that it will eventually visit the optimum program. But empirically, because of the bias in the search, it often quickly discovers correct programs that are almost optimal.
+
+#### Synthesis step
+
+The **synthesis step** of stochastic superoptimisation decides which program *P'* to try next by drawing an MCMC sample based on the candidate program *P*. It proposes *P'* by randomly applying one of a few mutations to *P*:
+
+* changing the opcode of an instruction
+* changing an operand of an instruction
+* inserting a new random instruction
+* swapping two randomly selected instructions
+* deleting an existing instruction
+
+The MCMC sampler uses the cost function, which measures how "close" to the target program *P'* is and how fast *P'* is, to decide whether to *accept* the candidate *P'*. A candidate is more likely to be accepted if it is close to the target or very fast. But even programs distant from the target and slow have some probability of being accepted; this ensures we explore novel programs. If the candidate is accepted, we move on to the verification step, and set *P* = *P'* for next time. If not, we repeat this process until a candidate is accepted, and do not change *P* until we find a candidate to accept.
+
+Evaluating the cost function involves executing the candidate program *P'* on a suite of test cases and comparing the results to the correct outputs. The paper counts the number of bits that differ between the two outputs to measure how "close" *P'* is to the target.
+
+#### Verification step
+
+Having accepted a candidate program *P'*, the **verification step** simply passes the candidate and target programs to a verifier to decide if they are equivalent. The paper has a few tricks to make this verification a little more forgiving of, for example, getting the correct result but in a different register. 
+
+The most important trick is that before executing the verifier, which could be slow, stochastic superoptimisation first uses the test cases from the cost function. If any of the test cases fail, we know the candidate can't possibly be the correct program, and so there's no need to call the verifier. Empirically, most bad candidates tend to fail fast on these test cases, and so this trick considerably improves the throughput of the MCMC search.
+
+#### Feedback step
+
+The **feedback step** of stochastic superoptimisation is implicit in the MCMC sampling. We compare new candidate programs *P'* to the previously accepted program *P* to decide whether *P'* is a program we should explore. If *P'* is better than *P* (i.e., has a higher cost function, and so is either faster or closer to the target, or both) we are certain to explore it. Otherwise, there is still some probability of exploring *P'* which depends on how much worse *P'* is.
 
 ### Enumerative search
 
@@ -111,8 +147,10 @@ ala TRANSIT
 * Verify: execute all the testcases on the program
 * Feedback: keep the program in a table if it's unique, to be used when doing *k*+1 
 
+### Conclusion
+
 {{% footnotes %}}
-{{% footnote 1 "Blah blah" %}}
+{{% footnote 1 "Sorry, Luis! We mock because we love." %}}
 {{% /footnotes %}}
 
 [luisceze]: http://homes.cs.washington.edu/~luisceze/
@@ -128,3 +166,8 @@ ala TRANSIT
 [cegis]: http://dl.acm.org/citation.cfm?id=1168907
 [oracle]: http://www.eecs.berkeley.edu/~sseshia/pubdir/synth-icse10.pdf
 [ssa]: http://en.wikipedia.org/wiki/Static_single_assignment_form
+[stoke]: http://cs.stanford.edu/people/eschkufz/research/asplos291-schkufza.pdf
+[hackers]: http://www.hackersdelight.org/
+[loopfree]: http://dl.acm.org/citation.cfm?id=1993506
+[mcmc]: http://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo
+[metropolis]: http://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm
