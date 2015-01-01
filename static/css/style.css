@@ -1,7 +1,6 @@
 body {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.4;
-    background: #eeeeee;
     color: #333333;
 }
 .pure-g > div {
@@ -21,12 +20,31 @@ code, pre {
 b, strong, h1, h2, h3 {
     font-weight: 600;
 }
-h1, h2, h3 {
-    line-height: 1.0;
+h1, h2, h3, h4 {
+    margin: 0.8em 0;
+}
+h1 {
+    font-size: 180%;
+}
+h2 {
+    font-size: 130%;
+}
+h3 {
+    font-size: 117%;
+}
+h4 {
+    font-size: 104%;
+    margin-bottom: 0;
+}
+.tight-header {
+    margin-bottom: 0;
+}
+p {
+    margin: 0.8em 0;
 }
 p.rss-link {
     display: inline;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 300;
 }
 #container {
@@ -34,7 +52,6 @@ p.rss-link {
     margin-right: auto;
     margin-left: auto;
     padding: 0.83em 0 1px 0;
-    background: #f7f7f7;
 }
 #header {
     padding-bottom: 0.83em;
@@ -45,14 +62,21 @@ p.rss-link {
     margin-bottom: 0;
 }
 #header-text {
-    padding: 0;
+    padding: 0 16px;
 }
-@media screen and (min-width: 48em) {
+#header h1 {
+    line-height: 1.0;
+    margin: 0;
+}
+@media screen and (max-width: 47.9em) {
     #header h1 {
-        margin: 0;
+        line-height: 1.4;
     }
     #header-text {
-        padding: 0 16px !important;
+        padding: 0;
+    }
+    #header p {
+        margin: 0;
     }
 }
 #content {
@@ -75,9 +99,6 @@ a {
 a:hover {
     color: #0A4C8B;
     text-decoration: underline;
-}
-#content h3 {
-    margin: 1.2em 0 0.8em 0;
 }
 ul.blog-posts {
     padding: 0;
@@ -116,17 +137,18 @@ ul.paper-list ul li {
     margin: 0;
     list-style: none;
     display: inline;
-    font-size: 16px;
+    font-size: 18px;
 }
 ul.paper-list ul li + li::before {
     content: ", ";
 }
 h2.blog-title {
-    margin-bottom: 0.2em;
+    margin: 0.5em 0 0 0;
+    font-size: 145%;
 }
 h3.blog-date {
     color: #666666;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 300;
     margin-top: 0 !important;
 }
