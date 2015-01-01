@@ -141,13 +141,41 @@ The **feedback step** of stochastic superoptimisation is implicit in the MCMC sa
 
 ### Enumerative search
 
-ala TRANSIT
+The last synthesis technique I'm going to try to fit into the CEGIS mold is enumerative search. It's a fairly obvious brute force approach with a neat trick, and despite its seeming naiveté, has been used to great effect, for example by Udupa et al in [synthesising distributed systems protocols][transit].
 
-* Synthesise: enumerates every possible program of size *k*
-* Verify: execute all the testcases on the program
-* Feedback: keep the program in a table if it's unique, to be used when doing *k*+1 
+For a **specification** we're going to use a finite set of test cases. Of course, since you can generate test cases given an implementation of the program, it's fine to instead assume an existing implementation like we did with oracle-guided synthesis and stochastic superoptimisation. We also assume we have a grammar of the target language. For our purposes, we'll use a simple grammar that has two operations `add` and `sub`, and two available variables `x` and `y`. The grammar defines expressions over these terms, so for example, `add(x, sub(x, y))` is a program in this grammar. There's no assignment statement.
+
+#### Synthesis step
+
+The key idea of enumerative search is to just brute force search all possible programs. The concrete strategy breaks programs up into depths based on the deepest path in their parse tree. For example, the program that just returns `x` has depth zero, while the program `x+y` has depth 1, and `(x+y)+x` has depth 2.
+
+We **synthesise** candidate programs by starting at depth 0 and enumerating all programs at that depth. In our case, that means the first two candidates are just the two programs `x` and `y`. Once we're done with a depth, we increment and repeat this process. So at depth 1, there are eight candidate programs, which all take the form `operation(a, b)`:
+
+{{% img src="post/synthesis-for-architects/enumerative-1.png" alt="enumerative search level 1" width="50%" %}}
+
+Notice how the possible expressions for `a` and `b` are exactly the programs of depth 0. This is how we do the enumeration: at depth *k*, we explore all programs of the form `operation(a, b)`, where `a` and `b` are any expression of depth at most *k*-1. This dynamic programming search is going to be exponential in the depth *k*: at depth 2, each hole can be filled with one of 8 depth-1 or 2 depth-0 expressions, and so we'll have to explore 2×(8+2)² = 200 programs; at depth 3, we'll have to explore 2×(200+8+2)² = 88,200 programs! We'll rely on the feedback step to try to prune this search space.
+
+#### Verification step
+
+Because we specified the program in terms of test case, the **verification step** is simply going to execute all the test cases and compare the output to the goal. If they match, we're done.
+
+#### Feedback step
+
+The test case output is also the key to the feedback step. The trick is that when trying to fill the holes in programs of depth *k*, we don't need to consider *every* program of depth at most *k*-1. Instead, we need only consider those programs with *distinct* outputs. For example, there's no point considering both `sub(x, x)` and `sub(y, y)` -- they both have the same effect. This insight prunes the search space.
+
+But how do we decide if two programs are distinct? That's where the test cases come in. Because we defined the target program behaviour in terms of the test cases, it actually doesn't matter if two programs are semantically equivalent, but rather only whether they differ *on the test cases*. So to decide if a new program *P* is distinct, we simply compare its test case outputs to those from every other program we've seen so far. If it matches an existing program, there's no point keeping *P*, and so we throw it away.
+
+For example, if every test case has *y* = 0, then `add(x, y)` and `sub(x, y)` are equivalent, even though that's clearly untrue in general. We get to prune a whole bunch of programs that are not semantically equivalent in general, but are equivalent for the set of behaviours we actually care about.
+
+It turns out that this strategy works remarkably well for some problems. When synthesising cache coherence protocols, Udupa et all found that the pruning reduces the search space by nearly a factor of nearly 100× at depth 10. Of course, how well it works on your problem will depend on both the set of behaviours you care about and the set of components you include in the grammar.
 
 ### Conclusion
+
+The promise of program synthesis is that programmers can stop telling computers *how* to do things, and focus instead on telling them *what* they want to do. Inductive program synthesis tackles this problem with fairly vague specifications and, although many of the algorithms seem intractable, in practice they work quite well.
+
+Unfortunately, "quite well" in this context means they can synthesise programs with up to around 100 instructions. We're not really close to the dream of synthesising entire applications from scratch. But in many cases, these smaller programs might be exactly what we're after from synthesis -- we can ask the programmer to bolt high-level pieces together, and fill in the details automatically. This is the idea of *sketching*, which prompted the [original CEGIS work][cegis]. It's also an appeal to the [80-20 rule] -- programs spend most of their time in a few small areas of the code, and so synthesis on those small parts can still deliver significant efficiency improvements. 
+
+Hopefully one day soon, you'll be able to tell Siri your awesome new app idea and have it on the App Store the next day.
 
 {{% footnotes %}}
 {{% footnote 1 "Sorry, Luis! We mock because we love." %}}
@@ -171,3 +199,5 @@ ala TRANSIT
 [loopfree]: http://dl.acm.org/citation.cfm?id=1993506
 [mcmc]: http://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo
 [metropolis]: http://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm
+[transit]: http://dl.acm.org/citation.cfm?id=2462174
+[80-20]: http://swreflections.blogspot.com/2013/11/applying-8020-rule-in-software.html
