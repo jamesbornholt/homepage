@@ -1,5 +1,5 @@
 ---
-date: 2014-12-15T01:43:43-08:00
+date: 2015-01-06T09:30:00-08:00
 draft: true
 title: Program Synthesis for Computer Architecture Professors
 description: Rather than keep explaining program synthesis to my <a href="https://homes.cs.washington.edu/~luisceze/">architecture-inclined adviser</a>, I wrote about it!
