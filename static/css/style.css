@@ -178,4 +178,7 @@ pre {
     body {
         font-size: 16px;
     }
+    h1 a {
+        color: #333333;
+    }
 }
