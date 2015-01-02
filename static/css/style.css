@@ -2,6 +2,7 @@ body {
     font-size: 18px;
     line-height: 1.4;
     color: #333333;
+    text-rendering: optimizeLegibility;
 }
 .pure-g > div {
     -webkit-box-sizing: border-box;
@@ -17,7 +18,7 @@ code, pre {
     font-family: "Source Code Pro", Consolas, monospace, sans-serif;
     font-weight: 400;
 }
-b, strong, h1, h2, h3 {
+b, strong, h1, h2, h3, h4 {
     font-weight: 600;
 }
 h1, h2, h3, h4 {
@@ -45,7 +46,7 @@ p {
 p.rss-link {
     display: inline;
     font-size: 18px;
-    font-weight: 300;
+    font-weight: 400;
 }
 #container {
     max-width: 48em;
@@ -91,6 +92,8 @@ p.rss-link {
 }
 #content p {
     margin-top: 0;
+    hyphens: auto;
+    -webkit-hyphens: auto;
 }
 #content img {
     display: block;
@@ -155,7 +158,7 @@ h2.blog-title {
 h3.blog-date {
     color: #666666;
     font-size: 18px;
-    font-weight: 300;
+    font-weight: 400;
     margin-top: 0 !important;
 }
 blockquote.blog-summary {
