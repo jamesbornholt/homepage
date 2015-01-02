@@ -189,7 +189,7 @@ Hopefully one day soon, you'll be able to tell Siri your awesome new app idea an
 [big data]: http://www.adrants.com/images/sxswcats_bigdatacruncher.jpg
 [Ke$ha]: http://i.dailymail.co.uk/i/pix/2012/08/30/article-2195779-14BE2A44000005DC-690_468x625.jpg
 [fol]: http://en.wikipedia.org/wiki/First-order_logic
-[cse507]: http://courses.cs.washington.edu/courses/cse507/14wi/
+[cse507]: http://courses.cs.washington.edu/courses/cse507/14au/
 [denali]: http://dl.acm.org/citation.cfm?id=512566
 [cegis]: http://dl.acm.org/citation.cfm?id=1168907
 [oracle]: http://www.eecs.berkeley.edu/~sseshia/pubdir/synth-icse10.pdf
