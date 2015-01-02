@@ -174,3 +174,8 @@ hr.footnotes {
 pre {
     margin: 0.7em 40px;
 }
+@media print {
+    body {
+        font-size: 16px;
+    }
+}
