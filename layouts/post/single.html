@@ -1,4 +1,4 @@
-{{ partial "header.html" . }}
+{{ partial "top.html" . }}
 
 <h2 class="blog-title">{{ .Title }}</h2>
 <h3 class="blog-date">{{ .Date.Format "2 January 2006" }}</h3>
@@ -9,4 +9,4 @@
 
 {{ .Content }}
 
-{{ partial "footer.html" . }}
+{{ partial "bottom.html" . }}

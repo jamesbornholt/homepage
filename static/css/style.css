@@ -79,6 +79,12 @@ p.rss-link {
         margin: 0;
     }
 }
+.tight-header p {
+    margin: 0;
+}
+.tight-header h1 {
+    line-height: 1.4 !important;
+}
 #content {
     margin: 0.83em;
     margin-top: 0.41em;

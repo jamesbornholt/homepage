@@ -1,4 +1,4 @@
-{{ partial "header.html" . }}
+{{ partial "top.html" . }}
     {{ range .Data.Pages }}
         {{ if (or (eq .RelPermalink "/~bornholt/index.html") (eq .RelPermalink "index.html")) }} {{ .Content }} {{ end }}
     {{ end }}
@@ -10,4 +10,4 @@
     <h2>Research</h2>
     {{ partial "paper-list.html" . }}
     
-{{ partial "footer.html" . }}
+{{ partial "bottom.html" . }}
