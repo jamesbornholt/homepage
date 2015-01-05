@@ -5,7 +5,7 @@ title: Program Synthesis for Computer Architecture Professors
 description: Rather than keep explaining program synthesis to my <a href="https://homes.cs.washington.edu/~luisceze/">architecture-inclined adviser</a>, I wrote about it!
 ---
 
-Professor [Luis Ceze][luisceze] is an awesome adviser, but he has one well-hidden, shameful secret: his PhD is in *computer architecture*.{{% fn 1 %}} I'm working on correcting this grave misjudgement by surrounding him with [experts][djg] in [programming languages][emina], but I feel like I must also make my own contribution. To that end, I present part 1 of my condescendingly-named [1,009-part][dragon] series, *Programming Languages for Computer Architecture Professors*. Today, we'll tackle **program synthesis**.{{% fn 2 %}}
+[Luis Ceze][luisceze] is a great adviser, but he has one well-hidden, shameful secret: his PhD is in *computer architecture*.{{% fn 1 %}} I'm working on correcting this grave misjudgement by surrounding him with [experts][djg] in [programming languages][emina], but I feel like I must also make my own contribution. To that end, I present part 1 of my condescendingly-named [1,009-part][dragon] series, *Programming Languages for Computer Architecture Professors*. Today, we'll tackle **program synthesis**.{{% fn 2 %}}
 
 ### Synthesis?
 
