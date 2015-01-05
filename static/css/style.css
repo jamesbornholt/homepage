@@ -163,14 +163,14 @@ h3.blog-date {
 }
 blockquote, pre {
     margin: 0.7em 0 0.7em 40px;
-    padding: 0 40px 0 5px;
+    padding: 0 5px;
 }
 blockquote {
     border-left: 5px solid #eee;
 }
 blockquote.blog-summary {
     border: 0;
-    padding-left: 0;
+    padding: 0;
     font-style: italic;
 }
 pre {
