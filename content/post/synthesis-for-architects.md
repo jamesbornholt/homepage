@@ -28,7 +28,7 @@ We have well-studied programming languages that tell computers how to do things.
 
 A complete formal specification lends itself to a style of *deductive* program synthesis, where we try to deduce an implementation based on the specification and a set of logical axioms. For example, the [Denali superoptimiser][denali] takes a logical specification and an axiomatisation of the instruction set, and explores every possible way to implement the specification. While this sounds great in theory, it depends on having a complete axiomatisation of the target language and a complete formal specification, both of which may be difficult to obtain.
 
-In contrast, *inductive* program synthesis allows a less formal specification and, rather than making logical deductions directly from that specification, applies an iterative refinement technique to find an implementation. The iterative approach has the benefit of flexibility in specification, but can run into significant scaling problems. Since I'm most interested in more relaxed types of specifications, I'll focus on inductive program synthesis.
+In contrast, *inductive* program synthesis allows a less formal specification and, rather than making logical deductions directly from that specification, applies an iterative search technique to find an implementation. The iterative approach has the benefit of flexibility in specification, but can run into significant scaling problems. Since I'm most interested in more relaxed types of specifications, I'll focus on inductive program synthesis.
 
 ### Inductive program synthesis
 
@@ -181,7 +181,7 @@ It turns out that this strategy works remarkably well for some problems. When sy
 
 ### Conclusion
 
-We're not really close to the dream of synthesising entire applications from scratch. But in many cases, smaller programs might be exactly what we're after from synthesis: we can ask the programmer to bolt high-level pieces together, and fill in the minute details automatically. This is the idea of *sketching*, which prompted the [original CEGIS work][cegis]. It's also an appeal to the [80-20 rule][8020] -- programs spend most of their time in a few small areas of the code, and so synthesis on those small parts can still deliver significant efficiency improvements.
+We're not going to be synthesising entire applications from scratch any time soon, but that's not really a viable goal anyway. In many cases, smaller programs are exactly what we're after from synthesis: we can ask the programmer to bolt high-level pieces together, and fill in the minute details automatically. This is the idea of *sketching*, which prompted the [original CEGIS work][cegis]. It's also an appeal to the [80-20 rule][8020] -- programs spend most of their time in a few small areas of the code, and so synthesis on those small parts can still deliver significant efficiency improvements.
 
 The promise of program synthesis is that programmers can stop telling computers *how* to do things, and focus instead on telling them *what* they want to do. Inductive program synthesis tackles this problem with fairly vague specifications and, although many of the algorithms seem intractable, in practice they work remarkably well. Chalk up another victory for the empiricists!
 
