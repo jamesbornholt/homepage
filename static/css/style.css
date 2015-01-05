@@ -161,9 +161,24 @@ h3.blog-date {
     font-weight: 400;
     margin-top: 0 !important;
 }
+blockquote, pre {
+    margin: 0.7em 0 0.7em 40px;
+    padding: 0 40px 0 5px;
+}
+blockquote {
+    border-left: 5px solid #eee;
+}
 blockquote.blog-summary {
+    border: 0;
+    padding-left: 0;
     font-style: italic;
-    margin: 0.7em 40px;
+}
+pre {
+    background: #eeeeee;
+}
+p > code {
+    background: #eeeeee;
+    white-space: nowrap;
 }
 hr.footnotes {
     border: 0;
@@ -171,8 +186,8 @@ hr.footnotes {
     color: #999;
     background-color: #999;
 }
-pre {
-    margin: 0.7em 40px;
+ol.footnotes p {
+    display: inline;
 }
 @media print {
     body {
