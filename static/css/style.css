@@ -109,9 +109,11 @@ a:hover {
     color: #0A4C8B;
     text-decoration: underline;
 }
-
 div.blog-post {
     padding-bottom: 0.8em;
+}
+div.blog-post:last-of-type {
+    padding-bottom: 0;
 }
 div.blog-post > div {
     box-sizing: border-box;
@@ -125,14 +127,6 @@ div.blog-date {
 }
 div.blog-desc {
     padding-left: 1em;
-}
-ul.blog-posts {
-    padding: 0;
-    margin: 0;
-}
-ul.blog-posts li {
-    list-style: none;
-    margin-bottom: 0.8em;
 }
 div.blog-posts blockquote {
     margin: 0 0 0 40px;
