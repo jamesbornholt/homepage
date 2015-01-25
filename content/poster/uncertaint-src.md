@@ -1,12 +1,12 @@
-+++
-date = "2013-06-15T00:00:00-07:00"
-title = "Uncertain<T>: A First-Order Type for Uncertain Data"
-paper_authors = "James Bornholt"
-paper_url = "papers/2013-pldisrc-uncertaint.finals.pdf"
-paper_venue = "PLDI 2013 Student Research Competition"
-paper_venue_url = "http://src.acm.org"
-paper_notes = "<b>First Place, PLDI Student Research Competition (Undergraduate). Second Place, ACM Student Research Competition Grand Final (Undergraduate)</b>"
-+++
+---
+date: "2013-06-15T00:00:00-07:00"
+title: "Uncertain<T>: A First-Order Type for Uncertain Data"
+paper_authors: "James Bornholt"
+paper_url: "papers/2013-pldisrc-uncertaint.finals.pdf"
+paper_venue: "PLDI 2013 Student Research Competition"
+paper_venue_url: "http://src.acm.org"
+paper_notes: "<b>First Place, PLDI Student Research Competition (Undergraduate). Second Place, ACM Student Research Competition Grand Final (Undergraduate)</b>"
+---
 
 * [Extended Abstract](papers/2013-pldisrc-uncertaint.pdf)
 * [Poster](papers/2013-pldisrc-uncertaint.poster.pdf)
