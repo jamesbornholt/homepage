@@ -1,12 +1,17 @@
-<ul class="blog-posts">
+<table class="blog-posts">
 {{ range where .Data.Pages "Section" "post" }}
     {{ if (not .Draft) }}
+<tr>
+    <td class="blog-date">{{ .Date.Format "2 January" }}</td>
+    <td>
     {{ if (not .Params.short_post) }}
-    <li>{{ .Date.Format "2 January" }}: <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    <blockquote class="blog-summary">{{ if .Description }}{{ .Description | safeHtml }}{{ else }}{{ .Summary }}{{ end }}</blockquote></li>
+    <p><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+    <blockquote class="blog-summary">{{ if .Description }}{{ .Description | safeHtml }}{{ else }}{{ .Summary }}{{ end }}</blockquote>
     {{ else }}
-    <li>{{ .Date.Format "2 January" }}: {{ .Content }}</li>
+    {{ .Content }}
     {{ end }}
+    </td>
     {{ end }}
+</tr>
 {{ end }}
-</ul>
+</table>
