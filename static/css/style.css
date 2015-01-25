@@ -109,20 +109,22 @@ a:hover {
     color: #0A4C8B;
     text-decoration: underline;
 }
-table.blog-posts {
 
-}
-table.blog-posts td {
+div.blog-post {
     padding-bottom: 0.8em;
 }
-td.blog-date {
+div.blog-post > div {
+    box-sizing: border-box;
+}
+div.blog-date {
     font-size: 80%;
     color: #777777;
     text-align: right;
-    white-space: nowrap;
     vertical-align: top;
-    padding-right: 1em;
     line-height: 18pt;
+}
+div.blog-desc {
+    padding-left: 1em;
 }
 ul.blog-posts {
     padding: 0;
@@ -132,16 +134,22 @@ ul.blog-posts li {
     list-style: none;
     margin-bottom: 0.8em;
 }
-table.blog-posts blockquote {
-    margin: 0 40px;
+div.blog-posts blockquote {
+    margin: 0 0 0 40px;
     font-style: italic;
 }
-table.blog-posts p {
+div.blog-posts p {
     display: inline;
 }
-ul.blog-posts span.blog-date {
-
+@media screen and (max-width: 47.9em) {
+    div.blog-date {
+        text-align: left;
+    }
+    div.blog-desc {
+        padding-left: 0;
+    }
 }
+
 .paper-title {
     font-style: italic;
 }
