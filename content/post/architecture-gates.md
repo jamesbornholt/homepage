@@ -2,7 +2,7 @@
 date: 2015-01-25T14:36:53-08:00
 draft: true
 title: Computer Architecture is Not About Gates
-description: "I have a misperception that computer architecture is just electrical engineering. Here I set myself straight."
+description: "I have a misconception that computer architecture is just electrical engineering. Here I set myself straight."
 ---
 
 Sometimes I feel uncomfortable calling myself a member of [a computer architecture research group][sampa], because I know nothing about electrical engineering (or as I prefer to call it, "how stuff actually works"). In our group's kickoff meeting at the start of this quarter, we gave two-minute [wild and crazy idea][waci] talks. I used this slide, funny to exactly five people in the world, in mine:
