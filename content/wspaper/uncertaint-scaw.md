@@ -10,3 +10,4 @@ paper_colocated_url: "http://darksilicon.org/hpca/"
 ---
 
 * [Paper](papers/2015-scaw-uncertaint.pdf)
+* [Slides](papers/2015-scaw-uncertaint.slides.pdf)
