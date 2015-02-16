@@ -6,7 +6,7 @@ type: "paper"
 paper_url: "http://dx.doi.org/10.1145/2541940.2541958"
 paper_venue: "ASPLOS 2014"
 paper_venue_url: "https://www.cs.utah.edu/asplos14/"
-paper_notes: "<b>SIGPLAN Research Highlight, November 2014</b>"
+paper_notes: "<b>SIGPLAN Research Highlight, November 2014. To appear in IEEE Micro Top Picks, 2015</b>"
 ---
 
 * [Paper](papers/2014-asplos-uncertaint.pdf)
