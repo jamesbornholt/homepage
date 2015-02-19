@@ -1,6 +1,6 @@
 ---
 date: 2015-01-06T09:30:00-08:00
-title: Program Synthesis Explained for Computer Architecture Professors
+title: Program Synthesis, Explained
 description: Rather than keep explaining program synthesis to my <a href="https://homes.cs.washington.edu/~luisceze/">architecture-inclined adviser</a>, I wrote about it!
 ---
 
