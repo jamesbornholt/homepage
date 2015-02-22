@@ -6,7 +6,9 @@ url = "index.html"
 
 +++
 
-I’m a first-year computer science PhD student in the [Sampa group][sampa] at the [University of Washington][uw], advised by [Luis Ceze][luisceze], [Dan Grossman][djg], and [Emina Torlak][emina]. I’m interested in how programming languages will evolve in an era where hardware is complex and unreliable, abstractions are too rigid and outdated, and energy efficiency is critical. I’m supported by the [David Notkin Endowed Graduate Fellowship][notkin].
+I’m a first-year computer science PhD student in the [Sampa][] and [PLSE][] groups at the [University of Washington][uw], advised by [Luis Ceze][luisceze], [Dan Grossman][djg], and [Emina Torlak][emina]. I’m interested in how programming
+languages and computer architectures can evolve and cooperate to
+address the competing demands of performance, energy efficiency, and accuracy. I’m supported by the [David Notkin Endowed Graduate Fellowship][notkin].
 
 I collaborate frequently with [Kathryn McKinley][mckinley] and [Todd Mytkowicz][toddm] from [Microsoft Research][msr], where I was an intern twice, in 2011 and 2012, and a software engineer for nine months in 2014.
 
@@ -15,6 +17,7 @@ In 2013 I graduated with a [Bachelor of Philosophy][phb] from the [Australian Na
 [Here's my CV][cv].
 
 [sampa]: https://sampa.cs.washington.edu
+[plse]: http://plse.cs.washington.edu
 [uw]: https://www.cs.washington.edu
 [luisceze]: http://homes.cs.washington.edu/~luisceze/
 [djg]: http://homes.cs.washington.edu/~djg/
