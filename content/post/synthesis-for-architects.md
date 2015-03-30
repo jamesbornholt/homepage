@@ -134,10 +134,6 @@ The MCMC sampler uses the cost function, which measures how "close" to the targe
 
 If the candidate is accepted, we move on to the verification step. If not, we repeat this process until a candidate is accepted.
 
-{{% comment %}}
-Evaluating the cost function involves executing the candidate program *P'* on a suite of test cases and comparing the results to the correct outputs. The paper counts the number of bits that differ between the two outputs to measure how "close" *P'* is to the target.
-{{% /comment %}}
-
 #### Verification step
 
 Having accepted a candidate program *P'*, the **verification step** simply passes the candidate and target programs to a verifier to decide if they are equivalent. The paper has a few tricks to make this verification a little more forgiving of, for example, getting the correct result but in a different register.

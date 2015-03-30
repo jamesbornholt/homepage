@@ -1,6 +1,6 @@
 {{ partial "top.html" . }}
     {{ range .Data.Pages }}
-        {{ if (or (eq .RelPermalink "/~bornholt/index.html") (eq .RelPermalink "index.html")) }} {{ .Content }} {{ end }}
+        {{ if (or (eq .RelPermalink "/~bornholt/index.html") (eq .RelPermalink "/index.html")) }} {{ .Content }} {{ end }}
     {{ end }}
 
     <h2>Blog <p class="rss-link">[<a href="{{ .Site.BaseUrl }}/post.xml">Subscribe</a>]</p></h2>
