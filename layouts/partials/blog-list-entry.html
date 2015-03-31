@@ -1,6 +1,3 @@
-<div class="blog-posts">
-{{ range where .Data.Pages "Section" "post" }}
-    {{ if (not .Draft) }}
 <div class="blog-post pure-g">
     <div class="blog-date pure-u-1 pure-u-md-1-8">{{ .Date.Format "2 January" }}</div><div class="blog-desc pure-u-1 pure-u-md-7-8">
     {{ if (not .Params.short_post) }}
@@ -10,7 +7,4 @@
     {{ .Content }}
     {{ end }}
     </div>
-</div>
-    {{ end }}
-{{ end }}
 </div>

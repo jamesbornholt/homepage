@@ -3,8 +3,14 @@
         {{ if (or (eq .RelPermalink "/~bornholt/index.html") (eq .RelPermalink "/index.html")) }} {{ .Content }} {{ end }}
     {{ end }}
 
-    <h2>Blog <p class="rss-link">[<a href="{{ .Site.BaseUrl }}/post/index.xml">Subscribe</a>]</p></h2>
-    {{ partial "blog-list.html" . }}
+    <h2>Blog <p class="rss-link">[<a href="{{ .Site.BaseUrl }}/post/index.xml">Subscribe</a>] [<a href="{{ .Site.BaseUrl }}/post.html">More Entries</a>]</h2>
+    <div class="blog-posts">
+{{ range first 5 (where .Data.Pages "Section" "post") }}
+    {{ if (not .Draft) }}
+    {{ partial "blog-list-entry.html" . }}
+    {{ end }}
+{{ end }}
+    </div>
 
 
     <h2>Research</h2>

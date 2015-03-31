@@ -21,5 +21,5 @@
 </head>
 <body>
 <div id="container">
-{{ if .IsPage }}{{ partial "header-page.html" . }}{{ else }}{{ partial "header-index.html" .}}{{ end }}
+{{ if eq .Url "/" }}{{ partial "header-index.html" . }}{{ else }}{{ partial "header-page.html" .}}{{ end }}
 <div id="content">
