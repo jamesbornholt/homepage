@@ -31,8 +31,6 @@ papers:
   links:
     - text: "Paper"
       url: "papers/2014-approx-bayes.pdf"
-    - text: "Slides"
-      url: "papers/2014-approx-bayes.slides.pdf"
 
 - title: "Uncertain<T>: A First-Order Type for Uncertain Data"
   authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
@@ -82,8 +80,6 @@ papers:
       url: "http://cecs.anu.edu.au/news/details?SID=453"
     - text: "More Press"
       url: "http://cecs.anu.edu.au/news/details?SID=552"
-    - text: "Photos"
-      url: "https://drive.google.com/folderview?id=0B80siNVaWps4eHlNd0R2Y3lWTlU&usp=sharing"
 
 - title: "The Model Is Not Enough: Understanding Energy Consumption in Mobile Devices"
   authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
