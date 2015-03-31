@@ -1,5 +1,5 @@
 baseurl = "https://homes.cs.washington.edu/~bornholt/"
-builddrafts = true
+builddrafts = false
 canonifyurls = true
 uglyurls = true
 disablesitemap = true
