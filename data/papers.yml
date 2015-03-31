@@ -1,0 +1,13 @@
+papers:
+- title: "Uncertain<T>: A First-Order Type for Uncertain Data"
+  authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
+  type: conference
+- title: "Hardware–Software Co-Design: Not Just a Cliché"
+  authors: "Adrian Sampson, James Bornholt, and Luis Ceze"
+  type: conference
+- title: "There's Something About Bayes: Effective Probabilistic Programming for the Rest of Us"
+  authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
+  type: workshop
+- title: "Programming the Internet of Uncertain <T>hings"
+  authors: "James Bornholt, Na Meng, Todd Mytkowicz, and Kathryn S. McKinley"
+  type: workshop
