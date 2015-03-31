@@ -1,13 +1,99 @@
 papers:
-- title: "Uncertain<T>: A First-Order Type for Uncertain Data"
-  authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
-  type: conference
 - title: "Hardware–Software Co-Design: Not Just a Cliché"
   authors: "Adrian Sampson, James Bornholt, and Luis Ceze"
   type: conference
-- title: "There's Something About Bayes: Effective Probabilistic Programming for the Rest of Us"
-  authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
-  type: workshop
+  venue: "SNAPL 2015"
+  venue_url: "http://snapl.org/2015/index.html"
+  extra: "To appear."
+
 - title: "Programming the Internet of Uncertain <T>hings"
   authors: "James Bornholt, Na Meng, Todd Mytkowicz, and Kathryn S. McKinley"
   type: workshop
+  venue: "SCAW 2015"
+  colocated_with: "HPCA 2015"
+  url: "papers/2015-scaw-uncertaint.pdf"
+  venue_url: "http://darksilicon.org/hpca/SCAW-2015/"
+  colocated_with_url: "http://darksilicon.org/hpca/"
+  links:
+    - text: "Paper"
+      url: "papers/2015-scaw-uncertaint.pdf"
+    - text: "Slides"
+      url: "papers/2015-scaw-uncertaint.slides.pdf"
+
+- title: "There's Something About Bayes: Effective Probabilistic Programming for the Rest of Us"
+  authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
+  type: workshop
+  venue: "APPROX 2014"
+  colocated_with: "PLDI 2014"
+  url: "papers/2014-approx-bayes.pdf"
+  venue_url: "http://approx2014.cs.umass.edu"
+  colocated_with_url: "http://conferences.inf.ed.ac.uk/pldi2014/"
+  links:
+    - text: "Paper"
+      url: "papers/2014-approx-bayes.pdf"
+    - text: "Slides"
+      url: "papers/2014-approx-bayes.slides.pdf"
+
+- title: "Uncertain<T>: A First-Order Type for Uncertain Data"
+  authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
+  type: conference
+  venue: "ASPLOS 2014"
+  url: "http://dx.doi.org/10.1145/2541940.2541958"
+  venue_url: "https://www.cs.utah.edu/asplos14/"
+  extra: "<b>SIGPLAN Research Highlight, November 2014. To appear in IEEE Micro Top Picks, 2015</b>."
+  links:
+    - text: "Paper"
+      url: "papers/2014-asplos-uncertaint.pdf"
+    - text: "Slides"
+      url: "papers/2014-asplos-uncertaint.slides.pdf"
+    - text: "Lightning Session Slides"
+      url: "papers/2014-asplos-uncertaint.lightning.pdf"
+    - text: "Poster"
+      url: "papers/2014-asplos-uncertaint.poster.pdf"
+
+- title: "Abstractions and Techniques for Programming with Uncertain Data"
+  authors: "James Bornholt"
+  type: thesis
+  url: "papers/2013-honours-thesis.pdf"
+  extra: "Honours thesis, Bachelor of Philosophy (Honours), Australian National University, 2013."
+  links:
+    - text: "Thesis"
+      url: "papers/2013-honours-thesis.pdf"
+    - text: "Slides"
+      url: "papers/2013-honours-thesis.slides.pdf"
+
+- title: "Uncertain<T>: A First-Order Type for Uncertain Data"
+  authors: "James Bornholt"
+  type: poster
+  venue: "PLDI 2013 Student Research Competition"
+  url: "papers/2013-pldisrc-uncertaint.finals.pdf"
+  venue_url: "http://src.acm.org"
+  extra: "<b>First Place, PLDI Student Research Competition (Undergraduate). Second Place, ACM Student Research Competition Grand Final (Undergraduate).</b>"
+  links:
+    - text: "Extended Abstract"
+      url: "papers/2013-pldisrc-uncertaint.pdf"
+    - text: "Poster"
+      url: "papers/2013-pldisrc-uncertaint.poster.pdf"
+    - text: "Slides"
+      url: "papers/2013-pldisrc-uncertaint.slides.pdf"
+    - text: "Grand Final Submission"
+      url: "papers/2013-pldisrc-uncertaint.finals.pdf"
+    - text: "Press"
+      url: "http://cecs.anu.edu.au/news/details?SID=453"
+    - text: "More Press"
+      url: "http://cecs.anu.edu.au/news/details?SID=552"
+    - text: "Photos"
+      url: "https://drive.google.com/folderview?id=0B80siNVaWps4eHlNd0R2Y3lWTlU&usp=sharing"
+
+- title: "The Model Is Not Enough: Understanding Energy Consumption in Mobile Devices"
+  authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
+  type: poster
+  venue: "Hot Chips 24, 2012"
+  url: "papers/2012-hotchips-energy.pdf"
+  venue_url: "http://www.hotchips.org/archives/hc24/"
+  links:
+    - text: "Extended Abstract"
+      url: "papers/2012-hotchips-energy.pdf"
+    - text: "Poster"
+      url: "papers/2012-hotchips-energy.poster.pdf"
+

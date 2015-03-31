@@ -1,0 +1,6 @@
+{{ if .url }}<a class="paper-title" href="{{ .url }}">{{ else }}<span class="paper-title">{{ end }}{{ .title }}{{ if .url }}</a>{{ else }}</span>{{ end }}. {{ .authors }}.
+{{ if .venue }}In {{ if .venue_url }}<a href="{{ .venue_url }}">{{ .venue }}</a>{{ else }}{{ .venue }}{{ end }}{{ if .colocated_with }}, colocated with {{ if .colocated_with_url }}<a href="{{ .colocated_with_url }}">{{ .colocated_with }}</a>{{ else }}{{ .colocated_with }}{{ end }}{{ end }}.{{ end }}
+{{ if .extra }}{{ .extra | safeHtml }}{{ end }}
+{{ if .links }}<ul>{{ range .links }}
+    <li>{{ if .url }}<a href="{{ .url }}">{{ end }}{{ .text }}{{ if .url }}</a>{{ end }}</li>
+{{ end }}</ul>{{ end }}
