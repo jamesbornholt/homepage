@@ -3,8 +3,11 @@ papers:
   authors: "Adrian Sampson, James Bornholt, and Luis Ceze"
   type: conference
   venue: "SNAPL 2015"
+  url: "papers/2015-snapl-approx.pdf"
   venue_url: "http://snapl.org/2015/index.html"
-  extra: "To appear."
+  links:
+    - text: "Paper"
+      url: "papers/2015-snapl-approx.pdf"
 
 - title: "Programming the Internet of Uncertain <T>hings"
   authors: "James Bornholt, Na Meng, Todd Mytkowicz, and Kathryn S. McKinley"
