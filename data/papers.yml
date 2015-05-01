@@ -3,7 +3,7 @@ papers:
   authors: "Adrian Sampson, James Bornholt, and Luis Ceze"
   type: conference
   venue: "SNAPL 2015"
-  url: "papers/2015-snapl-approx.pdf"
+  url: "http://drops.dagstuhl.de/opus/frontdoor.php?source_opus=5030"
   venue_url: "http://snapl.org/2015/index.html"
   links:
     - text: "Paper"
