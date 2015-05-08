@@ -1,4 +1,34 @@
 papers:
+- title: "Scaling Program Synthesis by Exploiting Existing Code"
+  authors: "James Bornholt and Emina Torlak"
+  type: workshop
+  venue: "ML4PL 2015"
+  colocated_with: "ECOOP 2015"
+  venue_url: "http://2015.ecoop.org/track/ML4PL2015"
+  colocated_with_url: "http://2015.ecoop.org/home"
+  links:
+    - text: "To appear."
+
+- title: "Approximate Program Synthesis"
+  authors: "James Bornholt, Emina Torlak, Luis Ceze, and Dan Grossman"
+  type: workshop
+  venue: "WAX 2015"
+  colocated_with: "PLDI 2015"
+  venue_url: "http://sampa.cs.washington.edu/wax2015/"
+  colocated_with_url: "http://conf.researchr.org/home/pldi2015"
+  links:
+    - text: "To appear."
+
+- title: "REACT: A Framework for Rapid Exploration of Approximate Computing Techniques"
+  authors: "Mark Wyse, Andre Baixo, Thierry Moreau, Bill Zorn, James Bornholt, Adrian Sampson, Luis Ceze, and Mark Oskin"
+  type: workshop
+  venue: "WAX 2015"
+  colocated_with: "PLDI 2015"
+  venue_url: "http://sampa.cs.washington.edu/wax2015/"
+  colocated_with_url: "http://conf.researchr.org/home/pldi2015"
+  links:
+    - text: "To appear."
+
 - title: "Hardware–Software Co-Design: Not Just a Cliché"
   authors: "Adrian Sampson, James Bornholt, and Luis Ceze"
   type: conference
