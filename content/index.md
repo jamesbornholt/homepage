@@ -6,9 +6,8 @@ url = "index.html"
 
 +++
 
-I’m a first-year computer science PhD student in the [Sampa][] and [PLSE][] groups at the [University of Washington][uw], advised by [Luis Ceze][luisceze], [Dan Grossman][djg], and [Emina Torlak][emina]. I’m interested in how programming
-languages and computer architectures can evolve and cooperate to
-address the competing demands of performance, energy efficiency, and accuracy. I’m supported by the [David Notkin Endowed Graduate Fellowship][notkin].
+I’m a first-year computer science PhD student in the [PLSE][] and [Sampa][] groups at the [University of Washington][uw], advised by [Luis Ceze][luisceze], [Dan Grossman][djg], and [Emina Torlak][emina]. 
+I’m interested in how techniques from programming languages and formal methods can influence the design of, and solve problems associated with, new computer systems and architectures.
 
 I collaborate frequently with [Kathryn McKinley][mckinley] and [Todd Mytkowicz][toddm] from [Microsoft Research][msr], where I was an intern twice, in 2011 and 2012, and a software engineer for nine months in 2014.
 
