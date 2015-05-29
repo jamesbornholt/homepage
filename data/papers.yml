@@ -64,6 +64,8 @@ papers:
   links:
     - text: "Paper"
       url: "papers/2014-approx-bayes.pdf"
+    - text: "Slides"
+      url: "papers/2014-approx-bayes.slides.pdf"
 
 - title: "Uncertain<T>: A First-Order Type for Uncertain Data"
   authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
