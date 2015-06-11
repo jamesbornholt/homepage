@@ -83,6 +83,8 @@ p.rss-link {
     #header p {
         margin: 0;
     }
+}
+@media screen and (max-width: 35.4em) {
     #header-text {
         padding-bottom: 16px;
     }
