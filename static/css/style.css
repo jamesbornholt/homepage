@@ -63,7 +63,11 @@ p.rss-link {
     margin-bottom: 0;
 }
 #header-text {
-    padding: 0 16px;
+    padding: 0;
+}
+#header-img img {
+    max-height: 8em;
+    float: right;
 }
 #header h1 {
     line-height: 1.0;
@@ -78,6 +82,18 @@ p.rss-link {
     }
     #header p {
         margin: 0;
+    }
+    #header-text {
+        padding-bottom: 16px;
+    }
+    #header-img img {
+        float: none;
+        max-height: 10em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #container {
+        padding-top: 0.5em;
     }
 }
 .tight-header p {
