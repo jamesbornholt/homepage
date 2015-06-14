@@ -14,20 +14,26 @@ papers:
   type: workshop
   venue: "WAX 2015"
   colocated_with: "PLDI 2015"
+  url: "papers/2015-wax-appsyn.pdf"
   venue_url: "http://sampa.cs.washington.edu/wax2015/"
   colocated_with_url: "http://conf.researchr.org/home/pldi2015"
   links:
-    - text: "To appear."
+    - text: "Paper"
+      url: "papers/2015-wax-appsyn.pdf"
+    - text: "Slides"
+      url: "papers/2015-wax-appsyn.slides.pdf"
 
 - title: "REACT: A Framework for Rapid Exploration of Approximate Computing Techniques"
   authors: "Mark Wyse, Andre Baixo, Thierry Moreau, Bill Zorn, James Bornholt, Adrian Sampson, Luis Ceze, and Mark Oskin"
   type: workshop
   venue: "WAX 2015"
   colocated_with: "PLDI 2015"
+  url: "papers/2015-wax-react.pdf"
   venue_url: "http://sampa.cs.washington.edu/wax2015/"
   colocated_with_url: "http://conf.researchr.org/home/pldi2015"
   links:
-    - text: "To appear."
+    - text: "Paper"
+      url: "papers/2015-wax-react.pdf"
 
 - title: "Hardware–Software Co-Design: Not Just a Cliché"
   authors: "Adrian Sampson, James Bornholt, and Luis Ceze"
