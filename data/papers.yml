@@ -34,6 +34,8 @@ papers:
   links:
     - text: "Paper"
       url: "papers/2015-wax-react.pdf"
+    - text: "Slides"
+      url: "papers/2015-wax-react.slides.pdf"
 
 - title: "Hardware–Software Co-Design: Not Just a Cliché"
   authors: "Adrian Sampson, James Bornholt, and Luis Ceze"
