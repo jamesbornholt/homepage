@@ -1,4 +1,4 @@
-<h3 class="tight-header">Conference Papers</h3>
+<h3 class="tight-header">Conference and Journal Papers</h3>
 <ul class="paper-list">
 {{ range where .Site.Data.papers.papers "type" "conference" }}
     <li>{{ partial "paper.html" . }}</li>

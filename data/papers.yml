@@ -1,4 +1,16 @@
 papers:
+- title: "Uncertain<T>: Abstractions for Uncertain Hardware and Software"
+  authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
+  type: conference
+  venue: "IEEE Micro"
+  volume: "vol. 35, no. 3, pp. 132–143, May–June 2015"
+  url: "http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7106409&filter%3DAND%28p_IS_Number%3A7129787%29"
+  venue_url: "http://ieeexplore.ieee.org/xpl/tocresult.jsp?isnumber=7129787"
+  extra: "<b>IEEE Micro's Top Picks from the Computer Architecture Conferences.</b>"
+  links:
+    - text: "Paper"
+      url: "papers/2015-toppicks-uncertaint.pdf"
+
 - title: "Scaling Program Synthesis by Exploiting Existing Code"
   authors: "James Bornholt and Emina Torlak"
   type: workshop
@@ -81,7 +93,7 @@ papers:
   venue: "ASPLOS 2014"
   url: "http://dx.doi.org/10.1145/2541940.2541958"
   venue_url: "https://www.cs.utah.edu/asplos14/"
-  extra: "<b>SIGPLAN Research Highlight, November 2014. To appear in IEEE Micro Top Picks, 2015</b>."
+  extra: "<b>SIGPLAN Research Highlight, November 2014. IEEE Micro Top Picks, 2015</b>."
   links:
     - text: "Paper"
       url: "papers/2014-asplos-uncertaint.pdf"
