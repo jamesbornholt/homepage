@@ -16,10 +16,14 @@ papers:
   type: workshop
   venue: "ML4PL 2015"
   colocated_with: "ECOOP 2015"
+  url: "papers/2015-ml4pl-scalesynth.pdf"
   venue_url: "http://2015.ecoop.org/track/ML4PL2015"
   colocated_with_url: "http://2015.ecoop.org/home"
   links:
-    - text: "To appear."
+    - text: "Paper"
+      url: "papers/2015-ml4pl-scalesynth.pdf"
+    - text: "Slides"
+      url: "papers/2015-ml4pl-scalesynth.slides.pdf"
 
 - title: "Approximate Program Synthesis"
   authors: "James Bornholt, Emina Torlak, Luis Ceze, and Dan Grossman"
