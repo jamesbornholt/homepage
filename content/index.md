@@ -7,7 +7,7 @@ url = "index.html"
 +++
 
 I’m a first-year computer science PhD student in the [PLSE][] and [Sampa][] groups at the [University of Washington][uw], advised by [Luis Ceze][luisceze], [Dan Grossman][djg], and [Emina Torlak][emina]. 
-I’m interested in how techniques from programming languages and formal methods can influence the design of, and solve problems associated with, new computer systems and architectures.
+I’m interested in the intersection of formal methods and programming languages, and how the two can solve problems in computer systems and architecture.
 
 I collaborate frequently with [Kathryn McKinley][mckinley] and [Todd Mytkowicz][toddm] from [Microsoft Research][msr], where I was an intern twice, in 2011 and 2012, and a software engineer for nine months in 2014.
 
