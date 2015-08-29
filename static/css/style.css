@@ -15,7 +15,7 @@ html, button, input, select, textarea,
     font-weight: 400;
 }
 code, pre {
-    font-family: "Source Code Pro", Consolas, monospace, sans-serif;
+    font-family: "Inconsolata", Consolas, monospace, sans-serif;
     font-weight: 400;
 }
 b, strong, h1, h2, h3, h4 {
@@ -213,6 +213,16 @@ blockquote.blog-summary {
 }
 pre {
     background: #eeeeee;
+}
+
+div.multiple-code div {
+    padding: 0 20px;
+}
+div.multiple-code p {
+    margin: 0;
+}
+div.multiple-code pre {
+    margin: 0.3em 0 0.7em 0;
 }
 p > code {
     background: #eeeeee;
