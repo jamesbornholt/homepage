@@ -16,7 +16,7 @@ In 2013 I graduated with a [Bachelor of Philosophy][phb] from the [Australian Na
 [Here's my CV][cv].
 
 [sampa]: https://sampa.cs.washington.edu
-[plse]: http://plse.cs.washington.edu
+[plse]: http://uwplse.org
 [uw]: https://www.cs.washington.edu
 [luisceze]: http://homes.cs.washington.edu/~luisceze/
 [djg]: http://homes.cs.washington.edu/~djg/
