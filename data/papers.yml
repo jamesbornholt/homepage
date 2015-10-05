@@ -1,4 +1,14 @@
 papers:
+- title: "Optimal Program Synthesis"
+  authors: "James Bornholt, Emina Torlak, Dan Grossman, and Luis Ceze"
+  type: conference
+  venue: "POPL 2016"
+  venue_url: "http://conf.researchr.org/home/POPL-2016"
+  extra: "To appear."
+  # links:
+  #   - text: "Paper"
+  #     url: "papers/2015-snapl-approx.pdf"
+
 - title: "Uncertain<T>: Abstractions for Uncertain Hardware and Software"
   authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
   type: conference
