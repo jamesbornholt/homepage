@@ -1,5 +1,5 @@
 papers:
-- title: "Optimal Program Synthesis"
+- title: "Optimizing Synthesis with Metasketches"
   authors: "James Bornholt, Emina Torlak, Dan Grossman, and Luis Ceze"
   type: conference
   venue: "POPL 2016"
