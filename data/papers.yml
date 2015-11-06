@@ -3,11 +3,11 @@ papers:
   authors: "James Bornholt, Emina Torlak, Dan Grossman, and Luis Ceze"
   type: conference
   venue: "POPL 2016"
-  url: "papers/2016-popl-synapse.pdf"
+  url: "papers/synapse-popl16.pdf"
   venue_url: "http://conf.researchr.org/home/POPL-2016"
   links:
     - text: "Paper"
-      url: "papers/2016-popl-synapse.pdf"
+      url: "papers/synapse-popl16.pdf"
 
 - title: "Uncertain<T>: Abstractions for Uncertain Hardware and Software"
   authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
@@ -19,49 +19,49 @@ papers:
   extra: "<b>IEEE Micro's Top Picks from the Computer Architecture Conferences.</b>"
   links:
     - text: "Paper"
-      url: "papers/2015-toppicks-uncertaint.pdf"
+      url: "papers/uncertaint-toppicks15.pdf"
 
 - title: "Scaling Program Synthesis by Exploiting Existing Code"
   authors: "James Bornholt and Emina Torlak"
   type: workshop
   venue: "ML4PL 2015"
   colocated_with: "ECOOP 2015"
-  url: "papers/2015-ml4pl-scalesynth.pdf"
+  url: "papers/scalesynth-ml4pl15.pdf"
   venue_url: "http://2015.ecoop.org/track/ML4PL2015"
   colocated_with_url: "http://2015.ecoop.org/home"
   links:
     - text: "Paper"
-      url: "papers/2015-ml4pl-scalesynth.pdf"
+      url: "papers/scalesynth-ml4pl15.pdf"
     - text: "Slides"
-      url: "papers/2015-ml4pl-scalesynth.slides.pdf"
+      url: "papers/scalesynth-ml4pl15.slides.pdf"
 
 - title: "Approximate Program Synthesis"
   authors: "James Bornholt, Emina Torlak, Luis Ceze, and Dan Grossman"
   type: workshop
   venue: "WAX 2015"
   colocated_with: "PLDI 2015"
-  url: "papers/2015-wax-appsyn.pdf"
+  url: "papers/appsyn-wax15.pdf"
   venue_url: "http://sampa.cs.washington.edu/wax2015/"
   colocated_with_url: "http://conf.researchr.org/home/pldi2015"
   links:
     - text: "Paper"
-      url: "papers/2015-wax-appsyn.pdf"
+      url: "papers/appsyn-wax15.pdf"
     - text: "Slides"
-      url: "papers/2015-wax-appsyn.slides.pdf"
+      url: "papers/appsyn-wax15.slides.pdf"
 
 - title: "REACT: A Framework for Rapid Exploration of Approximate Computing Techniques"
   authors: "Mark Wyse, Andre Baixo, Thierry Moreau, Bill Zorn, James Bornholt, Adrian Sampson, Luis Ceze, and Mark Oskin"
   type: workshop
   venue: "WAX 2015"
   colocated_with: "PLDI 2015"
-  url: "papers/2015-wax-react.pdf"
+  url: "papers/react-wax15.pdf"
   venue_url: "http://sampa.cs.washington.edu/wax2015/"
   colocated_with_url: "http://conf.researchr.org/home/pldi2015"
   links:
     - text: "Paper"
-      url: "papers/2015-wax-react.pdf"
+      url: "papers/react-wax15.pdf"
     - text: "Slides"
-      url: "papers/2015-wax-react.slides.pdf"
+      url: "papers/react-wax15.slides.pdf"
 
 - title: "Hardware–Software Co-Design: Not Just a Cliché"
   authors: "Adrian Sampson, James Bornholt, and Luis Ceze"
@@ -71,35 +71,35 @@ papers:
   venue_url: "http://snapl.org/2015/index.html"
   links:
     - text: "Paper"
-      url: "papers/2015-snapl-approx.pdf"
+      url: "papers/hwsw-snapl15.pdf"
 
 - title: "Programming the Internet of Uncertain <T>hings"
   authors: "James Bornholt, Na Meng, Todd Mytkowicz, and Kathryn S. McKinley"
   type: workshop
   venue: "SCAW 2015"
   colocated_with: "HPCA 2015"
-  url: "papers/2015-scaw-uncertaint.pdf"
+  url: "papers/context-scaw15.pdf"
   venue_url: "http://darksilicon.org/hpca/SCAW-2015/"
   colocated_with_url: "http://darksilicon.org/hpca/"
   links:
     - text: "Paper"
-      url: "papers/2015-scaw-uncertaint.pdf"
+      url: "papers/context-scaw15.pdf"
     - text: "Slides"
-      url: "papers/2015-scaw-uncertaint.slides.pdf"
+      url: "papers/context-scaw15.slides.pdf"
 
 - title: "There's Something About Bayes: Effective Probabilistic Programming for the Rest of Us"
   authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
   type: workshop
   venue: "APPROX 2014"
   colocated_with: "PLDI 2014"
-  url: "papers/2014-approx-bayes.pdf"
+  url: "papers/bayes-approx14.pdf"
   venue_url: "http://approx2014.cs.umass.edu"
   colocated_with_url: "http://conferences.inf.ed.ac.uk/pldi2014/"
   links:
     - text: "Paper"
-      url: "papers/2014-approx-bayes.pdf"
+      url: "papers/bayes-approx14.pdf"
     - text: "Slides"
-      url: "papers/2014-approx-bayes.slides.pdf"
+      url: "papers/bayes-approx14.slides.pdf"
 
 - title: "Uncertain<T>: A First-Order Type for Uncertain Data"
   authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
@@ -110,41 +110,41 @@ papers:
   extra: "<b>SIGPLAN Research Highlight, November 2014. IEEE Micro Top Picks, 2015</b>."
   links:
     - text: "Paper"
-      url: "papers/2014-asplos-uncertaint.pdf"
+      url: "papers/uncertaint-asplos14.pdf"
     - text: "Slides"
-      url: "papers/2014-asplos-uncertaint.slides.pdf"
+      url: "papers/uncertaint-asplos14.slides.pdf"
     - text: "Lightning Session Slides"
-      url: "papers/2014-asplos-uncertaint.lightning.pdf"
+      url: "papers/uncertaint-asplos14.lightning.pdf"
     - text: "Poster"
-      url: "papers/2014-asplos-uncertaint.poster.pdf"
+      url: "papers/uncertaint-asplos14.poster.pdf"
 
 - title: "Abstractions and Techniques for Programming with Uncertain Data"
   authors: "James Bornholt"
   type: thesis
-  url: "papers/2013-honours-thesis.pdf"
+  url: "papers/thesis13.pdf"
   extra: "Honours thesis, Bachelor of Philosophy (Honours), Australian National University, 2013."
   links:
     - text: "Thesis"
-      url: "papers/2013-honours-thesis.pdf"
+      url: "papers/thesis13.pdf"
     - text: "Slides"
-      url: "papers/2013-honours-thesis.slides.pdf"
+      url: "papers/thesis13.slides.pdf"
 
 - title: "Uncertain<T>: A First-Order Type for Uncertain Data"
   authors: "James Bornholt"
   type: poster
   venue: "PLDI 2013 Student Research Competition"
-  url: "papers/2013-pldisrc-uncertaint.finals.pdf"
+  url: "papers/uncertaint-src13.finals.pdf"
   venue_url: "http://src.acm.org"
   extra: "<b>First Place, PLDI Student Research Competition (Undergraduate). Second Place, ACM Student Research Competition Grand Final (Undergraduate).</b>"
   links:
     - text: "Extended Abstract"
-      url: "papers/2013-pldisrc-uncertaint.pdf"
+      url: "papers/uncertaint-src13.pdf"
     - text: "Poster"
-      url: "papers/2013-pldisrc-uncertaint.poster.pdf"
+      url: "papers/uncertaint-src13.poster.pdf"
     - text: "Slides"
-      url: "papers/2013-pldisrc-uncertaint.slides.pdf"
+      url: "papers/uncertaint-src13.slides.pdf"
     - text: "Grand Final Submission"
-      url: "papers/2013-pldisrc-uncertaint.finals.pdf"
+      url: "papers/uncertaint-src13.finals.pdf"
     - text: "Press"
       url: "http://cecs.anu.edu.au/news/details?SID=453"
     - text: "More Press"
@@ -154,11 +154,11 @@ papers:
   authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
   type: poster
   venue: "Hot Chips 24, 2012"
-  url: "papers/2012-hotchips-energy.pdf"
+  url: "papers/energy-hotchips15.pdf"
   venue_url: "http://www.hotchips.org/archives/hc24/"
   links:
     - text: "Extended Abstract"
-      url: "papers/2012-hotchips-energy.pdf"
+      url: "papers/energy-hotchips15.pdf"
     - text: "Poster"
-      url: "papers/2012-hotchips-energy.poster.pdf"
+      url: "papers/energy-hotchips15.poster.pdf"
 

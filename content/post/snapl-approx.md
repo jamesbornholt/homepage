@@ -9,5 +9,5 @@ title: SNAPL paper
 
 [adrian]: https://homes.cs.washington.edu/~asampson/
 [luis]: http://homes.cs.washington.edu/~luisceze/
-[paper]: papers/2015-snapl-approx.pdf
+[paper]: papers/hwsw-snapl15.pdf
 [snapl]: http://snapl.org
