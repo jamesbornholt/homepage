@@ -4,7 +4,7 @@
 <h3 class="blog-date">{{ .Date.Format "2 January 2006" }}</h3>
 
 {{ if .Description }}
-<blockquote class="blog-summary">{{ .Description | safeHtml }}</blockquote>
+<blockquote class="blog-summary">{{ .Description | safeHTML }}</blockquote>
 {{ end }}
 
 {{ .Content }}

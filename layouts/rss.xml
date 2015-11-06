@@ -3,11 +3,11 @@
   <title>James Bornholt — University of Washington</title>
   <updated>{{ .Date.Format "2006-01-02T15:04:05-07:00" }}</updated>
   <link rel="self" href="{{ .Permalink }}" />
-  <link rel="alternate" href="{{ .Site.BaseUrl }}" />
+  <link rel="alternate" href="{{ .Site.BaseURL }}" />
   {{ if isset .Site "Author" }}
   <author>
     <name>{{ .Site.Author.name }}</name>
-    <uri>{{ .Site.BaseUrl }}</uri>
+    <uri>{{ .Site.BaseURL }}</uri>
   </author>
   {{ end }}
 

@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ if .Title }}{{ .Title }} — {{ end }}James Bornholt — University of Washington</title>
-    <!-- <base href="{{ .Site.BaseUrl }}/" /> -->
-    <link rel="stylesheet" href="{{ .Site.BaseUrl }}/css/base-min.css" type="text/css">
-    <link rel="stylesheet" href="{{ .Site.BaseUrl }}/css/grids-min.css" type="text/css">
-    <link rel="stylesheet" href="{{ .Site.BaseUrl }}/css/grids-responsive-min.css" type="text/css">
+    <!-- <base href="{{ .Site.BaseURL }}/" /> -->
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/base-min.css" type="text/css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/grids-min.css" type="text/css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/grids-responsive-min.css" type="text/css">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic" type="text/css">
     <link rel="stylesheet" href='//fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="{{ .Site.BaseUrl }}/css/style.css?20150611" type="text/css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/style.css?20150611" type="text/css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
@@ -22,5 +22,5 @@
 </head>
 <body>
 <div id="container">
-{{ if eq .Url "/" }}{{ partial "header-index.html" . }}{{ else }}{{ partial "header-page.html" .}}{{ end }}
+{{ if eq .URL "/" }}{{ partial "header-index.html" . }}{{ else }}{{ partial "header-page.html" .}}{{ end }}
 <div id="content">
