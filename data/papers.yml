@@ -154,11 +154,11 @@ papers:
   authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
   type: poster
   venue: "Hot Chips 24, 2012"
-  url: "papers/energy-hotchips15.pdf"
+  url: "papers/energy-hotchips12.pdf"
   venue_url: "http://www.hotchips.org/archives/hc24/"
   links:
     - text: "Extended Abstract"
-      url: "papers/energy-hotchips15.pdf"
+      url: "papers/energy-hotchips12.pdf"
     - text: "Poster"
-      url: "papers/energy-hotchips15.poster.pdf"
+      url: "papers/energy-hotchips12.poster.pdf"
 
