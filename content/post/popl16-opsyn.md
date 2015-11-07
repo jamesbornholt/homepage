@@ -5,6 +5,7 @@ short_post: true
 title: POPL 2016
 ---
 
-Our paper on optimal program synthesis will appear at [POPL 2016]!
+Our paper on optimal program synthesis, [*Optimizing Synthesis with Metasketches*][paper], will appear at [POPL 2016]!
 
+[paper]: papers/synapse-popl16.pdf
 [POPL 2016]: http://conf.researchr.org/home/POPL-2016
