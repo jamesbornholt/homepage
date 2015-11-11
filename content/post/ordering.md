@@ -110,15 +110,27 @@ Rather than waiting for the write `(1)` to become visible, we could instead plac
 
 {{% img src="post/ordering/wb-wb.png" alt="two threads running in parallel" width="45%" %}}
 
-Then `(2)` could start immediately after putting `(1)` into the write buffer, rather than waiting for it to reach the L3 cache. At some time in the future, the cache hierarchy will pull the write from the write buffer and propagate it through the caches so that it becomes visible to other threads.
+Then `(2)` could start immediately after putting `(1)` into the write buffer, rather than waiting for it to reach the L3 cache. At some time in the future, the cache hierarchy will pull the write from the write buffer and propagate it through the caches so that it becomes visible to other threads. The write buffer allows us to hide the write latency that would usually be required to make write `(1)` visible to all the other threads.
 
-The write buffer is nice because it preserves single-threaded behavior. For example, consider this simple single-threaded program:
+Write buffering is nice because it preserves single-threaded behavior. For example, consider this simple single-threaded program:
 
 {{% img src="post/ordering/wb-local.png" alt="write buffers preserve local behavior" width="45%" %}}
 
 The read in `(2)` needs to see the value written by `(1)` for this program to preserve the expected single-threaded behavior. Write `(1)` has not yet gone to memory---it's sitting in core 1's write buffer---so if read `(2)` just looks to memory, it's going to get an old value. But because it's running on the same CPU, the read can instead just inspect the write buffer directly, see that it contains a write to the location it's reading, and use that value instead. So even with a write buffer, this program correctly prints `1`.
 
-A popular memory model that allows write buffering is called *total store ordering* (TSO).
+A popular memory model that allows write buffering is called *total store ordering* (TSO). TSO preserves the same guarantees as SC, except that it allows cores to use write buffers. These cores can therefore hide significant write latencies, making execution faster.
+
+#### The catch
+
+TSO sounds like a great performance optimization: we can hide write latency by just buffering writes locally rather than waiting for them to go all the way to main memory. But there's a catch: TSO allows behaviors that SC does not. In other words, programs running on TSO hardware can exhibit behavior that programmers don't find intuitive.
+
+Let's look at the same first example from above, but this time running on a machine with write buffers. First, we execute `(1)` and then `(3)`, which both place their data into the write buffer rather than sending it back to main memory:
+
+{{% img src="post/ordering/wb-tso0.png" alt="two threads running in parallel" width="45%" %}}
+
+Next we execute `(2)` on core 1, which is going to read the value of `B`. It first inspects its local write buffer, but there's no value of `B` there, so it reads `B` from memory and gets the value `0`, which it prints. Finally, we execute `(4)` on core 2, which is going to read the value of `A`. There's no value of `A` in core 2's write buffer, so it reads from memory and gets the value `0`, which is prints.
+
+Under TSO, then, this program can print `00`. This is a behavior that we saw above to be explicitly ruled out by SC!
 
 
 {{% footnotes %}}
