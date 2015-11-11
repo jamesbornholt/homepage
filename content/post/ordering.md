@@ -70,7 +70,7 @@ Since this execution would require time-warping, we can conclude that this progr
 
 Architects and programming language designers believe the rules we just explored to be *intuitive* to programmers. The idea is that multiple threads running in parallel are manipulating a single main memory, and so everything must happen in order. There's no notion that two events can occur "at the same time", because they are all accessing a single main memory.
 
-Note that this rule says nothing about *what* order the events happen in---just that they happen in *some* order. The other part of this intuitive model is that events happen in *program order*: the events in a single thread happen in the order in which they were written. This is what programmers expect: all sorts of crazy things would start happening if my programs were allowed to launch their missiles before checking that they key was turned.
+Note that this rule says nothing about *what* order the events happen in---just that they happen in *some* order. The other part of this intuitive model is that events happen in *program order*: the events in a single thread happen in the order in which they were written. This is what programmers expect: all sorts of bad things would start happening if my programs were allowed to launch their missiles before checking that the key was turned.
 
 Together, these two rules---a single main memory, and program order---define *sequential consistency*. [Defining sequential consistency][sc] is one of the many achievements that earned [Leslie Lamport][lamport] the [Turing award][turing] in 2013.{{% fn 1 %}}
 
@@ -80,13 +80,46 @@ Sequential consistency is our first example of a *memory consistency model*. A m
 
 One nice way to think about sequential consistency is as a switch. On each cycle, the switch selects a thread to run, and runs its next event completely. This model preserves the rules of sequential consistency: events are accessing a single main memory, and so happen in order; and by always running the *next* event from a selected thread, each thread's events happen in program order.
 
-The problem with this model is that it's *terribly, disastrously slow*. We can only run a single instruction at a time, so we've lost most of the benefit of having multiple threads run in parallel. Worse, we have to wait for each instruction to finish before we can start the next one.
+The problem with this model is that it's *terribly, disastrously slow*. We can only run a single instruction at a time, so we've lost most of the benefit of having multiple threads run in parallel. Worse, we have to wait for each instruction to finish before we can start the next one---no more instructions can run until the current instruction's effects become *visible* to every other thread.
 
-This second problem is even worse yet if we consider that not only must we run that instruction, but we also have to make its results *visible* to every other thread. For example, suppose we have two hardware cores running the program from above:
+### Coherence
+
+Sometimes, this requirement to wait makes sense: consider the case where two threads both want to write to a variable `A` that another thread wants to read:
+
+{{% img src="post/ordering/coherence.png" alt="coherence" width="70%" %}}
+
+If we give up on the idea of a single main memory, to allow `(1)` and `(2)` to run in parallel, it's suddenly unclear which value of `A` event `(3)` should read. The single main memory guarantees that there will always be a "winner": a single last write to each variable. Without this guarantee, after both `(1)` and `(2)` happen, some threads could see `A` to be `1` while others see it as `2`.
+
+We call this guarantee *coherence*, and it says that all writes *to the same location* are seen in the same order by every thread. It doesn't prescribe the actual order (either `(1)` or `(2)` could happen first), but does require that everyone sees the same "winner".
+
+## Relaxed memory models
+
+Outside of coherence, the requirement for a single main memory is often unnecessary. Consider this example again:
+
+{{% img src="post/ordering/wb.png" alt="two threads running in parallel" width="45%" %}}
+
+There's no reason why performing event `(2)` (a read from `B`) needs to wait until event `(1)` (a write to `A`) completes. They don't interfere with each other at all, and so should be allowed to run in parallel. Event `(1)` is particularly slow because it's a write. With a single view of memory, we can't run `(2)` until `(1)` has become visible to every other thread. On a modern CPU, that's a very expensive operation due to the cache hierarchy: 
 
 {{% img src="post/ordering/wb-cores.png" alt="two threads running in parallel" width="45%" %}}
 
-Suppose we've already executed `(1)`, and now the switch chooses to execute `(3)` and then `(2)`. Sequential consistency requires that when we execute `(2)`, it sees the value written by event `(3)` on core 2. So we have to communicate that value back to core 1 before `(2)` can execute. This requires writing that value all the way back to the L3 cache, which is shared by the two cores. On a modern CPU, this access can take upwards of 90 cycles. Since sequential consistency requires that we not proceed until this write happens, we're going to be spending a lot of time waiting---in the worst case, we can only run one instruction even 90 cycles!
+The only shared memory between the two cores is all the way back at the L3 cache, which often takes upwards of 90 cycles to access.
+
+### Total store ordering (TSO)
+
+Rather than waiting for the write `(1)` to become visible, we could instead place it into a *write buffer* and then begin `(2)` immediately:
+
+{{% img src="post/ordering/wb-wb.png" alt="two threads running in parallel" width="45%" %}}
+
+Then `(2)` could start immediately after putting `(1)` into the write buffer, rather than waiting for it to reach the L3 cache. At some time in the future, the cache hierarchy will pull the write from the write buffer and propagate it through the caches so that it becomes visible to other threads.
+
+The write buffer is nice because it preserves single-threaded behavior. For example, consider this simple single-threaded program:
+
+{{% img src="post/ordering/wb-local.png" alt="write buffers preserve local behavior" width="45%" %}}
+
+The read in `(2)` needs to see the value written by `(1)` for this program to preserve the expected single-threaded behavior. Write `(1)` has not yet gone to memory---it's sitting in core 1's write buffer---so if read `(2)` just looks to memory, it's going to get an old value. But because it's running on the same CPU, the read can instead just inspect the write buffer directly, see that it contains a write to the location it's reading, and use that value instead. So even with a write buffer, this program correctly prints `1`.
+
+A popular memory model that allows write buffering is called *total store ordering* (TSO).
+
 
 {{% footnotes %}}
 {{% footnote 1 %}}Though Lamport was originally writing about multiprocessors, his later work moved toward distributed systems. In the modern distributed systems context, "sequential consistency" means something slightly different (and weaker) to what architects intend. What architects call "sequential consistency" is what distributed systems folks would call "linearizability".{{% /footnote %}}
