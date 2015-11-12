@@ -3,11 +3,13 @@ papers:
   authors: "James Bornholt, Emina Torlak, Dan Grossman, and Luis Ceze"
   type: conference
   venue: "POPL 2016"
-  url: "papers/synapse-popl16.pdf"
+  url: "http://synapse.uwplse.org"
   venue_url: "http://conf.researchr.org/home/POPL-2016"
   links:
     - text: "Paper"
       url: "papers/synapse-popl16.pdf"
+    - text: "Artifact"
+      url: "http://synapse.uwplse.org/popl16-aec/"
 
 - title: "Uncertain<T>: Abstractions for Uncertain Hardware and Software"
   authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
@@ -145,10 +147,6 @@ papers:
       url: "papers/uncertaint-src13.slides.pdf"
     - text: "Grand Final Submission"
       url: "papers/uncertaint-src13.finals.pdf"
-    - text: "Press"
-      url: "http://cecs.anu.edu.au/news/details?SID=453"
-    - text: "More Press"
-      url: "http://cecs.anu.edu.au/news/details?SID=552"
 
 - title: "The Model Is Not Enough: Understanding Energy Consumption in Mobile Devices"
   authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"

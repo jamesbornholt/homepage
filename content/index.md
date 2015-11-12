@@ -9,9 +9,7 @@ url = "index.html"
 I’m a second-year computer science PhD student in the [PLSE][] and [Sampa][] groups at the [University of Washington][uw], advised by [Emina Torlak][emina], [Dan Grossman][djg], and [Luis Ceze][luisceze].
 I’m interested in formal methods and programming languages, and how the two can solve problems in computer systems.
 
-I collaborate frequently with [Kathryn McKinley][mckinley] and [Todd Mytkowicz][toddm] from [Microsoft Research][msr], where I was an intern twice, in 2011 and 2012, and a software engineer for nine months in 2014.
-
-In 2013 I graduated with a [Bachelor of Philosophy][phb] from the [Australian National University][anu], advised by [Steve Blackburn][steveb]. I earned first-class honours and the University Medal in computer science.
+I've been an intern and then a software engineer at [Microsoft Research][msr]. In 2013 I graduated with a [Bachelor of Philosophy][phb] from the [Australian National University][anu].
 
 [Here's my CV][cv].
 
@@ -21,11 +19,7 @@ In 2013 I graduated with a [Bachelor of Philosophy][phb] from the [Australian Na
 [luisceze]: http://homes.cs.washington.edu/~luisceze/
 [djg]: http://homes.cs.washington.edu/~djg/
 [emina]: http://homes.cs.washington.edu/~emina/
-[notkin]: http://www.cs.washington.edu/students/grad/awardrecipients/notkin/
-[mckinley]: http://research.microsoft.com/en-us/people/mckinley/
-[toddm]: http://research.microsoft.com/en-us/people/toddm/
 [msr]: http://research.microsoft.com
 [phb]: http://programsandcourses.anu.edu.au/program/APHSC
 [anu]: http://www.anu.edu.au
-[steveb]: http://users.cecs.anu.edu.au/~steveb/
 [cv]: files/cv.pdf
