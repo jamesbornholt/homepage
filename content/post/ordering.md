@@ -76,6 +76,8 @@ Together, these two rules---a single main memory, and program order---define *se
 
 Sequential consistency is our first example of a *memory consistency model*. A memory consistency model (which we often just call a "memory model") defines the allowed orderings of multiple threads on a multiprocessor. For example, on the program above, sequential consistency *forbids* any ordering that results in printing `00`, but *allows* some orderings that print `01` and `11`.
 
+A memory consistency model is a *contract* between the hardware and software. The hardware promises to only reorder operations in ways allowed by the model, and in return, the software acknowledges that all such reorderings are possible and that it needs to account for them.
+
 ## The problem with sequential consistency
 
 One nice way to think about sequential consistency is as a switch. On each cycle, the switch selects a thread to run, and runs its next event completely. This model preserves the rules of sequential consistency: events are accessing a single main memory, and so happen in order; and by always running the *next* event from a selected thread, each thread's events happen in program order.
@@ -98,7 +100,7 @@ Outside of coherence, the requirement for a single main memory is often unnecess
 
 {{% img src="post/ordering/wb.png" alt="two threads running in parallel" width="45%" %}}
 
-There's no reason why performing event `(2)` (a read from `B`) needs to wait until event `(1)` (a write to `A`) completes. They don't interfere with each other at all, and so should be allowed to run in parallel. Event `(1)` is particularly slow because it's a write. With a single view of memory, we can't run `(2)` until `(1)` has become visible to every other thread. On a modern CPU, that's a very expensive operation due to the cache hierarchy: 
+There's no reason why performing event `(2)` (a read from `B`) needs to wait until event `(1)` (a write to `A`) completes. They don't interfere with each other at all, and so should be allowed to run in parallel. Event `(1)` is particularly slow because it's a write. This means that with a single view of memory, we can't run `(2)` until `(1)` has become visible to every other thread. On a modern CPU, that's a very expensive operation due to the cache hierarchy: 
 
 {{% img src="post/ordering/wb-cores.png" alt="two threads running in parallel" width="45%" %}}
 
@@ -110,7 +112,7 @@ Rather than waiting for the write `(1)` to become visible, we could instead plac
 
 {{% img src="post/ordering/wb-wb.png" alt="two threads running in parallel" width="45%" %}}
 
-Then `(2)` could start immediately after putting `(1)` into the write buffer, rather than waiting for it to reach the L3 cache. At some time in the future, the cache hierarchy will pull the write from the write buffer and propagate it through the caches so that it becomes visible to other threads. The write buffer allows us to hide the write latency that would usually be required to make write `(1)` visible to all the other threads.
+Then `(2)` could start immediately after putting `(1)` into the write buffer, rather than waiting for it to reach the L3 cache. Since the write buffer is on-core, it's very fast to access. At some time in the future, the cache hierarchy will pull the write from the write buffer and propagate it through the caches so that it becomes visible to other threads. The write buffer allows us to hide the write latency that would usually be required to make write `(1)` visible to all the other threads.
 
 Write buffering is nice because it preserves single-threaded behavior. For example, consider this simple single-threaded program:
 
@@ -118,23 +120,55 @@ Write buffering is nice because it preserves single-threaded behavior. For examp
 
 The read in `(2)` needs to see the value written by `(1)` for this program to preserve the expected single-threaded behavior. Write `(1)` has not yet gone to memory---it's sitting in core 1's write buffer---so if read `(2)` just looks to memory, it's going to get an old value. But because it's running on the same CPU, the read can instead just inspect the write buffer directly, see that it contains a write to the location it's reading, and use that value instead. So even with a write buffer, this program correctly prints `1`.
 
-A popular memory model that allows write buffering is called *total store ordering* (TSO). TSO preserves the same guarantees as SC, except that it allows cores to use write buffers. These cores can therefore hide significant write latencies, making execution faster.
+A popular memory model that allows write buffering is called *total store ordering* (TSO). TSO preserves the same guarantees as SC, except that it allows the use of write buffers. These buffers hide write latency, making execution [significantly faster][wbperf].
 
 #### The catch
 
-TSO sounds like a great performance optimization: we can hide write latency by just buffering writes locally rather than waiting for them to go all the way to main memory. But there's a catch: TSO allows behaviors that SC does not. In other words, programs running on TSO hardware can exhibit behavior that programmers don't find intuitive.
+A write buffer sounds like a great performance optimization, but there's a catch: TSO allows behaviors that SC does not. In other words, programs running on TSO hardware can exhibit behavior that programmers would find unintuitive.
 
 Let's look at the same first example from above, but this time running on a machine with write buffers. First, we execute `(1)` and then `(3)`, which both place their data into the write buffer rather than sending it back to main memory:
 
 {{% img src="post/ordering/wb-tso0.png" alt="two threads running in parallel" width="45%" %}}
 
-Next we execute `(2)` on core 1, which is going to read the value of `B`. It first inspects its local write buffer, but there's no value of `B` there, so it reads `B` from memory and gets the value `0`, which it prints. Finally, we execute `(4)` on core 2, which is going to read the value of `A`. There's no value of `A` in core 2's write buffer, so it reads from memory and gets the value `0`, which is prints.
+Next we execute `(2)` on core 1, which is going to read the value of `B`. It first inspects its local write buffer, but there's no value of `B` there, so it reads `B` from memory and gets the value `0`, which it prints. Finally, we execute `(4)` on core 2, which is going to read the value of `A`. There's no value of `A` in core 2's write buffer, so it reads from memory and gets the value `0`, which it prints. At some indeterminate point in the future, the cache hierarchy empties both write buffers and propagates the changes to memory.
 
-Under TSO, then, this program can print `00`. This is a behavior that we saw above to be explicitly ruled out by SC!
+Under TSO, then, this program can print `00`. This is a behavior that we showed above to explicitly ruled out by SC! So write buffers cause behaviors that programmers don't expect.
 
+Is there any architecture willing to adopt an optimization that runs against programmer intuition? Yes! It turns out that practically *every* modern architecture includes a write buffer, and so has a memory model at least as weak as TSO.
+
+In particular, the venerable x86 architecture specifies a memory model that is very close to TSO. Both Intel (the originator of x86) and AMD (the originator of x86-64) specify their memory model with example *litmus tests*, similar to the programs above, that describe the observable outcomes of small tests. Unfortunately, specifying the behavior of a complex system with a handful of examples leaves room for ambiguity. Researchers at Cambridge have poured significant effort into [formalizing x86-TSO][x86tso] to make clear the intended behaviors of x86's TSO implementation.
+
+### Getting weaker
+
+Even though x86 gives up on sequential consistency, it's among the most well-behaved architectures in terms of the crazy behaviors it allows. Most other architectures implement even weaker memory models, meaning they allow even more unintuitive behaviors. There is an entire spectrum of such models---the [SPARC][] architecture had three different models to choose between.
+
+One such architecture worth calling out is ARM, which among other things, probably powers your smartphone. The ARM memory model is notoriously underspecified, but is essentially a form of *weak ordering*, which provides very few guarantees. Weak ordering allows almost any operation to be reordered, which enables a variety of hardware optimizations but also seems like a nightmare to program.
+
+### Escaping through barriers
+
+Luckily, all modern architectures include synchronization operations to bring their relaxed memory models under control when necessary. The most common such operation is a *barrier* (or *fence*). A barrier instruction forces all memory operations before it to complete before any memory operation after it can begin. That is, a barrier instruction effectively reinstates sequential consistency at a particular point in program execution.
+
+Of course, this is exactly the behavior we were trying to avoid by introducing write buffers and other optimizations. Barriers are an escape hatch to be used sparingly: they can cost hundreds of cycles. They are also extremely subtle to use correctly, especially when combined with ambiguous memory model definitions. There are some more usable primitives, such as [atomic compare-and-swap][cas], but using low-level synchronization directly should really be avoided. A real synchronization library will spare you worlds of pain.
+
+## Languages need memory models too
+
+It's not only hardware that reorders memory operations---compilers do it all the time. Consider this program:
+
+    X = 0
+    for i in range(100):
+        X = 1
+        print X
+
+This program always prints a string of 100 `1`s. Of course, the write to `X` inside the loop is redundant, because no other code changes the value of `X`. A standard [loop-invariant code motion][licm] compiler pass will move the write outside the loop to avoid repeating it, and [dead store elimination][dse] will then remove `X = 0`, leaving:
+
+    X = 1
+    for i in range(100):
+        print X
+
+These two programs are totally equivalent outside 
 
 {{% footnotes %}}
-{{% footnote 1 %}}Though Lamport was originally writing about multiprocessors, his later work moved toward distributed systems. In the modern distributed systems context, "sequential consistency" means something slightly different (and weaker) to what architects intend. What architects call "sequential consistency" is what distributed systems folks would call "linearizability".{{% /footnote %}}
+{{% footnote 1 %}}Though Lamport was originally writing about multiprocessors, his later work has moved toward distributed systems. In the modern distributed systems context, "sequential consistency" means something slightly different (and weaker) than what architects intend. What architects call "sequential consistency" is more like what distributed systems folks would call "linearizability".{{% /footnote %}}
 {{% /footnotes %}}
 
 
@@ -149,3 +183,9 @@ Under TSO, then, this program can print `00`. This is a behavior that we saw abo
 [sc]: http://research.microsoft.com/en-us/um/people/lamport/pubs/multi.pdf
 [lamport]: http://www.lamport.org/
 [turing]: http://amturing.acm.org/
+[wbperf]: https://courses.engr.illinois.edu/cs533/reading_list/2b.pdf
+[x86tso]: https://www.cl.cam.ac.uk/~pes20/weakmemory/cacm.pdf
+[SPARC]: https://en.wikipedia.org/wiki/SPARC
+[cas]: https://en.wikipedia.org/wiki/Compare-and-swap
+[licm]: https://en.wikipedia.org/wiki/Loop-invariant_code_motion
+[dse]: https://en.wikipedia.org/wiki/Dead_store
