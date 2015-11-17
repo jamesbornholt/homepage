@@ -1,4 +1,18 @@
 papers:
+- title: "Specifying and Checking File System Crash-Consistency Models"
+  authors: "James Bornholt, Antoine Kaufmann, Jialin Li, Arvind Krishnamurthy, Emina Torlak, and Xi Wang"
+  type: conference
+  venue: "ASPLOS 2016"
+  venue_url: "http://www.ece.cmu.edu/calcm/asplos2016/"
+  extra: "To appear."
+
+- title: "A DNA-Based Archival Storage System"
+  authors: "James Bornholt, Randolph Lopez, Karin Strauss, Luis Ceze, Douglas M. Carmean, and Georg Seelig"
+  type: conference
+  venue: "ASPLOS 2016"
+  venue_url: "http://www.ece.cmu.edu/calcm/asplos2016/"
+  extra: "To appear."
+
 - title: "Optimizing Synthesis with Metasketches"
   authors: "James Bornholt, Emina Torlak, Dan Grossman, and Luis Ceze"
   type: conference
