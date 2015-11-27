@@ -7,7 +7,7 @@ papers:
   extra: "To appear."
 
 - title: "A DNA-Based Archival Storage System"
-  authors: "James Bornholt, Randolph Lopez, Karin Strauss, Luis Ceze, Douglas M. Carmean, and Georg Seelig"
+  authors: "James Bornholt, Randolph Lopez, Douglas M. Carmean, Luis Ceze, Georg Seelig, and Karin Strauss"
   type: conference
   venue: "ASPLOS 2016"
   venue_url: "http://www.ece.cmu.edu/calcm/asplos2016/"
