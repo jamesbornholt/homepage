@@ -4,14 +4,16 @@ papers:
   type: conference
   venue: "ASPLOS 2016"
   venue_url: "http://www.ece.cmu.edu/calcm/asplos2016/"
-  extra: "To appear."
+  links:
+    - text: "To appear."
 
 - title: "A DNA-Based Archival Storage System"
   authors: "James Bornholt, Randolph Lopez, Douglas M. Carmean, Luis Ceze, Georg Seelig, and Karin Strauss"
   type: conference
   venue: "ASPLOS 2016"
   venue_url: "http://www.ece.cmu.edu/calcm/asplos2016/"
-  extra: "To appear."
+  links:
+    - text: "To appear."
 
 - title: "Optimizing Synthesis with Metasketches"
   authors: "James Bornholt, Emina Torlak, Dan Grossman, and Luis Ceze"
@@ -20,10 +22,12 @@ papers:
   url: "http://synapse.uwplse.org"
   venue_url: "http://conf.researchr.org/home/POPL-2016"
   links:
-    - text: "Paper"
+    - text: "Paper (PDF)"
       url: "papers/synapse-popl16.pdf"
     - text: "Artifact"
       url: "http://synapse.uwplse.org/popl16-aec/"
+    - text: "Source & Data"
+      url: "https://github.com/uwplse/synapse"
 
 - title: "Uncertain<T>: Abstractions for Uncertain Hardware and Software"
   authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
@@ -32,9 +36,9 @@ papers:
   volume: "vol. 35, no. 3, pp. 132–143, May–June 2015"
   url: "http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7106409&filter%3DAND%28p_IS_Number%3A7129787%29"
   venue_url: "http://ieeexplore.ieee.org/xpl/tocresult.jsp?isnumber=7129787"
-  extra: "<b>IEEE Micro's Top Picks from the Computer Architecture Conferences.</b>"
+  # extra: "<b>IEEE Micro's Top Picks from the Computer Architecture Conferences.</b>"
   links:
-    - text: "Paper"
+    - text: "Paper (PDF)"
       url: "papers/uncertaint-toppicks15.pdf"
 
 - title: "Scaling Program Synthesis by Exploiting Existing Code"
@@ -46,7 +50,7 @@ papers:
   venue_url: "http://2015.ecoop.org/track/ML4PL2015"
   colocated_with_url: "http://2015.ecoop.org/home"
   links:
-    - text: "Paper"
+    - text: "Paper (PDF)"
       url: "papers/scalesynth-ml4pl15.pdf"
     - text: "Slides"
       url: "papers/scalesynth-ml4pl15.slides.pdf"
@@ -60,7 +64,7 @@ papers:
   venue_url: "http://sampa.cs.washington.edu/wax2015/"
   colocated_with_url: "http://conf.researchr.org/home/pldi2015"
   links:
-    - text: "Paper"
+    - text: "Paper (PDF)"
       url: "papers/appsyn-wax15.pdf"
     - text: "Slides"
       url: "papers/appsyn-wax15.slides.pdf"
@@ -74,7 +78,7 @@ papers:
   venue_url: "http://sampa.cs.washington.edu/wax2015/"
   colocated_with_url: "http://conf.researchr.org/home/pldi2015"
   links:
-    - text: "Paper"
+    - text: "Paper (PDF)"
       url: "papers/react-wax15.pdf"
     - text: "Slides"
       url: "papers/react-wax15.slides.pdf"
@@ -86,7 +90,7 @@ papers:
   url: "http://drops.dagstuhl.de/opus/frontdoor.php?source_opus=5030"
   venue_url: "http://snapl.org/2015/index.html"
   links:
-    - text: "Paper"
+    - text: "Paper (PDF)"
       url: "papers/hwsw-snapl15.pdf"
 
 - title: "Programming the Internet of Uncertain <T>hings"
@@ -98,7 +102,7 @@ papers:
   venue_url: "http://darksilicon.org/hpca/SCAW-2015/"
   colocated_with_url: "http://darksilicon.org/hpca/"
   links:
-    - text: "Paper"
+    - text: "Paper (PDF)"
       url: "papers/context-scaw15.pdf"
     - text: "Slides"
       url: "papers/context-scaw15.slides.pdf"
@@ -112,7 +116,7 @@ papers:
   venue_url: "http://approx2014.cs.umass.edu"
   colocated_with_url: "http://conferences.inf.ed.ac.uk/pldi2014/"
   links:
-    - text: "Paper"
+    - text: "Paper (PDF)"
       url: "papers/bayes-approx14.pdf"
     - text: "Slides"
       url: "papers/bayes-approx14.slides.pdf"
@@ -123,9 +127,9 @@ papers:
   venue: "ASPLOS 2014"
   url: "http://dx.doi.org/10.1145/2541940.2541958"
   venue_url: "https://www.cs.utah.edu/asplos14/"
-  extra: "<b>SIGPLAN Research Highlight, November 2014. IEEE Micro Top Picks, 2015</b>."
+  extra: "<b>SIGPLAN Research Highlight, November 2014.<br />IEEE Micro Top Picks, 2015</b>."
   links:
-    - text: "Paper"
+    - text: "Paper (PDF)"
       url: "papers/uncertaint-asplos14.pdf"
     - text: "Slides"
       url: "papers/uncertaint-asplos14.slides.pdf"
@@ -151,7 +155,7 @@ papers:
   venue: "PLDI 2013 Student Research Competition"
   url: "papers/uncertaint-src13.finals.pdf"
   venue_url: "http://src.acm.org"
-  extra: "<b>First Place, PLDI Student Research Competition (Undergraduate). Second Place, ACM Student Research Competition Grand Final (Undergraduate).</b>"
+  extra: "<b>First Place, PLDI Student Research Competition (Undergraduate).<br />Second Place, ACM Student Research Competition Grand Final (Undergraduate).</b>"
   links:
     - text: "Extended Abstract"
       url: "papers/uncertaint-src13.pdf"

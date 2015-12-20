@@ -1,10 +1,15 @@
 <p>
     {{ if .url }}<a class="paper-title" href="{{ .url }}">{{ else }}<span class="paper-title">{{ end }}{{ .title }}{{ if .url }}</a>{{ else }}</span>{{ end }}.
 </p>
-<p class="paper-meta">
+<p class="paper-authors">
     {{ .authors }}.
+</p>
+<p class="paper-venue">
     {{ if .venue }}{{ if .venue_url }}<a href="{{ .venue_url }}">{{ .venue }}</a>{{ else }}{{ .venue }}{{ end }}{{ if .volume }}, {{ .volume }}{{ end }}{{ if .colocated_with }} (colocated with {{ if .colocated_with_url }}<a href="{{ .colocated_with_url }}">{{ .colocated_with }}</a>{{ else }}{{ .colocated_with }}{{ end }}){{ end }}.{{ end }}
-    {{ if .extra }}{{ .extra | safeHTML }}{{ end }}
+</p>
+{{ if .extra }}<p class="paper-extra">
+    {{ .extra | safeHTML }}
+</p>{{ end }}
     {{ if .links }}<ul class="paper-links">{{ range .links }}
         <li>{{ if .url }}<a href="{{ .url }}">{{ end }}{{ .text }}{{ if .url }}</a>{{ end }}</li>
     {{ end }}</ul>{{ end }}

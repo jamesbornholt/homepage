@@ -22,7 +22,10 @@ b, strong, h1, h2, h3, h4 {
     font-weight: 600;
 }
 h1, h2, h3, h4 {
-    margin: 0.8em 0 0.4em 0;
+    margin: 0.4em 0;
+}
+h1, h2 {
+    margin-top: 0.8em;
 }
 h1 {
     font-size: 180%;
@@ -37,16 +40,13 @@ h4 {
     font-size: 104%;
     margin-bottom: 0;
 }
-.tight-header {
-    margin-bottom: 0;
+.sec {
+    border-bottom: 1px solid #d3d3d3;
+    margin-bottom: 0.2em;
+    padding-bottom: 0.2em;
 }
 p {
     margin: 0.8em 0;
-}
-p.rss-link {
-    display: inline;
-    font-size: 17px;
-    font-weight: 400;
 }
 #container {
     max-width: 48em;
@@ -167,7 +167,7 @@ div.blog-posts p {
 ul.paper-list p {
     margin: 0;
 }
-.paper-meta, .paper-links {
+.paper-authors, .paper-venue, .paper-extra, .paper-links {
     font-size: 15px;
 }
 .paper-meta {
