@@ -1,22 +1,22 @@
-<h3 class="tight-header">Conference and Journal Papers</h3>
+<h3>Conference and Journal Papers</h3>
 <ul class="paper-list">
 {{ range where .Site.Data.papers.papers "type" "conference" }}
     <li>{{ partial "paper.html" . }}</li>
 {{ end }}
 </ul>
-<h3 class="tight-header">Workshop Papers</h3>
+<h3>Workshop Papers</h3>
 <ul class="paper-list">
 {{ range where .Site.Data.papers.papers "type" "workshop" }}
     <li>{{ partial "paper.html" . }}</li>
 {{ end }}
 </ul>
-<h3 class="tight-header">Posters & Talks</h3>
+<h3>Posters & Talks</h3>
 <ul class="paper-list">
 {{ range where .Site.Data.papers.papers "type" "poster" }}
     <li>{{ partial "paper.html" . }}</li>
 {{ end }}
 </ul>
-<h3 class="tight-header">Theses</h3>
+<h3>Theses</h3>
 <ul class="paper-list">
 {{ range where .Site.Data.papers.papers "type" "thesis" }}
     <li>{{ partial "paper.html" . }}</li>

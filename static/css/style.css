@@ -1,5 +1,5 @@
 body {
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.4;
     color: #333333;
     text-rendering: optimizeLegibility;
@@ -22,7 +22,7 @@ b, strong, h1, h2, h3, h4 {
     font-weight: 600;
 }
 h1, h2, h3, h4 {
-    margin: 0.8em 0;
+    margin: 0.8em 0 0.4em 0;
 }
 h1 {
     font-size: 180%;
@@ -45,7 +45,7 @@ p {
 }
 p.rss-link {
     display: inline;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 400;
 }
 #container {
@@ -73,7 +73,7 @@ p.rss-link {
     line-height: 1.0;
     margin: 0;
 }
-@media screen and (max-width: 47.9em) {
+@media screen and (max-width: 47.99em) {
     #header h1 {
         line-height: 1.4;
     }
@@ -84,7 +84,7 @@ p.rss-link {
         margin: 0;
     }
 }
-@media screen and (max-width: 35.4em) {
+@media screen and (max-width: 35.49em) {
     #header-text {
         padding-bottom: 16px;
     }
@@ -154,17 +154,24 @@ div.blog-posts blockquote {
 div.blog-posts p {
     display: inline;
 }
-@media screen and (max-width: 47.9em) {
+@media screen and (max-width: 47.99em) {
     div.blog-date {
         text-align: left;
+        line-height: 1.4;
     }
     div.blog-desc {
         padding-left: 0;
     }
 }
 
-.paper-title {
-    font-style: italic;
+ul.paper-list p {
+    margin: 0;
+}
+.paper-meta, .paper-links {
+    font-size: 15px;
+}
+.paper-meta {
+    line-height: 1.2;
 }
 ul.paper-list {
     padding: 0;
@@ -174,21 +181,22 @@ ul.paper-list li {
     list-style: none;
     margin-bottom: 0.8em;
 }
-ul.paper-list ul {
+ul.paper-links {
     padding: 0;
     margin: 0;
     margin-left: 24pt;
-    font-size: 0pt;
 }
-ul.paper-list ul li {
+ul.paper-links li {
     padding: 0;
     margin: 0;
     list-style: none;
     display: inline;
-    font-size: 18px;
 }
-ul.paper-list ul li + li::before {
+ul.paper-links li:after {
     content: ", ";
+}
+ul.paper-links li:last-child:after {
+    content: "";
 }
 h2.blog-title {
     margin: 0.5em 0 0 0;
@@ -196,7 +204,7 @@ h2.blog-title {
 }
 h3.blog-date {
     color: #666666;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 400;
     margin-top: 0 !important;
 }
