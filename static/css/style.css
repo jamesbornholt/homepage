@@ -167,6 +167,9 @@ div.blog-posts p {
 ul.paper-list p {
     margin: 0;
 }
+.paper-title {
+    font-weight: 600;
+}
 .paper-authors, .paper-venue, .paper-extra, .paper-links {
     font-size: 15px;
 }
