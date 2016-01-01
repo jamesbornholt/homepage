@@ -126,7 +126,7 @@ a {
 }
 a:hover {
     color: #0A4C8B;
-    text-decoration: underline;
+    text-decoration: none;
 }
 div.blog-post {
     padding-bottom: 0.8em;
