@@ -5,6 +5,6 @@ short_post: true
 title: POPL'16 AEC
 ---
 
-I'm on the [artifact evaluation committee for POPL'16][aec]. Submit your awesome artifacts!
+I'm on the [artifact evaluation committee for POPL'16][aec].
 
 [aec]: http://popl16-aec.seas.harvard.edu/home/
