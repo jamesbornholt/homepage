@@ -24,6 +24,8 @@ papers:
   links:
     - text: "Paper (PDF)"
       url: "papers/synapse-popl16.pdf"
+    - text: "Slides"
+      url: "papers/synapse-popl16.slides.pdf"
     - text: "Artifact"
       url: "http://synapse.uwplse.org/popl16-aec/"
     - text: "Source & Data"
