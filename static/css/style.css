@@ -147,6 +147,9 @@ div.blog-date {
 div.blog-desc {
     padding-left: 1em;
 }
+div.blog-posts {
+    margin: 0.4em 0;
+}
 div.blog-posts blockquote {
     margin: 0 0 0 40px;
     font-style: italic;
