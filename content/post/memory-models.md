@@ -136,7 +136,7 @@ Let's look at the same first example from above, but this time running on a mach
 
 Next we execute (2) on core 1, which is going to read the value of `B`. It first inspects its local write buffer, but there's no value of `B` there, so it reads `B` from memory and gets the value `0`, which it prints. Finally, we execute (4) on core 2, which is going to read the value of `A`. There's no value of `A` in core 2's write buffer, so it reads from memory and gets the value `0`, which it prints. At some indeterminate point in the future, the cache hierarchy empties both write buffers and propagates the changes to memory.
 
-Under TSO, then, this program can print `00`. This is a behavior that we showed above to explicitly ruled out by SC! So write buffers cause behaviors that programmers don't expect.
+Under TSO, then, this program can print `00`. This is a behavior that we showed above to be explicitly ruled out by SC! So write buffers cause behaviors that programmers don't expect.
 
 Is there any architecture willing to adopt an optimization that runs against programmer intuition? Yes! It turns out that practically *every* modern architecture includes a write buffer, and so has a memory model at least as weak as TSO.
 
