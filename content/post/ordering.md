@@ -1,8 +1,8 @@
 ---
-date: 2015-08-31T09:00:00-07:00
+date: 2016-02-17T09:00:00-08:00
 draft: true
-title: "Memory Consistency Models: Seeing Things in Order is the Hardest Problem in Computer Science"
-description: "Computer architecture's solution is everybody else's problem."
+title: "Memory Consistency Models: A Primer"
+description: "Memory consistency models are computer architecture's performance solution, but they're also everybody else's huge problem."
 ---
 
 There are, of course, 
@@ -11,17 +11,20 @@ cache invalidation, naming things, and off-by-one errors.
 But there is another hard problem 
 lurking amongst the tall weeds of computer science:
 *seeing things in order*.
-Whether it be [web-scale sorting algorithms][bubblesort],
-[high-performance un-sorting algorithms][fisheryates],
-or [messages in distributed systems][distributed],
+Whether it be [sorting][bubblesort],
+[un-sorting][fisheryates],
+or [tweeting][distributed],
 seeing things in order is a challenge for the ages.
 
-Today, I want to focus on one example of an ordering problem:
-*memory consistency models*.
-There's a vast corpus of resources on memory consistency models,
-but much of it consists of either [slides][lucia] from [someone's class][kayvon],
+One common ordering problem is
+*memory consistency*,
+which is the problem of defining how parallel threads
+can observe their shared memory state.
+There's a vast corpus of resources on memory consistency,
+but much of it consists of either [slides][lucia] from [a class][kayvon]
+(like [mine][myslides]!),
 or [thorough tomes][synthca] written for experts.
-My goal is to produce a short primer;
+My goal is to produce a primer;
 for the details, you should certainly consult these excellent sources.
 
 ## Making threads agree
@@ -90,7 +93,7 @@ Sometimes, this requirement to wait makes sense: consider the case where two thr
 
 {{% img src="post/ordering/coherence.png" alt="coherence" width="70%" %}}
 
-If we give up on the idea of a single main memory, to allow `(1)` and `(2)` to run in parallel, it's suddenly unclear which value of `A` event `(3)` should read. The single main memory guarantees that there will always be a "winner": a single last write to each variable. Without this guarantee, after both `(1)` and `(2)` happen, some threads could see `A` to be `1` while others see it as `2`.
+If we give up on the idea of a single main memory, to allow `(1)` and `(2)` to run in parallel, it's suddenly unclear which value of `A` event `(3)` should read. The single main memory guarantees that there will always be a "winner": a single last write to each variable. Without this guarantee, after both `(1)` and `(2)` have happened, `(3)` could see either `1` or `2`, which is confusing.
 
 We call this guarantee *coherence*, and it says that all writes *to the same location* are seen in the same order by every thread. It doesn't prescribe the actual order (either `(1)` or `(2)` could happen first), but does require that everyone sees the same "winner".
 
@@ -108,7 +111,7 @@ The only shared memory between the two cores is all the way back at the L3 cache
 
 ### Total store ordering (TSO)
 
-Rather than waiting for the write `(1)` to become visible, we could instead place it into a *write buffer* and then begin `(2)` immediately:
+Rather than waiting for the write `(1)` to become visible, we could instead place it into a *write buffer*:
 
 {{% img src="post/ordering/wb-wb.png" alt="two threads running in parallel" width="45%" %}}
 
@@ -165,10 +168,56 @@ This program always prints a string of 100 `1`s. Of course, the write to `X` ins
     for i in range(100):
         print X
 
-These two programs are totally equivalent outside 
+These two programs are totally equivalent, in that they will both produce the same output.{{% fn 2 %}}
+
+But now suppose there's another thread running in parallel with our program, and it performs a single write to `X`:
+
+    X = 0
+
+With these two threads running in parallel, the first program's behavior changes:
+now, it can print strings like `11101111...`, so long as there's only a single
+zero (because it will reset `X=1` on the next iteration).
+The second program's behavior also changes:
+it can now print strings like `11100000...`,
+where once it starts printing zeroes it never goes back to ones.
+
+But these two changes behaviors are not common to the two programs:
+the first program can never print `11100000...`,
+nor can the second program ever print `11101111...`.
+This means that in the presence of parallelism,
+the compiler optimization no longer produces an equivalent program!
+
+What this example is suggesting is that there's also an idea of memory consistency at the program level.
+The compiler optimization here is effectively a reordering: it's rearranging (and removing some) memory accesses in ways that may or may not be visible to programmers.
+So to preserve intuitive behavior, programming languages need memory models of their own, to provide a contract to programmers about how their memory operations will be reordered.
+This idea is becoming more common in the language design community. For example, the latest versions of C++ and Java have rigorously-defined memory models governing their operations.
+
+## Computers are broken!
+
+It might seem that computers are broken. All this reordering seems crazy insane, and there's no way a human can keep it all straight.
+On the other hand, if you reflect on your programming experience, memory consistency is probably not an issue you've run into often, if at all (unless you're a low-level kernel hacker).
+How do I reconcile these two extremes?
+
+The trick is that every example I've mentioned here has involved a *data race*.
+A data race is two accesses to the same memory location, of which at least one is a write operation,
+and with no ordering induced by synchronization.
+If there are no data races, then the reordering behaviors don't matter,
+because all unintuitive reorderings will be blocked by synchronization.
+Note that this doesn't mean race-free programs are *deterministic*: different threads can win the races on each execution.
+
+In fact, modern languages including C++ and Java offer a guarantee known as *sequential consistency for data-race-free programs* (or the buzzwordy version, "SC for DRF").
+What this guarantee specifies is that if your program has no data races, the compiler will insert all the necessary fences to preserve the appearance of sequential consistency.
+If your program *does* have data races, however, all bets are off, and the compiler is free to do whatever it likes.
+
+## Use a synchronization library
+
+Now that you've seen all this mess, the most important lesson you should learn is that you should use a synchronization library. It will take care of all the ugly reordering issues for you. Operating systems are also pretty heavily optimized to have only the synchronization necessary on a particular platform, making them go as fast as possible. But now you know what's going on under the hood when these libraries and kernels deal with subtle synchronization issues.
+
+If, for some reason, you want to know more about the various abominable memory models computer architecture has inflicted on the world, the Morgan & Claypool synthesis lectures on computer architecture have [a nice entry][synthca] on memory consistency and coherence.
 
 {{% footnotes %}}
 {{% footnote 1 %}}Though Lamport was originally writing about multiprocessors, his later work has moved toward distributed systems. In the modern distributed systems context, "sequential consistency" means something slightly different (and weaker) than what architects intend. What architects call "sequential consistency" is more like what distributed systems folks would call "linearizability".{{% /footnote %}}
+{{% footnote 2 %}}Let's suspend disbelief for a moment and assume the compiler isn't smart enough to optimize this program into a single call to `print`.{{% /footnote %}}
 {{% /footnotes %}}
 
 
@@ -178,6 +227,7 @@ These two programs are totally equivalent outside
 [distributed]: https://twitter.com/mathiasverraes/status/632260618599403520
 [lucia]: https://github.com/blucia0a/Talks/blob/master/Other/ConsistencySlides.pdf?raw=true
 [kayvon]: http://15418.courses.cs.cmu.edu/spring2015/lecture/consistency
+[myslides]: http://courses.cs.washington.edu/courses/cse451/15au/notes/l17-mcm-slides.pdf
 [synthca]: http://www.morganclaypool.com/doi/abs/10.2200/S00346ED1V01Y201104CAC016
 [raa]: https://en.wikipedia.org/wiki/Proof_by_contradiction
 [sc]: http://research.microsoft.com/en-us/um/people/lamport/pubs/multi.pdf
