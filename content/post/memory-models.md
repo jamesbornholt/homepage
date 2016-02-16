@@ -1,6 +1,6 @@
 ---
 date: 2016-02-17T09:00:00-08:00
-draft: true
+draft: false
 title: "Memory Consistency Models: A Primer"
 description: "The cause of, and solution to, all your multicore performance problems."
 ---
