@@ -112,35 +112,35 @@ The only shared memory between the two cores is all the way back at the L3 cache
 
 ### Total store ordering (TSO)
 
-Rather than waiting for the write (1) to become visible, we could instead place it into a *write buffer*:
+Rather than waiting for the write (1) to become visible, we could instead place it into a *store buffer*:
 
 {{% img src="post/ordering/wb-wb.png" alt="two threads running in parallel" width="45%" %}}
 
-Then (2) could start immediately after putting (1) into the write buffer, rather than waiting for it to reach the L3 cache. Since the write buffer is on-core, it's very fast to access. At some time in the future, the cache hierarchy will pull the write from the write buffer and propagate it through the caches so that it becomes visible to other threads. The write buffer allows us to hide the write latency that would usually be required to make write (1) visible to all the other threads.
+Then (2) could start immediately after putting (1) into the store buffer, rather than waiting for it to reach the L3 cache. Since the store buffer is on-core, it's very fast to access. At some time in the future, the cache hierarchy will pull the write from the store buffer and propagate it through the caches so that it becomes visible to other threads. The store buffer allows us to hide the write latency that would usually be required to make write (1) visible to all the other threads.
 
-Write buffering is nice because it preserves single-threaded behavior. For example, consider this simple single-threaded program:
+Store buffering is nice because it preserves single-threaded behavior. For example, consider this simple single-threaded program:
 
-{{% img src="post/ordering/wb-local.png" alt="write buffers preserve local behavior" width="45%" %}}
+{{% img src="post/ordering/wb-local.png" alt="store buffers preserve local behavior" width="45%" %}}
 
-The read in (2) needs to see the value written by (1) for this program to preserve the expected single-threaded behavior. Write (1) has not yet gone to memory---it's sitting in core 1's write buffer---so if read (2) just looks to memory, it's going to get an old value. But because it's running on the same CPU, the read can instead just inspect the write buffer directly, see that it contains a write to the location it's reading, and use that value instead. So even with a write buffer, this program correctly prints `1`.
+The read in (2) needs to see the value written by (1) for this program to preserve the expected single-threaded behavior. Write (1) has not yet gone to memory---it's sitting in core 1's store buffer---so if read (2) just looks to memory, it's going to get an old value. But because it's running on the same CPU, the read can instead just inspect the store buffer directly, see that it contains a write to the location it's reading, and use that value instead. So even with a store buffer, this program correctly prints `1`.
 
-A popular memory model that allows write buffering is called *total store ordering* (TSO). TSO mostly preserves the same guarantees as SC, except that it allows the use of write buffers. These buffers hide write latency, making execution [significantly faster][wbperf].
+A popular memory model that allows store buffering is called *total store ordering* (TSO). TSO mostly preserves the same guarantees as SC, except that it allows the use of store buffers. These buffers hide write latency, making execution [significantly faster][wbperf].
 
 #### The catch
 
-A write buffer sounds like a great performance optimization, but there's a catch: TSO allows behaviors that SC does not. In other words, programs running on TSO hardware can exhibit behavior that programmers would find surprising.
+A store buffer sounds like a great performance optimization, but there's a catch: TSO allows behaviors that SC does not. In other words, programs running on TSO hardware can exhibit behavior that programmers would find surprising.
 
-Let's look at the same first example from above, but this time running on a machine with write buffers. First, we execute (1) and then (3), which both place their data into the write buffer rather than sending it back to main memory:
+Let's look at the same first example from above, but this time running on a machine with store buffers. First, we execute (1) and then (3), which both place their data into the store buffer rather than sending it back to main memory:
 
 {{% img src="post/ordering/wb-tso0.png" alt="two threads running in parallel" width="45%" %}}
 
-Next we execute (2) on core 1, which is going to read the value of `B`. It first inspects its local write buffer, but there's no value of `B` there, so it reads `B` from memory and gets the value `0`, which it prints. Finally, we execute (4) on core 2, which is going to read the value of `A`. There's no value of `A` in core 2's write buffer, so it reads from memory and gets the value `0`, which it prints. At some indeterminate point in the future, the cache hierarchy empties both write buffers and propagates the changes to memory.
+Next we execute (2) on core 1, which is going to read the value of `B`. It first inspects its local store buffer, but there's no value of `B` there, so it reads `B` from memory and gets the value `0`, which it prints. Finally, we execute (4) on core 2, which is going to read the value of `A`. There's no value of `A` in core 2's store buffer, so it reads from memory and gets the value `0`, which it prints. At some indeterminate point in the future, the cache hierarchy empties both store buffers and propagates the changes to memory.
 
-Under TSO, then, this program can print `00`. This is a behavior that we showed above to be explicitly ruled out by SC! So write buffers cause behaviors that programmers don't expect.
+Under TSO, then, this program can print `00`. This is a behavior that we showed above to be explicitly ruled out by SC! So store buffers cause behaviors that programmers don't expect.
 
-Is there any architecture willing to adopt an optimization that runs against programmer intuition? Yes! It turns out that practically *every* modern architecture includes a write buffer, and so has a memory model at least as weak as TSO.
+Is there any architecture willing to adopt an optimization that runs against programmer intuition? Yes! It turns out that practically *every* modern architecture includes a store buffer, and so has a memory model at least as weak as TSO.
 
-In particular, the venerable x86 architecture specifies a memory model that is very close to TSO. Both Intel (the originator of x86) and AMD (the originator of x86-64) specify their memory model with example *litmus tests*, similar to the programs above, that describe the observable outcomes of small tests. Unfortunately, specifying the behavior of a complex system with a handful of examples leaves room for ambiguity. Researchers at Cambridge have poured significant effort into [formalizing x86-TSO][x86tso] to make clear the intended behaviors of x86's TSO implementation (and in particular, where it differs from this notion of write buffering).
+In particular, the venerable x86 architecture specifies a memory model that is very close to TSO. Both Intel (the originator of x86) and AMD (the originator of x86-64) specify their memory model with example *litmus tests*, similar to the programs above, that describe the observable outcomes of small tests. Unfortunately, specifying the behavior of a complex system with a handful of examples leaves room for ambiguity. Researchers at Cambridge have poured significant effort into [formalizing x86-TSO][x86tso] to make clear the intended behaviors of x86's TSO implementation (and in particular, where it differs from this notion of store buffering).
 
 ### Getting weaker
 
@@ -152,7 +152,7 @@ One such architecture worth calling out is [ARM][], which among other things, pr
 
 Luckily, all modern architectures include synchronization operations to bring their relaxed memory models under control when necessary. The most common such operation is a *barrier* (or *fence*). A barrier instruction forces all memory operations before it to complete before any memory operation after it can begin. That is, a barrier instruction effectively reinstates sequential consistency at a particular point in program execution.
 
-Of course, this is exactly the behavior we were trying to avoid by introducing write buffers and other optimizations. Barriers are an escape hatch to be used sparingly: they can cost hundreds of cycles. They are also extremely subtle to use correctly, especially when combined with ambiguous memory model definitions. There are some more usable primitives, such as [atomic compare-and-swap][cas], but using low-level synchronization directly should really be avoided. A real synchronization library will spare you worlds of pain.
+Of course, this is exactly the behavior we were trying to avoid by introducing store buffers and other optimizations. Barriers are an escape hatch to be used sparingly: they can cost hundreds of cycles. They are also extremely subtle to use correctly, especially when combined with ambiguous memory model definitions. There are some more usable primitives, such as [atomic compare-and-swap][cas], but using low-level synchronization directly should really be avoided. A real synchronization library will spare you worlds of pain.
 
 ## Languages need memory models too
 
