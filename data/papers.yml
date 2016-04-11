@@ -8,6 +8,8 @@ papers:
   links:
     - text: "Paper (PDF)"
       url: "papers/ferrite-asplos16.pdf"
+    - text: "Slides"
+      url: "papers/ferrite-asplos16.slides.pdf"
     - text: "Source"
       url: "https://github.com/uwplse/ferrite"
 
@@ -20,6 +22,8 @@ papers:
   links:
     - text: "Paper (PDF)"
       url: "papers/dnastorage-asplos16.pdf"
+    - text: "Slides"
+      url: "papers/dnastorage-asplos16.slides.pdf"
 
 - title: "Optimizing Synthesis with Metasketches"
   authors: "James Bornholt, Emina Torlak, Dan Grossman, and Luis Ceze"
