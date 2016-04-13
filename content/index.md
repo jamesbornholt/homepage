@@ -7,9 +7,9 @@ url = "index.html"
 +++
 
 I’m a second-year computer science PhD student in the [PLSE][] and [Sampa][] groups at the [University of Washington][uw], advised by [Emina Torlak][emina], [Dan Grossman][djg], and [Luis Ceze][luisceze].
-I’m interested in formal methods and programming languages, and how the two can solve problems in computer systems.
+We develop new formal methods and programming languages techniques---from [program synthesis frameworks][synapse] to [consistency models][ferrite]---to solve systems problems.
 
-I've been an intern and then a software engineer at [Microsoft Research][msr]. In 2013 I graduated with a [Bachelor of Philosophy][phb] from the [Australian National University][anu].
+I have a masters from UW, a bachelors from the [Australian National University][anu], and was a software engineer at [Microsoft Research][msr].
 
 [Here's my CV][cv].
 
@@ -23,3 +23,5 @@ I've been an intern and then a software engineer at [Microsoft Research][msr]. I
 [phb]: http://programsandcourses.anu.edu.au/program/APHSC
 [anu]: http://www.anu.edu.au
 [cv]: files/cv.pdf
+[synapse]: http://synapse.uwplse.org
+[ferrite]: http://sandcat.cs.washington.edu/ferrite
