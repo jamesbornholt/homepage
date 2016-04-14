@@ -1,11 +1,14 @@
 {{ partial "top.html" . }}
+<div id="container" class="pure-g index">
+{{ partial "sidebar.html" }}
+<div id="content" class="pure-u-1 pure-u-md-3-4">
     {{ range .Data.Pages }}
         {{ if (or (eq .RelPermalink "/~bornholt/index.html") (eq .RelPermalink "/index.html")) }} {{ .Content }} {{ end }}
     {{ end }}
 
     <h2 class="sec">News</h2>
     <div class="blog-posts">
-{{ range first 5 (where .Data.Pages "Section" "post") }}
+{{ range first 4 (where .Data.Pages "Section" "post") }}
     {{ if (not .Draft) }}
     {{ partial "blog-list-entry.html" . }}
     {{ end }}
@@ -18,7 +21,8 @@
     </div>
     </div>
 
-    <h2 class="sec">Publications</h2>
+    <h2 class="sec">Publications <p class="header-link">[<a href="http://dblp.uni-trier.de/pers/hd/b/Bornholt:James">DBLP</a>]</p></h2>
     {{ partial "paper-list.html" . }}
-    
+</div>
+</div>
 {{ partial "bottom.html" . }}

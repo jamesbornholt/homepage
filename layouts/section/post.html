@@ -1,4 +1,7 @@
 {{ partial "top.html" . }}
+<div id="container">
+{{ partial "header-page.html" .}}
+<div id="content">
 
 <h2>News</h2>
 
@@ -8,6 +11,9 @@
     {{ partial "blog-list-entry.html" . }}
     {{ end }}
 {{ end }}
+</div>
+
+</div>
 </div>
 
 {{ partial "bottom.html" . }}

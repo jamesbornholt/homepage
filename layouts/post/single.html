@@ -1,4 +1,7 @@
 {{ partial "top.html" . }}
+<div id="container">
+{{ partial "header-page.html" .}}
+<div id="content">
 
 <h2 class="blog-title">{{ .Title }}</h2>
 <h3 class="blog-date">{{ .Date.Format "2 January 2006" }}</h3>
@@ -8,5 +11,8 @@
 {{ end }}
 
 {{ .Content }}
+
+</div>
+</div>
 
 {{ partial "bottom.html" . }}

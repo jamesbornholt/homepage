@@ -3,15 +3,12 @@ date = "2014-10-28T13:52:51-07:00"
 draft = false
 title = "index"
 url = "index.html"
-
 +++
 
 I’m a second-year computer science PhD student in the [PLSE][] and [Sampa][] groups at the [University of Washington][uw], advised by [Emina Torlak][emina], [Dan Grossman][djg], and [Luis Ceze][luisceze].
-We develop new formal methods and programming languages techniques---from [program synthesis frameworks][synapse] to [consistency models][ferrite]---to solve systems problems.
+We develop new formal methods and programming languages techniques, from [program synthesis frameworks][synapse] to [consistency models][ferrite], to solve systems problems.
 
 I have a masters from UW, a bachelors from the [Australian National University][anu], and was a software engineer at [Microsoft Research][msr].
-
-[Here's my CV][cv].
 
 [sampa]: https://sampa.cs.washington.edu
 [plse]: http://uwplse.org
