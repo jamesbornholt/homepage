@@ -12,7 +12,7 @@
   {{ end }}
 
   {{ $author := .Site.Author.name }}
-  {{ range first 15 .Data.Pages }}{{ if not .Draft }}
+  {{ range first 15 .Data.Pages }}{{ if (and (not .Draft) (not .Params.short_post) (not (eq .Title "index"))) }}
   <entry>
     <id>{{ .Permalink }}</id>
     <title type="html">{{ .Title }}</title>
