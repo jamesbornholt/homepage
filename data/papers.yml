@@ -34,6 +34,8 @@ papers:
   links:
     - text: "Paper (PDF)"
       url: "papers/synapse-popl16.pdf"
+    - text: "Video"
+      url: "https://www.youtube.com/watch?v=9eYHNO-4yk4"
     - text: "ACM"
       url: "http://dl.acm.org/citation.cfm?id=2837666"
     - text: "Slides"
