@@ -6,7 +6,7 @@ url = "index.html"
 +++
 
 I’m a third-year computer science PhD student in the [PLSE][] and [Sampa][] groups at the [University of Washington][uw], advised by [Emina Torlak][emina], [Dan Grossman][djg], and [Luis Ceze][luisceze].
-I develop new formal methods and programming languages techniques, from [program synthesis frameworks][synapse] to [consistency models][ferrite], to solve systems problems.
+I work on programming languages and formal methods, from [program synthesis frameworks][synapse] to [consistency models][ferrite].
 
 I have a masters from UW, a bachelors from the [Australian National University][anu], and was a software engineer at [Microsoft Research][msr].
 
