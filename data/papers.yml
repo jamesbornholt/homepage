@@ -3,30 +3,21 @@ papers:
   authors: "Helgi Sigurbjarnarson, James Bornholt, Emina Torlak, and Xi Wang"
   type: conference
   venue: "OSDI 2016"
-  # url: "http://sandcat.cs.washington.edu/ferrite/"
   venue_url: "https://www.usenix.org/conference/osdi16"
+  url: "papers/yggdrasil-osdi16.pdf"
   links:
-    # - text: "Paper (PDF)"
-    #   url: "papers/ferrite-asplos16.pdf"
-    # - text: "Slides"
-    #   url: "papers/ferrite-asplos16.slides.pdf"
-    # - text: "Source"
-    #   url: "https://github.com/uwplse/ferrite"
-    - text: "To appear."
+    - text: "Paper (PDF)"
+      url: "papers/yggdrasil-osdi16.pdf"
+    - text: "Homepage"
+      url: "https://locore.cs.washington.edu/yggdrasil/"
 
 - title: "Disciplined Inconsistency with Consistency Types"
   authors: "Brandon Holt, James Bornholt, Irene Zhang, Dan R. K. Ports, Mark Oskin, and Luis Ceze"
   type: conference
   venue: "SoCC 2016"
-  # url: "http://sandcat.cs.washington.edu/ferrite/"
   venue_url: "http://acmsocc.github.io/2016/"
+  # url: whatever
   links:
-    #- text: "Paper (PDF)"
-    #  url: "papers/ferrite-asplos16.pdf"
-    #- text: "Slides"
-    #  url: "papers/ferrite-asplos16.slides.pdf"
-    #- text: "Source"
-    #  url: "https://github.com/uwplse/ferrite"
     - text: "To appear."
 
 - title: "Specifying and Checking File System Crash-Consistency Models"
