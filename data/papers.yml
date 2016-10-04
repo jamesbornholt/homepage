@@ -16,9 +16,10 @@ papers:
   type: conference
   venue: "SoCC 2016"
   venue_url: "http://acmsocc.github.io/2016/"
-  # url: whatever
+  url: "papers/ipa-socc16.pdf"
   links:
-    - text: "To appear."
+    - text: "Paper (PDF)"
+      url: "papers/ipa-socc16.pdf"
 
 - title: "Specifying and Checking File System Crash-Consistency Models"
   authors: "James Bornholt, Antoine Kaufmann, Jialin Li, Arvind Krishnamurthy, Emina Torlak, and Xi Wang"
