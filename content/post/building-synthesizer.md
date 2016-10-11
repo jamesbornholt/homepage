@@ -73,38 +73,90 @@ You can think of this return value as a kind of function: once you know a value 
 These symbolic representations are very powerful: Rosette can produce them for a very large subset of Racket code. Let's extend the above program with another example:
 
 ```racket
-(define (abs x)
+(define (absv x)
   (if (< x 0) (- x) x))
   
-(abs y)
+(absv y)
 ```
 
 Now we've defined an absolute value function: if the input `x` is negative (`(< x 0)` is true), then return `-x`, otherwise return `x`. The `(if ...)` form is similar to the ternary `a ? b : c` expression you might know from C, Java, etc -- `(if cond then else)` returns `then` if `cond` is true, or `else` otherwise.
 
-So, what should `(abs y)` return, if `y` is still unknown? (Take another second). Rosette produces this symbolic representation:
+So, what should `(absv y)` return, if `y` is still unknown? (Take another second). Rosette produces this symbolic representation:
 
     (ite (< y 0) (- y) y)
 
-It captures the intuitive version of what `abs` does: if `y` is negative, it would return `(- y)`, otherwise it would return `y`. (`ite` is the same as `if`, but named differently to distinguish symbolic representations from Racket code).
+It captures the intuitive version of what `absv` does: if `y` is negative, it would return `(- y)`, otherwise it would return `y`. (`ite` is the same as `if`, but named differently to distinguish symbolic representations from Racket code).
 
-Here's one final example:
+> **Aside**: Rosette generates these symbolic representations using symbolic execution, the same idea that underpins tools like [KLEE][] or Microsoft's newly announced [Project Springfield][springfield]. There are more details in [the Rosette paper][paper].
+
+#### Solving constraints
+
+The next piece of the Rosette world is filling in values for the unknown variables. We do this by using the symbolic representations as constraints. Though this is a very powerful idea, let's start by doing something very simple:
 
 ```racket
-(define c 0)
-(define (maybe-update-c x)
-  (when (> x 5)
-    (set! c 1)))
-
-(maybe-update-c y)
+(solve (assert (= (add2 y) 8)))
 ```
 
-The new function `maybe-update-c` doesn't return anything, but it has a *side effect*: if its input `x` is greater than 5, it sets the global variable `c` to 1.
+This fragment asks Rosette to try to fill in all the unknown variables (so far, just `y`) to satisfy a *constraint* that `(add2 y)` is equal to 8. Of course, we know the answer should set `y` to 6, because we can do arithmetic. Rosette can do arithmetic, too; here's the output:
 
-What should happen to `c` if we call `(maybe-update-c y)`, when `y` is unknown? We want to somehow capture the idea that `c` will change only if `y` is greater than 5. Running the above code and then printing out the value of `c` gives:
+    (model
+     [y 6])
 
-    (ite (< 5 y) 1 0)
+Rosette says that it found a *model* (an assignment of values to all the unknown variables) in which `y` takes the value 6.
 
-Rosette has updated the variable `c` to contain a symbolic representation: if `y` is greater than 5, then `c` is 1, else it is 0.
+Let's try a slightly more difficult constraint to test out our absolute value function:
+
+```racket
+(solve (assert (and (= (absv y) 5) 
+                    (< y 0))))
+```
+
+Our new constraint says that `(absv y)` should be equal to 5, and that `y` should be negative. Rosette figures this out:
+
+    (model
+     [y -5])
+     
+Now let's try to outsmart Rosette by asking for the impossible:
+
+```racket
+(solve (assert (< (absv y) 0)))
+```
+
+Is there any value of `y` which has a negative absolute value? Rosette says:
+
+    (unsat)
+
+Rosette reports that this constraint is *unsatisfiable*: there is no possible `y` that has a negative absolute value.
+
+Finally, let's see how Rosette handles a more complicated constraint involving data structures. Racket supports lists, and provides the `list-ref` procedure to retrieve an element from the list:
+
+```racket
+(define L (list 9 7 5 3))
+(list-ref L 2)  ; returns 5, i.e., L[2]
+```
+
+Rosette supports lists, so we can ask it to solve this constraint:
+
+```racket
+(solve (assert (= (list-ref L y) 7)))
+```
+
+which asks for a value of `y` such that `(list-ref L y)` is 7. Rosette says:
+
+    (model
+     [y 1])
+
+as we'd expect -- the second element of `L` is 7 (and list indices start from 0).
+
+So constraint programming allows us to fill in unknown values in our program automatically. This ability will underlie our approach to program synthesis (when the *program* will be the unknown value).
+
+> **Aside**: Rosette's `(solve ...)` form works by compiling constraints to the [Z3 SMT solver][z3], which provides high-performance solving algorithms for a variety of styles of constraints. The [Z3 tutorial][z3tutorial] is a nice introduction to this lower-level style of constraint progamming that Rosette abstracts away.
+
+### Domain-specific languages: programs in programs
+
+What does it mean for "the program" to be the unknown value? Which language is the program in? Can it be any program in that language? To give precise answers to these questions, we're going to define a *domain-specific language* (DSL) for our synthesis task. A DSL is just a small programming language equipped with exactly the features we want.
+
+You can build a DSL for just about anything. In our research, we've built DSLs for synthesis work in [file system operations][ferrite] and [approximate hardware][synapse], and others have done the same for [network configuration][bagpipe] and [K-12 algebra classes][rulesynth]. The common thread is that a DSL makes the operations we care about explicit, and hides those we don't.
 
 {{% footnotes %}}
 {{% footnote 1 %}}The `/safe` part of the language name is telling Rosette to stop us from shooting ourselves in the foot by using some parts of Racket that Rosette doesn't or can't support. If you're feeling brave, `#lang rosette` will let you use *all* of Racket, but there's no guarantees everything will work.{{% /footnote %}}
@@ -122,3 +174,13 @@ Rosette has updated the variable `c` to contain a symbolic representation: if `y
 [learnracket]: https://learnxinyminutes.com/docs/racket/
 [br]: http://beautifulracket.com/
 [lang]: http://beautifulracket.com/explainer/lang-line.html
+[klee]: https://klee.github.io/
+[springfield]: https://www.microsoft.com/en-us/springfield/
+[paper]: http://homes.cs.washington.edu/~emina/pubs/rosette.pldi14.pdf
+[z3]: https://github.com/Z3Prover/z3
+[z3tutorial]: http://rise4fun.com/Z3/tutorial/guide
+[ferrite]: http://sandcat.cs.washington.edu/ferrite/
+[synapse]: http://synapse.uwplse.org/
+[bagpipe]: http://bagpipe.uwplse.org/bagpipe/
+[rulesynth]: http://homes.cs.washington.edu/~emina/pubs/rulesynth.its16.pdf
+
