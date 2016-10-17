@@ -158,8 +158,51 @@ What does it mean for "the program" to be the unknown value? Which language is t
 
 You can build a DSL for just about anything. In our research, we've built DSLs for synthesis work in [file system operations][ferrite] and [approximate hardware][synapse], and others have done the same for [network configuration][bagpipe] and [K-12 algebra classes][rulesynth]. The common thread is that a DSL makes the operations we care about explicit, and hides those we don't.
 
+For today, we're going to define a very trivial DSL for arithmetic operations. The programs we synthesize in this DSL will be arithmetic expressions like `(plus x y)`. While this isn't a particularly thrilling DSL, it will be simple to implement and demonstrate.
+
+We need to define two parts of our language: its **syntax** (what programs look like) and its **semantics** (what programs do).
+
+#### Syntax
+
+To define the DSL syntax, we're going to make use of Racket's support for [structures][]. We'll define a new structure type for each operation in our language:
+
+```racket
+(struct plus (left right) #:transparent)
+(struct minus (left right) #:transparent)
+(struct mul (left right) #:transparent)
+(struct square (arg) #:transparent)
+```
+
+Here, we've defined four operators in our language: three operations `plus`, `minus`, and `mul` that each take two arguments, and a `square` operation that takes only a single argument. The structure declarations give names to the fields of the structure (`left` and `right` for the two-argument operations, and `arg` for the single-argument operation). The `#:transparent` annotation just tells Racket that it can look "into" these structures and, for example, automatically generate string representations for them.{{% fn 2 %}}
+
+This syntax allows us to write programs such as this one:
+
+```racket
+(define prog (plus (square 7) 3))
+```
+
+to stand for the mathematical expression 7<sup>2</sup> + 3.
+
+#### Semantics
+
+Now that we know what programs in our DSL look like, we need to say what they mean. To do this, we're going to implement a simple *interpreter* for programs in our DSL. The interpreter takes as input a program, performs the computations that program describes, and returns the output value. For example, we'd expect the above program to return 52.
+
+Our interpreter just recurses on the syntax tree using Racket's [pattern matching][pattern]:
+
+```racket
+(define (interpret prog)
+  (match p
+    [(plus a b) (+ (interpret a) (interpret b))]
+    [(minus a b) (- (interpret a) (interpret b))]
+    [(mul a b) (* (interpret a) (interpret b))]
+    [(square a) (expt (interpret a) 2)]
+    [_ p]))
+```
+
 {{% footnotes %}}
 {{% footnote 1 %}}The `/safe` part of the language name is telling Rosette to stop us from shooting ourselves in the foot by using some parts of Racket that Rosette doesn't or can't support. If you're feeling brave, `#lang rosette` will let you use *all* of Racket, but there's no guarantees everything will work.{{% /footnote %}}
+{{% footnote 2 %}}`#:transparent` also has a Rosette-specific meaning: structures with this annotation will be merged together when possible, while those without will be treated as mutable structures that cannot be merged.
+{{% /footnote %}}
 {{% /footnotes %}}
 
 [synthpost]: synthesis-for-architects.html
@@ -183,4 +226,5 @@ You can build a DSL for just about anything. In our research, we've built DSLs f
 [synapse]: http://synapse.uwplse.org/
 [bagpipe]: http://bagpipe.uwplse.org/bagpipe/
 [rulesynth]: http://homes.cs.washington.edu/~emina/pubs/rulesynth.its16.pdf
-
+[structures]: https://docs.racket-lang.org/guide/define-struct.html#%28part._.Simple_.Structure_.Types__struct%29
+[pattern]: https://docs.racket-lang.org/guide/match.html
