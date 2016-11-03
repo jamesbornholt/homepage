@@ -5,6 +5,7 @@ papers:
   venue: "OSDI 2016"
   venue_url: "https://www.usenix.org/conference/osdi16"
   url: "papers/yggdrasil-osdi16.pdf"
+  extra: "<b>Best Paper Award</b>."
   links:
     - text: "Paper (PDF)"
       url: "papers/yggdrasil-osdi16.pdf"
@@ -165,7 +166,7 @@ papers:
   venue: "ASPLOS 2014"
   url: "http://dx.doi.org/10.1145/2541940.2541958"
   venue_url: "https://www.cs.utah.edu/asplos14/"
-  extra: "<b>SIGPLAN Research Highlight, November 2014.<br />IEEE Micro Top Picks, 2015</b>."
+  extra: "<b>SIGPLAN Research Highlight</b>. <b>IEEE Micro Top Picks</b>."
   links:
     - text: "Paper (PDF)"
       url: "papers/uncertaint-asplos14.pdf"
@@ -193,7 +194,7 @@ papers:
   venue: "PLDI 2013 Student Research Competition"
   url: "papers/uncertaint-src13.finals.pdf"
   venue_url: "http://src.acm.org"
-  extra: "<b>First Place, PLDI Student Research Competition (Undergraduate).<br />Second Place, ACM Student Research Competition Grand Final (Undergraduate).</b>"
+  extra: "<b>First Place, PLDI Student Research Competition</b>. <b>Second Place, ACM Student Research Competition Grand Final</b>."
   links:
     - text: "Extended Abstract"
       url: "papers/uncertaint-src13.pdf"
