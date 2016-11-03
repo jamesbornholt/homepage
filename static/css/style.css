@@ -268,6 +268,7 @@ blockquote.blog-summary {
     border: 0;
     padding: 0;
     font-style: italic;
+    color: #333;
 }
 div.highlight pre {
     background: #eeeeee;
