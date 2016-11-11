@@ -112,15 +112,23 @@ a:hover {
     line-height: 1.0;
     margin: 0;
 }
-@media screen and (max-width: 47.99em) {
+@media screen and (max-width: 51.99em) {
     #sidebar {
         padding: 1em;
     }
     #sidebar h1 {
-        line-height: 1.4;
+        margin-bottom: 0.3em;
     }
     #sidebar-img {
-        max-width: 10em;
+        max-width: 8em;
+        display: inline-block;
+        padding-bottom: 0;
+        vertical-align: top;
+    }
+    #sidebar-content {
+        display: inline-block;
+        margin-left: 1em;
+        vertical-align: top;
     }
     #sidebar p {
         margin: 0;
@@ -167,7 +175,7 @@ a:hover {
     max-width: 80%;
     min-width: 350px;
 }
-@media screen and (max-width: 47.99em) {
+@media screen and (max-width: 51.99em) {
     #content {
         padding: 1em;
     }
@@ -205,7 +213,7 @@ div.blog-posts blockquote {
 div.blog-posts p {
     display: inline;
 }
-@media screen and (max-width: 47.99em) {
+@media screen and (max-width: 51.99em) {
     div.blog-date {
         text-align: left;
         line-height: 1.4;
