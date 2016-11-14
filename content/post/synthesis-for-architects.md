@@ -1,14 +1,14 @@
 ---
 date: 2015-01-06T09:30:00-08:00
-title: Program Synthesis, Explained
-description: Rather than keep explaining program synthesis to my <a href="https://homes.cs.washington.edu/~luisceze/">architecture-inclined adviser</a>, I wrote about it!
+title: Program Synthesis Explained
+description: An introduction to the field of program synthesis, the idea that computers can write programs automatically if we just tell them what we want.
 ---
 
 Professor [Luis Ceze][luisceze] is a great adviser, but he has one well-hidden, shameful secret: his PhD is in *computer architecture*.{{% fn 1 %}} I'm working on correcting this grave misjudgement by surrounding him with [experts][djg] in [programming languages][emina]. But it's time to make my own contribution, with part 1 of my [1,009-part][dragon] series, *Programming Languages for Computer Architecture Professors*. Today, we'll tackle **program synthesis**.{{% fn 2 %}}
 
 ### Synthesis?
 
-Synthesis is one of the hot computer science buzzwords right now, like [deep learning][], [big data][], and [Ke$ha][]. But what is program synthesis?
+Synthesis is one of the hotter computer science buzzwords right now, like [deep learning][] or [big data][]. But what is program synthesis?
 
 It's a little odd that the way we program computers is by giving them explicit instructions. Of course, instructions are what computers are good at following extremely quickly, but they're not necessarily what humans are good at writing. Wouldn't it be more efficient for us to tell the computer *what* we want the program to do, and leave the details of *how* to the computer to figure out? It's the ultimate abstraction: a programmer who only tells the computer what they want, rather than how to do it, is completely absolved from any implementation details. This is the promise of program synthesis.
 
