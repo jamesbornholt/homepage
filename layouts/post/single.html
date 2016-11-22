@@ -1,4 +1,6 @@
 {{ partial "top.html" . }}
+<div id="root">
+<div id="left" class="padding"></div>
 <div id="container">
 {{ partial "header-page.html" .}}
 <div id="content">
@@ -13,6 +15,8 @@
 {{ .Content }}
 
 </div>
+</div>
+<div id="right" class="padding"></div>
 </div>
 
 {{ partial "bottom.html" . }}

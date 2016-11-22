@@ -7,14 +7,8 @@ body {
     text-rendering: optimizeLegibility;
 }
 
-.pure-g > div {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
 
-html, button, input, select, textarea,
-.pure-g [class *= "pure-u"] {
+html, button, input, select, textarea {
     font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
     font-weight: 400;
 }
@@ -76,15 +70,30 @@ a:hover {
 
 
 
-
 /* page container */
 #container {
     max-width: 48em;
-    margin-right: auto;
-    margin-left: auto;
+    display: flex;
+    flex-flow: row wrap;
+    flex-grow: 1;
+    flex-basis: 48em;
 }
+
+
+
+/* homepage stuff */
 #container.index {
-    max-width: 61em;
+    max-width: 62em;
+    flex-basis: 62em;
+}
+#root {
+    display: flex;
+}
+.padding {
+    flex-grow: 1;
+}
+.index #left {
+    background-color: #002546;
 }
 
 
@@ -92,9 +101,10 @@ a:hover {
 
 /* sidebar */
 #sidebar {
-    padding: 1.5em;
+    padding: 1em;
     background-color: #002546;
     color: #ffffff;
+    flex: 1 100%;
 }
 #sidebar a {
     color: #cccccc;
@@ -104,34 +114,44 @@ a:hover {
     color: #aaaaaa;
     text-decoration: none;
 }
-
-#sidebar-img {
-    padding-bottom: 1em;
-}
 #sidebar h1 {
     line-height: 1.0;
+    margin: 0 0 0.3em 0;
+}
+#sidebar-img {
+    max-width: 8em;
+    display: inline-block;
+    padding: 0;
+    vertical-align: top;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+#sidebar-img img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+#sidebar-content {
+    display: inline-block;
+    vertical-align: top;
+}
+#sidebar p {
     margin: 0;
 }
-@media screen and (max-width: 51.99em) {
+
+
+
+@media screen and (min-width: 48em) {
     #sidebar {
-        padding: 1em;
-    }
-    #sidebar h1 {
-        margin-bottom: 0.3em;
+        padding: 1.5em;
     }
     #sidebar-img {
-        max-width: 8em;
-        display: inline-block;
-        padding-bottom: 0;
-        vertical-align: top;
-    }
-    #sidebar-content {
-        display: inline-block;
-        margin-left: 1em;
-        vertical-align: top;
+        display: block;
+        max-width: none;
+        margin-right: 0;
     }
     #sidebar p {
-        margin: 0;
+        margin: 0.8em 0;
     }
 }
 
@@ -144,6 +164,9 @@ a:hover {
     margin-bottom: 0;
     padding: 0 0 0.83em 0;
     border-bottom: 1px solid #d3d3d3;
+    flex: 1 100%;
+    display: flex;
+    flex-flow: row wrap;
 }
 #header p {
     margin: 0;
@@ -155,13 +178,22 @@ a:hover {
     line-height: 1.4;
     margin: 0;
 }
+#header .header-cell {
+    flex: 1 100%;
+}
+@media screen and (min-width: 48em) {
+    #header .header-cell {
+        flex: 1 0;
+    }
+}
 
 
 
 
 /* content */
 #content {
-    padding: 1.5em;
+    padding: 1em;
+    flex: 1 100%;
 }
 #content p {
     margin-top: 0;
@@ -175,9 +207,16 @@ a:hover {
     max-width: 80%;
     min-width: 350px;
 }
-@media screen and (max-width: 51.99em) {
-    #content {
-        padding: 1em;
+
+
+
+@media screen and (min-width: 48em) {
+    #sidebar {
+        flex: 1 0px;
+    }
+    .index #content {
+        padding: 1.5em;
+        flex: 3 0px;
     }
 }
 
@@ -186,6 +225,8 @@ a:hover {
 /* blog post lists */
 div.blog-post {
     padding-bottom: 0.8em;
+    display: flex;
+    flex-flow: row wrap;
 }
 div.blog-post:last-of-type {
     padding-bottom: 0;
@@ -196,12 +237,14 @@ div.blog-post > div {
 div.blog-date {
     font-size: 80%;
     color: #777777;
-    text-align: right;
     vertical-align: top;
-    line-height: 18pt;
+    text-align: left;
+    line-height: 1.4;
+    flex: 1 100%;
 }
 div.blog-desc {
-    padding-left: 1em;
+    padding-left: 0;
+    flex: 1 100%;
 }
 div.blog-posts {
     margin: 0.4em 0;
@@ -213,13 +256,15 @@ div.blog-posts blockquote {
 div.blog-posts p {
     display: inline;
 }
-@media screen and (max-width: 51.99em) {
+@media screen and (min-width: 48em) {
     div.blog-date {
-        text-align: left;
-        line-height: 1.4;
+        text-align: right;
+        line-height: 18pt;
+        flex: 1 0;
     }
     div.blog-desc {
-        padding-left: 0;
+        padding-left: 1em;
+        flex: 7 0;
     }
 }
 
