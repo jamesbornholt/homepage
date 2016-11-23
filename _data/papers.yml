@@ -1,9 +1,8 @@
 - title: "Push-Button Verification of File Systems via Crash Refinement"
   authors: "Helgi Sigurbjarnarson, James Bornholt, Emina Torlak, and Xi Wang"
   type: conference
-  venue: "Operating Systems Design and Implementation (OSDI), 2016"
+  venue: "OSDI 2016"
   venue_url: "https://www.usenix.org/conference/osdi16"
-  venue_short: "OSDI'16"
   url: "papers/yggdrasil-osdi16.pdf"
   extra: "<b>Best Paper Award</b>."
   links:
@@ -15,9 +14,8 @@
 - title: "Disciplined Inconsistency with Consistency Types"
   authors: "Brandon Holt, James Bornholt, Irene Zhang, Dan R. K. Ports, Mark Oskin, and Luis Ceze"
   type: conference
-  venue: "Symposium on Cloud Computing (SoCC), 2016"
+  venue: "SoCC 2016"
   venue_url: "http://acmsocc.github.io/2016/"
-  venue_short: "SoCC'16"
   url: "papers/ipa-socc16.pdf"
   links:
     - text: "Paper (PDF)"
@@ -26,8 +24,7 @@
 - title: "Specifying and Checking File System Crash-Consistency Models"
   authors: "James Bornholt, Antoine Kaufmann, Jialin Li, Arvind Krishnamurthy, Emina Torlak, and Xi Wang"
   type: conference
-  venue: "Architectural Support for Programming Languages and Operating Systems (ASPLOS), 2016"
-  venue_short: "ASPLOS'16"
+  venue: "ASPLOS 2016"
   url: "http://sandcat.cs.washington.edu/ferrite/"
   venue_url: "http://www.ece.cmu.edu/calcm/asplos2016/"
   links:
@@ -41,8 +38,7 @@
 - title: "A DNA-Based Archival Storage System"
   authors: "James Bornholt, Randolph Lopez, Douglas M. Carmean, Luis Ceze, Georg Seelig, and Karin Strauss"
   type: conference
-  venue: "Architectural Support for Programming Languages and Operating Systems (ASPLOS), 2016"
-  venue_short: "ASPLOS'16"
+  venue: "ASPLOS 2016"
   url: "papers/dnastorage-asplos16.pdf"
   venue_url: "http://www.ece.cmu.edu/calcm/asplos2016/"
   links:
@@ -54,8 +50,7 @@
 - title: "Optimizing Synthesis with Metasketches"
   authors: "James Bornholt, Emina Torlak, Dan Grossman, and Luis Ceze"
   type: conference
-  venue: "Principles of Programming Languages (POPL), 2016"
-  venue_short: "POPL'16"
+  venue: "POPL 2016"
   url: "http://synapse.uwplse.org"
   venue_url: "http://conf.researchr.org/home/POPL-2016"
   links:
@@ -75,11 +70,11 @@
 - title: "Uncertain<T>: Abstractions for Uncertain Hardware and Software"
   authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
   type: conference
-  venue: "IEEE Micro Top Picks from the Computer Architecture Conferences"
-  venue_short: "IEEE Micro Top Picks'15"
+  venue: "IEEE Micro"
   volume: "vol. 35, no. 3, pp. 132–143, May–June 2015"
   url: "http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7106409&filter%3DAND%28p_IS_Number%3A7129787%29"
   venue_url: "http://ieeexplore.ieee.org/xpl/tocresult.jsp?isnumber=7129787"
+  # extra: "<b>IEEE Micro's Top Picks from the Computer Architecture Conferences.</b>"
   links:
     - text: "Paper (PDF)"
       url: "papers/uncertaint-toppicks15.pdf"
@@ -87,8 +82,7 @@
 - title: "Scaling Program Synthesis by Exploiting Existing Code"
   authors: "James Bornholt and Emina Torlak"
   type: workshop
-  venue: "Machine Learning for Programming Languages (ML4PL), 2015"
-  venue_short: "ML4PL'15"
+  venue: "ML4PL 2015"
   colocated_with: "ECOOP 2015"
   url: "papers/scalesynth-ml4pl15.pdf"
   venue_url: "http://2015.ecoop.org/track/ML4PL2015"
@@ -102,8 +96,7 @@
 - title: "Approximate Program Synthesis"
   authors: "James Bornholt, Emina Torlak, Luis Ceze, and Dan Grossman"
   type: workshop
-  venue: "Workshop on Approximate Computing Across the Stack (WAX), 2015"
-  venue_short: "WAX'15"
+  venue: "WAX 2015"
   colocated_with: "PLDI 2015"
   url: "papers/appsyn-wax15.pdf"
   venue_url: "http://sampa.cs.washington.edu/wax2015/"
@@ -117,8 +110,7 @@
 - title: "REACT: A Framework for Rapid Exploration of Approximate Computing Techniques"
   authors: "Mark Wyse, Andre Baixo, Thierry Moreau, Bill Zorn, James Bornholt, Adrian Sampson, Luis Ceze, and Mark Oskin"
   type: workshop
-  venue: "Workshop on Approximate Computing Across the Stack (WAX), 2015"
-  venue_short: "WAX'15"
+  venue: "WAX 2015"
   colocated_with: "PLDI 2015"
   url: "papers/react-wax15.pdf"
   venue_url: "http://sampa.cs.washington.edu/wax2015/"
@@ -132,8 +124,7 @@
 - title: "Hardware–Software Co-Design: Not Just a Cliché"
   authors: "Adrian Sampson, James Bornholt, and Luis Ceze"
   type: conference
-  venue: "Summit on Advances in Programming Languages (SNAPL), 2015"
-  venue_short: "SNAPL'15"
+  venue: "SNAPL 2015"
   url: "http://drops.dagstuhl.de/opus/frontdoor.php?source_opus=5030"
   venue_url: "http://snapl.org/2015/index.html"
   links:
@@ -143,8 +134,7 @@
 - title: "Programming the Internet of Uncertain <T>hings"
   authors: "James Bornholt, Na Meng, Todd Mytkowicz, and Kathryn S. McKinley"
   type: workshop
-  venue: "Sensors to Cloud Architectures Workshop (SCAW), 2015"
-  venue_short: "SCAW'15"
+  venue: "SCAW 2015"
   colocated_with: "HPCA 2015"
   url: "papers/context-scaw15.pdf"
   venue_url: "http://darksilicon.org/hpca/SCAW-2015/"
@@ -158,8 +148,7 @@
 - title: "There's Something About Bayes: Effective Probabilistic Programming for the Rest of Us"
   authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
   type: workshop
-  venue: "Workshop on Probabilistic and Approximate Computing (APPROX), 2014"
-  venue_short: "APPROX'14"
+  venue: "APPROX 2014"
   colocated_with: "PLDI 2014"
   url: "papers/bayes-approx14.pdf"
   venue_url: "http://approx2014.cs.umass.edu"
@@ -173,8 +162,7 @@
 - title: "Uncertain<T>: A First-Order Type for Uncertain Data"
   authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
   type: conference
-  venue: "Architectural Support for Programming Languages and Operating Systems (ASPLOS), 2014"
-  venue_short: "ASPLOS'14"
+  venue: "ASPLOS 2014"
   url: "http://dx.doi.org/10.1145/2541940.2541958"
   venue_url: "https://www.cs.utah.edu/asplos14/"
   extra: "<b>SIGPLAN Research Highlight</b>. <b>IEEE Micro Top Picks</b>."
@@ -192,7 +180,6 @@
   authors: "James Bornholt"
   type: thesis
   url: "papers/thesis13.pdf"
-  venue_short: "BPhil"
   extra: "Honours thesis, Bachelor of Philosophy (Honours), Australian National University, 2013."
   links:
     - text: "Thesis"
@@ -204,7 +191,6 @@
   authors: "James Bornholt"
   type: poster
   venue: "PLDI 2013 Student Research Competition"
-  venue_short: "PLDI'13 SRC"
   url: "papers/uncertaint-src13.finals.pdf"
   venue_url: "http://src.acm.org"
   extra: "<b>First Place, PLDI Student Research Competition</b>. <b>Second Place, ACM Student Research Competition Grand Final</b>."
@@ -221,8 +207,7 @@
 - title: "The Model Is Not Enough: Understanding Energy Consumption in Mobile Devices"
   authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
   type: poster
-  venue: "Symposium on High Performance Chips (Hot Chips), 2012"
-  venue_short: "Hot Chips'12"
+  venue: "Hot Chips 24, 2012"
   url: "papers/energy-hotchips12.pdf"
   venue_url: "http://www.hotchips.org/archives/hc24/"
   links:

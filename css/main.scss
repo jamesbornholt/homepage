@@ -268,8 +268,8 @@ div.blog-posts p {
 @media screen and (min-width: 48em) {
     div.blog-date {
         text-align: right;
+        line-height: 18pt;
         flex: 1 0;
-        padding-top: 1.5pt;
     }
     div.blog-desc {
         padding-left: 1em;
@@ -281,12 +281,6 @@ div.blog-posts p {
 
 /* Paper lists */
 
-.paper-box {
-    display: inline;
-}
-.paper-venue-short {
-    display: none;
-}
 ul.paper-list p {
     margin: 0;
 }
@@ -324,24 +318,7 @@ ul.paper-links li:after {
 ul.paper-links li:last-child:after {
     content: "";
 }
-@media screen and (min-width: 48em) {
-    .paper-box {
-        display: flex;
-    }
-    .paper-venue-short {
-        display: block;
-        font-size: 80%;
-        color: #777777;
-        vertical-align: top;
-        text-align: right;
-        flex: 1 0px;
-        padding-top: 1.5pt;
-    }
-    .paper-details {
-        padding-left: 1em;
-        flex: 7 0px;
-    }
-}
+
 
 
 /* Blog entries */
