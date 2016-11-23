@@ -1,3 +1,8 @@
+<div class="paper-box">
+<div class="paper-venue-short">
+{{ paper.venue_short }}
+</div>
+<div class="paper-details">
 <p>
     {% if paper.url %}<a class="paper-title" href="{{ paper.url }}">{% else %}<span class="paper-title">{% endif %}{{ paper.title | escape }}{% if paper.url %}</a>{% else %}</span>{% endif %}.
 </p>
@@ -16,3 +21,5 @@
     </ul>
     {% endif %}
 </p>
+</div>
+</div>
