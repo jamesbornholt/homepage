@@ -92,7 +92,7 @@ The problem with this model is that it's *terribly, disastrously slow*. We can o
 
 Sometimes, this requirement to wait makes sense. Consider the case where two threads both want to write to a variable `A` that another thread wants to read:
 
-![coherence]({{ "/img/post/ordering/coherence.png" | relative_url }}){: width="45%"}
+![coherence]({{ "/img/post/ordering/coherence.png" | relative_url }}){: width="70%"}
 
 If we give up on the idea of a single main memory, to allow (1) and (2) to run in parallel, it's suddenly unclear which value of `A` event (3) should read. The single main memory guarantees that there will always be a "winner": a single last write to each variable. Without this guarantee, after both (1) and (2) have happened, (3) could see either `1` or `2`, which is confusing.
 
