@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<div id="sidebar">
+    <div id="sidebar-img">
+        <img src="{{ "/img/me_square.jpg" | relative_url}}" alt="Me." />
+    </div>
+    <div id="sidebar-content">
+        <h1>James Bornholt</h1>
+        <p>PhD Student<br />Computer Science<br />University of Washington</p>
+        <p><i class="fa fa-envelope"></i>&nbsp;&nbsp;<a target="_blank" id="contact" href="http://www.google.com/recaptcha/mailhide/d?k=018LlPIxwBJBGEA_-iI3ZNKA==&c=p7ZC8Co1Y_3uvMJaqz5Gng==">born<span style="display:none">DEL</span>holt@u<span style="display:none">ETE</span>w.edu</a><br />
+            &nbsp;<i class="fa fa-building"></i>&nbsp;&nbsp;<a href="http://uw.edu/maps/?cse">CSE 366</a><br />
+            &nbsp;<i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;<a href="{{ "/files/cv.pdf" | relative_url }}">CV</a></p>
+    </div>
+</div>
+
+<div id="content">
+
+    {{ content }}
+
+    <h2 class="sec">News</h2>
+    <div class="blog-posts">
+    {% for post in site.posts limit:4 %}
+    {% include post-blurb.html post=post %}
+    {% endfor %}
+    <div class="blog-post">
+        <div class="blog-date"></div>
+        <div class="blog-desc">
+            <a href="{{ "/posts.html" | relative_url }}">More Entries...</a>
+        </div>
+    </div>
+    </div>
+
+    <h2 class="sec">Publications <p class="header-link">[<a href="http://dblp.uni-trier.de/pers/hd/b/Bornholt:James">DBLP</a>]</p></h2>
+    <h3>Conference and Journal Papers</h3>
+    {% assign papers = site.data.papers | where_exp:"paper","paper.type == 'conference'" %}
+    {% include paper-list.html papers=papers %}
+
+    <h3>Workshop Papers</h3>
+    {% assign papers = site.data.papers | where_exp:"paper","paper.type == 'workshop'" %}
+    {% include paper-list.html papers=papers %}
+
+    <h3>Posters & Talks</h3>
+    {% assign papers = site.data.papers | where_exp:"paper","paper.type == 'poster'" %}
+    {% include paper-list.html papers=papers %}
+
+    <h3>Theses</h3>
+    {% assign papers = site.data.papers | where_exp:"paper","paper.type == 'thesis'" %}
+    {% include paper-list.html papers=papers %}
+
+</div>

@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+{% include header.html %}
+
+<div id="content">
+
+<h2>News</h2>
+<div class="blog-posts">
+{% for post in site.posts %}
+{% include post-blurb.html post=post %}
+{% endfor %}
+</div>
+
+</div>

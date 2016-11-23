@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% if page.title %}{{ page.title | escape }} — {% endif %}{{ site.title | escape }}</title>
+    <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic" type="text/css">
+    <link rel="stylesheet" href='//fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ "/css/normalize.min.css" | relative_url }}" type="text/css">
+    <link rel="stylesheet" href="{{ "/css/main.css" | relative_url }}" type="text/css">
+    <link rel="stylesheet" href="{{ "/css/highlight.css" | relative_url }}" type="text/css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="{{ "/js/main.js" | relative_url }}"></script>
+</head>
+<body class="{{ page.path | replace:'.md','' | slugify }}">
+    <div id="left" class="padding"></div>
+    <div id="container">
+        {{ content }}
+    </div>
+    <div id="right" class="padding"></div>
+</body>
+</html>

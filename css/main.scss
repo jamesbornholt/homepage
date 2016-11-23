@@ -1,0 +1,370 @@
+---
+# Main CSS
+---
+
+
+
+/* Fonts */
+
+body {
+    font-size: 17px;
+    line-height: 1.4;
+    color: #333333;
+    text-rendering: optimizeLegibility;
+    display: flex;
+}
+
+
+
+/* Text layout */
+
+html, button, input, select, textarea {
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+}
+
+p {
+    margin: 0.8em 0;
+}
+
+code, pre {
+    font-family: "Inconsolata", Consolas, monospace, sans-serif;
+    font-weight: 400;
+}
+
+b, strong, h1, h2, h3, h4 {
+    font-weight: 600;
+}
+
+h1, h2, h3, h4 {
+    margin: 0.4em 0;
+}
+h1, h2 {
+    margin-top: 0.8em;
+}
+h1 {
+    font-size: 160%;
+}
+h2 {
+    font-size: 130%;
+}
+h3 {
+    font-size: 117%;
+}
+h4 {
+    font-size: 104%;
+    margin-bottom: 0;
+}
+
+p.header-link {
+    display: inline;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+a {
+    color: #0365C0;
+    text-decoration: none;
+}
+a:hover {
+    color: #0A4C8B;
+    text-decoration: none;
+}
+
+/* section headers get a rule */
+.sec {
+    border-bottom: 1px solid #d3d3d3;
+    margin-bottom: 0.2em;
+    padding-bottom: 0.2em;
+}
+
+
+
+/* Root flexbox */
+
+#root {
+    display: flex;
+}
+.padding {
+    flex-grow: 1;
+}
+
+
+
+/* Main container */
+
+#container {
+    max-width: 48em;
+    display: flex;
+    flex-flow: row wrap;
+    flex-grow: 1;
+    flex-basis: 48em;
+}
+
+
+
+/* Page header */
+
+/* header */
+#header {
+    margin: 1em;
+    margin-bottom: 0;
+    padding: 0 0 0.83em 0;
+    border-bottom: 1px solid #d3d3d3;
+    flex: 1 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+#header p {
+    margin: 0;
+}
+#header-text {
+    padding: 0;
+}
+#header h1 {
+    line-height: 1.4;
+    margin: 0;
+}
+#header .header-cell {
+    flex: 1 100%;
+}
+@media screen and (min-width: 48em) {
+    #header .header-cell {
+        flex: 1 0;
+    }
+}
+
+
+
+/* Page content */
+
+#content {
+    padding: 1em;
+    flex: 1 100%;
+}
+#content p {
+    margin-top: 0;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+#content img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%;
+    min-width: 350px;
+}
+
+
+
+/* Homepage */
+
+/* Container */
+.index #container {
+    max-width: 62em;
+    flex-basis: 62em;
+}
+.index #left {
+    background-color: #002546;
+}
+/* Sidebar */
+#sidebar {
+    padding: 1em;
+    background-color: #002546;
+    color: #ffffff;
+    flex: 1 100%;
+}
+#sidebar a {
+    color: #cccccc;
+    text-decoration: none;
+}
+#sidebar a:hover {
+    color: #aaaaaa;
+    text-decoration: none;
+}
+#sidebar h1 {
+    line-height: 1.0;
+    margin: 0 0 0.3em 0;
+}
+#sidebar-img {
+    max-width: 8em;
+    display: inline-block;
+    padding: 0;
+    vertical-align: top;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+#sidebar-img img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+#sidebar-content {
+    display: inline-block;
+    vertical-align: top;
+}
+#sidebar p {
+    margin: 0;
+}
+@media screen and (min-width: 48em) {
+    #sidebar {
+        flex: 1 0px;
+        padding: 1.5em;
+    }
+    #sidebar-img {
+        display: block;
+        max-width: none;
+        margin-right: 0;
+    }
+    #sidebar p {
+        margin: 0.8em 0;
+    }
+}
+/* Content */
+@media screen and (min-width: 48em) {
+    .index #content {
+        padding: 1.5em;
+        flex: 3 0px;
+    }
+}
+
+
+
+/* Blog post lists */
+
+div.blog-post {
+    padding-bottom: 0.8em;
+    display: flex;
+    flex-flow: row wrap;
+}
+div.blog-post:last-of-type {
+    padding-bottom: 0;
+}
+div.blog-post > div {
+    box-sizing: border-box;
+}
+div.blog-date {
+    font-size: 80%;
+    color: #777777;
+    vertical-align: top;
+    text-align: left;
+    line-height: 1.4;
+    flex: 1 100%;
+}
+div.blog-desc {
+    padding-left: 0;
+    flex: 1 100%;
+}
+div.blog-posts {
+    margin: 0.4em 0;
+}
+div.blog-posts blockquote {
+    margin: 0 0 0 40px;
+    font-style: italic;
+}
+div.blog-posts p {
+    display: inline;
+}
+@media screen and (min-width: 48em) {
+    div.blog-date {
+        text-align: right;
+        line-height: 18pt;
+        flex: 1 0;
+    }
+    div.blog-desc {
+        padding-left: 1em;
+        flex: 7 0;
+    }
+}
+
+
+
+/* Paper lists */
+
+ul.paper-list p {
+    margin: 0;
+}
+.paper-title {
+    font-weight: 600;
+}
+.paper-authors, .paper-venue, .paper-extra, .paper-links {
+    font-size: 15px;
+}
+.paper-meta {
+    line-height: 1.2;
+}
+ul.paper-list {
+    padding: 0;
+    margin: 0;
+}
+ul.paper-list li {
+    list-style: none;
+    margin-bottom: 0.8em;
+}
+ul.paper-links {
+    padding: 0;
+    margin: 0;
+    margin-left: 24pt;
+}
+ul.paper-links li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: inline;
+}
+ul.paper-links li:after {
+    content: ", ";
+}
+ul.paper-links li:last-child:after {
+    content: "";
+}
+
+
+
+/* Blog entries */
+
+h2.blog-title {
+    margin: 0;
+    font-size: 145%;
+}
+h3.blog-date {
+    color: #666666;
+    font-size: 17px;
+    font-weight: 400;
+    margin-top: 0 !important;
+}
+blockquote, pre {
+    margin: 0.7em 0 0.7em 40px;
+    padding: 0 5px;
+}
+blockquote {
+    border-left: 5px solid #eee;
+    color: #666;
+}
+blockquote.blog-summary {
+    border: 0;
+    padding: 0;
+    font-style: italic;
+    color: #333;
+}
+.highlight pre {
+    background: #eeeeee;
+}
+figure.highlight {
+    margin: 0;
+}
+p > code {
+    background: #eeeeee;
+    white-space: nowrap;
+}
+div.footnotes {
+    border-top: 1px solid #999
+}
+@media print {
+    body {
+        font-size: 16px;
+    }
+    h1 a {
+        color: #333333;
+    }
+}

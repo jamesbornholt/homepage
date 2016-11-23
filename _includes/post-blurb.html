@@ -1,0 +1,9 @@
+<div class="blog-post">
+    <div class="blog-date">{{ post.date | date: "%e %B" }}</div>
+    <div class="blog-desc">
+    {% if post.short_post %}{{ post.content }}{% else %}
+    <p><a href="{{ post.url | relative_url }}">{{ post.title }}</a></p>
+    <blockquote class="blog-summary">{{ post.excerpt | markdownify }}</blockquote>
+    {% endif %}
+    </div>
+</div>

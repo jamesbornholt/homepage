@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+{% include header.html %}
+
+<div id="content">
+
+<h2 class="blog-title">{{ page.title }}</h2>
+<h3 class="blog-date">{{ page.date | date: "%e %B %Y" }}</h3>
+
+{% if page.excerpt %}
+<blockquote class="blog-summary">{{ page.excerpt | markdownify }}</blockquote>
+{% endif %}
+
+{{ page.content }}
+
+</div>

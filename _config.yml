@@ -1,0 +1,34 @@
+# Basic stuff
+title: James Bornholt — University of Washington
+description: >
+  I’m a third-year computer science PhD student 
+  in programming languages
+  at the University of Washington, advised by 
+  Emina Torlak, Dan Grossman, and Luis Ceze.
+
+# URLs
+baseurl: "/~bornholt"
+url: "/~bornholt"
+permalink: /post/:title.html
+
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM
+highlighter: pygments
+
+
+# Build settings
+exclude:
+  - Gemfile
+  - Gemfile.lock
+
+
+# Default layout
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
