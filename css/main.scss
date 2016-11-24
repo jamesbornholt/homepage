@@ -266,12 +266,12 @@ div.blog-posts p {
     display: inline;
 }
 @media screen and (min-width: 48em) {
-    div.blog-date {
+    div.blog-date-flex {
         text-align: right;
         line-height: 18pt;
         flex: 1 0;
     }
-    div.blog-desc {
+    div.blog-desc-flex {
         padding-left: 1em;
         flex: 7 0;
     }

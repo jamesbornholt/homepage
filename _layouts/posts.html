@@ -1,16 +1,19 @@
 ---
-layout: default
+layout: page
 ---
 
-{% include header.html %}
-
-<div id="content">
-
-<h2>News</h2>
+<h2>Blog</h2>
 <div class="blog-posts">
-{% for post in site.posts %}
-{% include post-blurb.html post=post %}
+{% assign blog = site.posts | where_exp:"post","post.short_post != true" %}
+{% for post in blog %}
+{% include post-blurb.html post=post year="true" %}
 {% endfor %}
 </div>
 
+<h2>News</h2>
+<div class="blog-posts">
+{% assign news = site.posts | where_exp:"post","post.short_post == true" %}
+{% for post in news %}
+{% include post-blurb.html post=post year="true" %}
+{% endfor %}
 </div>
