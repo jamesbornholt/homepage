@@ -11,6 +11,9 @@ baseurl: "/~bornholt"
 url: "/~bornholt"
 permalink: /post/:title.html
 
+# Version
+css_version: 20161124
+
 
 # Markdown settings
 markdown: kramdown
