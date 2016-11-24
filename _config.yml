@@ -23,6 +23,8 @@ highlighter: pygments
 exclude:
   - Gemfile
   - Gemfile.lock
+  - Makefile
+  - README.md
 
 
 # Default layout
