@@ -41,6 +41,7 @@
   venue: "ASPLOS 2016"
   url: "papers/dnastorage-asplos16.pdf"
   venue_url: "http://www.ece.cmu.edu/calcm/asplos2016/"
+  extra: "<b>IEEE Micro Top Picks</b>."
   links:
     - text: "Paper (PDF)"
       url: "papers/dnastorage-asplos16.pdf"
