@@ -1,3 +1,15 @@
+- title: "Synthesizing Memory Models from Framework Sketches and Litmus Tests"
+  authors: "James Bornholt and Emina Torlak"
+  type: conference
+  venue: "PLDI 2017"
+  venue_url: "http://conf.researchr.org/home/pldi-2017"
+  links:
+    - text: "To appear."
+    # - text: "Paper (PDF)"
+    #   url: "papers/yggdrasil-osdi16.pdf"
+    # - text: "Homepage"
+    #   url: "https://locore.cs.washington.edu/yggdrasil/"
+
 - title: "Push-Button Verification of File Systems via Crash Refinement"
   authors: "Helgi Sigurbjarnarson, James Bornholt, Emina Torlak, and Xi Wang"
   type: conference
