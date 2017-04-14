@@ -33,8 +33,12 @@ layout: default
     </div>
 
     <h2 class="sec">Publications <p class="header-link">[<a href="http://dblp.uni-trier.de/pers/hd/b/Bornholt:James">DBLP</a>]</p></h2>
-    <h3>Conference and Journal Papers</h3>
+    <h3>Conference Papers</h3>
     {% assign papers = site.data.papers | where_exp:"paper","paper.type == 'conference'" %}
+    {% include paper-list.html papers=papers %}
+
+    <h3>Journal Papers</h3>
+    {% assign papers = site.data.papers | where_exp:"paper","paper.type == 'journal'" %}
     {% include paper-list.html papers=papers %}
 
     <h3>Workshop Papers</h3>

@@ -1,3 +1,15 @@
+- title: "Toward a DNA-Based Archival Storage System"
+  authors: "James Bornholt, Randolph Lopez, Douglas M. Carmean, Luis Ceze, Georg Seelig, and Karin Strauss"
+  type: journal
+  venue: "IEEE Micro"
+  volume: "vol. 37, no. 3, May–June 2017"
+  # url: "http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7106409&filter%3DAND%28p_IS_Number%3A7129787%29"
+  # venue_url: "http://ieeexplore.ieee.org/xpl/tocresult.jsp?isnumber=7129787"
+  links:
+    - text: "To appear."
+    #- text: "Paper (PDF)"
+    #  url: "papers/uncertaint-toppicks15.pdf"
+
 - title: "Synthesizing Memory Models from Framework Sketches and Litmus Tests"
   authors: "James Bornholt and Emina Torlak"
   type: conference
@@ -86,7 +98,7 @@
 
 - title: "Uncertain<T>: Abstractions for Uncertain Hardware and Software"
   authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
-  type: conference
+  type: journal
   venue: "IEEE Micro"
   volume: "vol. 35, no. 3, pp. 132–143, May–June 2015"
   url: "http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7106409&filter%3DAND%28p_IS_Number%3A7129787%29"
