@@ -64,10 +64,14 @@ This representation captures the intuitive notion of `absv`: if `y` is negative,
 Once we have a symbolic representation, we can try to fill in values for the symbolic variables. We do this by using the symbolic representations as *constraints* to be solved. For example:
 
 {% highlight racket %}
-(solve (assert (= (add2 y) 8)))
+(solve
+  (assert 
+    (= (add2 y) 8)))
 {% endhighlight %}
 
-This fragment asks Rosette to try to fill in all the unknown variables (so far, just `y`) to satisfy a *constraint* that `(add2 y)` is equal to 8. Of course, we know the answer should set `y` to 6, because we can do arithmetic. Rosette can do arithmetic, too; here's the output:
+This fragment asks Rosette to try to fill in all the unknown variables (so far, just `y`) to satisfy a *constraint* that `(add2 y)` is equal to 8. The `assert` form creates the constraint, and the `solve` form solves it.
+
+Of course, we know the answer should set `y` to 6, because we can do arithmetic. Rosette can do arithmetic, too; here's the output:
 
     (model
      [y 6])
@@ -98,41 +102,26 @@ Is there any value of `y` which has a negative absolute value? Rosette says:
 
 This is an *unsatisfiable* model: there is no possible `y` that has a negative absolute value.
 
-Finally, let's see how Rosette handles a more complicated constraint involving data structures. Racket supports lists, and provides the `list-ref` procedure to retrieve an element from the list:
-
-{% highlight racket %}
-(define L (list 9 7 5 3))
-(list-ref L 2)  ; returns 5, i.e., L[2]
-{% endhighlight %}
-
-Rosette supports lists, so we can ask it to solve this constraint:
-
-{% highlight racket %}
-(solve (assert (= (list-ref L y) 7)))
-{% endhighlight %}
-
-which asks for a value of `y` such that `(list-ref L y)` is 7. Rosette returns:
-
-    (model
-     [y 1])
-
-as we'd expect -- the second element of `L` is 7 (and list indices start from 0).
-
 So constraint programming allows us to fill in unknown values in our program automatically. This ability will underlie our approach to program synthesis.
 
 > **Aside**: Rosette's `(solve ...)` form works by compiling constraints and sending them to the [Z3 SMT solver][z3], which provides high-performance solving algorithms for a variety of types of constraints. The [Z3 tutorial][z3tutorial] is a nice introduction to this lower-level style of constraint progamming that Rosette abstracts away.
 
 ### Domain-specific languages: programs in programs
 
-Program synthesis is related to the problems we just solved: there is a constraint (the specification) and an unknown (the program) whose value we wish to find. But what does it mean for "the program" to be the unknown value? The avenue we'll explore makes this idea explicit by defining a *domain-specific language* (DSL) for our synthesis task. 
+Program synthesis is similar to the problems we just solved: there are some
+unknowns whose values we wish to fill in subject to some constraints.
+But in synthesis, the unknowns are *programs*,
+usually drawn from a *domain-specific language* (DSL).
 
-A DSL is just a small programming language equipped with exactly the features we are interested in. You can build a DSL for just about anything. In our research, we've built DSLs for synthesis work in [file system operations][ferrite] and [approximate hardware][synapse], and others have done the same for [network configuration][bagpipe] and [K--12 algebra tutoring][rulesynth]. 
+A DSL is just a small programming language equipped with exactly the features we are interested in. You can build a DSL for just about anything. In our research, we've built DSLs for synthesis work in [file system operations][ferrite],
+[memory consistency][memsynth], and [approximate hardware][synapse], and others have done the same for [network configuration][bagpipe] and [K--12 algebra tutoring][rulesynth]. 
 
-DSLs are fundamental to program synthesis because they define the *search space*---the set of possible values for the "unknown program". If a DSL is too complex, it may be difficult to solve a synthesis problem, because there are many programs to consider. But if a DSL is too simple, it won't be able to express interesting behaviors. Controlling this trade-off is critical to building practical synthesis tools.
+DSLs are fundamental in program synthesis because they define the *search space*---the set of possible values for the "unknown program".
+If a DSL is too complex, it may be difficult to solve a synthesis problem, because there are many programs to consider. But if a DSL is too simple, it won't be able to express interesting behaviors. Controlling this trade-off is critical to building practical synthesis tools.
 
 #### A simple arithmetic DSL
 
-For today, we're going to define a very trivial DSL for arithmetic operations. The programs we synthesize in this DSL will be arithmetic expressions like `(plus x y)`. While this isn't a particularly thrilling DSL, it will be simple to implement and demonstrate.
+For today, we're going to define a trivial DSL for arithmetic operations. The programs we synthesize in this DSL will be arithmetic expressions like `(plus x y)`. While this isn't a particularly thrilling DSL, it will be simple to implement and demonstrate.
 
 We need to define two parts of our language: its **syntax** (what programs look like) and its **semantics** (what programs do).
 
@@ -140,14 +129,13 @@ We need to define two parts of our language: its **syntax** (what programs look 
 
 {% highlight racket %}
 (struct plus (left right) #:transparent)
-(struct minus (left right) #:transparent)
 (struct mul (left right) #:transparent)
 (struct square (arg) #:transparent)
 {% endhighlight %}
 
-We've defined four operators in our language: three operations `plus`, `minus`, and `mul` that each take two arguments, and a `square` operation that takes only a single argument. The structure declarations give names to the fields of the structure (`left` and `right` for the two-argument operations, and `arg` for the single-argument operation). The `#:transparent` annotation just tells Racket that it can look "into" these structures and, for example, automatically generate string representations for them.[^transparent]
+We've defined four operators in our language: two operations `plus` and `mul` that each take two arguments, and a `square` operation that takes only a single argument. The structure declarations give names to the fields of the structure (`left` and `right` for the two-argument operations, and `arg` for the single-argument operation). The `#:transparent` annotation just tells Racket that it can look "into" these structures and, for example, automatically generate string representations for them.[^transparent]
 
-This syntax allows us to write programs such as this one:
+Our syntax allows us to write programs such as this one:
 
 {% highlight racket %}
 (define prog (plus (square 7) 3))
@@ -164,7 +152,6 @@ Our interpreter just recurses on the syntax using Racket's [pattern matching][pa
 (define (interpret p)
   (match p
     [(plus a b)  (+ (interpret a) (interpret b))]
-    [(minus a b) (- (interpret a) (interpret b))]
     [(mul a b)   (* (interpret a) (interpret b))]
     [(square a)  (expt (interpret a) 2)]
     [_ p]))
@@ -173,7 +160,8 @@ Our interpreter just recurses on the syntax using Racket's [pattern matching][pa
 The recursion has a base case `[_ p]`---in Racket patterns, `_` matches any value---that simply returns the input program `p`. This base case handles constants in our programs.
 
 **Solving with DSLs**.
-Because our interpreter is just Racket code, it works for free with Rosette. For example, we can evaluate programs that use unknown symbolic variables:
+Because our interpreter is just Racket code, Rosette will make it work even
+when unknown values are involved. For example, this program:
 
 {% highlight racket %}
 (interpret (square (plus y 2)))
@@ -183,7 +171,7 @@ returns the symbolic representation
 
 	(* (+ 2 y) (+ 2 y))
 	
-as we might expect. This "lifting" behavior means we can answer simple questions about programs in our DSL; for example, can this program ever evaluate to 25?
+as we might expect, since `y` is unknown. This "lifting" behavior means we can answer simple questions about programs in our DSL; for example, can the program `(square (plus y 2))` ever evaluate to 25?
 
 {% highlight racket %}
 (solve (assert (= (interpret (square (plus y 2))) 25)))
@@ -194,10 +182,56 @@ In fact, Rosette was too clever for me, and gave an answer I didn't expect:
 	(model
 	 [y -7])
 
+I was expecting `y` to be 3, but of course, (-7 + 2)<sup>2</sup> is also equal to 25.
+
 #### Dealing with program inputs
 
-There's one thing missing from the programs we've talked about so far: they haven't had any notion of "input". Without input, programs in our DSL are really just constants.
+There's one thing missing from the programs we've talked about so far: they haven't had any notion of "input". Without input, programs in our DSL are really just constant expressions.
 
+In other words, we'd like to be able to find a constant `c`
+such that `(mul c x)` is equal to `x + x`
+*for every possible `x`*, rather than just
+a single `x`.
+
+To do this, we'll ask Rosette to *synthesize* rather than solve,
+using its `synthesize` form. For example:
+
+{% highlight racket %}
+(synthesize
+  #:forall (list x)
+  #:guarantee (assert (= (interpret (mul c x)) (+ x x))))
+{% endhighlight %}
+
+Here, we're asking Rosette to fill in the unknowns
+such that the constraint (the `#:guarantee` part)
+holds for any possible value of `x` (the `#:forall` part).
+We find the answer we probably expect:
+
+    (model
+     [c 2])
+            
+In other words, `(mul 2 x)` is equivalent to `x + x`. Surprise!
+What's neat is that the synthesizer discovered this identity
+(which is a property of our DSL) all by itself.
+We didn't have to teach
+it any rewrite rules or algebraic laws---only the DSL's semantics---which
+we would have had to do if we were building a regular compiler.
+
+### Wrapping up
+
+We've barely scratched the surface of program synthesis.
+All we've done so far is synthesize constants:
+in the example above, we told the synthesizer it should look for
+a program of the form `(mul c x)`, which feels a bit like cheating.
+(In the synthesis world, we'd call this a *sketch* of a program:
+a syntactic template that the synthesizer will try to complete).
+
+In a later post, we'll look at how we can make the synthesizer discover
+entire programs, so that we don't have to give it such a helping hand.
+It's not much more complex than this example
+(in fact, we won't change our interpreter at all);
+the only difficulty comes from telling the synthesizer
+what valid programs look like.
 
 
 [^transparent]: `#:transparent` also has a Rosette-specific meaning: structures with this annotation will be merged together when possible, while those without will be treated as mutable structures that cannot be merged.
@@ -222,6 +256,7 @@ There's one thing missing from the programs we've talked about so far: they have
 [z3tutorial]: http://rise4fun.com/Z3/tutorial/guide
 [ferrite]: http://sandcat.cs.washington.edu/ferrite/
 [synapse]: http://synapse.uwplse.org/
+[memsynth]: http://memsynth.uwplse.org/
 [bagpipe]: http://bagpipe.uwplse.org/bagpipe/
 [rulesynth]: http://homes.cs.washington.edu/~emina/pubs/rulesynth.its16.pdf
 [structures]: https://docs.racket-lang.org/guide/define-struct.html#%28part._.Simple_.Structure_.Types__struct%29
