@@ -1,7 +1,6 @@
 function enableMailto() {
     var contact = document.getElementById("contact");
     var spans = contact.querySelectorAll("span");
-    console.log(spans);
     for (var i = 0; i < spans.length; i++) {
         spans[i].parentNode.removeChild(spans[i]);
     }
