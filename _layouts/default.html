@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{{ "/css/main.css?VERSION" | replace: 'VERSION', site.css_version | relative_url }}" type="text/css">
     <link rel="stylesheet" href="{{ "/css/highlight.css" | relative_url }}" type="text/css">
 
-    <script src="{{ "/js/main.js" | relative_url }}"></script>
+    <script src="{{ "/js/main.js?VERSION" | replace: 'VERSION', site.css_version | relative_url }}"></script>
 </head>
 <body class="{{ page.path | replace:'.md','' | slugify }}">
     <div id="left" class="padding"></div>
