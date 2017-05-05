@@ -80,6 +80,35 @@ a:hover {
 
 
 
+/* Icons */
+@font-face {
+    font-family: 'icons';
+    src: url('fonts/icons.woff2?82422007') format('woff2'),
+         url('fonts/icons.woff?82422007') format('woff');
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: "icons";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.icon-mail:before { content: '\f0e0'; }
+.icon-building:before { content: '\f1ad'; }
+.icon-pdf:before { content: '\f1c1'; }
+
+
+
 /* Root flexbox */
 
 #root {
