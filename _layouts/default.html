@@ -18,6 +18,14 @@
     <link rel="stylesheet" href="{{ "/css/highlight.css" | relative_url }}" type="text/css">
 
     <script src="{{ "/js/main.js?VERSION" | replace: 'VERSION', site.css_version | relative_url }}"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-52309609-1', 'auto');
+        ga('send', 'pageview');
+    </script>
 </head>
 <body class="{{ page.path | replace:'.md','' | slugify }}">
     <div id="left" class="padding"></div>
