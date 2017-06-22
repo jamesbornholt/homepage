@@ -15,11 +15,13 @@
   type: conference
   venue: "PLDI 2017"
   venue_url: "http://conf.researchr.org/home/pldi-2017"
-  url: "http://memsynth.uwplse.org"
+  url: "http://dx.doi.org/10.1145/3062341.3062353"
   links:
     - text: "Paper (PDF)"
       url: "papers/memsynth-pldi17.pdf"
-    - text: "Homepage"
+    - text: "Slides"
+      url: "papers/memsynth-pldi17.slides.pdf"
+    - text: "Project Homepage"
       url: "http://memsynth.uwplse.org"
     - text: "Artifact"
       url: "http://memsynth.uwplse.org/pldi17-aec/"
@@ -31,14 +33,14 @@
   type: conference
   venue: "OSDI 2016"
   venue_url: "https://www.usenix.org/conference/osdi16"
-  url: "papers/yggdrasil-osdi16.pdf"
+  url: "https://www.usenix.org/conference/osdi16/technical-sessions/presentation/sigurbjarnarson"
   extra: "<b>Best Paper Award</b>."
   links:
     - text: "Paper (PDF)"
       url: "papers/yggdrasil-osdi16.pdf"
     - text: "Slides"
       url: "papers/yggdrasil-osdi16.slides.pdf"
-    - text: "Homepage"
+    - text: "Project Homepage"
       url: "https://locore.cs.washington.edu/yggdrasil/"
 
 - title: "Disciplined Inconsistency with Consistency Types"
@@ -46,7 +48,7 @@
   type: conference
   venue: "SoCC 2016"
   venue_url: "http://acmsocc.github.io/2016/"
-  url: "papers/ipa-socc16.pdf"
+  url: "https://dx.doi.org/10.1145/2987550.2987559"
   links:
     - text: "Paper (PDF)"
       url: "papers/ipa-socc16.pdf"
@@ -55,21 +57,23 @@
   authors: "James Bornholt, Antoine Kaufmann, Jialin Li, Arvind Krishnamurthy, Emina Torlak, and Xi Wang"
   type: conference
   venue: "ASPLOS 2016"
-  url: "http://sandcat.cs.washington.edu/ferrite/"
+  url: "https://dx.doi.org/10.1145/2872362.2872406"
   venue_url: "http://www.ece.cmu.edu/calcm/asplos2016/"
   links:
     - text: "Paper (PDF)"
       url: "papers/ferrite-asplos16.pdf"
     - text: "Slides"
       url: "papers/ferrite-asplos16.slides.pdf"
-    - text: "Source"
+    - text: "Project Homepage"
+      url: "http://sandcat.cs.washington.edu/ferrite/"
+    - text: "Source Code"
       url: "https://github.com/uwplse/ferrite"
 
 - title: "A DNA-Based Archival Storage System"
   authors: "James Bornholt, Randolph Lopez, Douglas M. Carmean, Luis Ceze, Georg Seelig, and Karin Strauss"
   type: conference
   venue: "ASPLOS 2016"
-  url: "papers/dnastorage-asplos16.pdf"
+  url: "https://dx.doi.org/10.1145/2872362.2872397"
   venue_url: "http://www.ece.cmu.edu/calcm/asplos2016/"
   extra: "<b>IEEE Micro Top Picks</b>."
   links:
@@ -82,21 +86,22 @@
   authors: "James Bornholt, Emina Torlak, Dan Grossman, and Luis Ceze"
   type: conference
   venue: "POPL 2016"
-  url: "http://synapse.uwplse.org"
+  url: "https://dx.doi.org/10.1145/2837614.2837666"
   venue_url: "http://conf.researchr.org/home/POPL-2016"
   links:
     - text: "Paper (PDF)"
       url: "papers/synapse-popl16.pdf"
-    - text: "Video"
-      url: "https://www.youtube.com/watch?v=9eYHNO-4yk4"
-    - text: "ACM"
-      url: "http://dl.acm.org/citation.cfm?id=2837666"
     - text: "Slides"
       url: "papers/synapse-popl16.slides.pdf"
+    - text: "Video"
+      url: "https://www.youtube.com/watch?v=9eYHNO-4yk4"
+    - text: "Project Homepage"
+      url: "http://synapse.uwplse.org"
     - text: "Artifact"
       url: "http://synapse.uwplse.org/popl16-aec/"
-    - text: "Source & Data"
+    - text: "Source Code"
       url: "https://github.com/uwplse/synapse"
+
 
 - title: "Uncertain<T>: Abstractions for Uncertain Hardware and Software"
   authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
@@ -202,8 +207,6 @@
       url: "papers/uncertaint-asplos14.pdf"
     - text: "Slides"
       url: "papers/uncertaint-asplos14.slides.pdf"
-    - text: "Lightning Session Slides"
-      url: "papers/uncertaint-asplos14.lightning.pdf"
     - text: "Poster"
       url: "papers/uncertaint-asplos14.poster.pdf"
 
