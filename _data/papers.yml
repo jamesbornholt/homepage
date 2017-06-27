@@ -21,6 +21,8 @@
       url: "papers/memsynth-pldi17.pdf"
     - text: "Slides"
       url: "papers/memsynth-pldi17.slides.pdf"
+    - text: "Video"
+      url: "https://www.youtube.com/watch?v=381tyFwYp9g"
     - text: "Project Homepage"
       url: "http://memsynth.uwplse.org"
     - text: "Artifact"
