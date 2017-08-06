@@ -1,3 +1,13 @@
+- title: "Hyperkernel: Push-Button Verification of an OS Kernel"
+  authors: "Luke Nelson, Helgi Sigurbjarnarson, Kaiyuan Zhang, Dylan Johnson, James Bornholt, Emina Torlak, and Xi Wang"
+  type: conference
+  venue: "SOSP 2017"
+  venue_url: "https://www.sigops.org/sosp/sosp17/"
+  # url: "https://www.usenix.org/conference/osdi16/technical-sessions/presentation/sigurbjarnarson"
+  links:
+    - text: "To appear."
+      # url: "papers/yggdrasil-osdi16.pdf"
+
 - title: "Toward a DNA-Based Archival Storage System"
   authors: "James Bornholt, Randolph Lopez, Douglas M. Carmean, Luis Ceze, Georg Seelig, and Karin Strauss"
   type: journal
