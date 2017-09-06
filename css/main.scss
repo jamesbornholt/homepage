@@ -7,7 +7,7 @@
 /* Fonts */
 
 body {
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.4;
     color: #333333;
     text-rendering: optimizeLegibility;
@@ -206,6 +206,9 @@ a:hover {
     color: #BEC5CC;
     text-decoration: none;
 }
+#sidebar i {
+    color: #CAD1D9;
+}
 #sidebar a:hover {
     color: #CEE0F2;
     text-decoration: none;
@@ -252,7 +255,7 @@ a:hover {
 @media screen and (min-width: 48em) {
     .index #content {
         padding: 1.5em;
-        flex: 3 0px;
+        flex: 3.1 0px;
     }
 }
 
