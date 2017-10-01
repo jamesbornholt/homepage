@@ -3,10 +3,10 @@
   type: conference
   venue: "SOSP 2017"
   venue_url: "https://www.sigops.org/sosp/sosp17/"
-  # url: "https://www.usenix.org/conference/osdi16/technical-sessions/presentation/sigurbjarnarson"
+  url: "papers/hyperkernel-sosp17.pdf"
   links:
-    - text: "To appear."
-      # url: "papers/yggdrasil-osdi16.pdf"
+    - text: "Paper (PDF)"
+      url: "papers/hyperkernel-sosp17.pdf"
 
 - title: "Toward a DNA-Based Archival Storage System"
   authors: "James Bornholt, Randolph Lopez, Douglas M. Carmean, Luis Ceze, Georg Seelig, and Karin Strauss"
