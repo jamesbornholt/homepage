@@ -1,3 +1,13 @@
+- title: "A Taxonomy of General Purpose Approximate Computing Techniques"
+  authors: "Thierry Moreau, Joshua San Miguel, Mark Wyse, James Bornholt, Armin Alaghi, Luis Ceze, Natalie Enright Jerger, and Adrian Sampson"
+  type: journal
+  venue: "IEEE Embedded Systems Letters"
+  url: "http://ieeexplore.ieee.org/document/8054698/"
+  venue_url: "http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4563995"
+  links:
+    - text: "Paper (PDF)"
+      url: "papers/approxtaxonomy-esl17.pdf"
+
 - title: "Hyperkernel: Push-Button Verification of an OS Kernel"
   authors: "Luke Nelson, Helgi Sigurbjarnarson, Kaiyuan Zhang, Dylan Johnson, James Bornholt, Emina Torlak, and Xi Wang"
   type: conference
