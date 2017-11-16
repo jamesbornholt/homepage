@@ -17,6 +17,8 @@
   links:
     - text: "Paper (PDF)"
       url: "papers/hyperkernel-sosp17.pdf"
+    - text: "Slides"
+      url: "papers/hyperkernel-sosp17.slides.pdf"
     - text: "Project Homepage"
       url: "https://locore.cs.washington.edu/hyperkernel/"
 
