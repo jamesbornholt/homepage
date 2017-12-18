@@ -1,6 +1,6 @@
 .PHONY: clean site deploy
 
-HOST := bornholt@recycle.cs.washington.edu
+HOST := bornholt@tricycle.cs.washington.edu
 ROOT := public_html/website/
 RSYNC_ARGS := --compress --recursive --checksum --itemize-changes --delete --filter='- .DS_Store' -e ssh
 

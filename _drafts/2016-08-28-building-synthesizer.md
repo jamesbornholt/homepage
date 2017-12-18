@@ -224,7 +224,7 @@ what valid programs look like.
 [^transparent]: `#:transparent` also has a Rosette-specific meaning: structures with this annotation will be merged together when possible, while those without will be treated as mutable structures that cannot be merged. This is often important for performance reasons.
 
 
-[synthpost]: synthesis-for-architects.html
+[synthpost]: synthesis-explained.html
 [sketch]: https://bitbucket.org/gatoatigrado/sketch-frontend/wiki/Home
 [sygus]: http://www.sygus.org/index.html
 [rosette]: http://emina.github.io/rosette/
