@@ -1,6 +1,6 @@
 <div class="blog-post">
-    <div class="blog-date {% unless include.year %}blog-date-flex{% endunless %}">{% if include.year=="true" %}{{ post.date | date: "%e %B %Y" }}{% else %}{{ post.date | date: "%e %B" }}{% endif %}</div>
-    <div class="blog-desc {% unless include.year %}blog-desc-flex{% endunless %}">
+    <div class="blog-date">{{ post.date | date: "%e %B %Y" }}</div>
+    <div class="blog-desc">
     {% if post.short_post %}{{ post.content }}{% else %}
     <p><a href="{{ post.url | relative_url }}">{{ post.title }}</a></p>
     <blockquote class="blog-summary">{{ post.excerpt | markdownify }}</blockquote>

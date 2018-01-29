@@ -265,26 +265,18 @@ a:hover {
 
 div.blog-post {
     padding-bottom: 0.8em;
-    display: flex;
-    flex-flow: row wrap;
 }
 div.blog-post:last-of-type {
     padding-bottom: 0;
 }
-div.blog-post > div {
-    box-sizing: border-box;
-}
 div.blog-date {
     font-size: 80%;
     color: #777777;
-    vertical-align: top;
     text-align: left;
-    line-height: 1.4;
-    flex: 1 100%;
+    line-height: 1.2;
 }
 div.blog-desc {
     padding-left: 0;
-    flex: 1 100%;
 }
 div.blog-posts {
     margin: 0.4em 0;
@@ -295,17 +287,6 @@ div.blog-posts blockquote {
 }
 div.blog-posts p {
     display: inline;
-}
-@media screen and (min-width: 48em) {
-    div.blog-date-flex {
-        text-align: right;
-        line-height: 18pt;
-        flex: 1 0;
-    }
-    div.blog-desc-flex {
-        padding-left: 1em;
-        flex: 7 0;
-    }
 }
 
 
@@ -336,6 +317,7 @@ ul.paper-links {
     padding: 0;
     margin: 0;
     margin-left: 24pt;
+    font-size: 13px;
 }
 ul.paper-links li {
     padding: 0;

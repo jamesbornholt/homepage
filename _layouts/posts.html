@@ -6,7 +6,7 @@ layout: page
 <div class="blog-posts">
 {% assign blog = site.posts | where_exp:"post","post.short_post != true" %}
 {% for post in blog %}
-{% include post-blurb.html post=post year="true" %}
+{% include post-blurb.html post=post %}
 {% endfor %}
 </div>
 
@@ -14,6 +14,6 @@ layout: page
 <div class="blog-posts">
 {% assign news = site.posts | where_exp:"post","post.short_post == true" %}
 {% for post in news %}
-{% include post-blurb.html post=post year="true" %}
+{% include post-blurb.html post=post %}
 {% endfor %}
 </div>

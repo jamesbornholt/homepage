@@ -2,12 +2,11 @@
 layout: home
 ---
 
-I’m a fourth-year computer science PhD student in the [PLSE][] and [Sampa][] groups at the [University of Washington][uw], advised by [Emina Torlak][emina], [Dan Grossman][djg], and [Luis Ceze][luisceze].
+I’m a fourth-year computer science PhD student in the [PLSE][] group at the [University of Washington][uw], advised by [Emina Torlak][emina], [Dan Grossman][djg], and [Luis Ceze][luisceze].
 I work on programming languages and formal methods, from [program synthesis frameworks][synapse] to [consistency models][ferrite].
 
 I have a masters from UW, a bachelors from the [Australian National University][anu], and was a software engineer at [Microsoft Research][msr].
 
-[sampa]: https://sampa.cs.washington.edu
 [plse]: http://uwplse.org
 [uw]: https://www.cs.washington.edu
 [luisceze]: http://homes.cs.washington.edu/~luisceze/
