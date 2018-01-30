@@ -12,7 +12,7 @@ url: "/~bornholt"
 permalink: /post/:title.html
 
 # Version
-css_version: 20170905
+css_version: 20180129
 
 
 # Markdown settings
