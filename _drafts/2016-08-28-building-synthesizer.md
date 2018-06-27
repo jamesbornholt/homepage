@@ -90,7 +90,7 @@ We need to define two parts of our language: its **syntax** (what programs look 
 (struct square (arg) #:transparent)
 {% endhighlight %}
 
-We've defined four operators in our language: two operations `plus` and `mul` that each take two arguments, and a `square` operation that takes only a single argument. The structure declarations give names to the fields of the structure (`left` and `right` for the two-argument operations, and `arg` for the single-argument operation). The `#:transparent` annotation just tells Racket to automatically generate some niceties, like string representations.[^transparent]
+We've defined three operators in our language: two operations `plus` and `mul` that each take two arguments, and a `square` operation that takes only a single argument. The structure declarations give names to the fields of the structure (`left` and `right` for the two-argument operations, and `arg` for the single-argument operation). The `#:transparent` annotation just tells Racket to automatically generate some niceties, like string representations.[^transparent]
 
 Our syntax allows us to write programs such as this one:
 
@@ -129,7 +129,7 @@ returns an expression
 
 	(* (+ 2 y) (+ 2 y))
 	
-since `y` is symbolic. This "lifting" behavior means we can answer simple questions about programs in our DSL; for example, can the program `(square (plus y 2))` ever evaluate to 25?
+since `y` is symbolic. This "lifting" behavior means we can answer simple questions about programs in our DSL; for example, is there a value of `y` that makes the program `(square (plus y 2))` evaluate to 25?
 
 {% highlight racket %}
 (solve 
@@ -221,7 +221,7 @@ the only difficulty comes from telling the synthesizer
 what valid programs look like.
 
 
-[^transparent]: `#:transparent` also has a Rosette-specific meaning: structures with this annotation will be merged together when possible, while those without will be treated as mutable structures that cannot be merged. This is often important for performance reasons.
+[^transparent]: If you know Haskell, this is like `deriving (Show, Eq)`. But `#:transparent` also has a Rosette-specific meaning: structures with this annotation will be merged together when possible, while those without will be treated as mutable structures that cannot be merged. This is often important for performance.
 
 
 [synthpost]: synthesis-explained.html
