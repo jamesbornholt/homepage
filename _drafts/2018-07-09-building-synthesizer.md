@@ -1,8 +1,8 @@
 ---
-date: 2016-08-28T18:32:31-07:00
+date: 2018-07-09T07:00:00-07:00
 draft: true
 title: Building your own Program Synthesizer
-excerpt: Building a program synthesis tool, to automatically generate programs from specifications, is easier than you might think. We'll use [Rosette](http://emina.github.io/rosette/) to write a simple synthesizer in 20 lines of code.
+excerpt: Building a [program synthesis](https://homes.cs.washington.edu/~bornholt/post/synthesis-explained.html) tool, to automatically generate programs from specifications, is easier than you might think. We'll use [Rosette](http://emina.github.io/rosette/) to write a simple synthesizer in 20 lines of code.
 ---
 
 In an [earlier post][synthpost], we saw an overview of *program synthesis* algorithms that automatically generate a program to implement a desired specification. While these algorithms are an exciting and evolving field of research, you don't need to implement them yourself. Today, we'll see how to build program synthesizers using existing tools.
