@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>{% if page.title %}{{ page.title | escape }} — {% endif %}{{ site.title | escape }}</title>
-    <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+    <meta name="description" content="{{ page.excerpt | default: site.description | markdownify | strip_html | normalize_whitespace | truncate: 280 | escape }}">
 
     <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@siderealed" />
     <meta property="og:title" content="{{ page.title | default: site.title }}" />
-    <meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}" />
+    <meta property="og:description" content="{{ page.excerpt | default: site.description | markdownify | strip_html | normalize_whitespace | truncate: 280 | escape }}" />
 
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic" type="text/css">
     <link rel="stylesheet" href='//fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
