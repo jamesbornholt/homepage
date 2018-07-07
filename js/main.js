@@ -10,7 +10,7 @@ function enableMailto() {
 
 function highlightRosette() {
     // hack to highlight rosette code
-    var keywords = ["define-symbolic", "solve", "assert"];
+    var keywords = ["define-symbolic", "solve", "assert", "synthesize"];
     var elts = document.querySelectorAll(".n");
     for (var i = 0; i < elts.length; i++) {
         var txt = elts[i].innerHTML;
