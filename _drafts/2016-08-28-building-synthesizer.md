@@ -1,7 +1,7 @@
 ---
 date: 2016-08-28T18:32:31-07:00
 draft: true
-title: Building your own Program Synthesizer, Part 1
+title: Building your own Program Synthesizer
 excerpt: Building a program synthesis tool, to automatically generate programs from specifications, is easier than you might think. We'll use [Rosette](http://emina.github.io/rosette/) to write a simple synthesizer in 20 lines of code.
 ---
 
@@ -162,6 +162,7 @@ Our earlier approach won't be able to do this.
 If we try this program:
 
 {% highlight racket %}
+(define-symbolic x c integer?)
 (solve 
   (assert 
     (= (interpret (mul c x)) (+ x x))))
@@ -240,16 +241,14 @@ given some limitations on the values that can be leaves of that expression:
   (choose* (plus a b)
            (mul a b)
            (square a)
-           (shl a b)
-           (shr a b)
            a))
 {% endhighlight %}
 
 The `choose*` procedure is provided by Rosette,
 and is where the magic happens.
-Given `n` arguments,
+Given *n* arguments,
 `choose*` returns a single value
-that can evaluate to any of the `n` arguments.
+that can evaluate to any of the *n* arguments.
 Our `??expr` function constructs an unknown expression
 by first constructing two values `a` and `b`,
 each of which can evaluate to any of the values in the list `terminals`.
@@ -282,124 +281,53 @@ but this time, we save the resulting model to a variable `M`.
 Then we use Rosette's `evaluate` procedure,
 which *substitutes* any symbolic values in `sketch`
 with concrete values as specified by `M`.
+The result of evaluating our sketch against the model `M`
+is our synthesized program:
 
-TK
+    (plus (mul 8 x) (plus x x))
 
+If you do your math correctly,
+you'll find that 8*x* + *x* + *x* is, in fact, equal to 10*x*.
+We've synthesized a (slower, sillier) program!
 
-<!--
-The biggest difference between Adrian's language
-and our DSL above is that Adrian's works over *bitvectors*,
-which are fixed-width integers,
-rather than the mathematical integers we've been using above.
-Bitvectors are closer to what a real computer does,
-and offer the opportunity for lots of [clever optimizations][hd],
-so they're a fruitful target for synthesis.
-
-We're going to change the semantics of our language to
-operate over bitvectors.
-This is mostly mechanical---we just use bitvector operations
-instead of `+` and `*`---but there's one catch.
-Earlier, we were freely using integer constants like `2`,
-but now we're going to need to say what size of bitvector
-those constants are.[^bitwidth]
-For convenience, we're just going to assume
-all constants are 8 bits wide,
-and add a new case in our interpreter to do that onversion for us.
-Here's our new `interpret` function,
-including semantics for new `shl` and `shr` operations
-that work on bitvectors:
-
-{% highlight racket %}
-(define (interpret p)
-  (match p
-    [(plus a b)   (bvadd (interpret a) (interpret b))]
-    [(mul a b)    (bvmul (interpret a) (interpret b))]
-    [(square a)   (let ([a* (interpret a)]) (bvmul a* a*))]
-    [(shl a b)    (bvshl (interpret a) (interpret b))]
-    [(shr a b)    (bvashr (interpret a) (interpret b))]
-    [(? integer?) (bv p 8)]  ; convert int constants to 8-bit BVs
-    [_ p]))
-{% endhighlight %}
-
-And here's the new syntax we added to our DSL:
-
-{% highlight racket %}
-(struct shl (a b) #:transparent)
-(struct shr (a b) #:transparent)
-{% endhighlight %}
-
-Now we can synthesize
-Adrian's language features conditional expressions,
-so let's add those to our DSL too.
-While we're at it, we'll add some simple bitwise operations,
-to realize some optimization opportunities.
-First, we need to add the new syntax:
-
-{% highlight racket %}
-(struct ite (cond then else) #:transparent)
-{% endhighlight %}
-
-Now we can add the new cases to `interpret`,
-inserting these lines right before the final `[_ p]` case from above:[^if]
-
-{% highlight racket %}
-    [(shl a b) (bvshl (interpret a) (interpret b))]
-    [(shr a b) (bvashr (interpret a) (interpret b))]
-    [(ite cond then else)
-     (if (interpret cond) (interpret then) (interpret else))]
-{% endhighlight %}
-
-
-
-First, 
-{% highlight racket %}
-(define (interpret p env)
-  (match p
-    [(plus a b)  (+ (interpret a env) (interpret b env))]
-    [(mul a b)   (* (interpret a env) (interpret b env))]
-    [(square a)  (expt (interpret a env) 2)]
-    [(var n)     (cdr (assoc n env))]
-    [_ p]))
-{% endhighlight %}
-
-Our new interpreter can now handle variables:
-
-{% highlight racket %}
-(interpret (plus (mul (var 'x) 2) 1) (list (cons 'x 5)))
-{% endhighlight %}
-
-
-The biggest difference is that Adrian's language
-supports *sketches*,
-which are just programs in our DSL
-but with *holes* for the synthesizer to fill in.
-In the example above, `(mul c x)` was our sketch,
-and `c` the hole to fill in.
-But it would be nice to have a simpler interface
--->
 
 ### Wrapping up
 
-We've barely scratched the surface of program synthesis.
-All we've done so far is synthesize constants:
-in the example above, we told the synthesizer it should look for
-a program of the form `(mul c x)`, which feels a bit like cheating.
-(In the synthesis world, we'd call this a *sketch* of a program:
-a syntactic template that the synthesizer will try to complete).
+At this point, we've barely scratched the surface of program synthesis.
+But we've already done something very cool:
+notice that when we built the syntax and semantics for our DSL,
+we didn't think about synthesis or symbolic reasoning at all.
+A simple interpreter for concrete programs magically became
+a powerful automated reasoning tool
+that can be used for solving, synthesizing, and verifying programs.
+This is the key promise of [Rosette]: write your programs for concrete state
+and get these powerful automated tools for free.
 
-In a later post, we'll look at how we can make the synthesizer discover
-entire programs, so that we don't have to give it such a helping hand.
-It's not much more complex than this example
-(in fact, we won't change our interpreter at all);
-the only difficulty comes from telling the synthesizer
-what valid programs look like.
+Where to from here?
+From the program synthesis side,
+most excitement in the community is focused on *example-based* synthesis.
+In our programs above, we had to write fairly detailed specifications
+for the synthesis to work out.
+What if we could instead just give a few *examples* of what we want our
+program to output for particular concrete inputs?
+This approach offers much simpler specifications,
+but has its own complexities (e.g., what if our examples are ambiguous?).
+
+On the formal methods side,
+one of the key challenges for automated reasoning tools like those above
+is *scalability*.
+Our examples work well with trivial specifications over a trivial DSL,
+but what if we want to talk about real-world code,
+like the software for a [clinical radiotherapy system][neutrons]?
+Scaling an automated reasoning tool requires careful design.
+We've been working on [new abstractions][synapse]
+for synthesis tools,
+and more recently on better ways to 
+[identify scalability bottlenecks][sympro] in automated reasoning tools,
+but it's still early in the quest to make automated reasoning accessible to everyone.
 
 
 [^transparent]: If you know Haskell, this is like `deriving (Show, Eq)`. But `#:transparent` also has a Rosette-specific meaning: structures with this annotation will be merged together when possible, while those without will be treated as mutable structures that cannot be merged. This is often important for performance.
-
-[^bitwidth]: This conversion is something Z3's Python bindings do automatically, which can lead to surprising behavior. For example, if we wrote `x = z3.BitVec('x', 4)`, then the Python expressions `x + 16` and `x` are equal, because the bindings assume that when you wrote the integer `16`, and added it to a 4-bit value, you really meant `16` to be a 4-bit value holding the lowest 4 bits of `16`. Rosette prefers to make this conversion explicit when it's required, and would give you a type error here.
-
-[^if]: Unlike in Adrian's example, we get to just use Racket's built-in `if` form here to implement `ite`, and Rosette will take care of generating the right constraints.
 
 [synthpost]: synthesis-explained.html
 [sketch]: https://bitbucket.org/gatoatigrado/sketch-frontend/wiki/Home
@@ -429,3 +357,6 @@ what valid programs look like.
 [adrian]: https://cs.cornell.edu/~asampson/
 [adrianintro]: https://www.cs.cornell.edu/~asampson/blog/minisynth.html
 [alist]: https://en.wikipedia.org/wiki/Association_list
+[neutrons]: http://neutrons.uwplse.org/
+[synapse]: http://synapse.uwplse.org/
+[sympro]: https://2018.splashcon.org/event/splash-2018-oopsla-finding-code-that-explodes-under-symbolic-evaluation
