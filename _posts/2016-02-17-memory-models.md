@@ -1,7 +1,7 @@
 ---
 date: 2016-02-17T09:00:00-08:00
 draft: false
-title: "Memory Consistency Models: A Primer"
+title: "Memory Consistency Models: A Tutorial"
 excerpt: "The cause of, and solution to, all your multicore performance problems."
 ---
 
