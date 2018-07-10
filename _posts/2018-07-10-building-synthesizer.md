@@ -5,11 +5,11 @@ title: Building a Program Synthesizer
 excerpt: Build a [program synthesis](https://homes.cs.washington.edu/~bornholt/post/synthesis-explained.html) tool, to generate programs from specifications, in 20 lines of code using [Rosette](http://emina.github.io/rosette/).
 ---
 
-In an [earlier post][synthpost], we saw an overview of *program synthesis* algorithms that automatically generate a program to implement a desired specification. While these algorithms are an exciting and evolving field of research, you don't need to implement them yourself. Today, we'll see how to build program synthesizers using existing tools.
+In an [earlier post][synthpost], we saw an overview of *program synthesis* algorithms that automatically generate a program to implement a desired specification. While these algorithms are an exciting and evolving field of research, you don't need to implement them yourself. Today, we'll see how to build a program synthesizer using existing tools.
 
 ### Getting started with Rosette
 
-There are a few excellent frameworks for program synthesis. The original is [Sketch][], which offers a Java-ish language equipped with synthesis features. There's also the [syntax-guided synthesis language][sygus], which offers a common interface to several different synthesis engines.
+There are some great off-the-shelf frameworks for program synthesis. The original is [Sketch][], which offers a Java-ish language equipped with synthesis features. There's also the [syntax-guided synthesis language][sygus], which offers a common interface to several different synthesis engines.
 
 For this post, we're going to use [Rosette][], which adds synthesis and verification support to the [Racket][] programming language. The nice thing about Rosette is that it's an extension of Racket, so we'll be able to use many of
 Racket's nice features (like pattern matching) while building our synthesizer.
