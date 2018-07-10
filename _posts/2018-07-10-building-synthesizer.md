@@ -1,7 +1,7 @@
 ---
-date: 2018-07-09T07:00:00-07:00
+date: 2018-07-10T08:00:00-07:00
 draft: true
-title: Building your own Program Synthesizer
+title: Building a Program Synthesizer
 excerpt: Building a [program synthesis](https://homes.cs.washington.edu/~bornholt/post/synthesis-explained.html) tool, to automatically generate programs from specifications, is easier than you might think. We'll use [Rosette](http://emina.github.io/rosette/) to write a simple synthesizer in 20 lines of code.
 ---
 
