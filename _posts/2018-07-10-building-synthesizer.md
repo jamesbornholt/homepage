@@ -61,7 +61,7 @@ and returns:
 
     (unsat)
 
-This is an *unsatisfiable* model: there is no possible `y` that has a negative absolute value.
+This is an *unsatisfiable* solution: there is no possible `y` that has a negative absolute value.
 
 So constraint programming allows us to fill in unknown values in our program automatically. This ability will underlie our approach to program synthesis.
 There are many more examples of this constraint solving in the [Rosette documentation][rosetteessentials].
