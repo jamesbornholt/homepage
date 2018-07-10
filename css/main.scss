@@ -359,6 +359,16 @@ blockquote.blog-summary {
     font-style: italic;
     color: #333;
 }
+blockquote.callout {
+    border: 1px solid #B2E6FF;
+    margin: 0.8em 0;
+    padding: 0.8em;
+    background-color: #D9F2FF;
+    color: #333;
+}
+blockquote.callout p {
+    margin: 0;
+}
 .highlight pre {
     background: #eeeeee;
 }

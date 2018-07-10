@@ -15,6 +15,7 @@ For this post, we're going to use [Rosette][], which adds synthesis and verifica
 Racket's nice features (like pattern matching) while building our synthesizer.
 
 > **Following along**: the code for this post is [available on GitHub][gist]. If you'd like to follow along, you'll need to [install Racket][racketdl] and [Rosette][rosettedl]. Then you'll be able to run Rosette programs either with the DrRacket IDE or the `racket` command-line interpreter.
+{:.callout}
 
 #### Programming with constraints
 
