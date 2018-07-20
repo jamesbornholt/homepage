@@ -4,8 +4,8 @@ function enableMailto() {
     for (var i = 0; i < spans.length; i++) {
         spans[i].parentNode.removeChild(spans[i]);
     }
-    var txt = contact.innerText;
-    contact.setAttribute("href", "mailto:" + txt.trim());
+    var txt = contact.innerText.trim();
+    contact.setAttribute("href", "mailto:" + txt);
 }
 
 function highlightRosette() {

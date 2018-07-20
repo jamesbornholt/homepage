@@ -84,8 +84,8 @@ a:hover {
 /* Icons */
 @font-face {
     font-family: 'icons';
-    src: url('fonts/icons.woff2?82422007') format('woff2'),
-         url('fonts/icons.woff?82422007') format('woff');
+    src: url('fonts/icons.woff2?07192018') format('woff2'),
+         url('fonts/icons.woff?07192018') format('woff');
 }
 
 [class^="icon-"]:before, [class*=" icon-"]:before {
@@ -104,10 +104,10 @@ a:hover {
     -moz-osx-font-smoothing: grayscale
 }
 
-.icon-mail:before { content: '\f0e0'; }
-.icon-building:before { content: '\f1ad'; }
+.icon-mail:before { content: '\e800'; }
+.icon-building:before { content: '\f0f7'; }
 .icon-pdf:before { content: '\f1c1'; }
-
+.icon-github:before { content: '\f09b'; }
 
 
 /* Root flexbox */
