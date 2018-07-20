@@ -6,6 +6,9 @@ excerpt: An introduction to the field of program synthesis, the idea that comput
 
 Professor [Luis Ceze][luisceze] is a great adviser, but he has one well-hidden, shameful secret: his PhD is in *computer architecture*.[^sorry] I'm working on correcting this grave misjudgement by surrounding him with [experts][djg] in [programming languages][emina]. But it's time to make my own contribution, with part 1 of my [1,009-part][dragon] series, *Programming Languages for Computer Architecture Professors*. Today, we'll tackle **program synthesis**.[^507]
 
+> If you just want to *build* a program synthesizer, I have a [quick tutorial][building] on that too.
+{:.callout}
+
 ### Synthesis?
 
 Synthesis is one of the hotter computer science buzzwords right now, like [deep learning][] or [big data][]. But what is program synthesis?
@@ -208,3 +211,4 @@ The promise of program synthesis is that programmers can stop telling computers 
 [bandit]: http://en.wikipedia.org/wiki/Multi-armed_bandit
 [transit]: http://dl.acm.org/citation.cfm?id=2462174
 [8020]: http://swreflections.blogspot.com/2013/11/applying-8020-rule-in-software.html
+[building]: https://homes.cs.washington.edu/~bornholt/post/building-synthesizer.html
