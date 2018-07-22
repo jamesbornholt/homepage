@@ -1,14 +1,14 @@
 # Basic stuff
 title: James Bornholt — University of Washington
 description: >
-  I’m a fourth-year computer science PhD student 
+  I’m a fourth-year computer science PhD student
   in programming languages
-  at the University of Washington, advised by 
+  at the University of Washington, advised by
   Emina Torlak, Dan Grossman, and Luis Ceze.
 
 # URLs
 baseurl: "/~bornholt"
-url: "/~bornholt"
+url: "https://homes.cs.washington.edu"
 permalink: /post/:title.html
 
 # Version

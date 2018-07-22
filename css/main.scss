@@ -41,7 +41,7 @@ h1, h2, h3, h4 {
     margin: 0.4em 0;
 }
 h1, h2 {
-    margin-top: 0.8em;
+    margin-top: 2em;
 }
 h1 {
     font-size: 160%;
@@ -59,8 +59,9 @@ h4 {
 
 p.header-link {
     display: inline;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 400;
+    margin-left: 1em;
 }
 
 a {
@@ -287,6 +288,11 @@ div.blog-posts blockquote {
 }
 div.blog-posts p {
     display: inline;
+}
+.subscribe-link {
+    margin-left: 1.5em;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 

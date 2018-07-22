@@ -2,7 +2,7 @@
 layout: page
 ---
 
-<h2>Blog</h2>
+<h2>Blog <p class="header-link">[<a href="{{ "posts.xml" | relative_url }}">Subscribe</a>]</p></h2>
 <div class="blog-posts">
 {% assign blog = site.posts | where_exp:"post","post.short_post != true" %}
 {% for post in blog %}

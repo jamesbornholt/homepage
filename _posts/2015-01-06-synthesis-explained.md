@@ -36,7 +36,7 @@ In contrast, *inductive* program synthesis allows a less formal specification an
 
 The specific flavour of inductive synthesis I'm going to focus on is [counterexample-guided inductive synthesis][cegis] (CEGIS). The idea is to have two parts working hand-in-hand in a loop:
 
-![the CEGIS loop]({{ "/img/post/synthesis-for-architects/cegis-loop.png" | relative_url }})
+![the CEGIS loop]({{ "/img/post/synthesis-for-architects/cegis-loop.png" | absolute_url }})
 
 We start with some *specification* of the desired program. A *synthesiser* produces a candidate program that might satisfy the specification, and then a *verifier* decides whether that candidate really does satisfy the specification. If so, we're done! If not, the verifier closes the loop by providing some sort of *feedback* to the synthesiser, which it will use to guide its search for new candidate programs. 
 
@@ -65,7 +65,7 @@ We provide oracle-guided synthesis with a library of *components* from which the
 
 For example, here is a library of three components -- two adds and a square root -- and a possible way to connect them together:
 
-![oracle-guided synthesis strings components together]({{ "/img/post/synthesis-for-architects/oracle-components.png" | relative_url }}){: width="65%" }
+![oracle-guided synthesis strings components together]({{ "/img/post/synthesis-for-architects/oracle-components.png" | absolute_url }}){: width="65%" }
 
 The program those connections implement is in SSA form:
 
@@ -93,7 +93,7 @@ We're not asking anything about the oracle program. In particular, it might be t
 
 For example, here's how it works with two test cases and the same components we saw above:
 
-![oracle-guided synthesis test cases]({{ "/img/post/synthesis-for-architects/oracle-table.png" | relative_url }}){: width="65%" }
+![oracle-guided synthesis test cases]({{ "/img/post/synthesis-for-architects/oracle-table.png" | absolute_url }}){: width="65%" }
 
 Here the only test inputs we have are (0,0) and (1,0). The synthesiser gave us as a candidate *P* the program `sqrt(x)+y`, which satisfied both test cases since it agrees with the oracle on both. We asked the verifier to produce two things: a new program *P'* and a new test input *z*. In this case, it was successful. It produced a new program `x+y` and a new test input (4,5). On this new test input, the candidate *P* and the new program *P'* disagree: sqrt(4)+5 = 7, while 4+5 = 9. In this case, it turns out that *both* programs are wrong, since the oracle's output for the new test case is sqrt(4+5) = 3. But the fact that *P* and *P'* disagree is sufficient to send us back around the loop via the feedback step.
 
@@ -159,7 +159,7 @@ The idea of enumerative search is to just brute force search all possible progra
 
 We **synthesise** candidate programs by starting at depth 0 and enumerating all programs at that depth. In our grammar, that means the first two candidates are just the two programs `x` and `y`. Once we're done with a depth, we increment to the next depth and repeat the process. At depth 1, there are eight candidate programs, which all take the form `operation(a, b)`:
 
-![enumerative search level 1]({{ "/img/post/synthesis-for-architects/enumerative-1.png" | relative_url }}){: width="50%" }
+![enumerative search level 1]({{ "/img/post/synthesis-for-architects/enumerative-1.png" | absolute_url }}){: width="50%" }
 
 
 Notice how the possible expressions for `a` and `b` are exactly the programs of depth 0. This is how we do the enumeration: at depth *k*, we explore all programs of the form `operation(a, b)`, where `a` and `b` are any expression of depth at most *k*-1. This dynamic programming search is going to be exponential in the depth *k*: at depth 2, each hole can be filled with one of 8 depth-1 or 2 depth-0 expressions, and so we'll have to explore 2×(8+2)² = 200 programs; at depth 3, we'll have to explore 2×(200+8+2)² = 88,200 programs! We'll rely on the feedback step to try to prune this search space.

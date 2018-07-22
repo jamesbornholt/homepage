@@ -37,7 +37,7 @@ Consider this simple program,
 running two threads,
 and where `A` and `B` are initially both `0`:
 
-![two threads running in parallel]({{ "/img/post/ordering/wb.png" | relative_url }}){: width="45%"}
+![two threads running in parallel]({{ "/img/post/ordering/wb.png" | absolute_url }}){: width="45%"}
 
 To understand what this program can output,
 we should think about the order in which its events can happen.
@@ -56,15 +56,15 @@ There are also some less obvious orders, where the instructions are interleaved 
 
 Intuitively, it shouldn't be possible for this program to print `00`. For line (2) to print `0`, we have to print `B` before line (3) writes a `1` to it. We can represent this graphically with an edge:
 
-![two threads running in parallel]({{ "/img/post/ordering/wb1.png" | relative_url }}){: width="45%"}
+![two threads running in parallel]({{ "/img/post/ordering/wb1.png" | absolute_url }}){: width="45%"}
 
 An edge from operation `x` to operation `y` says that `x` must *happen before* `y` to get the behavior we're interested in. Similarly, for line (4) to print `0`, that print must happen before line (1) writes a `1` to `A`, so let's add that to the graph:
 
-![two threads running in parallel]({{ "/img/post/ordering/wb2.png" | relative_url }}){: width="45%"}
+![two threads running in parallel]({{ "/img/post/ordering/wb2.png" | absolute_url }}){: width="45%"}
 
 And finally, of course, each thread's events should happen in order---(1) before (2), and (3) before (4)---because that's what we expect from an imperative program. So let's add those edges too:
 
-![two threads running in parallel]({{ "/img/post/ordering/wb3.png" | relative_url }}){: width="45%"}
+![two threads running in parallel]({{ "/img/post/ordering/wb3.png" | absolute_url }}){: width="45%"}
 
 But now we have a problem. If we start at (1), and follow the edges---to (2), then (3), then (4), then... (1) again! Remember that the edges are saying which events must happen before other events. So if we start at (1), and end up back at (1) again, the graph is saying that (1) must *happen before itself*! Barring a very concerning advance in physics, this is unlikely to be possible.
 
@@ -92,7 +92,7 @@ The problem with this model is that it's *terribly, disastrously slow*. We can o
 
 Sometimes, this requirement to wait makes sense. Consider the case where two threads both want to write to a variable `A` that another thread wants to read:
 
-![coherence]({{ "/img/post/ordering/coherence.png" | relative_url }}){: width="70%"}
+![coherence]({{ "/img/post/ordering/coherence.png" | absolute_url }}){: width="70%"}
 
 If we give up on the idea of a single main memory, to allow (1) and (2) to run in parallel, it's suddenly unclear which value of `A` event (3) should read. The single main memory guarantees that there will always be a "winner": a single last write to each variable. Without this guarantee, after both (1) and (2) have happened, (3) could see either `1` or `2`, which is confusing.
 
@@ -102,11 +102,11 @@ We call this guarantee *coherence*, and it says that all writes *to the same loc
 
 Outside of coherence, a single main memory is often unnecessary. Consider this example again:
 
-![two threads running in parallel]({{ "/img/post/ordering/wb.png" | relative_url }}){: width="45%"}
+![two threads running in parallel]({{ "/img/post/ordering/wb.png" | absolute_url }}){: width="45%"}
 
 There's no reason why performing event (2) (a read from `B`) needs to wait until event (1) (a write to `A`) completes. They don't interfere with each other at all, and so should be allowed to run in parallel. Event (1) is particularly slow because it's a write. This means that with a single view of memory, we can't run (2) until (1) has become visible to every other thread. On a modern CPU, that's a very expensive operation due to the cache hierarchy: 
 
-![two threads running in parallel]({{ "/img/post/ordering/wb-cores.png" | relative_url }}){: width="45%"}
+![two threads running in parallel]({{ "/img/post/ordering/wb-cores.png" | absolute_url }}){: width="45%"}
 
 The only shared memory between the two cores is all the way back at the L3 cache, which often takes upwards of 90 cycles to access.
 
@@ -114,13 +114,13 @@ The only shared memory between the two cores is all the way back at the L3 cache
 
 Rather than waiting for the write (1) to become visible, we could instead place it into a *store buffer*:
 
-![two threads running in parallel]({{ "/img/post/ordering/wb-wb.png" | relative_url }}){: width="45%"}
+![two threads running in parallel]({{ "/img/post/ordering/wb-wb.png" | absolute_url }}){: width="45%"}
 
 Then (2) could start immediately after putting (1) into the store buffer, rather than waiting for it to reach the L3 cache. Since the store buffer is on-core, it's very fast to access. At some time in the future, the cache hierarchy will pull the write from the store buffer and propagate it through the caches so that it becomes visible to other threads. The store buffer allows us to hide the write latency that would usually be required to make write (1) visible to all the other threads.
 
 Store buffering is nice because it preserves single-threaded behavior. For example, consider this simple single-threaded program:
 
-![two threads running in parallel]({{ "/img/post/ordering/wb-local.png" | relative_url }}){: width="45%"}
+![two threads running in parallel]({{ "/img/post/ordering/wb-local.png" | absolute_url }}){: width="45%"}
 
 The read in (2) needs to see the value written by (1) for this program to preserve the expected single-threaded behavior. Write (1) has not yet gone to memory---it's sitting in core 1's store buffer---so if read (2) just looks to memory, it's going to get an old value. But because it's running on the same CPU, the read can instead just inspect the store buffer directly, see that it contains a write to the location it's reading, and use that value instead. So even with a store buffer, this program correctly prints `1`.
 
@@ -132,7 +132,7 @@ A store buffer sounds like a great performance optimization, but there's a catch
 
 Let's look at the same first example from above, but this time running on a machine with store buffers. First, we execute (1) and then (3), which both place their data into the store buffer rather than sending it back to main memory:
 
-![two threads running in parallel]({{ "/img/post/ordering/wb-tso0.png" | relative_url }}){: width="45%"}
+![two threads running in parallel]({{ "/img/post/ordering/wb-tso0.png" | absolute_url }}){: width="45%"}
 
 Next we execute (2) on core 1, which is going to read the value of `B`. It first inspects its local store buffer, but there's no value of `B` there, so it reads `B` from memory and gets the value `0`, which it prints. Finally, we execute (4) on core 2, which is going to read the value of `A`. There's no value of `A` in core 2's store buffer, so it reads from memory and gets the value `0`, which it prints. At some indeterminate point in the future, the cache hierarchy empties both store buffers and propagates the changes to memory.
 

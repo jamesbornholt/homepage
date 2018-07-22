@@ -8,9 +8,10 @@
     <meta name="description" content="{{ page.excerpt | default: site.description | markdownify | strip_html | normalize_whitespace | truncate: 280 | escape }}">
 
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@siderealed" />
     <meta property="og:title" content="{{ page.title | default: site.title }}" />
     <meta property="og:description" content="{{ page.excerpt | default: site.description | markdownify | strip_html | normalize_whitespace | truncate: 280 | escape }}" />
+
+    <link rel="alternate" type="application/rss+xml" href="{{ "posts.xml" | absolute_url }}">
 
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic" type="text/css">
     <link rel="stylesheet" href='//fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>

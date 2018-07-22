@@ -24,17 +24,17 @@ next to impossible.
 
 [Mytkowicz et al][todd09] showed a variety of environmental factors that significantly bias the results of compiler experiments. If you do any kind of computer systems research, this paper should be absolutely terrifying to you. Their first result shows that *linking order* can significantly bias the results of a benchmark (here, `perlbench` from [SPECcpu2006][spec2006]):
 
-![perlbench linking order]({{ "/img/post/performance-evaluation/perlbench-linking.png" | relative_url }})
+![perlbench linking order]({{ "/img/post/performance-evaluation/perlbench-linking.png" | absolute_url }})
 
 Here on the *x*-axis are two fixed linking orders (the SPECcpu default and an alphabetical order) and 31 random orders. The performance variation is 15% and, most worryingly, straddles 1.0 -- so picking the wrong linking order can tell you your compiler is worse when it's actually better! This effect is not unique to one benchmark; here are the results over a variety of SPECcpu2006 programs:
 
-![SPECcpu2006 linking order]({{ "/img/post/performance-evaluation/speccpu-linking.png" | relative_url }})
+![SPECcpu2006 linking order]({{ "/img/post/performance-evaluation/speccpu-linking.png" | absolute_url }})
 
 I never really pay attention to the order I put things in my Makefiles, as long as everything compiles, but these results might make me start paying attention.
 
 Even more terrifying than linking order is a result in this paper that shows how the size of your UNIX environment variables biases performance. Here's `perlbench` again, with different environment sizes on the *x*-axis:
 
-![perlbench environment size]({{ "/img/post/performance-evaluation/perlbench-envsize.png" | relative_url }})
+![perlbench environment size]({{ "/img/post/performance-evaluation/perlbench-envsize.png" | absolute_url }})
 
 The scary part here is that even innocuous things like changing your username can change the size of your UNIX environment. If I run an experiment on a machine logged in as `james`, then [my advisor][djg] runs the same experiment with the same binaries on the same machine logged in as `thagrossmanator9000`, there's every risk of running afoul of this source of bias.
 
@@ -46,13 +46,13 @@ I think there's an important distinction between variables we don't immediately 
 
 In the garbage collection world, heap size was one of these variables for a very long time. Researchers often ran their garbage collector comparisons at a single heap size, ignoring the time-space trade-off that garbage collection explores. Only in the last decade or so have garbage collection papers started showing graphs like this one, from [*Wake Up and Smell the Coffee: Evaluation Methodology for the 21st Century*][dacapo-cacm] (an excellent paper you should certainly read):
 
-![time-space trade-off]({{ "/img/post/performance-evaluation/heapsize.png" | relative_url }}){: width="60%" }
+![time-space trade-off]({{ "/img/post/performance-evaluation/heapsize.png" | absolute_url }}){: width="60%" }
 
 This graph shows that we could have gamed our results to show either mark-sweep or semi-space as the "best" garbage collector by being judicious in our choice of heap sizes. (Of course, it turns out both collectors are pretty bad, but that's another story.)
 
 Charts like this one are very dangerous if you're not careful about what they actually say. If you're one of the six people in the world who care about garbage collection, you might have read Drew Crawford's [*Why mobile web apps are slow*][crawford], which uses a graph from [a fantastic paper][gcvsmalloc] by [Matthew Hertz][hertzm] and [Emery Berger][emery] to claim that garbage collection couldn't possibly work:
 
-![time-space trade-off for jess]({{ "/img/post/performance-evaluation/gcmalloc-jess.png" | relative_url }})
+![time-space trade-off for jess]({{ "/img/post/performance-evaluation/gcmalloc-jess.png" | absolute_url }})
 
 Crawford cherry-picks this single-benchmark graph from the paper because it shows particularly poor performance for some relatively naive collectors like naive mark-sweep. But he uses the poor performance of naive mark-sweep on this single benchmark to confidently declare that all garbage collection is a disaster and we should just give up. ([Vitaly Mikheev compares this conclusion][bubblesort] to using bubble sort to argue that sorting is slow.) The reality of Hertz and Berger's detailed study is far more subtle. For one, this particular benchmark is an extreme outlier compared to most of the others in the paper. Also, even in this very graph, more modern collectors like generational mark-sweep have acceptable performance except in the most extreme conditions. But the allure of the exponential graph was simply too much for Crawford, and cherry-picking too easy. As always, it's easy to lie with statistics and graphs. *[update: an older version of this paragraph could have been interpreted as saying that Hertz and Berger were being deliberately misleading, which is not at all what I meant. Sorry about that.]*
 
@@ -62,7 +62,7 @@ When it comes to benchmarking, we're usually happy to trust the compiler. For ex
 
 In 2012, I was working on some experiments with [Jikes RVM][jikesrvm], a Java virtual machine. At one point, I thought it would be clever to build the VM ten times and run performance experiments on all ten binaries. Here are the results from those ten binaries on the `_228_jack` benchmark from SPECjvm98:
 
-![build performance variation]({{ "/img/post/performance-evaluation/build-variance.png" | relative_url }})
+![build performance variation]({{ "/img/post/performance-evaluation/build-variance.png" | absolute_url }})
 
 These supposedly identical builds vary in performance by up to 7%! If you've ever compiled an old system and a new system to compare the two, and the quantum of the difference was in this range, results like this mean you can't really be sure whether you saw a true difference or a build artefact.
 
@@ -78,7 +78,7 @@ Even if you choose a good benchmark suite, it's often tempting to drop outliers 
 
 The problem with subsetting benchmarks in this way is that you ignore important behaviour. Benchmark suites are supposed to reflect the space of possible programs, and by subsetting the set of benchmarks, you (unwittingly) bias your results towards certain regions of that space. To make this argument concrete, [Perez&nbsp;et&nbsp;al][perez04] found that when comparing different cache optimisations, subsetting the benchmarks could create many different "best" optimisations, depending on which benchmarks are included:
 
-![subsetting benchmarks]({{ "/img/post/performance-evaluation/subsetting.png" | relative_url }})
+![subsetting benchmarks]({{ "/img/post/performance-evaluation/subsetting.png" | absolute_url }})
 
 This graph says that even if we drop just a few benchmarks from the 26 in the suite, we can create two or more possible "best" systems. If we go so far as to drop 12 benchmarks, as the HPCA paper does, there are 7 possible "best" systems out of 12 being tested. This is not to suggest that the authors gamed their results in any way. Rather, the point is that dropping benchmarks from your comparison creates bias.
 
@@ -90,7 +90,7 @@ What should we take from all these results, apart from a deep feeling of sadness
 
 We should be investing more heavily in infrastructure to support our computer systems research. We're lucky to get funding to [build hardware infrastructure][raijin] for our work, but that doesn't seem to extend to building software to actually *use* this infrastructure effectively. Part of my undergraduate research was to build [plotty][], a web application that managed the output of most of our group's experiments, ingesting raw output from benchmarks and outputting (arguably nice-looking) graphs and tables:
 
-![plotty plots things]({{ "/img/post/performance-evaluation/plotty.png" | relative_url }})
+![plotty plots things]({{ "/img/post/performance-evaluation/plotty.png" | absolute_url }})
 
 Plotty saves us from having to reimplement common analyses over and over again, and protects us from the bugs that crop up when doing so (can you remember, off the top of your head, how to use [scipy's *t* distribution][scipy-t] for a hypothesis test?). It works well for our small group, and helps us collaborate. I think infrastructure like this is increasingly important.
 

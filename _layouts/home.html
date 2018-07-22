@@ -20,7 +20,7 @@ layout: default
 
     {{ content }}
 
-    <h2 class="sec">News</h2>
+    <h2 class="sec">News <p class="header-link">[<a href="{{ "/posts.xml" | relative_url }}">Subscribe</a>]</p></h2>
     <div class="blog-posts">
     {% for post in site.posts limit:4 %}
     {% include post-blurb.html post=post %}
@@ -28,7 +28,7 @@ layout: default
     <div class="blog-post">
         <div class="blog-date blog-date-flex"></div>
         <div class="blog-desc blog-desc-flex">
-            <a href="{{ "/posts.html" | relative_url }}">More Entries...</a>
+            <a href="{{ "/posts.html" | relative_url }}">More Entries</a>
         </div>
     </div>
     </div>
