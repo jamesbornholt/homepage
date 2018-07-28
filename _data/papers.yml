@@ -1,3 +1,20 @@
+- title: "Finding Code That Explodes Under Symbolic Evaluation"
+  authors: "James Bornholt and Emina Torlak"
+  type: conference
+  venue: "OOPSLA 2018"
+  venue_url: "https://conf.researchr.org/track/splash-2018/splash-2018-OOPSLA"
+  links:
+    - text: "To appear."
+
+- title: "Nickel: A Framework for Design and Verification of Information Flow Control Systems"
+  authors: "Helgi Sigurbjarnarson, Luke Nelson, Bruno Castro-Karney, James Bornholt, Emina Torlak, and Xi Wang"
+  type: conference
+  venue: "OSDI 2018"
+  venue_url: "https://www.usenix.org/conference/osdi18"
+  # url: "https://dx.doi.org/10.1145/3132747.3132748"
+  links:
+    - text: "To appear."
+
 - title: "A Taxonomy of General Purpose Approximate Computing Techniques"
   authors: "Thierry Moreau, Joshua San Miguel, Mark Wyse, James Bornholt, Armin Alaghi, Luis Ceze, Natalie Enright Jerger, and Adrian Sampson"
   type: journal
@@ -8,6 +25,26 @@
   links:
     - text: "Paper (PDF)"
       url: "papers/approxtaxonomy-esl17.pdf"
+
+- title: "Synthesizing Memory Models from Framework Sketches and Litmus Tests"
+  authors: "James Bornholt and Emina Torlak"
+  type: conference
+  venue: "PLDI 2017"
+  venue_url: "http://conf.researchr.org/home/pldi-2017"
+  url: "http://dx.doi.org/10.1145/3062341.3062353"
+  links:
+    - text: "Paper (PDF)"
+      url: "papers/memsynth-pldi17.pdf"
+    - text: "Slides"
+      url: "papers/memsynth-pldi17.slides.pdf"
+    - text: "Video"
+      url: "https://www.youtube.com/watch?v=381tyFwYp9g"
+    - text: "Project Homepage"
+      url: "http://memsynth.uwplse.org"
+    - text: "Artifact"
+      url: "http://memsynth.uwplse.org/pldi17-aec/"
+    - text: "Source Code"
+      url: "https://github.com/uwplse/memsynth"
 
 - title: "Hyperkernel: Push-Button Verification of an OS Kernel"
   authors: "Luke Nelson, Helgi Sigurbjarnarson, Kaiyuan Zhang, Dylan Johnson, James Bornholt, Emina Torlak, and Xi Wang"
@@ -34,50 +71,6 @@
     - text: "Paper (PDF)"
       url: "papers/dnastorage-toppicks17.pdf"
 
-- title: "Synthesizing Memory Models from Framework Sketches and Litmus Tests"
-  authors: "James Bornholt and Emina Torlak"
-  type: conference
-  venue: "PLDI 2017"
-  venue_url: "http://conf.researchr.org/home/pldi-2017"
-  url: "http://dx.doi.org/10.1145/3062341.3062353"
-  links:
-    - text: "Paper (PDF)"
-      url: "papers/memsynth-pldi17.pdf"
-    - text: "Slides"
-      url: "papers/memsynth-pldi17.slides.pdf"
-    - text: "Video"
-      url: "https://www.youtube.com/watch?v=381tyFwYp9g"
-    - text: "Project Homepage"
-      url: "http://memsynth.uwplse.org"
-    - text: "Artifact"
-      url: "http://memsynth.uwplse.org/pldi17-aec/"
-    - text: "Source Code"
-      url: "https://github.com/uwplse/memsynth"
-
-- title: "Push-Button Verification of File Systems via Crash Refinement"
-  authors: "Helgi Sigurbjarnarson, James Bornholt, Emina Torlak, and Xi Wang"
-  type: conference
-  venue: "OSDI 2016"
-  venue_url: "https://www.usenix.org/conference/osdi16"
-  url: "https://www.usenix.org/conference/osdi16/technical-sessions/presentation/sigurbjarnarson"
-  extra: "<b>Best Paper Award</b>."
-  links:
-    - text: "Paper (PDF)"
-      url: "papers/yggdrasil-osdi16.pdf"
-    - text: "Slides"
-      url: "papers/yggdrasil-osdi16.slides.pdf"
-    - text: "Project Homepage"
-      url: "https://locore.cs.washington.edu/yggdrasil/"
-
-- title: "Disciplined Inconsistency with Consistency Types"
-  authors: "Brandon Holt, James Bornholt, Irene Zhang, Dan R. K. Ports, Mark Oskin, and Luis Ceze"
-  type: conference
-  venue: "SoCC 2016"
-  venue_url: "http://acmsocc.github.io/2016/"
-  url: "https://dx.doi.org/10.1145/2987550.2987559"
-  links:
-    - text: "Paper (PDF)"
-      url: "papers/ipa-socc16.pdf"
 
 - title: "Specifying and Checking File System Crash-Consistency Models"
   authors: "James Bornholt, Antoine Kaufmann, Jialin Li, Arvind Krishnamurthy, Emina Torlak, and Xi Wang"
@@ -127,6 +120,31 @@
       url: "http://synapse.uwplse.org/popl16-aec/"
     - text: "Source Code"
       url: "https://github.com/uwplse/synapse"
+
+- title: "Push-Button Verification of File Systems via Crash Refinement"
+  authors: "Helgi Sigurbjarnarson, James Bornholt, Emina Torlak, and Xi Wang"
+  type: conference
+  venue: "OSDI 2016"
+  venue_url: "https://www.usenix.org/conference/osdi16"
+  url: "https://www.usenix.org/conference/osdi16/technical-sessions/presentation/sigurbjarnarson"
+  extra: "<b>Best Paper Award</b>."
+  links:
+    - text: "Paper (PDF)"
+      url: "papers/yggdrasil-osdi16.pdf"
+    - text: "Slides"
+      url: "papers/yggdrasil-osdi16.slides.pdf"
+    - text: "Project Homepage"
+      url: "https://locore.cs.washington.edu/yggdrasil/"
+
+- title: "Disciplined Inconsistency with Consistency Types"
+  authors: "Brandon Holt, James Bornholt, Irene Zhang, Dan R. K. Ports, Mark Oskin, and Luis Ceze"
+  type: conference
+  venue: "SoCC 2016"
+  venue_url: "http://acmsocc.github.io/2016/"
+  url: "https://dx.doi.org/10.1145/2987550.2987559"
+  links:
+    - text: "Paper (PDF)"
+      url: "papers/ipa-socc16.pdf"
 
 
 - title: "Uncertain<T>: Abstractions for Uncertain Hardware and Software"
