@@ -7,7 +7,7 @@ excerpt: Build a [program synthesis](https://homes.cs.washington.edu/~bornholt/p
 
 In an [earlier post][synthpost], we saw an overview of *program synthesis* algorithms that automatically generate a program to implement a desired specification. While these algorithms are an exciting and evolving field of research, you don't need to implement them yourself. Today, we'll see how to build a program synthesizer using existing tools.
 
-### Getting started with Rosette
+## Getting started with Rosette
 
 There are some great off-the-shelf frameworks for program synthesis. The original is [Sketch][], which offers a Java-ish language equipped with synthesis features. There's also the [syntax-guided synthesis language][sygus], which offers a common interface to several different synthesis engines.
 
@@ -17,7 +17,7 @@ Racket's nice features (like pattern matching) while building our synthesizer.
 > **Following along**: the code for this post is [available on GitHub][gist]. If you'd like to follow along, you'll need to [install Racket][racketdl] and [Rosette][rosettedl]. Then you'll be able to run Rosette programs either with the DrRacket IDE or the `racket` command-line interpreter.
 {:.callout}
 
-#### Programming with constraints
+### Programming with constraints
 
 Rosette's key feature is programming with, and solving, *constraints*. Rather than a program in which all variables have known values, a Rosette program has some *unknown* variables, which we call **symbolic variables**.
 The values of the symbolic variables will be determined automatically
@@ -68,7 +68,7 @@ There are many more examples of this constraint solving in the [Rosette document
 
 > **Aside**: Rosette's `(solve ...)` form works by compiling constraints and sending them to the [Z3 SMT solver][z3], which provides high-performance solving algorithms for a variety of types of constraints. The [Z3 tutorial][z3tutorial] is a nice introduction to this lower-level style of constraint progamming that Rosette abstracts away.
 
-### Domain-specific languages: programs in programs
+## Domain-specific languages: programs in programs
 
 Program synthesis is similar to the problems we just solved: there are some
 unknowns whose values we wish to fill in, subject to some constraints.
@@ -81,13 +81,14 @@ A DSL is just a small programming language equipped with exactly the features we
 DSLs are fundamental in program synthesis because they define the *search space*---the set of possible values for the "unknown program".
 If a DSL is too complex, it may be difficult to solve a synthesis problem, because there are many programs to consider. But if a DSL is too simple, it won't be able to express interesting behaviors. Controlling this trade-off is critical to building practical synthesis tools.
 
-#### A simple arithmetic DSL
+### A simple arithmetic DSL
 
 For today, we're going to define a trivial DSL for arithmetic operations. The programs we synthesize in this DSL will be arithmetic expressions like `(plus x y)`. While this isn't a particularly thrilling DSL, it will be simple to implement and demonstrate.
 
 Every DSL needs two parts: its **syntax** (what programs look like) and its **semantics** (what programs mean).
 
-**Syntax**. The syntax for our DSL will use Racket's support for [structures][]. We'll define a new structure type for each operation in our language:
+#### Syntax
+The syntax for our DSL will use Racket's support for [structures][]. We'll define a new structure type for each operation in our language:
 
 {% highlight racket %}
 (struct plus (left right) #:transparent)
@@ -107,7 +108,7 @@ to stand for the mathematical expression 7<sup>2</sup> + 3.
 In essence, we write programs in our DSL by constructing [abstract syntax trees][ast]
 for the expressions we're interested in.
 
-**Semantics**.
+#### Semantics
 Now that we know what programs in our DSL look like, we need to say what they mean. To do so, we'll implement a simple *interpreter* for programs in our DSL. The interpreter takes as input a program, performs the computations that program describes, and returns the output value. For example, we'd expect the above program to return 52.
 
 Our little interpreter just recurses on the syntax using Racket's [pattern matching][pattern]:
@@ -133,7 +134,7 @@ we can compute the value it evaluates to:
 
     52
 
-### Synthesis with DSLs
+## Synthesis with DSLs
 
 Because our interpreter is just Racket code, Rosette will make it work even
 when symbolic variables are involved. For example, this program:
@@ -166,7 +167,7 @@ It's not a very interesting program---`(square (plus -7 2))`---but
 it's certainly a form of synthesis: we found a program
 that satisfies a constraint.[^progsynth]
 
-#### Dealing with program inputs
+### Dealing with program inputs
 
 One thing that's missing from the above synthesis is a notion of "input".
 Without input, programs in our DSL are really just constant expressions.
@@ -223,7 +224,7 @@ it any rewrite rules or algebraic laws, as
 we would have had to do if we were building a regular compiler,
 but instead told it only about the semantics of our DSL.
 
-### A fancier example
+## A fancier example
 
 [Adrian Sampson][adrian] has a [nice introduction][adrianintro] to program synthesis
 using the Z3 SMT solver directly.
@@ -314,7 +315,7 @@ you'll find that 8*x* + *x* + *x* is, in fact, equal to 10*x*.
 We've synthesized a (slower, sillier) program!
 
 
-### Wrapping up
+## Wrapping up
 
 At this point, we've barely scratched the surface of program synthesis.
 But we've already done something very cool:
