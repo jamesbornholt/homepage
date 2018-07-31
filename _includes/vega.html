@@ -1,0 +1,10 @@
+<div id="{{ include.name }}" class="blog-vega"></div>
+<script src="https://cdn.jsdelivr.net/npm/vega@4.2.0/build/vega.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@3.0.0-rc0/build/vega-lite.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@3.18.1/build/vega-embed.js"></script>
+<script src="{{ include.data | absolute_url }}"></script>
+<script>
+vegaEmbed("#{{ include.name }}", {{ include.name }}, {
+    "actions": false
+});
+</script>
