@@ -181,7 +181,7 @@ a:hover {
     margin-left: auto;
     margin-right: auto;
     max-width: 80%;
-    min-width: 350px;
+    min-width: 250px;
 }
 
 
@@ -383,15 +383,20 @@ figure.highlight {
 }
 p > code {
     background: #eeeeee;
-    white-space: nowrap;
+    white-space: pre-wrap;
 }
 div.footnotes {
     border-top: 1px solid #999
 }
-div.blog-vega {
-    width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+.blog-vega { /* force plots to scroll without making the container wider */
+    width: 0px;
+}
+@media screen and (min-width: 48em) {
+    .blog-vega {
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 @media print {
     body {

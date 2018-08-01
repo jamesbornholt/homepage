@@ -8,3 +8,8 @@ vegaEmbed("#{{ include.name }}", {{ include.name }}, {
     "actions": false
 });
 </script>
+{% if include.alt %}
+<noscript>
+    <img src="{{ include.alt | absolute_url }}" class="blog-vega">
+</noscript>
+{% endif %}
