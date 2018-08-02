@@ -4,9 +4,13 @@
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.18.1/build/vega-embed.js"></script>
 <script src="{{ include.data | absolute_url }}"></script>
 <script>
+(function() {
+var elt = document.getElementById("{{ include.name }}");
+{{ include.name }}.width = Math.min(elt.clientWidth, {{include.name}}.width);
+elt.style.width = {{ include.name }}.width + "px";
 vegaEmbed("#{{ include.name }}", {{ include.name }}, {
     "actions": false
-});
+})})();
 </script>
 {% if include.alt %}
 <noscript>
