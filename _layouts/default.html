@@ -8,7 +8,7 @@
     <meta name="description" content="{{ page.excerpt | default: site.description | markdownify | strip_html | normalize_whitespace | truncate: 280 | escape }}">
 
     <meta name="twitter:card" content="summary" />
-    <meta property="og:title" content="{{ page.title | default: site.title }}" />
+    <meta property="og:title" content="{% if page.short_title %}{{ page.short_title | escape }}{% else %}{{ page.title | default: site.title }}{% endif %}" />
     <meta property="og:description" content="{{ page.excerpt | default: site.description | markdownify | strip_html | normalize_whitespace | truncate: 280 | escape }}" />
 
     <link rel="alternate" type="application/rss+xml" href="{{ "posts.xml" | absolute_url }}">
