@@ -3,8 +3,14 @@
   type: conference
   venue: "OOPSLA 2018"
   venue_url: "https://conf.researchr.org/track/splash-2018/splash-2018-OOPSLA"
+  url: "papers/sympro-oopsla18.pdf"
   links:
-    - text: "To appear."
+    - text: "Paper (PDF)"
+      url: "papers/sympro-oopsla18.pdf"
+    - text: "Project Homepage"
+      url: "https://unsat.cs.washington.edu/projects/sympro/"
+    - text: "Artifact"
+      url: "https://unsat.cs.washington.edu/projects/sympro/oopsla18-aec/"
 
 - title: "Nickel: A Framework for Design and Verification of Information Flow Control Systems"
   authors: "Helgi Sigurbjarnarson, Luke Nelson, Bruno Castro-Karney, James Bornholt, Emina Torlak, and Xi Wang"
