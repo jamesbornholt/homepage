@@ -2,7 +2,8 @@
 layout: home
 ---
 
-I’m a fifth-year PhD candidate in the [PLSE][] group at the [University of Washington][uw], advised by [Emina Torlak][emina], [Dan Grossman][djg], and [Luis Ceze][luisceze].
+I’m a fifth-year PhD candidate in the [PLSE][] and [UNSAT][] groups at the [University of Washington][uw],
+advised by [Emina Torlak][emina], [Dan Grossman][djg], and [Luis Ceze][luisceze].
 I work on programming languages and formal methods,
 with an emphasis on building scalable automated reasoning tools
 for program verification and synthesis.
@@ -12,6 +13,7 @@ I've also spent time at [Microsoft Research][msr] and [Amazon Web Services][aws]
 I'm grateful to be supported by a [Facebook PhD Fellowship][fb].
 
 [plse]: https://uwplse.org
+[unsat]: https://unsat.org
 [uw]: https://www.cs.washington.edu
 [luisceze]: https://homes.cs.washington.edu/~luisceze/
 [djg]: https://homes.cs.washington.edu/~djg/
