@@ -4,7 +4,7 @@ layout: home
 
 I’m a fifth-year PhD candidate in the [PLSE][] group at the [University of Washington][uw], advised by [Emina Torlak][emina], [Dan Grossman][djg], and [Luis Ceze][luisceze].
 I work on programming languages and formal methods,
-with an emphasis on making it easier to build and scale automated reasoning tools
+with an emphasis on building scalable automated reasoning tools
 for program verification and synthesis.
 
 I have a masters from UW and a bachelors from the [Australian National University][anu].

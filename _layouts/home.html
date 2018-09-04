@@ -2,56 +2,38 @@
 layout: default
 ---
 
-<div id="sidebar">
-    <div id="sidebar-img">
-        <img src="{{ "/img/me_square.jpg" | relative_url}}" alt="Me." />
-    </div>
-    <div id="sidebar-content">
-        <h1>James Bornholt</h1>
-        <p>PhD Candidate<br />Computer Science<br />University of Washington</p>
-        <p><i class="icon-mail"></i> <a target="_blank" id="contact" href="#">born<span style="display:none">DEL</span>holt@cs.washingto<span style="display:none">ETE</span>n.edu</a><br />
-            <i class="icon-building"></i> <a href="http://uw.edu/maps/?cse">CSE 366</a><br />
-            <i class="icon-pdf"></i> <a href="{{ "/files/cv.pdf" | relative_url }}">CV</a><br />
-            <i class="icon-github"></i> <a href="https://github.com/jamesbornholt">GitHub</a></p>
+{{ content }}
+
+<h2 class="sec">News <p class="header-link">[<a href="{{ "/posts.xml" | relative_url }}">Subscribe</a>]</p></h2>
+<div class="blog-posts">
+{% for post in site.posts limit:4 %}
+{% include post-blurb.html post=post %}
+{% endfor %}
+<div class="blog-post">
+    <div class="blog-date blog-date-flex"></div>
+    <div class="blog-desc blog-desc-flex">
+        <a href="{{ "/posts.html" | relative_url }}">More Entries</a>
     </div>
 </div>
-
-<div id="content">
-
-    {{ content }}
-
-    <h2 class="sec">News <p class="header-link">[<a href="{{ "/posts.xml" | relative_url }}">Subscribe</a>]</p></h2>
-    <div class="blog-posts">
-    {% for post in site.posts limit:4 %}
-    {% include post-blurb.html post=post %}
-    {% endfor %}
-    <div class="blog-post">
-        <div class="blog-date blog-date-flex"></div>
-        <div class="blog-desc blog-desc-flex">
-            <a href="{{ "/posts.html" | relative_url }}">More Entries</a>
-        </div>
-    </div>
-    </div>
-
-    <h2 class="sec">Publications <p class="header-link">[<a href="http://dblp.uni-trier.de/pers/hd/b/Bornholt:James">DBLP</a>]</p></h2>
-    <h3>Conference Papers</h3>
-    {% assign papers = site.data.papers | where_exp:"paper","paper.type == 'conference'" %}
-    {% include paper-list.html papers=papers %}
-
-    <h3>Journal Papers</h3>
-    {% assign papers = site.data.papers | where_exp:"paper","paper.type == 'journal'" %}
-    {% include paper-list.html papers=papers %}
-
-    <h3>Workshop Papers</h3>
-    {% assign papers = site.data.papers | where_exp:"paper","paper.type == 'workshop'" %}
-    {% include paper-list.html papers=papers %}
-
-    <h3>Posters & Talks</h3>
-    {% assign papers = site.data.papers | where_exp:"paper","paper.type == 'poster'" %}
-    {% include paper-list.html papers=papers %}
-
-    <h3>Theses</h3>
-    {% assign papers = site.data.papers | where_exp:"paper","paper.type == 'thesis'" %}
-    {% include paper-list.html papers=papers %}
-
 </div>
+
+<h2 class="sec">Publications <p class="header-link">[<a href="http://dblp.uni-trier.de/pers/hd/b/Bornholt:James">DBLP</a>]</p></h2>
+<h3>Conference Papers</h3>
+{% assign papers = site.data.papers | where_exp:"paper","paper.type == 'conference'" %}
+{% include paper-list.html papers=papers %}
+
+<h3>Journal Papers</h3>
+{% assign papers = site.data.papers | where_exp:"paper","paper.type == 'journal'" %}
+{% include paper-list.html papers=papers %}
+
+<h3>Workshop Papers</h3>
+{% assign papers = site.data.papers | where_exp:"paper","paper.type == 'workshop'" %}
+{% include paper-list.html papers=papers %}
+
+<h3>Posters & Talks</h3>
+{% assign papers = site.data.papers | where_exp:"paper","paper.type == 'poster'" %}
+{% include paper-list.html papers=papers %}
+
+<h3>Theses</h3>
+{% assign papers = site.data.papers | where_exp:"paper","paper.type == 'thesis'" %}
+{% include paper-list.html papers=papers %}
