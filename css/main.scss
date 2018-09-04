@@ -240,10 +240,11 @@ a:hover {
 #sidebar p {
     margin: 0;
 }
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 54em) {
     #sidebar {
         flex: 1 0px;
         padding: 1.5em;
+        min-width: 14em; /* email wrap */
     }
     #sidebar-img {
         display: block;
@@ -255,10 +256,10 @@ a:hover {
     }
 }
 /* Content */
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 54em) {
     .index #content {
         padding: 1.5em;
-        flex: 3.1 0px;
+        flex: 3 0px;
     }
 }
 
