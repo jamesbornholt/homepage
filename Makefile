@@ -8,8 +8,8 @@ clean:
 	rm -rf _site
 
 site:
-	jekyll build
+	bundle exec jekyll build
 
 deploy: clean
-	jekyll build
+	bundle exec jekyll build
 	rsync $(RSYNC_ARGS) _site/ $(HOST):$(ROOT)
