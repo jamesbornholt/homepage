@@ -17,9 +17,12 @@
   type: conference
   venue: "OSDI 2018"
   venue_url: "https://www.usenix.org/conference/osdi18"
-  # url: "https://dx.doi.org/10.1145/3132747.3132748"
+  url: "https://www.usenix.org/conference/osdi18/presentation/sigurbjarnarson"
   links:
-    - text: "To appear."
+    - text: "Paper (PDF)"
+      url: "papers/nickel-osdi18.pdf"
+    - text: "Project Homepage"
+      url: "https://unsat.cs.washington.edu/projects/nickel/"
 
 - title: "A Taxonomy of General Purpose Approximate Computing Techniques"
   authors: "Thierry Moreau, Joshua San Miguel, Mark Wyse, James Bornholt, Armin Alaghi, Luis Ceze, Natalie Enright Jerger, and Adrian Sampson"
