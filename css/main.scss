@@ -131,11 +131,17 @@ a:hover {
     max-width: 80%;
     min-width: 250px;
 }
+@supports(padding: unquote('max(0px)')) {
+    #content {
+        padding-left: unquote('max(1em, env(safe-area-inset-left))');
+        padding-right: unquote('max(1em, env(safe-area-inset-right))');
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
 
 
 /* Header */
 #header-container {
-    width: 100%;
     background-color: #002546;
     color: #EDF4FA;
 }
@@ -145,6 +151,15 @@ a:hover {
     margin-left: auto;
     margin-right: auto;
 }
+@supports(padding: unquote('max(0px)')) {
+    #header {
+        padding-left: unquote('max(1em, env(safe-area-inset-left))');
+        padding-right: unquote('max(1em, env(safe-area-inset-right))');
+        padding-top: unquote('max(1em, env(safe-area-inset-bottom))');
+    }
+}
+
+
 #header a {
     color: #EDF4FA;
     text-decoration: none;
