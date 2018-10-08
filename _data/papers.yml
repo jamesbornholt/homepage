@@ -4,6 +4,7 @@
   venue: "OOPSLA 2018"
   venue_url: "https://conf.researchr.org/track/splash-2018/splash-2018-OOPSLA"
   url: "papers/sympro-oopsla18.pdf"
+  extra: "<b>Distinguished Artifact Award</b>."
   links:
     - text: "Paper (PDF)"
       url: "papers/sympro-oopsla18.pdf"
