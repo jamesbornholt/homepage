@@ -22,6 +22,8 @@
   links:
     - text: "Paper (PDF)"
       url: "papers/nickel-osdi18.pdf"
+    - text: "Slides"
+      url: "papers/nickel-osdi18.slides.pdf"
     - text: "Project Homepage"
       url: "https://unsat.cs.washington.edu/projects/nickel/"
 
