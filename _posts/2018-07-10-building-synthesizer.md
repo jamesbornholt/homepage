@@ -1,6 +1,5 @@
 ---
 date: 2018-07-10T08:00:00-07:00
-draft: true
 title: Building a Program Synthesizer
 excerpt: Build a [program synthesis](https://homes.cs.washington.edu/~bornholt/post/synthesis-explained.html) tool, to generate programs from specifications, in 20 lines of code using [Rosette](http://emina.github.io/rosette/).
 ---
