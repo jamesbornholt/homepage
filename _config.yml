@@ -12,7 +12,7 @@ url: "https://homes.cs.washington.edu"
 permalink: /post/:title.html
 
 # Version
-css_version: 20180929
+css_version: 20181015
 
 
 # Markdown settings
