@@ -19,18 +19,14 @@ var z3_initial = {
       "contains": "padding"
     },
     "axis": {
-      "labelFont": "Carlito",
       "labelFontSize": 14,
-      "titleFont": "Carlito",
       "titleFontSize": 14
     },
     "legend": {
-      "labelFont": "Carlito",
       "labelFontSize": 14
     },
     "text": {
-      "font": "Carlito",
-      "fontSize": 14,
+      "fontSize": 14
     }
   }
 };

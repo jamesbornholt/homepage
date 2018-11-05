@@ -12,6 +12,7 @@ var z3_sweep = {
         {"proc": "A12", "type": "Apple", "date": "2018-09-12", "speedup": "4.5532"},
         {"proc": "i7-6700K", "type": "Intel", "date": "2015-08-05", "speedup": "4.5200"},
         {"proc": "i7-7700K", "type": "Intel", "date": "2017-01-03", "speedup": "4.9696"},
+        {"proc": "i7-8700K", "type": "Intel", "date": "2017-10-05", "speedup": "5.1392"},
       ]
     },
     "layer": [{
@@ -22,9 +23,59 @@ var z3_sweep = {
     }, {
       "mark": {
         "type": "text",
-        "align": "left",
-        "baseline": "top",
-        "dx": 4
+        "align": "right",
+        "baseline": "bottom",
+        "dx": -4
+      },
+      "encoding": {
+        "text": {"field": "proc", "type": "ordinal"}
+      }
+    }],
+    "encoding": {
+      "x": {
+        "field": "date",
+        "type": "temporal",
+        "title": "Release Date",
+        "axis": {
+          "tickCount": 6
+        }
+      },
+      "y": {
+        "field": "speedup",
+        "type": "quantitative",
+        "title": "Speedup over A7",
+        "scale": {
+          "type": "log",
+          "nice": false,
+          "domain": [1, 6]
+        }
+      },
+      "color": {
+        "field": "type",
+        "type": "nominal",
+        "legend": {
+          "title": null
+        },
+        "scale": {"range": ["#e41a1c", "#377eb8"]}
+      }
+    }
+  }, {
+    "data": {
+      "values": [
+        {"proc": "m7-6Y75", "type": "Intel", "date": "2015-10-01", "speedup": "3.1110"},
+      ]
+    },
+    "layer": [{
+      "mark": {
+        "type": "line",
+        "point": true
+      }
+    }, {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "bottom",
+        "dx": -4
       },
       "encoding": {
         "text": {"field": "proc", "type": "ordinal"}
@@ -65,18 +116,14 @@ var z3_sweep = {
       "contains": "padding"
     },
     "axis": {
-      "labelFont": "Carlito",
       "labelFontSize": 14,
-      "titleFont": "Carlito",
       "titleFontSize": 14
     },
     "legend": {
-      "labelFont": "Carlito",
       "labelFontSize": 14
     },
     "text": {
-      "font": "Carlito",
-      "fontSize": 14,
+      "fontSize": 14
     }
   }
 };

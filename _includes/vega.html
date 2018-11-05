@@ -1,7 +1,9 @@
 <div id="{{ include.name }}" class="blog-vega"></div>
-<script src="https://cdn.jsdelivr.net/npm/vega@4.2.0/build/vega.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vega-lite@3.0.0-rc0/build/vega-lite.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vega-embed@3.18.1/build/vega-embed.js"></script>
+{% unless include.noload %}
+<script src="https://cdn.jsdelivr.net/npm/vega@4.2.0/build/vega.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@3.0.0-rc0/build/vega-lite.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@3.18.1/build/vega-embed.min.js"></script>
+{% endunless %}
 <script src="{{ include.data | absolute_url }}"></script>
 <script>
 (function() {
