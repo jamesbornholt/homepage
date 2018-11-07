@@ -12,6 +12,9 @@ I have a masters from UW and a bachelors from the [Australian National Universit
 I've also spent time at [Microsoft Research][msr] and [Amazon Web Services][aws].
 I'm grateful to be supported by a [Facebook PhD Fellowship][fb].
 
+> I'm on the academic job market this year!
+{:.callout}
+
 [plse]: https://uwplse.org
 [unsat]: https://unsat.org
 [uw]: https://www.cs.washington.edu
