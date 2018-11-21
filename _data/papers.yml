@@ -8,10 +8,16 @@
   links:
     - text: "Paper (PDF)"
       url: "papers/sympro-oopsla18.pdf"
+    - text: "Slides"
+      url: "papers/sympro-oopsla18.slides.pdf"
+    - text: "Video"
+      url: "https://www.youtube.com/watch?v=wj0pnUjIxlQ"
     - text: "Project Homepage"
       url: "https://unsat.cs.washington.edu/projects/sympro/"
     - text: "Artifact"
       url: "https://unsat.cs.washington.edu/projects/sympro/oopsla18-aec/"
+    - text: "Documentation"
+      url: "https://docs.racket-lang.org/rosette-guide/ch_performance.html?q=rosette#%28part._sec~3asympro%29"
 
 - title: "Nickel: A Framework for Design and Verification of Information Flow Control Systems"
   authors: "Helgi Sigurbjarnarson, Luke Nelson, Bruno Castro-Karney, James Bornholt, Emina Torlak, and Xi Wang"
