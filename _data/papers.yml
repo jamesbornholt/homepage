@@ -33,16 +33,19 @@
     - text: "Project Homepage"
       url: "https://unsat.cs.washington.edu/projects/nickel/"
 
-- title: "A Taxonomy of General Purpose Approximate Computing Techniques"
-  authors: "Thierry Moreau, Joshua San Miguel, Mark Wyse, James Bornholt, Armin Alaghi, Luis Ceze, Natalie Enright Jerger, and Adrian Sampson"
-  type: journal
-  venue: "IEEE Embedded Systems Letters"
-  volume: "vol. 10, no. 1, pp. 2–5"
-  url: "http://ieeexplore.ieee.org/document/8054698/"
-  venue_url: "http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4563995"
+- title: "Hyperkernel: Push-Button Verification of an OS Kernel"
+  authors: "Luke Nelson, Helgi Sigurbjarnarson, Kaiyuan Zhang, Dylan Johnson, James Bornholt, Emina Torlak, and Xi Wang"
+  type: conference
+  venue: "SOSP 2017"
+  venue_url: "https://www.sigops.org/sosp/sosp17/"
+  url: "https://dx.doi.org/10.1145/3132747.3132748"
   links:
     - text: "Paper (PDF)"
-      url: "papers/approxtaxonomy-esl17.pdf"
+      url: "papers/hyperkernel-sosp17.pdf"
+    - text: "Slides"
+      url: "papers/hyperkernel-sosp17.slides.pdf"
+    - text: "Project Homepage"
+      url: "https://locore.cs.washington.edu/hyperkernel/"
 
 - title: "Synthesizing Memory Models from Framework Sketches and Litmus Tests"
   authors: "James Bornholt and Emina Torlak"
@@ -64,31 +67,30 @@
     - text: "Source Code"
       url: "https://github.com/uwplse/memsynth"
 
-- title: "Hyperkernel: Push-Button Verification of an OS Kernel"
-  authors: "Luke Nelson, Helgi Sigurbjarnarson, Kaiyuan Zhang, Dylan Johnson, James Bornholt, Emina Torlak, and Xi Wang"
+- title: "Push-Button Verification of File Systems via Crash Refinement"
+  authors: "Helgi Sigurbjarnarson, James Bornholt, Emina Torlak, and Xi Wang"
   type: conference
-  venue: "SOSP 2017"
-  venue_url: "https://www.sigops.org/sosp/sosp17/"
-  url: "https://dx.doi.org/10.1145/3132747.3132748"
+  venue: "OSDI 2016"
+  venue_url: "https://www.usenix.org/conference/osdi16"
+  url: "https://www.usenix.org/conference/osdi16/technical-sessions/presentation/sigurbjarnarson"
+  extra: "<b>Best Paper Award</b>."
   links:
     - text: "Paper (PDF)"
-      url: "papers/hyperkernel-sosp17.pdf"
+      url: "papers/yggdrasil-osdi16.pdf"
     - text: "Slides"
-      url: "papers/hyperkernel-sosp17.slides.pdf"
+      url: "papers/yggdrasil-osdi16.slides.pdf"
     - text: "Project Homepage"
-      url: "https://locore.cs.washington.edu/hyperkernel/"
+      url: "https://locore.cs.washington.edu/yggdrasil/"
 
-- title: "Toward a DNA-Based Archival Storage System"
-  authors: "James Bornholt, Randolph Lopez, Douglas M. Carmean, Luis Ceze, Georg Seelig, and Karin Strauss"
-  type: journal
-  venue: "IEEE Micro"
-  volume: "vol. 37, no. 3, pp. 98–104, May–June 2017"
-  url: "https://dx.doi.org/10.1109/MM.2017.70"
-  venue_url: "http://ieeexplore.ieee.org/xpl/tocresult.jsp?isnumber=7948654"
+- title: "Disciplined Inconsistency with Consistency Types"
+  authors: "Brandon Holt, James Bornholt, Irene Zhang, Dan R. K. Ports, Mark Oskin, and Luis Ceze"
+  type: conference
+  venue: "SoCC 2016"
+  venue_url: "http://acmsocc.github.io/2016/"
+  url: "https://dx.doi.org/10.1145/2987550.2987559"
   links:
     - text: "Paper (PDF)"
-      url: "papers/dnastorage-toppicks17.pdf"
-
+      url: "papers/ipa-socc16.pdf"
 
 - title: "Specifying and Checking File System Crash-Consistency Models"
   authors: "James Bornholt, Antoine Kaufmann, Jialin Li, Arvind Krishnamurthy, Emina Torlak, and Xi Wang"
@@ -139,31 +141,54 @@
     - text: "Source Code"
       url: "https://github.com/uwplse/synapse"
 
-- title: "Push-Button Verification of File Systems via Crash Refinement"
-  authors: "Helgi Sigurbjarnarson, James Bornholt, Emina Torlak, and Xi Wang"
+- title: "Hardware–Software Co-Design: Not Just a Cliché"
+  authors: "Adrian Sampson, James Bornholt, and Luis Ceze"
   type: conference
-  venue: "OSDI 2016"
-  venue_url: "https://www.usenix.org/conference/osdi16"
-  url: "https://www.usenix.org/conference/osdi16/technical-sessions/presentation/sigurbjarnarson"
-  extra: "<b>Best Paper Award</b>."
+  venue: "SNAPL 2015"
+  url: "http://drops.dagstuhl.de/opus/frontdoor.php?source_opus=5030"
+  venue_url: "http://snapl.org/2015/index.html"
   links:
     - text: "Paper (PDF)"
-      url: "papers/yggdrasil-osdi16.pdf"
+      url: "papers/hwsw-snapl15.pdf"
+
+- title: "Uncertain<T>: A First-Order Type for Uncertain Data"
+  authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
+  type: conference
+  venue: "ASPLOS 2014"
+  url: "http://dx.doi.org/10.1145/2541940.2541958"
+  venue_url: "https://www.cs.utah.edu/asplos14/"
+  extra: "<b>SIGPLAN Research Highlight</b>. <b>IEEE Micro Top Picks</b>."
+  links:
+    - text: "Paper (PDF)"
+      url: "papers/uncertaint-asplos14.pdf"
     - text: "Slides"
-      url: "papers/yggdrasil-osdi16.slides.pdf"
-    - text: "Project Homepage"
-      url: "https://locore.cs.washington.edu/yggdrasil/"
+      url: "papers/uncertaint-asplos14.slides.pdf"
+    - text: "Poster"
+      url: "papers/uncertaint-asplos14.poster.pdf"
 
-- title: "Disciplined Inconsistency with Consistency Types"
-  authors: "Brandon Holt, James Bornholt, Irene Zhang, Dan R. K. Ports, Mark Oskin, and Luis Ceze"
-  type: conference
-  venue: "SoCC 2016"
-  venue_url: "http://acmsocc.github.io/2016/"
-  url: "https://dx.doi.org/10.1145/2987550.2987559"
+
+
+- title: "A Taxonomy of General Purpose Approximate Computing Techniques"
+  authors: "Thierry Moreau, Joshua San Miguel, Mark Wyse, James Bornholt, Armin Alaghi, Luis Ceze, Natalie Enright Jerger, and Adrian Sampson"
+  type: journal
+  venue: "IEEE Embedded Systems Letters"
+  volume: "vol. 10, no. 1, pp. 2–5"
+  url: "http://ieeexplore.ieee.org/document/8054698/"
+  venue_url: "http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4563995"
   links:
     - text: "Paper (PDF)"
-      url: "papers/ipa-socc16.pdf"
+      url: "papers/approxtaxonomy-esl17.pdf"
 
+- title: "Toward a DNA-Based Archival Storage System"
+  authors: "James Bornholt, Randolph Lopez, Douglas M. Carmean, Luis Ceze, Georg Seelig, and Karin Strauss"
+  type: journal
+  venue: "IEEE Micro"
+  volume: "vol. 37, no. 3, pp. 98–104, May–June 2017"
+  url: "https://dx.doi.org/10.1109/MM.2017.70"
+  venue_url: "http://ieeexplore.ieee.org/xpl/tocresult.jsp?isnumber=7948654"
+  links:
+    - text: "Paper (PDF)"
+      url: "papers/dnastorage-toppicks17.pdf"
 
 - title: "Uncertain<T>: Abstractions for Uncertain Hardware and Software"
   authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
@@ -176,6 +201,8 @@
   links:
     - text: "Paper (PDF)"
       url: "papers/uncertaint-toppicks15.pdf"
+
+
 
 - title: "Scaling Program Synthesis by Exploiting Existing Code"
   authors: "James Bornholt and Emina Torlak"
@@ -219,16 +246,6 @@
     - text: "Slides"
       url: "papers/react-wax15.slides.pdf"
 
-- title: "Hardware–Software Co-Design: Not Just a Cliché"
-  authors: "Adrian Sampson, James Bornholt, and Luis Ceze"
-  type: conference
-  venue: "SNAPL 2015"
-  url: "http://drops.dagstuhl.de/opus/frontdoor.php?source_opus=5030"
-  venue_url: "http://snapl.org/2015/index.html"
-  links:
-    - text: "Paper (PDF)"
-      url: "papers/hwsw-snapl15.pdf"
-
 - title: "Programming the Internet of Uncertain <T>hings"
   authors: "James Bornholt, Na Meng, Todd Mytkowicz, and Kathryn S. McKinley"
   type: workshop
@@ -257,31 +274,7 @@
     - text: "Slides"
       url: "papers/bayes-approx14.slides.pdf"
 
-- title: "Uncertain<T>: A First-Order Type for Uncertain Data"
-  authors: "James Bornholt, Todd Mytkowicz, and Kathryn S. McKinley"
-  type: conference
-  venue: "ASPLOS 2014"
-  url: "http://dx.doi.org/10.1145/2541940.2541958"
-  venue_url: "https://www.cs.utah.edu/asplos14/"
-  extra: "<b>SIGPLAN Research Highlight</b>. <b>IEEE Micro Top Picks</b>."
-  links:
-    - text: "Paper (PDF)"
-      url: "papers/uncertaint-asplos14.pdf"
-    - text: "Slides"
-      url: "papers/uncertaint-asplos14.slides.pdf"
-    - text: "Poster"
-      url: "papers/uncertaint-asplos14.poster.pdf"
 
-- title: "Abstractions and Techniques for Programming with Uncertain Data"
-  authors: "James Bornholt"
-  type: thesis
-  url: "papers/thesis13.pdf"
-  extra: "Honours thesis, Bachelor of Philosophy (Honours), Australian National University, 2013."
-  links:
-    - text: "Thesis"
-      url: "papers/thesis13.pdf"
-    - text: "Slides"
-      url: "papers/thesis13.slides.pdf"
 
 - title: "Uncertain<T>: A First-Order Type for Uncertain Data"
   authors: "James Bornholt"
@@ -312,3 +305,15 @@
     - text: "Poster"
       url: "papers/energy-hotchips12.poster.pdf"
 
+
+
+- title: "Abstractions and Techniques for Programming with Uncertain Data"
+  authors: "James Bornholt"
+  type: thesis
+  url: "papers/thesis13.pdf"
+  extra: "Honours thesis, Bachelor of Philosophy (Honours), Australian National University, 2013."
+  links:
+    - text: "Thesis"
+      url: "papers/thesis13.pdf"
+    - text: "Slides"
+      url: "papers/thesis13.slides.pdf"
