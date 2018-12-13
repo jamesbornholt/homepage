@@ -2,11 +2,16 @@
 layout: home
 ---
 
-I’m a fifth (and final) year PhD candidate in the [PLSE][] and [UNSAT][] groups at the [University of Washington][uw],
+I'm a fifth (and final) year PhD candidate in the [PLSE][] and [UNSAT][] groups at the [University of Washington][uw],
 advised by [Emina Torlak][emina], [Dan Grossman][djg], and [Luis Ceze][luisceze].
-I work on programming languages and formal methods,
-with an emphasis on building scalable automated reasoning tools
-for program verification and synthesis.
+
+I work on programming languages and formal methods.
+My research helps programmers build more reliable software using
+*automated reasoning tools*: verification tools
+that check program correctness,
+and synthesis tools that generate correct programs from specifications.
+I work to make automated reasoning tools easier to [build][synapse] and to [scale][sympro],
+and deploy them on important programming problems in [systems][ferrite] and [architecture][memsynth].
 
 I have a masters from UW and a bachelors from the [Australian National University][anu].
 I've also spent time at [Microsoft Research][msr] and [Amazon Web Services][aws].
@@ -25,3 +30,7 @@ I'm grateful to be supported by a [Facebook PhD Fellowship][fb].
 [msr]: https://research.microsoft.com
 [aws]: https://aws.amazon.com
 [fb]: https://research.fb.com/programs/fellowship/
+[synapse]: https://unsat.cs.washington.edu/projects/synapse/
+[sympro]: https://unsat.cs.washington.edu/projects/sympro/
+[ferrite]: https://sandcat.cs.washington.edu/ferrite/
+[memsynth]: http://memsynth.uwplse.org
