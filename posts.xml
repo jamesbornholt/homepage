@@ -5,7 +5,7 @@ layout: null
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
   <title>{{ site.title | xml_escape }}</title>
   <subtitle type="text">{{ site.description | xml_escape }}</subtitle>
-  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <updated>{{ site.posts.first.date | date_to_xmlschema }}</updated>
   <link type="application/atom+xml" href="{{ "posts.xml" | absolute_url | uri_escape }}" rel="self" />
   <link type="text/html" href="{{ site.url | uri_escape }}{{ site.baseurl | uri_escape }}" rel="alternate"/>
   <id>{{ site.url | uri_escape }}{{ site.baseurl | uri_escape }}</id>
