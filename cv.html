@@ -1,0 +1,165 @@
+---
+layout: default
+plain: true
+---
+
+{% assign cv = site.data.cv %}
+
+<section id="cv-head">
+    <div id="cv-name"><h1>{{ cv.name }}</h1></div>
+    <div id="cv-contact">
+        <p>
+            <i class="icon-building"></i> {{ cv.contact.address}}<br />
+            <i class="icon-mail"></i> <a href="mailto:{{ cv.contact.email }}">{{ cv.contact.email }}</a><br />
+            <i class="icon-globe"></i> <a href="{{ cv.contact.website }}">{{ cv.contact.website }}</a>
+       </p>
+   </div>
+</section>
+
+<section id="cv-employment">
+    <h2>Employment</h2>
+    <ul>
+    {% for job in cv.employment %}
+        <li>
+            {{ job.employer }}<br />
+            {{ job.job }}<br />
+            {{ job.where }}<br />
+            {{ job.when }}
+        </li>
+    {% endfor %}
+    </ul>
+</section>
+
+<section id="cv-education">
+    <h2>Education</h2>
+    <ul>
+    {% for degree in cv.education %}
+        <li>
+            {{ degree.school }}<br />
+            {{ degree.where }}<br />
+            {{ degree.when }}<br />
+            {{ degree.degree }}<br />
+            {% if degree.notes %}
+            <ul>
+                {% for n in degree.notes %}
+                <li>{{ n | markdownify }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+</section>
+
+<section id="cv-publications">
+    <h2>Publications</h2>
+    <h3>Conference Papers</h3>
+    <ul>
+    {% for paper in site.data.papers %}
+        {% if paper.type == 'conference' %}
+            <li>{% include paper-cv.html paper=paper %}</li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+
+    <h3>Journal Papers</h3>
+    <ul>
+    {% for paper in site.data.papers %}
+        {% if paper.type == 'journal' %}
+            <li>{% include paper-cv.html paper=paper %}</li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+
+    <h3>Workshop Papers</h3>
+    <ul>
+    {% for paper in site.data.papers %}
+        {% if paper.type == 'workshop' %}
+            <li>{% include paper-cv.html paper=paper %}</li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+
+    <h3>Posters & Talks</h3>
+    <ul>
+    {% for paper in site.data.papers %}
+        {% if paper.type == 'poster' %}
+            <li>{% include paper-cv.html paper=paper %}</li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+
+    <h3>Theses</h3>
+    <ul>
+    {% for paper in site.data.papers %}
+        {% if paper.type == 'thesis' %}
+            <li>{% include paper-cv.html paper=paper %}</li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+</section>
+
+<section id="cv-awards">
+    <h2>Awards</h2>
+    <ul>
+    {% for a in cv.awards %}
+        <li>{{ a | markdownify }}</li>
+    {% endfor %}
+    </ul>
+</section>
+
+<section id="cv-teaching">
+    <h2>Teaching</h2>
+    <ul>
+    {% for c in cv.teaching %}
+        <li>
+            {{ c.course }}<br />
+            {{ c.school }}<br />
+            {{ c.when }}<br />
+            {{ c.role }}
+        </li>
+    {% endfor %}
+    </ul>
+</section>
+
+<section id="cv-service">
+    <h2>Service</h2>
+
+    <h3>Review Committees</h3>
+    <ul>
+    {% for c in cv.service.pc %}
+        <li>{{ c | markdownify }}</li>
+    {% endfor %}
+    </ul>
+
+    <h3>External Reviewing</h3>
+    <ul>
+    {% for c in cv.service.review %}
+        <li>{{ c | markdownify }}</li>
+    {% endfor %}
+    </ul>
+
+    <h3>Department Service</h3>
+    <ul>
+    {% for c in cv.service.department %}
+        <li>{{ c | markdownify }}</li>
+    {% endfor %}
+    </ul>
+</section>
+
+<section id="cv-presentations">
+    <h2>Presentations and Seminars</h2>
+
+    {% for t in cv.talks %}
+    <h3>{{ t.title }}</h3>
+    <ul>
+        {% for e in t.events %}
+        <li>
+            {{ e.date | date: "%b %Y" }}<br />
+            {{ e.where }}<br />
+            {{ e.what }}
+        </li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+</section>

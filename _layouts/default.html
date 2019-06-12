@@ -1,4 +1,4 @@
-{% capture pagename %}{{ page.path | replace:'.md','' | slugify }}{% endcapture %}
+{% capture pagename %}{{ page.path | replace:'.md','' | replace:'.html','' | slugify }}{% endcapture %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -23,6 +23,8 @@
     <script src="{{ "/js/main.js?VERSION" | replace: 'VERSION', site.css_version | relative_url }}" async></script>
 </head>
 <body class="{{ pagename }}">
+    {% if page.plain != true %}
+    <header>
     <div id="header-container">
         <div id="header">
             {% if pagename == 'index' %}
@@ -43,6 +45,8 @@
             </div>
         </div>
     </div>
+    </header>
+    {% endif %}
     <div id="content">
         {{ content }}
     </div>

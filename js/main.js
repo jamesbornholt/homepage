@@ -1,11 +1,13 @@
 function enableMailto() {
     var contact = document.getElementById("contact");
-    var spans = contact.querySelectorAll("span");
-    for (var i = 0; i < spans.length; i++) {
-        spans[i].parentNode.removeChild(spans[i]);
+    if (contact !== null) {
+        var spans = contact.querySelectorAll("span");
+        for (var i = 0; i < spans.length; i++) {
+            spans[i].parentNode.removeChild(spans[i]);
+        }
+        var txt = contact.innerText.trim();
+        contact.setAttribute("href", "mailto:" + txt);
     }
-    var txt = contact.innerText.trim();
-    contact.setAttribute("href", "mailto:" + txt);
 }
 
 function highlightRosette() {

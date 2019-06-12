@@ -83,11 +83,11 @@ a:hover {
 
 
 
-/* Icons */
+/* Icons (fontello.com) */
 @font-face {
     font-family: 'icons';
-    src: url('fonts/icons.woff2?07192018') format('woff2'),
-         url('fonts/icons.woff?07192018') format('woff');
+    src: url('fonts/icons.woff2?20190612') format('woff2'),
+         url('fonts/icons.woff?20190612') format('woff');
 }
 
 [class^="icon-"]:before, [class*=" icon-"]:before {
@@ -110,7 +110,7 @@ a:hover {
 .icon-building:before { content: '\f0f7'; }
 .icon-pdf:before { content: '\f1c1'; }
 .icon-github:before { content: '\f09b'; }
-
+.icon-globe:before { content: '\e801'; }
 
 
 /* Page content */
@@ -355,4 +355,42 @@ div.footnotes {
     h1 a {
         color: #333333;
     }
+}
+
+
+
+/* CV */
+
+body.cv {
+section#cv-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 2em;
+}
+section#cv-head h1 {
+    margin-top: 0;
+    margin: 0;
+}
+section#cv-head div#cv-contact {
+    display: block;
+    flex-grow: 1;
+    text-align: right;
+}
+section#cv-head p {
+    margin: 0;
+}
+
+h2 {
+    border-bottom: 1px solid #d3d3d3;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
 }

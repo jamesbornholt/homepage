@@ -1,0 +1,182 @@
+name: James Bornholt
+
+contact:
+  address: |
+    Box 352350, Seattle, WA 98195-2350
+  email: bornholt@cs.washington.edu
+  website: https://homes.cs.washington.edu/~bornholt/
+
+employment:
+  - employer: University of Texas at Austin
+    job: Assistant Professor, Department of Computer Science
+    when: "2020--"
+    where: Austin, TX, USA
+
+  - employer: Amazon Web Services
+    job: Research Intern, Automated Reasoning Group, AWS Security
+    when: 2018
+    where: Seattle, WA, USA
+
+  - employer: Microsoft Research
+    job: Software Engineer
+    when: 2014
+    where: Canberra, Australia
+
+  - employer: Microsoft Research
+    job: Research Intern, Research in Software Engineering (RiSE) group
+    when: 2012
+    where: Seattle, WA, USA
+
+  - employer: Microsoft Research
+    job: Research Intern, Research in Software Engineering (RiSE) group
+    when: 2011
+    where: Seattle, WA, USA
+
+education:
+  - school: University of Washington
+    where: Seattle, WA, USA
+    degree: "Ph.D., Computer Science & Engineering"
+    when: 2019
+    notes:
+      - "Advisors: [Emina Torlak](https://homes.cs.washington.edu/~emina/), [Dan Grossman](https://homes.cs.washington.edu/~djg/), [Luis Ceze](https://homes.cs.washington.edu/~luisceze/)"
+      - "Thesis: Optimizing the Automated Programming Stack"
+
+  - school: University of Washington
+    where: Seattle, WA, USA
+    degree: "M.S., Computer Science & Engineering"
+    when: 2016
+
+  - school: Australian National University
+    where: Canberra, Australia
+    degree: "Bachelor of Philosophy with First Class Honours and the University Medal"
+    when: 2013
+    notes:
+      - "Advisor: [Steve Blackburn](http://users.cecs.anu.edu.au/~steveb/)"
+      - "Majors: Computer Science, Mathematics"
+
+teaching:
+  - school: University of Washington
+    course: CSE 507, Computer Aided Reasoning for Software
+    when: Winter 2017
+    role: Teaching Assistant
+
+  - school: University of Washington
+    course: CSE 507, Computer Aided Reasoning for Software
+    when: Spring 2016
+    role: Teaching Assistant
+
+awards:
+  - OOPSLA Distinguished Artifact Award, 2018
+  - Facebook Ph.D. Fellowship, 2018--2020
+  - IEEE Micro Top Picks from the Computer Architecture Conferences, for DNA storage, 2017
+  - OSDI Jay Lepreau Best Paper Award, 2016
+  - IEEE Micro Top Picks from the Computer Architecture Conferences, for Uncertain&lt;T&gt;, 2015
+  - ACM SIGPLAN Research Highlight, for Uncertain&lt;T&gt;, 2014
+  - David Notkin Endowed Graduate Fellowship, University of Washington, 2014--2015
+  - Second Place, ACM Student Research Competition Grand Finals (undergraduate), 2014
+  - ANU University Medal for Computer Science, 2013
+  - First Place, ACM PLDI Student Research Competition (undergraduate), 2013
+
+service:
+  pc:
+    - PLDI 2020 Program Committee
+    - ASPLOS 2020 External Review Committee
+    - FTfJP 2019 Program Committee
+    - PLDI 2017 External Review Committee
+    - CAV 2017 Artifact Evaluation Committee
+    - POPL 2016 Artifact Evaluation Committee
+    - PLDI 2015 Artifact Evaluation Committee
+
+  review:
+    - ASPLOS 2018
+    - IEEE Transactions on Emerging Topics in Computing, 2017
+    - CAV 2015
+    - ACM Transactions on Embedded Computing, 2015
+    - ASPLOS 2015
+
+  department:
+    - "Graduate Admissions Committee, University of Washington: 2017, 2018, 2019"
+    - "Prospective Student Committee Co-Chair, University of Washington: 2016"
+    - "Prospective Student Committee, University of Washington: 2015--2019"
+
+talks:
+  - title: "Optimizing the Automated Programming Stack"
+    events:
+      - date: 2019-04-25
+        where: University of Toronto
+        what: Invited Seminar
+      - date: 2019-04-18
+        where: Princeton University
+        what: Invited Seminar
+      - date: 2019-04-15
+        where: University of British Columbia
+        what: Invited Seminar
+      - date: 2019-04-08
+        where: École Polytechnique Fédérale de Lausanne
+        what: Invited Seminar
+      - date: 2019-04-02
+        where: University of Massachusetts Amherst
+        what: Invited Seminar
+      - date: 2019-03-27
+        where: Northeastern University
+        what: Invited Seminar
+      - date: 2019-03-18
+        where: Microsoft Research
+        what: Invited Seminar
+      - date: 2019-03-05
+        where: Georgia Tech
+        what: Invited Seminar
+      - date: 2019-02-28
+        where: University of California, Berkeley
+        what: Invited Seminar
+      - date: 2019-02-21
+        where: Brown University
+        what: Invited Seminar
+      - date: 2019-02-19
+        where: Carnegie Mellon University
+        what: Invited Seminar
+      - date: 2019-02-11
+        where: University of Maryland, College Park
+        what: Invited Seminar
+      - date: 2019-02-07
+        where: University of Texas at Austin
+        what: Invited Seminar
+      - date: 2019-01-29
+        where: Cornell University
+        what: Invited Seminar
+  
+  - title: "Finding Code That Explodes Under Symbolic Evaluation"
+    events:
+      - date: 2018-11-07
+        where: OOPSLA
+        what: Conference Talk
+      - date: 2018-06-21
+        where: Galois
+        what: Invited Talk
+
+  - title: "Ocelot: Relational Logic in a Solver-Aided Language"
+    events:
+      - date: 2018-04-30
+        where: Future of Alloy Workshop
+        what: Invited Talk
+  
+  - title: "Synthesizing Memory Models from Framework Sketches and Litmus Tests"
+    events:
+      - date: 2017-06-22
+        where: PLDI
+        what: Conference Talk
+
+  - title: "Programming with Estimates"
+    events:
+      - date: 2016-06-14
+        where: Programming Languages Mentoring Workshop
+        what: Invited Talk
+
+  - title: "Optimizing Synthesis with Metasketches"
+    events:
+      - date: 2016-01-21
+        where: POPL
+        what: Conference Talk
+      - date: 2015-12-02
+        where: "Dagstuhl Seminar 15491 (Approximate and Probabilistic Computing)"
+        what: Invited Talk
