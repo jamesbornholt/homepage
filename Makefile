@@ -1,5 +1,6 @@
 .PHONY: clean site deploy
 
+JEKYLL := bundle exec jekyll
 HOST := bornholt@tricycle.cs.washington.edu
 ROOT := public_html/website/
 RSYNC_ARGS := --compress --recursive --checksum --itemize-changes --delete --filter='- .DS_Store' -e ssh
@@ -8,8 +9,15 @@ clean:
 	rm -rf _site
 
 site:
-	bundle exec jekyll build
+	$(JEKYLL) build
 
 deploy: clean
-	bundle exec jekyll build
+	$(JEKYLL) build
 	rsync $(RSYNC_ARGS) _site/ $(HOST):$(ROOT)
+
+
+CHROME := /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
+
+cv:
+	$(JEKYLL) build -b $(shell pwd)/_site
+	$(CHROME) --headless --print-to-pdf=files/cv.pdf _site/cv.html
