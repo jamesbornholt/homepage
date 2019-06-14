@@ -86,8 +86,8 @@ a:hover {
 /* Icons (fontello.com) */
 @font-face {
     font-family: 'icons';
-    src: url('fonts/icons.woff2?20190612') format('woff2'),
-         url('fonts/icons.woff?20190612') format('woff');
+    src: url('fonts/icons.woff2?20190614') format('woff2'),
+         url('fonts/icons.woff?20190614') format('woff');
 }
 
 [class^="icon-"]:before, [class*=" icon-"]:before {
@@ -111,6 +111,7 @@ a:hover {
 .icon-pdf:before { content: '\f1c1'; }
 .icon-github:before { content: '\f09b'; }
 .icon-globe:before { content: '\e801'; }
+.icon-doc:before { content: '\f0f6'; }
 
 
 /* Page content */
