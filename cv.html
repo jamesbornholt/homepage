@@ -6,7 +6,10 @@ plain: true
 {% assign cv = site.data.cv %}
 
 <section id="cv-head">
-    <div id="cv-name"><h1>{{ cv.name }}</h1></div>
+    <div id="cv-name">
+        <h1>{{ cv.name }}</h1>
+        <p id="cv-pdf">view CV in <a href="files/cv.pdf">pdf</a></p>
+    </div>
     <div id="cv-contact">
         <p>
             <i class="icon-building"></i> {{ cv.contact.address}}<br />

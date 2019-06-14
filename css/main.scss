@@ -382,6 +382,10 @@ body.cv {
     }
 
     /* Header */
+    p#cv-pdf {
+        font-size: 70%;
+        color: #a3a3a3;
+    }
     section#cv-head {
         display: flex;
         flex-wrap: wrap;
@@ -536,6 +540,9 @@ body.cv {
         }
         p {
             break-inside: avoid;
+        }
+        p#cv-pdf {
+            display: none;
         }
     }
 }
