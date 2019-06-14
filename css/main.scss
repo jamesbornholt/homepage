@@ -516,3 +516,26 @@ body.cv {
         flex: 1;
     }
 }
+
+@media print {
+    @page {
+        margin: 0.4in;
+    }
+    body.cv {
+        font-size: 14px;
+        color: black;
+        orphans: 2;
+        a {
+            color: black;
+        }
+        #content {
+            max-width: none;
+        }
+        h1, h2, h3 {
+            break-after: avoid;
+        }
+        p {
+            break-inside: avoid;
+        }
+    }
+}
