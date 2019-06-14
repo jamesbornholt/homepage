@@ -9,7 +9,7 @@ contact:
 employment:
   - employer: University of Texas at Austin
     job: Assistant Professor, Department of Computer Science
-    when: "2020--"
+    when: "starting in 2020"
     where: Austin, TX, USA
 
   - employer: Amazon Web Services
@@ -18,18 +18,18 @@ employment:
     where: Seattle, WA, USA
 
   - employer: Microsoft Research
-    job: Software Engineer
+    job: Software Engineer, Research in Software Engineering (RiSE) group
     when: 2014
     where: Canberra, Australia
 
   - employer: Microsoft Research
     job: Research Intern, Research in Software Engineering (RiSE) group
-    when: 2012
+    when: 2012&ndash;2013
     where: Seattle, WA, USA
 
   - employer: Microsoft Research
     job: Research Intern, Research in Software Engineering (RiSE) group
-    when: 2011
+    when: 2011&ndash;2012
     where: Seattle, WA, USA
 
 education:
@@ -66,38 +66,70 @@ teaching:
     role: Teaching Assistant
 
 awards:
-  - OOPSLA Distinguished Artifact Award, 2018
-  - Facebook Ph.D. Fellowship, 2018--2020
-  - IEEE Micro Top Picks from the Computer Architecture Conferences, for DNA storage, 2017
-  - OSDI Jay Lepreau Best Paper Award, 2016
-  - IEEE Micro Top Picks from the Computer Architecture Conferences, for Uncertain&lt;T&gt;, 2015
-  - ACM SIGPLAN Research Highlight, for Uncertain&lt;T&gt;, 2014
-  - David Notkin Endowed Graduate Fellowship, University of Washington, 2014--2015
-  - Second Place, ACM Student Research Competition Grand Finals (undergraduate), 2014
-  - ANU University Medal for Computer Science, 2013
-  - First Place, ACM PLDI Student Research Competition (undergraduate), 2013
+  - what: OOPSLA Distinguished Artifact Award
+    when: 2018
+  - what: Facebook Ph.D. Fellowship
+    when: "2018&ndash;2020"
+  - what: IEEE Micro Top Picks from the Computer Architecture Conferences, for DNA storage
+    when: 2017
+  - what: OSDI Jay Lepreau Best Paper Award
+    when: 2016
+  - what: IEEE Micro Top Picks from the Computer Architecture Conferences, for Uncertain&lt;T&gt;
+    when: 2015
+  - what: ACM SIGPLAN Research Highlight, for Uncertain&lt;T&gt;
+    when: 2014
+  - what: David Notkin Endowed Graduate Fellowship, University of Washington
+    when: "2014&ndash;2015"
+  - what: Second Place, ACM Student Research Competition Grand Finals (undergraduate)
+    when: 2014
+  - what: First Place, ACM PLDI Student Research Competition (undergraduate)
+    when: 2013
+  - what: ANU University Medal for Computer Science
+    when: 2013
 
 service:
   pc:
-    - PLDI 2020 Program Committee
-    - ASPLOS 2020 External Review Committee
-    - FTfJP 2019 Program Committee
-    - PLDI 2017 External Review Committee
-    - CAV 2017 Artifact Evaluation Committee
-    - POPL 2016 Artifact Evaluation Committee
-    - PLDI 2015 Artifact Evaluation Committee
+    - what: Programming Languages Design and Implementation (PLDI)
+      role: Program Committee
+      when: 2020
+    - what: Architectural Support for Programming Languages and Operating Systems (ASPLOS)
+      role: External Review Committee
+      when: 2020
+    - what: Formal Techniques for Java-Like Programs (FTfJP)
+      role: Program Committee
+      when: 2019
+    - what: Programming Languages Design and Implementation (PLDI)
+      role: External Review Committee
+      when: 2017
+    - what: Computer-Aided Verification (CAV)
+      role: Artifact Evaluation Committee
+      when: 2017
+    - what: Principles of Programming Languages (POPL)
+      role: Artifact Evaluation Committee
+      when: 2016
+    - what: Programming Languages Design and Implementation (PLDI)
+      role: Artifact Evaluation Committee
+      when: 2015
 
   review:
-    - ASPLOS 2018
-    - IEEE Transactions on Emerging Topics in Computing, 2017
-    - CAV 2015
-    - ACM Transactions on Embedded Computing, 2015
-    - ASPLOS 2015
+    - what: Architectural Support for Programming Languages and Operating Systems (ASPLOS)
+      when: 2018
+    - what: IEEE Transactions on Emerging Topics in Computing
+      when: 2017
+    - what: Computer-Aided Verification (CAV)
+      when: 2015
+    - what: ACM Transactions on Embedded Computing
+      when: 2015
+    - what: Architectural Support for Programming Languages and Operating Systems (ASPLOS)
+      when: 2015
 
   department:
-    - "Graduate Admissions Committee, University of Washington: 2017, 2018, 2019"
-    - "Prospective Student Committee Co-Chair, University of Washington: 2016"
-    - "Prospective Student Committee, University of Washington: 2015--2019"
+    - what: Graduate Admissions Committee, University of Washington
+      when: 2017, 2018, 2019
+    - what: Prospective Student Committee Co-Chair, University of Washington
+      when: 2016
+    - what: Prospective Student Committee, University of Washington
+      when: "2015&ndash;2019"
 
 talks:
   - title: "Optimizing the Automated Programming Stack"
@@ -171,6 +203,21 @@ talks:
       - date: 2016-06-14
         where: Programming Languages Mentoring Workshop
         what: Invited Talk
+
+  - title: "Specifying and Checking File-System Crash Consistency Models"
+    events:
+      - date: 2016-07-25
+        where: DARPA BRASS PI Meeting
+        what: Invited Talk
+      - date: 2016-04-04
+        where: ASPLOS
+        what: Conference Talk
+
+  - title: "A DNA-Based Archival Storage System"
+    events:
+      - date: 2016-04-06
+        where: ASPLOS
+        what: Conference Talk
 
   - title: "Optimizing Synthesis with Metasketches"
     events:

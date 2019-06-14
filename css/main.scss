@@ -362,35 +362,157 @@ div.footnotes {
 /* CV */
 
 body.cv {
-section#cv-head {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-bottom: 2em;
-}
-section#cv-head h1 {
-    margin-top: 0;
-    margin: 0;
-}
-section#cv-head div#cv-contact {
-    display: block;
-    flex-grow: 1;
-    text-align: right;
-}
-section#cv-head p {
-    margin: 0;
-}
+    #content {
+        max-width: 38em;
+    }
 
-h2 {
-    border-bottom: 1px solid #d3d3d3;
-}
+    h2 {
+        border-bottom: 1px solid #d3d3d3;
+    }
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+    li {
+        list-style: none;
+    }
 
-ul {
-    padding: 0;
-}
+    section {
+        margin-bottom: 2em;
+    }
 
-li {
-    list-style: none;
-}
+    /* Header */
+    section#cv-head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    section#cv-head h1 {
+        margin-top: 0;
+        margin: 0;
+    }
+    section#cv-head div#cv-contact {
+        display: block;
+        flex-grow: 1;
+        text-align: right;
+    }
+    section#cv-head p {
+        margin: 0;
+    }
 
+    /* Employment */
+    section#cv-employment li {
+        margin-bottom: 1rem;
+    }
+    section#cv-employment li div {
+        display: flex;
+    }
+    section#cv-employment p {
+        margin-bottom: 0;
+    }
+    section#cv-employment p.cv-employer,
+    section#cv-employment p.cv-job {
+        flex: 1;
+    }
+    section#cv-employment p.cv-employer {
+        font-weight: 600;
+    }
+    
+    /* Education */
+    section#cv-education li {
+        margin-bottom: 1rem;
+    }
+    section#cv-education li div {
+        display: flex;
+    }
+    section#cv-education p {
+        margin-bottom: 0;
+    }
+    section#cv-education p.cv-school,
+    section#cv-education p.cv-degree {
+        flex: 1;
+    }
+    section#cv-education p.cv-school {
+        font-weight: 600;
+    }
+    section#cv-education li ul {
+        padding-left: 1rem;
+    }
+    section#cv-education li ul li {
+        list-style: disc;
+        margin-bottom: 0;
+    }
+
+    /* Papers */
+
+    /* Awards */
+    section#cv-awards li {
+        margin-bottom: 0.3rem;
+    }
+    section#cv-awards li div {
+        display: flex;
+    }
+    section#cv-awards p {
+        margin-bottom: 0;
+    }
+    section#cv-awards p.cv-award {
+        flex: 1;
+    }
+
+    /* Teaching */
+    section#cv-teaching li {
+        margin-bottom: 1rem;
+    }
+    section#cv-teaching li div {
+        display: flex;
+    }
+    section#cv-teaching p {
+        margin-bottom: 0;
+    }
+    section#cv-teaching p.cv-course,
+    section#cv-teaching p.cv-role {
+        flex: 1;
+    }
+    section#cv-teaching p.cv-course {
+        font-weight: 600;
+    }
+
+    /* Service */
+    section#cv-service li {
+        margin-bottom: 0.3rem;
+    }
+    section#cv-service li div {
+        display: flex;
+    }
+    section#cv-service p {
+        margin-bottom: 0;
+    }
+    section#cv-service p.cv-what {
+        flex: 1;
+    }
+
+    /* Presentations */
+    section#cv-presentations h3 {
+        font-size: 100%;
+        margin: 0;
+        margin-bottom: 0.3rem;
+        border-bottom: 1px dotted #d3d3d3;
+        font-style: italic;
+        font-weight: 400;
+    }
+    section#cv-presentations li.cv-talk {
+        margin-bottom: 1rem;
+    }
+    section#cv-presentations li.cv-event {
+        margin-bottom: 0.3rem;
+    }
+    section#cv-presentations li div {
+        display: flex;
+    }
+    section#cv-presentations p {
+        margin-bottom: 0;
+    }
+    section#cv-presentations p.cv-what {
+        flex: 1;
+    }
 }

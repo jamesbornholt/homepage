@@ -21,10 +21,14 @@ plain: true
     <ul>
     {% for job in cv.employment %}
         <li>
-            {{ job.employer }}<br />
-            {{ job.job }}<br />
-            {{ job.where }}<br />
-            {{ job.when }}
+            <div>
+                <p class="cv-employer">{{ job.employer }}</p>
+                <p class="cv-where">{{ job.where }}</p>
+            </div>
+            <div>
+                <p class="cv-job">{{ job.job }}</p>
+                <p class="cv-when">{{ job.when }}</p>
+            </div>
         </li>
     {% endfor %}
     </ul>
@@ -35,10 +39,14 @@ plain: true
     <ul>
     {% for degree in cv.education %}
         <li>
-            {{ degree.school }}<br />
-            {{ degree.where }}<br />
-            {{ degree.when }}<br />
-            {{ degree.degree }}<br />
+            <div>
+                <p class="cv-school">{{ degree.school }}</p>
+                <p class="cv-where">{{ degree.where }}</p>
+            </div>
+            <div>
+                <p class="cv-degree">{{ degree.degree }}</p>
+                <p class="cv-when">{{ degree.when }}</p>
+            </div>
             {% if degree.notes %}
             <ul>
                 {% for n in degree.notes %}
@@ -103,7 +111,12 @@ plain: true
     <h2>Awards</h2>
     <ul>
     {% for a in cv.awards %}
-        <li>{{ a | markdownify }}</li>
+        <li>
+            <div>
+                <p class="cv-award">{{ a.what }}</p>
+                <p class="cv-when">{{ a.when }}</p>
+            </div>
+        </li>
     {% endfor %}
     </ul>
 </section>
@@ -113,10 +126,14 @@ plain: true
     <ul>
     {% for c in cv.teaching %}
         <li>
-            {{ c.course }}<br />
-            {{ c.school }}<br />
-            {{ c.when }}<br />
-            {{ c.role }}
+            <div>
+                <p class="cv-course">{{ c.course }}</p>
+                <p class="cv-school">{{ c.school }}</p>
+            </div>
+            <div>
+                <p class="cv-role">{{ c.role }}</p>
+                <p class="cv-when">{{ c.when }}</p>
+            </div>
         </li>
     {% endfor %}
     </ul>
@@ -128,21 +145,36 @@ plain: true
     <h3>Review Committees</h3>
     <ul>
     {% for c in cv.service.pc %}
-        <li>{{ c | markdownify }}</li>
+        <li>
+            <div>
+                <p class="cv-what">{{ c.what }} &mdash; {{ c.role }}</p>
+                <p class="cv-when">{{ c.when }}</p>
+            </div>
+        </li>
     {% endfor %}
     </ul>
 
     <h3>External Reviewing</h3>
     <ul>
     {% for c in cv.service.review %}
-        <li>{{ c | markdownify }}</li>
+        <li>
+            <div>
+                <p class="cv-what">{{ c.what }}</p>
+                <p class="cv-when">{{ c.when }}</p>
+            </div>
+        </li>
     {% endfor %}
     </ul>
 
     <h3>Department Service</h3>
     <ul>
     {% for c in cv.service.department %}
-        <li>{{ c | markdownify }}</li>
+        <li>
+            <div>
+                <p class="cv-what">{{ c.what }}</p>
+                <p class="cv-when">{{ c.when }}</p>
+            </div>
+        </li>
     {% endfor %}
     </ul>
 </section>
@@ -150,16 +182,21 @@ plain: true
 <section id="cv-presentations">
     <h2>Presentations and Seminars</h2>
 
-    {% for t in cv.talks %}
-    <h3>{{ t.title }}</h3>
     <ul>
-        {% for e in t.events %}
-        <li>
-            {{ e.date | date: "%b %Y" }}<br />
-            {{ e.where }}<br />
-            {{ e.what }}
+        {% for t in cv.talks %}
+        <li class="cv-talk">
+            <h3>{{ t.title }}</h3>
+            <ul>
+                {% for e in t.events %}
+                <li class="cv-event">
+                    <div>
+                        <p class="cv-what">{{ e.where }}, {{ e.what }}</p>
+                        <p class="cv-when">{{ e.date | date: "%b %Y" }}</p>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
         </li>
         {% endfor %}
     </ul>
-    {% endfor %}
 </section>
