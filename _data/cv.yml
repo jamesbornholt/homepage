@@ -48,11 +48,11 @@ education:
 
   - school: Australian National University
     where: Canberra, Australia
-    degree: "Bachelor of Philosophy with First Class Honours and the University Medal"
+    degree: "Bachelor of Philosophy (Honours)"
     when: 2013
     notes:
       - "Advisor: [Steve Blackburn](http://users.cecs.anu.edu.au/~steveb/)"
-      - "Majors: Computer Science, Mathematics"
+      - "First Class Honours and the University Medal in Computer Science"
 
 teaching:
   - school: University of Washington
@@ -125,7 +125,7 @@ service:
 
   department:
     - what: Graduate Admissions Committee, University of Washington
-      when: 2017, 2018, 2019
+      when: "2017&ndash;2019"
     - what: Prospective Student Committee Co-Chair, University of Washington
       when: 2016
     - what: Prospective Student Committee, University of Washington
