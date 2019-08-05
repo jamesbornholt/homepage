@@ -1,3 +1,11 @@
+- title: "Serval: Scaling Symbolic Evaluation for Automated Verification of Systems Code"
+  authors: "Luke Nelson, James Bornholt, Ronghui Gu, Andrew Baumann, Emina Torlak, and Xi Wang"
+  type: conference
+  venue: "SOSP 2019"
+  venue_url: "https://sosp19.rcs.uwaterloo.ca/"
+  links:
+    - text: "To appear."
+
 - title: "Finding Code That Explodes Under Symbolic Evaluation"
   authors: "James Bornholt and Emina Torlak"
   type: conference

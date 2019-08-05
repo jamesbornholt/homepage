@@ -9,7 +9,7 @@ contact:
 employment:
   - employer: University of Texas at Austin
     job: Assistant Professor, Department of Computer Science
-    when: "starting in 2020"
+    when: "2020&ndash;"
     where: Austin, TX, USA
 
   - employer: Amazon Web Services
