@@ -147,7 +147,7 @@ a:hover {
 
 /* Header */
 #header-container {
-    border-bottom: 1px solid #455286;
+    border-bottom: 1px solid #435082;
 }
 #header {
     padding: 1em 1em 0 1em;
@@ -156,7 +156,7 @@ a:hover {
     margin-right: auto;
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
 }
 @supports(padding: unquote('max(0px)')) {
     #header {
@@ -201,7 +201,7 @@ a:hover {
 }
 /* spacing only on homepage */
 body.index div#header-content {
-    padding-top: 1em;
+
 }    
 
 
