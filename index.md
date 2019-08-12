@@ -2,6 +2,9 @@
 layout: home
 ---
 
+**In Autumn 2020 I will join the [University of Texas at Austin][utcs]
+as an Assistant Professor of Computer Science.**
+
 I'm a fifth (and final) year PhD candidate in the [PLSE][] and [UNSAT][] groups at the [University of Washington][uw],
 advised by [Emina Torlak][emina], [Dan Grossman][djg], and [Luis Ceze][luisceze].
 
@@ -17,9 +20,6 @@ I have a masters from UW and a bachelors from the [Australian National Universit
 I've also spent time at [Microsoft Research][msr] and [Amazon Web Services][aws].
 I'm grateful to be supported by a [Facebook PhD Fellowship][fb].
 
-> I'm on the faculty job market this year!
-{:.callout}
-
 [plse]: https://uwplse.org
 [unsat]: https://unsat.org
 [uw]: https://www.cs.washington.edu
@@ -34,3 +34,4 @@ I'm grateful to be supported by a [Facebook PhD Fellowship][fb].
 [sympro]: https://unsat.cs.washington.edu/projects/sympro/
 [ferrite]: https://sandcat.cs.washington.edu/ferrite/
 [memsynth]: http://memsynth.uwplse.org
+[utcs]: https://cs.utexas.edu
