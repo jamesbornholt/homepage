@@ -2,18 +2,23 @@ name: James Bornholt
 
 contact:
   address: |
-    Box 352350, Seattle, WA 98195-2350
-  email: bornholt@cs.washington.edu
-  website: https://homes.cs.washington.edu/~bornholt/
+    2317 Speedway, Stop D9500, Austin, TX 78712-1757
+  email: bornholt@cs.utexas.edu
+  website: https://www.cs.utexas.edu/~bornholt/
 
 employment:
   - employer: University of Texas at Austin
     job: Assistant Professor, Department of Computer Science
-    when: "2020&ndash;"
+    when: "2019&ndash;"
     where: Austin, TX, USA
 
   - employer: Amazon Web Services
-    job: Research Intern, Automated Reasoning Group, AWS Security
+    job: Applied Scientist, Automated Reasoning Group
+    when: "2019&ndash;"
+    where: Seattle, WA, USA
+
+  - employer: Amazon Web Services
+    job: Research Intern, Automated Reasoning Group
     when: 2018
     where: Seattle, WA, USA
 
@@ -134,6 +139,9 @@ service:
 talks:
   - title: "Optimizing the Automated Programming Stack"
     events:
+      - date: 2019-07-09
+        where: Australian National University
+        what: Invited Talk
       - date: 2019-04-25
         where: University of Toronto
         what: Invited Seminar
@@ -156,7 +164,7 @@ talks:
         where: Microsoft Research
         what: Invited Seminar
       - date: 2019-03-05
-        where: Georgia Tech
+        where: Georgia Institute of Technology
         what: Invited Seminar
       - date: 2019-02-28
         where: University of California, Berkeley
