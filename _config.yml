@@ -1,13 +1,13 @@
 # Basic stuff
 title: James Bornholt
 description: >
-  I’m a fifth-year computer science PhD candidate
-  in programming languages and formal methods
-  at the University of Washington.
+  I’m an assistant professor of computer science
+  at the University of Texas at Austin,
+  specializing in programming languages and formal methods.
 
 # URLs
 baseurl: "/~bornholt"
-url: "https://homes.cs.washington.edu"
+url: "https://www.cs.utexas.edu"
 permalink: /post/:title.html
 
 # Version
