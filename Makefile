@@ -1,8 +1,8 @@
 .PHONY: clean site deploy
 
 JEKYLL := bundle exec jekyll
-HOST := bornholt@tricycle.cs.washington.edu
-ROOT := public_html/website/
+HOST := bornholt@linux.cs.utexas.edu
+ROOT := public_html/homepage/
 RSYNC_ARGS := --compress --recursive --checksum --itemize-changes --delete --filter='- .DS_Store' -e ssh
 
 clean:
