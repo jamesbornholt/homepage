@@ -3,7 +3,7 @@
 JEKYLL := bundle exec jekyll
 HOST := bornholt@linux.cs.utexas.edu
 ROOT := public_html/homepage/
-RSYNC_ARGS := --compress --recursive --checksum --itemize-changes --delete --filter='- .DS_Store' -e ssh
+RSYNC_ARGS := --compress --chmod=u=rwx,og=rx --perms --recursive --checksum --itemize-changes --delete --filter='- .DS_Store' -e ssh
 
 clean:
 	rm -rf _site
