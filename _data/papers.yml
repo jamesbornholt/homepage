@@ -314,14 +314,24 @@
       url: "papers/energy-hotchips12.poster.pdf"
 
 
+- title: "Optimizing the Automated Programming Stack"
+  authors: "James Bornholt"
+  type: thesis
+  url: "papers/thesis-phd19.pdf"
+  extra: "PhD thesis, University of Washington, 2019."
+  links:
+    - text: "Thesis"
+      url: "papers/thesis-phd19.pdf"
+    - text: "Slides"
+      url: "papers/thesis-phd19.slides.pdf"
 
 - title: "Abstractions and Techniques for Programming with Uncertain Data"
   authors: "James Bornholt"
   type: thesis
-  url: "papers/thesis13.pdf"
+  url: "papers/thesis-hons13.pdf"
   extra: "Honours thesis, Bachelor of Philosophy (Honours), Australian National University, 2013."
   links:
     - text: "Thesis"
-      url: "papers/thesis13.pdf"
+      url: "papers/thesis-hons13.pdf"
     - text: "Slides"
-      url: "papers/thesis13.slides.pdf"
+      url: "papers/thesis-hons13.slides.pdf"
