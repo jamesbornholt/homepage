@@ -88,6 +88,7 @@ a:hover {
     font-family: 'icons';
     src: url('fonts/icons.woff2?20190614') format('woff2'),
          url('fonts/icons.woff?20190614') format('woff');
+    font-display: fallback;
 }
 
 [class^="icon-"]:before, [class*=" icon-"]:before {
@@ -216,7 +217,7 @@ div.blog-post:last-of-type {
 }
 div.blog-date {
     font-size: 80%;
-    color: #777777;
+    color: #666666;
     text-align: left;
     line-height: 1.2;
 }
