@@ -355,7 +355,7 @@ div.footnotes {
 
 /* CV */
 
-body.cv {
+body.cv, body.cv-2p {
     #content {
         max-width: 38em;
     }
@@ -524,7 +524,7 @@ body.cv {
     @page {
         margin: 0.4in;
     }
-    body.cv {
+    body.cv, body.cv-2p {
         font-size: 14px;
         color: black;
         orphans: 2;
