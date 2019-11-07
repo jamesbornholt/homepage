@@ -1,9 +1,26 @@
+- title: "Automatic Generation of High-Performance Quantized Machine Learning Kernels"
+  authors: "Meghan Cowan, Thierry Moreau, Tianqi Chen, James Bornholt, and Luis Ceze"
+  type: conference
+  venue: "CGO 2020"
+  venue_url: "https://cgo-conference.github.io/cgo2020/"
+  links:
+    - text: "To appear."
+
+- title: "Fixing Code That Explodes Under Symbolic Evaluation"
+  authors: "Sorawee Porncharoenwase, James Bornholt, and Emina Torlak"
+  type: conference
+  venue: "VMCAI 2020"
+  venue_url: "https://popl20.sigplan.org/home/VMCAI-2020"
+  links:
+    - text: "To appear."
+
 - title: "Scaling Symbolic Evaluation for Automated Verification of Systems Code with Serval"
   authors: "Luke Nelson, James Bornholt, Ronghui Gu, Andrew Baumann, Emina Torlak, and Xi Wang"
   type: conference
   venue: "SOSP 2019"
   venue_url: "https://sosp19.rcs.uwaterloo.ca/"
   url: "papers/serval-sosp19.pdf"
+  extra: "<b>Best Paper Award</b>. <b>Distinguished Artifact Award</b>."
   links:
     - text: "Paper (PDF)"
       url: "papers/serval-sosp19.pdf"

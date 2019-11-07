@@ -13,12 +13,12 @@ function enableMailto() {
 function highlightRosette() {
     // hack to highlight rosette code
     var keywords = ["define-symbolic", "solve", "assert", "synthesize"];
-    var elts = document.querySelectorAll(".n");
+    var elts = document.querySelectorAll(".nf");
     for (var i = 0; i < elts.length; i++) {
         var txt = elts[i].innerHTML;
         for (var j = 0; j < keywords.length; j++) {
             if (txt.indexOf(keywords[j]) > -1) {
-                elts[i].classList.remove("n");
+                elts[i].classList.remove("nf");
                 elts[i].classList.add("k");
                 break;
             }

@@ -18,7 +18,6 @@ css_version: 20181213
 markdown: kramdown
 kramdown:
   input: GFM
-highlighter: pygments
 
 
 # Build settings
