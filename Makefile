@@ -14,6 +14,7 @@ site:
 deploy: clean
 	$(JEKYLL) build
 	rsync $(RSYNC_ARGS) _site/ $(HOST):$(ROOT)
+	ssh $(HOST) 'find $(ROOT) -type d -exec chmod 0755 {} \; ; find $(ROOT) -type f -exec chmod 0644 {} \;'
 
 
 CHROME := /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
