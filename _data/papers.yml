@@ -11,8 +11,12 @@
   type: conference
   venue: "VMCAI 2020"
   venue_url: "https://popl20.sigplan.org/home/VMCAI-2020"
+  url: "papers/symfix-vmcai20.pdf"
   links:
-    - text: "To appear."
+    - text: "Paper (PDF)"
+      url: "papers/symfix-vmcai20.pdf"
+    - text: "Project Homepage"
+      url: "https://unsat.cs.washington.edu/projects/sympro/"
 
 - title: "Scaling Symbolic Evaluation for Automated Verification of Systems Code with Serval"
   authors: "Luke Nelson, James Bornholt, Ronghui Gu, Andrew Baumann, Emina Torlak, and Xi Wang"

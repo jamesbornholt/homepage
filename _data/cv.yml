@@ -100,6 +100,9 @@ service:
     - what: Architectural Support for Programming Languages and Operating Systems (ASPLOS)
       role: External Review Committee
       when: 2020
+    - what: Principles and Practice of Parallel Programming (PPoPP)
+      role: Brief Announcements Program Committee
+      when: 2020
     - what: Formal Techniques for Java-Like Programs (FTfJP)
       role: Program Committee
       when: 2019
@@ -137,6 +140,12 @@ service:
       when: "2015&ndash;2019"
 
 talks:
+  - title: "Synthesizing System Specifications"
+    events:
+      - date: 2019-09-19
+        where: State of the Art in Program Synthesis
+        what: Invited Talk
+
   - title: "Optimizing the Automated Programming Stack"
     events:
       - date: 2019-07-09
@@ -187,6 +196,9 @@ talks:
   
   - title: "Finding Code That Explodes Under Symbolic Evaluation"
     events:
+      - date: 2019-11-15
+        where: University of California, Santa Cruz
+        what: Guest Lecture
       - date: 2018-11-07
         where: OOPSLA
         what: Conference Talk
