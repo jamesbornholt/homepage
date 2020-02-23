@@ -97,6 +97,9 @@ service:
     - what: Programming Languages Design and Implementation (PLDI)
       role: Program Committee
       when: 2020
+    - what: Object-Oriented Programming, Systems, Languages, and Applications (OOPSLA)
+      role: Review Committee
+      when: 2020
     - what: Architectural Support for Programming Languages and Operating Systems (ASPLOS)
       role: External Review Committee
       when: 2020
