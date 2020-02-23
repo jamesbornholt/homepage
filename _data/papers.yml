@@ -3,8 +3,12 @@
   type: conference
   venue: "CGO 2020"
   venue_url: "https://cgo-conference.github.io/cgo2020/"
+  url: "papers/quantized-cgo20.pdf"
   links:
-    - text: "To appear."
+    - text: "Paper (PDF)"
+      url: "papers/quantized-cgo20.pdf"
+    - text: "Artifact"
+      url: "https://github.com/cowanmeg/cgo-artifact-2020"
 
 - title: "Fixing Code That Explodes Under Symbolic Evaluation"
   authors: "Sorawee Porncharoenwase, James Bornholt, and Emina Torlak"
@@ -17,6 +21,8 @@
       url: "papers/symfix-vmcai20.pdf"
     - text: "Project Homepage"
       url: "https://unsat.cs.washington.edu/projects/sympro/"
+    - text: "Code"
+      url: "https://github.com/uw-unsat/symfix-vmcai20"
 
 - title: "Scaling Symbolic Evaluation for Automated Verification of Systems Code with Serval"
   authors: "Luke Nelson, James Bornholt, Ronghui Gu, Andrew Baumann, Emina Torlak, and Xi Wang"
