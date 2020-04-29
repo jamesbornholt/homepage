@@ -1,3 +1,15 @@
+- title: "A Synthesis-Aided Compiler for DSP Architectures"
+  authors: "Alexa VanHattum, Rachit Nigam, Vincent T. Lee, James Bornholt, and Adrian Sampson"
+  type: conference
+  venue: "LCTES 2020"
+  venue_url: "https://conf.researchr.org/home/LCTES-2020"
+  url: "papers/diospyros-lctes20.pdf"
+  links:
+    - text: "Paper (PDF)"
+      url: "papers/diospyros-lctes20.pdf"
+    - text: "Code"
+      url: "https://github.com/cucapra/diospyros"
+
 - title: "Automatic Generation of High-Performance Quantized Machine Learning Kernels"
   authors: "Meghan Cowan, Thierry Moreau, Tianqi Chen, James Bornholt, and Luis Ceze"
   type: conference
