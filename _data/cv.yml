@@ -13,7 +13,7 @@ employment:
     where: Austin, TX, USA
 
   - employer: Amazon Web Services
-    job: Applied Scientist, Automated Reasoning Group
+    job: Senior Applied Scientist, Automated Reasoning Group
     when: "2019&ndash;"
     where: Seattle, WA, USA
 
@@ -71,6 +71,8 @@ teaching:
     role: Teaching Assistant
 
 awards:
+  - what: SOSP Best Paper Award
+    when: 2019
   - what: OOPSLA Distinguished Artifact Award
     when: 2018
   - what: Facebook Ph.D. Fellowship
@@ -94,6 +96,9 @@ awards:
 
 service:
   pc:
+    - what: Architectural Support for Programming Languages and Operating Systems (ASPLOS)
+      role: Program Committee
+      when: 2021
     - what: Programming Languages Design and Implementation (PLDI)
       role: Program Committee
       when: 2020

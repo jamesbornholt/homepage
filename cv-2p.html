@@ -71,25 +71,6 @@ title: CV
         {% endif %}
     {% endfor %}
     </ul>
-<!--
-    <h3>Journal Papers</h3>
-    <ul>
-    {% for paper in site.data.papers %}
-        {% if paper.type == 'journal' %}
-            <li>{% include paper-cv.html paper=paper %}</li>
-        {% endif %}
-    {% endfor %}
-    </ul>
-
-    <h3>Workshop Papers</h3>
-    <ul>
-    {% for paper in site.data.papers %}
-        {% if paper.type == 'workshop' %}
-            <li>{% include paper-cv.html paper=paper %}</li>
-        {% endif %}
-    {% endfor %}
-    </ul>
--->
 </section>
 
 <section id="cv-awards">
@@ -106,26 +87,6 @@ title: CV
     </ul>
 </section>
 
-<!--
-<section id="cv-teaching">
-    <h2>Teaching</h2>
-    <ul>
-    {% for c in cv.teaching %}
-        <li>
-            <div>
-                <p class="cv-course">{{ c.course }}</p>
-                <p class="cv-school">{{ c.school }}</p>
-            </div>
-            <div>
-                <p class="cv-role">{{ c.role }}</p>
-                <p class="cv-when">{{ c.when }}</p>
-            </div>
-        </li>
-    {% endfor %}
-    </ul>
-</section>
--->
-
 <section id="cv-service">
     <h2>Service</h2>
 
@@ -140,30 +101,4 @@ title: CV
         </li>
     {% endfor %}
     </ul>
-
-    <h3>External Reviewing</h3>
-    <ul>
-    {% for c in cv.service.review %}
-        <li>
-            <div>
-                <p class="cv-what">{{ c.what }}</p>
-                <p class="cv-when">{{ c.when }}</p>
-            </div>
-        </li>
-    {% endfor %}
-    </ul>
-
-<!--
-    <h3>Department Service</h3>
-    <ul>
-    {% for c in cv.service.department %}
-        <li>
-            <div>
-                <p class="cv-what">{{ c.what }}</p>
-                <p class="cv-when">{{ c.when }}</p>
-            </div>
-        </li>
-    {% endfor %}
-    </ul>
--->
 </section>

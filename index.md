@@ -2,9 +2,9 @@
 layout: home
 ---
 
-**In Autumn 2020 I will join the [University of Texas at Austin][utcs]
-as an Assistant Professor of Computer Science.**
-I'm currently an Applied Scientist
+I'm an Assistant Professor of Computer Science
+at the [University of Texas at Austin][utcs],
+and a Senior Applied Scientist
 in the [Automated Reasoning Group][arg]
 at Amazon Web Services.
 
