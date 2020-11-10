@@ -110,11 +110,11 @@ for the expressions we're interested in.
 #### Semantics
 Now that we know what programs in our DSL look like, we need to say what they mean. To do so, we'll implement a simple *interpreter* for programs in our DSL. The interpreter takes as input a program, performs the computations that program describes, and returns the output value. For example, we'd expect the above program to return 52.
 
-Our little interpreter just recurses on the syntax using Racket's [pattern matching][pattern]:
+Our little interpreter just recurses on the syntax using Rosette's [pattern matching][pattern]:
 
 {% highlight racket %}
 (define (interpret p)
-  (match p
+  (destruct p
     [(plus a b)  (+ (interpret a) (interpret b))]
     [(mul a b)   (* (interpret a) (interpret b))]
     [(square a)  (expt (interpret a) 2)]
@@ -378,7 +378,7 @@ but it's still early in the quest to make automated reasoning accessible to ever
 [bagpipe]: http://bagpipe.uwplse.org/bagpipe/
 [rulesynth]: http://homes.cs.washington.edu/~emina/pubs/rulesynth.its16.pdf
 [structures]: https://docs.racket-lang.org/guide/define-struct.html#%28part._.Simple_.Structure_.Types__struct%29
-[pattern]: https://docs.racket-lang.org/guide/match.html
+[pattern]: https://docs.racket-lang.org/rosette-guide/sec_utility-libs.html?q=destruct#%28form._%28%28lib._rosette%2Flib%2Fdestruct..rkt%29._destruct%29%29
 [rosetteessentials]: http://emina.github.io/rosette/rosette-guide/ch_essentials.html
 [adrian]: https://cs.cornell.edu/~asampson/
 [adrianintro]: https://www.cs.cornell.edu/~asampson/blog/minisynth.html
