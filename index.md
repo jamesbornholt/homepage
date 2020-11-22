@@ -3,10 +3,7 @@ layout: home
 ---
 
 I'm an Assistant Professor of Computer Science
-at the [University of Texas at Austin][utcs],
-and a Senior Applied Scientist
-in the [Automated Reasoning Group][arg]
-at Amazon Web Services.
+at the [University of Texas at Austin][utcs].
 
 I work on programming languages and formal methods.
 My research helps programmers build more reliable software using
@@ -20,6 +17,9 @@ I received my PhD in 2019 from the [University of Washington][uw],
 where I was advised by [Emina Torlak][emina], [Dan Grossman][djg], and [Luis Ceze][luisceze],
 and a member of the [UNSAT][] and [PLSE] groups.
 I also have a masters from UW and a bachelors from the [Australian National University][anu].
+Before starting at UT, I was a Senior Applied Scientist
+in the [Automated Reasoning Group][arg]
+at Amazon Web Services.
 
 [plse]: https://uwplse.org
 [unsat]: https://unsat.org

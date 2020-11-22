@@ -14,7 +14,7 @@ employment:
 
   - employer: Amazon Web Services
     job: Senior Applied Scientist, Automated Reasoning Group
-    when: "2019&ndash;"
+    when: "2019&ndash;2021"
     where: Seattle, WA, USA
 
   - employer: Amazon Web Services
@@ -60,6 +60,11 @@ education:
       - "First Class Honours and the University Medal in Computer Science"
 
 teaching:
+  - school: University of Texas at Austin
+    course: CS 395T, Systems Verification and Synthesis
+    when: Spring 2021
+    role: Instructor
+  
   - school: University of Washington
     course: CSE 507, Computer Aided Reasoning for Software
     when: Winter 2017

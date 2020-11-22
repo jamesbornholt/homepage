@@ -1,3 +1,11 @@
+- title: "Vectorization for Digital Signal Processors via Equality Saturation"
+  authors: "Alexa VanHattum, Rachit Nigam, Vincent T. Lee, James Bornholt, and Adrian Sampson"
+  type: conference
+  venue: "ASPLOS 2021"
+  venue_url: "https://asplos-conference.org/"
+  links:
+    - text: "To appear."
+
 - title: "A Synthesis-Aided Compiler for DSP Architectures"
   authors: "Alexa VanHattum, Rachit Nigam, Vincent T. Lee, James Bornholt, and Adrian Sampson"
   type: conference
