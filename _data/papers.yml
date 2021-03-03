@@ -3,6 +3,7 @@
   type: conference
   venue: "ASPLOS 2021"
   venue_url: "https://asplos-conference.org/"
+  url: "papers/diospyros-asplos21.pdf"
   links:
     - text: "Paper (PDF)"
       url: "papers/diospyros-asplos21.pdf"

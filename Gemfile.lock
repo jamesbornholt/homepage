@@ -69,7 +69,7 @@ DEPENDENCIES
   rouge
 
 RUBY VERSION
-   ruby 2.6.3p62
+   ruby 3.0.0p0
 
 BUNDLED WITH
-   2.1.4
+   2.2.3
