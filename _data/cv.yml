@@ -46,7 +46,7 @@ education:
   - school: University of Washington
     where: Seattle, WA, USA
     degree: "Ph.D., Computer Science & Engineering"
-    when: 2019
+    when: "2014&ndash;2019"
     notes:
       - "Advisors: [Emina Torlak](https://homes.cs.washington.edu/~emina/), [Dan Grossman](https://homes.cs.washington.edu/~djg/), [Luis Ceze](https://homes.cs.washington.edu/~luisceze/)"
       - "Thesis: Optimizing the Automated Programming Stack"
@@ -59,7 +59,7 @@ education:
   - school: Australian National University
     where: Canberra, Australia
     degree: "Bachelor of Philosophy (Honours)"
-    when: 2013
+    when: "2010&ndash;2013"
     notes:
       - "Advisor: [Steve Blackburn](http://users.cecs.anu.edu.au/~steveb/)"
       - "First Class Honours and the University Medal in Computer Science"
