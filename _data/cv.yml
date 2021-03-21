@@ -9,11 +9,16 @@ contact:
 employment:
   - employer: University of Texas at Austin
     job: Assistant Professor, Department of Computer Science
-    when: "2019&ndash;"
+    when: "2021&ndash;"
+    where: Austin, TX, USA
+  
+  - employer: Amazon Web Services
+    job: Visiting Academic
+    when: "2021&ndash;"
     where: Austin, TX, USA
 
   - employer: Amazon Web Services
-    job: Senior Applied Scientist, Automated Reasoning Group
+    job: Senior Applied Scientist, S3
     when: "2019&ndash;2021"
     where: Seattle, WA, USA
 
@@ -101,6 +106,12 @@ awards:
 
 service:
   pc:
+    - what: Object-Oriented Programming, Systems, Languages, and Applications (OOPSLA)
+      role: External Review Committee
+      when: 2021
+    - what: Operating Systems Design and Implementation (OSDI)
+      role: Program Committee
+      when: 2021
     - what: Architectural Support for Programming Languages and Operating Systems (ASPLOS)
       role: Program Committee
       when: 2021
@@ -153,6 +164,12 @@ service:
       when: "2015&ndash;2019"
 
 talks:
+  - title: "Program Synthesis in the Small"
+    events:
+      - date: 2020-10-09
+        where: Purdue University
+        what: Invited Talk
+
   - title: "Synthesizing System Specifications"
     events:
       - date: 2019-09-19

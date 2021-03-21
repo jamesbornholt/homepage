@@ -6,3 +6,5 @@ gem "jekyll"
 gem "rouge"
 
 gem "pygments.rb"
+
+gem "webrick", "~> 1.7"
