@@ -10,6 +10,17 @@
     - text: "Code"
       url: "https://github.com/cucapra/diospyros"
 
+- title: "Noninterference Specifications for Secure Systems"
+  authors: "Luke Nelson, James Bornholt, Arvind Krishnamurthy, Emina Torlak, and Xi Wang"
+  type: journal
+  venue: "ACM SIGOPS Operating Systems Review"
+  volume: "vol. 54, no. 1, pp. 31–39, July 2020"
+  url: "papers/ni-osr20.pdf"
+  venue_url: "https://dl.acm.org/toc/sigops/2020/54/1"
+  links:
+    - text: "Paper (PDF)"
+      url: "papers/ni-osr20.pdf"
+
 - title: "A Synthesis-Aided Compiler for DSP Architectures"
   authors: "Alexa VanHattum, Rachit Nigam, Vincent T. Lee, James Bornholt, and Adrian Sampson"
   type: conference
@@ -237,7 +248,7 @@
   authors: "Thierry Moreau, Joshua San Miguel, Mark Wyse, James Bornholt, Armin Alaghi, Luis Ceze, Natalie Enright Jerger, and Adrian Sampson"
   type: journal
   venue: "IEEE Embedded Systems Letters"
-  volume: "vol. 10, no. 1, pp. 2–5"
+  volume: "vol. 10, no. 1, pp. 2–5, March 2018"
   url: "http://ieeexplore.ieee.org/document/8054698/"
   venue_url: "http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4563995"
   links:
