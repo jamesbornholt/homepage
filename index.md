@@ -13,12 +13,13 @@ and synthesis tools that generate correct programs from specifications.
 I work to make automated tools easier to [build][synapse] and to [scale][sympro],
 and deploy them on important programming problems in [systems][ferrite] and [architecture][memsynth].
 
+I'm also a visiting researcher at [Amazon Web Services][aws],
+where I work on
+[automated reasoning][arg] for [Amazon S3][s3].
+
 I received my PhD in 2019 from the [University of Washington][uw],
 where I was advised by [Emina Torlak][emina], [Dan Grossman][djg], and [Luis Ceze][luisceze].
 I also have a bachelors from the [Australian National University][anu].
-Before starting at UT, I was a Senior Applied Scientist
-at Amazon Web Services,
-where I worked on [automated reasoning][arg] for [Amazon S3][s3].
 
 [plse]: https://uwplse.org
 [unsat]: https://unsat.org
@@ -36,5 +37,6 @@ where I worked on [automated reasoning][arg] for [Amazon S3][s3].
 [memsynth]: http://memsynth.uwplse.org
 [utcs]: https://cs.utexas.edu
 [ut]: https://utexas.edu
+[aws]: https://aws.amazon.com
 [arg]: https://aws.amazon.com/security/provable-security/
 [s3]: https://aws.amazon.com/s3/

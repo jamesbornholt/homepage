@@ -143,10 +143,26 @@ title: CV
     </ul>
 </section>
 
+<section id="cv-students">
+    <h2>Students</h2>
+    <ul>
+    {% for s in cv.students %}
+        <li>
+            <div>
+                <p class="cv-student">{{ s.name }} ({{ s.type }})</p>
+                <p class="cv-when">{{ s.when }}</p>
+            </div>
+        </li>
+    {% endfor %}
+    </ul>
+</section>
+
+</section>
+
 <section id="cv-service">
     <h2>Service</h2>
 
-    <h3>Review Committees</h3>
+    <h3>Program Committees</h3>
     <ul>
     {% for c in cv.service.pc %}
         <li>
@@ -158,7 +174,7 @@ title: CV
     {% endfor %}
     </ul>
 
-    <h3>External Reviewing</h3>
+    <h3>Reviewing</h3>
     <ul>
     {% for c in cv.service.review %}
         <li>
@@ -173,6 +189,18 @@ title: CV
     <h3>Department Service</h3>
     <ul>
     {% for c in cv.service.department %}
+        <li>
+            <div>
+                <p class="cv-what">{{ c.what }}</p>
+                <p class="cv-when">{{ c.when }}</p>
+            </div>
+        </li>
+    {% endfor %}
+    </ul>
+
+    <h3>Student Committees</h3>
+    <ul>
+    {% for c in cv.service.students %}
         <li>
             <div>
                 <p class="cv-what">{{ c.what }}</p>

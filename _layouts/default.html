@@ -22,7 +22,7 @@
 
     <script src="{{ "/js/main.js?VERSION" | replace: 'VERSION', site.css_version | relative_url }}" async></script>
 </head>
-<body class="{{ pagename }}">
+<body class="{{ pagename }}{% if pagename != 'index' %} page{% endif %}">
     {% if page.plain != true %}
     <header>
     <div id="header-container">

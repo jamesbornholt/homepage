@@ -146,25 +146,26 @@ a:hover {
 }
 
 
+
 /* Header */
 #header-container {
-    border-bottom: 1px solid #435082;
+    padding: 1em 1em 0 1em;
+}
+@supports(padding: unquote('max(0px)')) {
+    #header-container {
+        padding-left: unquote('max(1em, env(safe-area-inset-left))');
+        padding-right: unquote('max(1em, env(safe-area-inset-right))');
+        padding-top: unquote('max(1em, env(safe-area-inset-bottom))');
+    }
 }
 #header {
-    padding: 1em 1em 0 1em;
     max-width: 48em;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     align-items: center;
     flex-wrap: wrap-reverse;
-}
-@supports(padding: unquote('max(0px)')) {
-    #header {
-        padding-left: unquote('max(1em, env(safe-area-inset-left))');
-        padding-right: unquote('max(1em, env(safe-area-inset-right))');
-        padding-top: unquote('max(1em, env(safe-area-inset-bottom))');
-    }
+    border-bottom: 1px solid #435082;
 }
 #header a {
     text-decoration: none;
@@ -201,10 +202,10 @@ a:hover {
     margin-right: 1em;
     vertical-align: top;
 }
-/* spacing only on homepage */
-body.index div#header-content {
-
-}    
+/* font size on non-homepage */
+body.page #header h1 {
+    font-size: 130%;
+}
 
 
 
@@ -479,6 +480,20 @@ body.cv, body.cv-2p {
     }
     section#cv-teaching p.cv-course {
         font-weight: 600;
+    }
+
+    /* Students */
+    section#cv-students li {
+        margin-bottom: 0.3rem;
+    }
+    section#cv-students li div {
+        display: flex;
+    }
+    section#cv-students p {
+        margin-bottom: 0;
+    }
+    section#cv-students p.cv-student {
+        flex: 1;
     }
 
     /* Service */

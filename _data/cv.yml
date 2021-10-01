@@ -13,12 +13,11 @@ employment:
     where: Austin, TX, USA
   
   - employer: Amazon Web Services
-    job: Visiting Academic
+    job: Visiting Academic, Amazon S3
     when: "2021&ndash;"
-    where: Austin, TX, USA
 
   - employer: Amazon Web Services
-    job: Senior Applied Scientist, S3
+    job: Senior Applied Scientist, Amazon S3
     when: "2019&ndash;2021"
     where: Seattle, WA, USA
 
@@ -64,22 +63,6 @@ education:
       - "Advisor: [Steve Blackburn](http://users.cecs.anu.edu.au/~steveb/)"
       - "First Class Honours and the University Medal in Computer Science"
 
-teaching:
-  - school: University of Texas at Austin
-    course: CS 395T, Systems Verification and Synthesis
-    when: Spring 2021
-    role: Instructor
-  
-  - school: University of Washington
-    course: CSE 507, Computer Aided Reasoning for Software
-    when: Winter 2017
-    role: Teaching Assistant
-
-  - school: University of Washington
-    course: CSE 507, Computer Aided Reasoning for Software
-    when: Spring 2016
-    role: Teaching Assistant
-
 awards:
   - what: SOSP Best Paper Award
     when: 2019
@@ -104,8 +87,44 @@ awards:
   - what: ANU University Medal for Computer Science
     when: 2013
 
+teaching:
+  - school: University of Texas at Austin
+    course: CS 395T, Systems Verification and Synthesis
+    when: Spring 2021
+    role: Instructor
+
+  - school: University of Washington
+    course: CSE 507, Computer Aided Reasoning for Software
+    when: Winter 2017
+    role: Teaching Assistant
+
+  - school: University of Washington
+    course: CSE 507, Computer Aided Reasoning for Software
+    when: Spring 2016
+    role: Teaching Assistant
+
+students:
+  - name: Nathan Taylor
+    type: PhD
+    when: "2021&ndash;"
+  - name: Sammy Thomas
+    type: PhD
+    when: "2021&ndash;"
+  - name: Dani Wang
+    type: PhD
+    when: "2021&ndash;"
+  - name: Owen Graves
+    type: BS Honors
+    when: 2021
+
 service:
   pc:
+    - what: Programming Languages Design and Implementation (PLDI)
+      role: Program Committee
+      when: 2022
+    - what: Architectural Support for Programming Languages and Operating Systems (ASPLOS)
+      role: External Review Committee
+      when: 2022
     - what: Object-Oriented Programming, Systems, Languages, and Applications (OOPSLA)
       role: External Review Committee
       when: 2021
@@ -144,6 +163,8 @@ service:
       when: 2015
 
   review:
+    - what: NSF panel member
+      when: 2021
     - what: Architectural Support for Programming Languages and Operating Systems (ASPLOS)
       when: 2018
     - what: IEEE Transactions on Emerging Topics in Computing
@@ -156,12 +177,20 @@ service:
       when: 2015
 
   department:
+    - what: PhD Admissions Committee, University of Texas at Austin
+      when: 2021
     - what: Graduate Admissions Committee, University of Washington
       when: "2017&ndash;2019"
     - what: Prospective Student Committee Co-Chair, University of Washington
       when: 2016
     - what: Prospective Student Committee, University of Washington
       when: "2015&ndash;2019"
+
+  students:
+    - what: Mihir Mehta, PhD Dissertation Committee
+      when: 2021
+    - what: Kostas Ferlas, PhD Dissertation Committee
+      when: 2020
 
 talks:
   - title: "Program Synthesis in the Small"

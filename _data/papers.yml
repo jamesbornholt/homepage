@@ -1,3 +1,13 @@
+- title: "Using Lightweight Formal Methods to Validate a Key-Value Storage Node in Amazon S3"
+  authors: "James Bornholt, Rajeev Joshi, Vytautas Astrauskas, Brendan Cully, Bernhard Kragl, Seth Markle, Kyle Sauri, Drew Schleit, Grant Slatton, Serdar Tasiran, Jacob Van Geffen, and Andrew Warfield"
+  type: conference
+  venue: "SOSP 2021"
+  venue_url: "https://sosp2021.mpi-sws.org"
+  url: "https://www.amazon.science/publications/using-lightweight-formal-methods-to-validate-a-key-value-storage-node-in-amazon-s3"
+  links:
+    - text: "Paper (PDF)"
+      url: "papers/shardstore-sosp21.pdf"
+
 - title: "Vectorization for Digital Signal Processors via Equality Saturation"
   authors: "Alexa VanHattum, Rachit Nigam, Vincent T. Lee, James Bornholt, and Adrian Sampson"
   type: conference
