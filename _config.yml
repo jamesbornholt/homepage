@@ -10,7 +10,7 @@ url: "https://www.cs.utexas.edu"
 permalink: /post/:title.html
 
 # Version
-css_version: 20200803
+css_version: 20211006
 
 
 # Markdown settings
