@@ -4,11 +4,16 @@
   venue: "SOSP 2021"
   venue_url: "https://sosp2021.mpi-sws.org"
   url: "https://www.amazon.science/publications/using-lightweight-formal-methods-to-validate-a-key-value-storage-node-in-amazon-s3"
+  extra: "<b>Best Paper Award</b>."
   links:
     - text: "Paper (PDF)"
       url: "papers/shardstore-sosp21.pdf"
+    - text: "Slides"
+      url: "papers/shardstore-sosp21.slides.pdf"
     - text: "Video"
       url: "https://www.youtube.com/watch?v=YdxvOPenjWI"
+    - text: "Poster"
+      url: "papers/shardstore-sosp21.poster.pdf"
 
 - title: "Vectorization for Digital Signal Processors via Equality Saturation"
   authors: "Alexa VanHattum, Rachit Nigam, Vincent T. Lee, James Bornholt, and Adrian Sampson"
