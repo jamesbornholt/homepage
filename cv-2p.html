@@ -23,7 +23,7 @@ title: CV
 <section id="cv-employment">
     <h2>Employment</h2>
     <ul>
-    {% assign job = cv.employment[0] %}
+    {% for job in cv.employment limit: 3 %}
         <li>
             <div>
                 <p class="cv-employer">{{ job.employer }}</p>
@@ -34,6 +34,7 @@ title: CV
                 <p class="cv-when">{{ job.when }}</p>
             </div>
         </li>
+    {% endfor %}
     </ul>
 </section>
 
@@ -87,16 +88,34 @@ title: CV
     </ul>
 </section>
 
-<section id="cv-service">
-    <h2>Service</h2>
-
-    <h3>Review Committees</h3>
+<section id="cv-teaching">
+    <h2>Teaching</h2>
     <ul>
-    {% for c in cv.service.pc %}
+    {% for c in cv.teaching %}
+        {% if c.role != "Teaching Assistant" %}
         <li>
             <div>
-                <p class="cv-what">{{ c.what }} &mdash; {{ c.role }}</p>
+                <p class="cv-course">{{ c.course }}</p>
+                <p class="cv-school">{{ c.school }}</p>
+            </div>
+            <div>
+                <p class="cv-role">{{ c.role }}</p>
                 <p class="cv-when">{{ c.when }}</p>
+            </div>
+        </li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+</section>
+
+<section id="cv-students">
+    <h2>Students</h2>
+    <ul>
+    {% for s in cv.students %}
+        <li>
+            <div>
+                <p class="cv-student">{{ s.name }} ({{ s.type }})</p>
+                <p class="cv-when">{{ s.when }}</p>
             </div>
         </li>
     {% endfor %}
