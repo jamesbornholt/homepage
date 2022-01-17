@@ -92,6 +92,11 @@ awards:
 teaching:
   - school: University of Texas at Austin
     course: CS 395T, Systems Verification and Synthesis
+    when: Spring 2022
+    role: Instructor
+
+  - school: University of Texas at Austin
+    course: CS 395T, Systems Verification and Synthesis
     when: Spring 2021
     role: Instructor
 
@@ -115,6 +120,9 @@ students:
   - name: Dani Wang
     type: PhD
     when: "2021&ndash;"
+  - name: Stefan Debruyn
+    type: BS Honors
+    when: "2021&ndash;2022"
   - name: Owen Graves
     type: BS Honors
     when: 2021
@@ -180,7 +188,7 @@ service:
 
   department:
     - what: PhD Admissions Committee, University of Texas at Austin
-      when: 2021
+      when: "2021, 2022"
     - what: Graduate Admissions Committee, University of Washington
       when: "2017&ndash;2019"
     - what: Prospective Student Committee Co-Chair, University of Washington
