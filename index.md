@@ -5,13 +5,13 @@ layout: home
 I'm an assistant professor in the [Department of Computer Science][utcs]
 at the [University of Texas at Austin][ut].
 
-I work on programming languages and formal methods.
+I work in programming languages, formal methods, and systems.
 My research helps programmers build more reliable software using
 *automated programming tools*: verification tools
 that check program correctness,
 and synthesis tools that generate correct programs from specifications.
-I work to make automated tools easier to [build][synapse] and to [scale][sympro],
-and deploy them on important programming problems in [systems][ferrite] and [architecture][memsynth].
+I work to make automated programming tools easier to [build][synapse] and [use][sympro],
+and deploy them [at scale][shardstore] on applications in [systems][ferrite] and [architecture][memsynth].
 
 I'm also a visiting researcher at [Amazon Web Services][aws],
 where I work on
@@ -40,3 +40,4 @@ I also have a bachelors from the [Australian National University][anu].
 [aws]: https://aws.amazon.com
 [arg]: https://aws.amazon.com/security/provable-security/
 [s3]: https://aws.amazon.com/s3/
+[shardstore]: papers/shardstore-sosp21.pdf

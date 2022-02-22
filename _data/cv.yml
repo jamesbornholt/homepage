@@ -91,14 +91,21 @@ awards:
 
 teaching:
   - school: University of Texas at Austin
-    course: CS 395T, Systems Verification and Synthesis
+    course: "CS 345H: Programming Languages (Honors)"
+    when: Fall 2022
+    role: Instructor
+    
+  - school: University of Texas at Austin
+    course: "CS 395T: Systems Verification and Synthesis"
     when: Spring 2022
     role: Instructor
+    website: https://www.cs.utexas.edu/~bornholt/courses/cs395t-22sp/
 
   - school: University of Texas at Austin
-    course: CS 395T, Systems Verification and Synthesis
+    course: "CS 395T: Systems Verification and Synthesis"
     when: Spring 2021
     role: Instructor
+    website: https://www.cs.utexas.edu/~bornholt/courses/cs395t-21sp/
 
   - school: University of Washington
     course: CSE 507, Computer Aided Reasoning for Software
@@ -114,18 +121,21 @@ students:
   - name: Nathan Taylor
     type: PhD
     when: "2021&ndash;"
+    website: https://www.cs.utexas.edu/~ntaylor/
   - name: Sammy Thomas
     type: PhD
     when: "2021&ndash;"
   - name: Dani Wang
     type: PhD
     when: "2021&ndash;"
-  - name: Stefan Debruyn
+  - name: Stefan deBruyn
     type: BS Honors
     when: "2021&ndash;2022"
+    website: https://stefandebruyn.github.io
   - name: Owen Graves
     type: BS Honors
     when: 2021
+    alum: true
 
 service:
   pc:

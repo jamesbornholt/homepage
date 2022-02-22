@@ -2,6 +2,8 @@
 # Main CSS
 ---
 
+$bodyText: #333333;
+
 
 
 /* Fonts */
@@ -9,7 +11,7 @@
 body {
     font-size: 17px;
     line-height: 1.35;
-    color: #333333;
+    color: $bodyText;
     text-rendering: optimizeLegibility;
 }
 
@@ -243,6 +245,39 @@ div.blog-posts p {
     margin-left: 1.5em;
     font-size: 16px;
     font-weight: 400;
+}
+
+
+
+/* Course lists */
+
+ul.courses {
+    margin: 0;
+    padding: 0;
+
+    li {
+        list-style: none;
+    }
+}
+
+
+
+/* Student lists */
+
+ul.students {
+    margin: 0 1em 0 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: top;
+
+    li {
+        list-style: none;
+    }
+
+    span.student-meta {
+        font-size: 80%;
+        color: scale-color($bodyText, $lightness: +40%);
+    }
 }
 
 
