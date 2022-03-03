@@ -1,3 +1,11 @@
+- title: "Synthesizing Fine-Grained Synchronization Protocols for Implicit Monitors"
+  authors: "Kostas Ferles, Benjamin Sepanski, Rahul Krishnan, James Bornholt, and Isil Dillig"
+  type: conference
+  venue: "OOPSLA 2022"
+  venue_url: "https://2022.splashcon.org/track/splash-2022-oopsla"
+  links:
+    - text: "To appear."
+
 - title: "Using Lightweight Formal Methods to Validate a Key-Value Storage Node in Amazon S3"
   authors: "James Bornholt, Rajeev Joshi, Vytautas Astrauskas, Brendan Cully, Bernhard Kragl, Seth Markle, Kyle Sauri, Drew Schleit, Grant Slatton, Serdar Tasiran, Jacob Van Geffen, and Andrew Warfield"
   type: conference
