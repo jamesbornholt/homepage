@@ -3,8 +3,12 @@
   type: conference
   venue: "OOPSLA 2022"
   venue_url: "https://2022.splashcon.org/track/splash-2022-oopsla"
+  url: "papers/cortado-oopsla22.pdf"
   links:
-    - text: "To appear."
+    - text: "Paper (PDF)"
+      url: "papers/cortado-oopsla22.pdf"
+    - text: "Code"
+      url: "https://github.com/utopia-group/cortado"
 
 - title: "Using Lightweight Formal Methods to Validate a Key-Value Storage Node in Amazon S3"
   authors: "James Bornholt, Rajeev Joshi, Vytautas Astrauskas, Brendan Cully, Bernhard Kragl, Seth Markle, Kyle Sauri, Drew Schleit, Grant Slatton, Serdar Tasiran, Jacob Van Geffen, and Andrew Warfield"
