@@ -91,7 +91,7 @@ awards:
 
 teaching:
   - school: University of Texas at Austin
-    course: "CS 345H: Programming Languages (Honors)"
+    course: "CS 345H/CS 386L: Programming Languages"
     when: Fall 2022
     role: Instructor
     
