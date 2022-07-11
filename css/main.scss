@@ -263,12 +263,17 @@ ul.courses {
 
 
 /* Student lists */
+div.students-block {
+    display: flex;
+    flex-wrap: wrap;
+}
 
 ul.students {
-    margin: 0 1em 0 0;
+    margin: 0;
     padding: 0;
-    display: inline-block;
     vertical-align: top;
+    width: 50%;
+    min-width: 16em;
 
     li {
         list-style: none;

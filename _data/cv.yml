@@ -133,6 +133,7 @@ students:
     type: BS Honors
     when: "2021&ndash;2022"
     website: https://stefandebruyn.github.io
+    alum: true
   - name: Owen Graves
     type: BS Honors
     when: 2021
