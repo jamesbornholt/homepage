@@ -13,7 +13,7 @@ employment:
     where: Austin, TX, USA
   
   - employer: Amazon Web Services
-    job: Visiting Academic, Amazon S3
+    job: Amazon Scholar, Amazon S3
     when: "2021&ndash;"
 
   - employer: Amazon Web Services
@@ -91,7 +91,7 @@ awards:
 
 teaching:
   - school: University of Texas at Austin
-    course: "CS 345H/CS 386L: Programming Languages"
+    course: "CS 345H/386L: Programming Languages"
     when: Fall 2022
     role: Instructor
     website: https://www.cs.utexas.edu/~bornholt/courses/cs345h-22au/
@@ -126,6 +126,7 @@ students:
   - name: Sammy Thomas
     type: PhD
     when: "2021&ndash;"
+    website: https://sgtpeacock.com
   - name: Dani Wang
     type: PhD
     when: "2021&ndash;"
@@ -188,6 +189,8 @@ service:
       when: 2015
 
   review:
+    - what: National Science Foundation (NSF) panel member
+      when: 2022
     - what: National Science Foundation (NSF) panel member
       when: 2021
     - what: Architectural Support for Programming Languages and Operating Systems (ASPLOS)
