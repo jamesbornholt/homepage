@@ -1,3 +1,15 @@
+- title: "Chipmunk: Investigating Crash-Consistency in Persistent-Memory File Systems"
+  authors: "Hayley LeBlanc, Shankara Pailoor, Om Saran, Isil Dillig, James Bornholt, and Vijay Chidambaram"
+  type: conference
+  venue: "EuroSys 2023"
+  venue_url: "https://2023.eurosys.org"
+  url: "papers/chipmunk-eurosys23.pdf"
+  links:
+    - text: "Paper (PDF)"
+      url: "papers/chipmunk-eurosys23.pdf"
+    - text: "Code"
+      url: "https://github.com/utsaslab/chipmunk"
+
 - title: "Synthesizing Fine-Grained Synchronization Protocols for Implicit Monitors"
   authors: "Kostas Ferles, Benjamin Sepanski, Rahul Krishnan, James Bornholt, and Isil Dillig"
   type: conference
