@@ -91,6 +91,12 @@ awards:
 
 teaching:
   - school: University of Texas at Austin
+    course: "CS 395T: Systems Verification and Synthesis"
+    when: Spring 2023
+    role: Instructor
+    website: https://www.cs.utexas.edu/~bornholt/courses/cs395t-23sp/
+
+  - school: University of Texas at Austin
     course: "CS 345H/386L: Programming Languages"
     when: Fall 2022
     role: Instructor
