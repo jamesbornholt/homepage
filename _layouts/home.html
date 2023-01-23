@@ -20,7 +20,13 @@ layout: default
 <h2 class="sec">Teaching</h2>
 {% assign courses = site.data.cv.teaching | where_exp:"course","course.school == 'University of Texas at Austin'" %}
 <ul class="courses">
-    {% for course in courses %}<li>{{ course.when }}: {% if course.website %}<a href="{{ course.website }}">{% endif %}{{ course.course }}{% if course.website %}</a>{% endif %}</li>{% endfor %}
+    {% for course in courses %}
+    <li>{{ course.course }}:
+        {% for o in course.offerings %}
+            {% if o.website %}<a href="{{ o.website }}">{% endif %}{{ o.when }}{% if o.website %}</a>{% endif %}{% if forloop.last %}{% else %}, {% endif %}
+        {% endfor %}
+    </li>
+    {% endfor %}
 </ul>
 
 <h2 class="sec">Students</h2>

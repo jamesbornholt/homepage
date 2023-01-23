@@ -8,38 +8,41 @@ contact:
 
 employment:
   - employer: University of Texas at Austin
-    job: Assistant Professor, Department of Computer Science
-    when: "2021&ndash;"
     where: Austin, TX, USA
+    roles:
+      - job: Assistant Professor, Department of Computer Science
+        when: "2021&ndash;"
   
   - employer: Amazon Web Services
-    job: Amazon Scholar, Amazon S3
-    when: "2021&ndash;"
+    where: Austin, TX, USA
+    roles:
+      - job: Amazon Scholar, Amazon S3
+        when: "2022&ndash;"
+      - job: Amazon Visiting Academic, Amazon S3
+        when: "2021&ndash;2022"
+      - job: Senior Applied Scientist, Amazon S3
+        when: "2019&ndash;2021"
 
   - employer: Amazon Web Services
-    job: Senior Applied Scientist, Amazon S3
-    when: "2019&ndash;2021"
     where: Seattle, WA, USA
-
-  - employer: Amazon Web Services
-    job: Research Intern, Automated Reasoning Group
-    when: 2018
-    where: Seattle, WA, USA
+    roles:
+      - job: Research Intern, Automated Reasoning Group
+        when: 2018
 
   - employer: Microsoft Research
-    job: Software Engineer, Research in Software Engineering (RiSE) group
-    when: 2014
     where: Canberra, Australia
+    roles:
+      - job: Software Engineer, Research in Software Engineering (RiSE) group
+        when: 2014
+        
 
   - employer: Microsoft Research
-    job: Research Intern, Research in Software Engineering (RiSE) group
-    when: 2012&ndash;2013
     where: Seattle, WA, USA
-
-  - employer: Microsoft Research
-    job: Research Intern, Research in Software Engineering (RiSE) group
-    when: 2011&ndash;2012
-    where: Seattle, WA, USA
+    roles: 
+      - job: Research Intern, Research in Software Engineering (RiSE) group
+        when: 2012&ndash;2013
+      - job: Research Intern, Research in Software Engineering (RiSE) group
+        when: 2011&ndash;2012
 
 education:
   - school: University of Washington
@@ -92,37 +95,31 @@ awards:
 teaching:
   - school: University of Texas at Austin
     course: "CS 395T: Systems Verification and Synthesis"
-    when: Spring 2023
-    role: Instructor
-    website: https://www.cs.utexas.edu/~bornholt/courses/cs395t-23sp/
+    offerings:
+      - when: Spring 2023
+        role: Instructor
+        website: https://www.cs.utexas.edu/~bornholt/courses/cs395t-23sp/
+      - when: Spring 2022
+        role: Instructor
+        website: https://www.cs.utexas.edu/~bornholt/courses/cs395t-22sp/
+      - when: Spring 2021
+        role: Instructor
+        website: https://www.cs.utexas.edu/~bornholt/courses/cs395t-21sp/
 
   - school: University of Texas at Austin
     course: "CS 345H/386L: Programming Languages"
-    when: Fall 2022
-    role: Instructor
-    website: https://www.cs.utexas.edu/~bornholt/courses/cs345h-22au/
+    offerings:
+      - when: Fall 2022
+        role: Instructor
+        website: https://www.cs.utexas.edu/~bornholt/courses/cs345h-22au/
     
-  - school: University of Texas at Austin
-    course: "CS 395T: Systems Verification and Synthesis"
-    when: Spring 2022
-    role: Instructor
-    website: https://www.cs.utexas.edu/~bornholt/courses/cs395t-22sp/
-
-  - school: University of Texas at Austin
-    course: "CS 395T: Systems Verification and Synthesis"
-    when: Spring 2021
-    role: Instructor
-    website: https://www.cs.utexas.edu/~bornholt/courses/cs395t-21sp/
-
   - school: University of Washington
     course: CSE 507, Computer Aided Reasoning for Software
-    when: Winter 2017
-    role: Teaching Assistant
-
-  - school: University of Washington
-    course: CSE 507, Computer Aided Reasoning for Software
-    when: Spring 2016
-    role: Teaching Assistant
+    offerings:
+      - when: Winter 2017
+        role: Teaching Assistant
+      - when: Spring 2016
+        role: Teaching Assistant
 
 students:
   - name: Nathan Taylor
@@ -211,22 +208,47 @@ service:
       when: 2015
 
   department:
-    - what: PhD Admissions Committee, University of Texas at Austin
+    - what: Undergrduate Curriculum Committee, Computer Science, University of Texas at Austin
+      when: 2022
+    - what: PhD Admissions Committee, Computer Science, University of Texas at Austin
       when: "2021, 2022"
-    - what: Graduate Admissions Committee, University of Washington
-      when: "2017&ndash;2019"
-    - what: Prospective Student Committee Co-Chair, University of Washington
+    - what: Graduate Admissions Committee, Computer Science & Engineering, University of Washington
+      when: "2017, 2018, 2019"
+    - what: Prospective Student Committee Co-Chair, Computer Science & Engineering, University of Washington
       when: 2016
-    - what: Prospective Student Committee, University of Washington
+    - what: Prospective Student Committee, Computer Science & Engineering, University of Washington
       when: "2015&ndash;2019"
 
   students:
+    - what: Sekwon Lee, PhD Dissertation Committee
+      when: 2023
+    - what: Henrique Fingler, PhD Dissertation Committee
+      when: 2022
+    - what: Aashaka Shah, PhD Dissertation Committee
+      when: 2022
+    - what: Rohan Kadekodi, PhD Dissertation Committee
+      when: 2022
     - what: Mihir Mehta, PhD Dissertation Committee
       when: 2021
     - what: Kostas Ferlas, PhD Dissertation Committee
       when: 2020
 
 talks:
+  - title: "Using Lightweight Formal Methods to Validate a Key-Value Storage Node in Amazon S3"
+    events:
+      - date: 2022-05-19
+        where: High Confidence Software and Systems conference
+        what: Invited Talk
+      - date: 2022-04-01
+        where: Facebook
+        what: Invited Talk
+      - date: 2021-10-29
+        where: SOSP
+        what: Conference Talk
+      - date: 2021-10-22
+        where: New England Systems Verification Day
+        what: Invited Talk
+      
   - title: "Program Synthesis in the Small"
     events:
       - date: 2020-10-09
