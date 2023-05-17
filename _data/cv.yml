@@ -133,15 +133,6 @@ students:
   - name: Dani Wang
     type: PhD
     when: "2021&ndash;"
-  - name: Stefan deBruyn
-    type: BS Honors
-    when: "2021&ndash;2022"
-    website: https://stefandebruyn.github.io
-    alum: true
-  - name: Owen Graves
-    type: BS Honors
-    when: 2021
-    alum: true
 
 service:
   pc:

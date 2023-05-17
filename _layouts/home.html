@@ -36,10 +36,12 @@ layout: default
 <ul class="students">
     {% for student in current %}<li>{% if student.website %}<a href="{{ student.website }}">{% endif %}{{ student.name }}{% if student.website %}</a>{% endif %}&nbsp;<span class="student-meta">{{ student.type }}, {{ student.when }}</span></li>{% endfor %}
 </ul>
+{% comment %}
 <ul class="students">
     <li><strong>Alumni</strong></li>
     {% for student in alumni %}<li>{% if student.website %}<a href="{{ student.website }}">{% endif %}{{ student.name }}{% if student.website %}</a>{% endif %}&nbsp;<span class="student-meta">{{ student.type }}, {{ student.when }}</span></li>{% endfor %}
 </ul>
+{% endcomment %}
 </div>
 
 <h2 class="sec">Publications <p class="header-link">[<a href="http://dblp.uni-trier.de/pers/hd/b/Bornholt:James">DBLP</a>]</p> <p class="header-link">[<a href="https://scholar.google.com/citations?user=nuwXTh4AAAAJ">Google Scholar</a>]</p></h2>
