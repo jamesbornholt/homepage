@@ -1,9 +1,18 @@
+- title: "Synthesis-Aided Crash Consistency for Storage Systems"
+  authors: "Jacob Van Geffen, Xi Wang, Emina Torlak, and James Bornholt"
+  type: conference
+  venue: "ECOOP 2023"
+  venue_url: "https://conf.researchr.org/home/ecoop-2023"
+  links:
+    - text: "To appear."
+
 - title: "Chipmunk: Investigating Crash-Consistency in Persistent-Memory File Systems"
   authors: "Hayley LeBlanc, Shankara Pailoor, Om Saran, Isil Dillig, James Bornholt, and Vijay Chidambaram"
   type: conference
   venue: "EuroSys 2023"
   venue_url: "https://2023.eurosys.org"
   url: "papers/chipmunk-eurosys23.pdf"
+  extra: "<b>Best Paper Award</b>."
   links:
     - text: "Paper (PDF)"
       url: "papers/chipmunk-eurosys23.pdf"
