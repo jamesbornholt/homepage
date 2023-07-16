@@ -67,6 +67,8 @@ education:
       - "First Class Honours and the University Medal in Computer Science"
 
 awards:
+  - what: EuroSys Best Paper Award
+    when: 2023
   - what: SOSP Best Paper Award
     when: 2021
   - what: SOSP Best Paper Award

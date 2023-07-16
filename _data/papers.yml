@@ -3,8 +3,10 @@
   type: conference
   venue: "ECOOP 2023"
   venue_url: "https://conf.researchr.org/home/ecoop-2023"
+  url: "papers/depsynth-ecoop23.pdf"
   links:
-    - text: "To appear."
+    - text: "Paper (PDF)"
+      url: "papers/depsynth-ecoop23.pdf"
 
 - title: "Chipmunk: Investigating Crash-Consistency in Persistent-Memory File Systems"
   authors: "Hayley LeBlanc, Shankara Pailoor, Om Saran, Isil Dillig, James Bornholt, and Vijay Chidambaram"
