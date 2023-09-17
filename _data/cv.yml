@@ -138,6 +138,12 @@ students:
 
 service:
   pc:
+    - what: Programming Languages Design and Implementation (PLDI)
+      role: Program Committee
+      when: 2024
+    - what: Architectural Support for Programming Languages and Operating Systems (ASPLOS)
+      role: External Review Committee
+      when: 2023
     - what: Architectural Support for Programming Languages and Operating Systems (ASPLOS)
       role: Program Committee
       when: 2023
@@ -185,6 +191,8 @@ service:
       when: 2015
 
   review:
+    - what: Symposium on Operating Systems Principles (SOSP)
+      when: 2023
     - what: National Science Foundation (NSF) panel member
       when: 2022
     - what: National Science Foundation (NSF) panel member
