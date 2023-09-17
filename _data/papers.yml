@@ -1,3 +1,13 @@
+- title: "Automatic Generation of Vectorizing Compilers for Customizable Digital Signal Processors"
+  authors: "Samuel Thomas and James Bornholt"
+  type: conference
+  venue: "ASPLOS 2024"
+  venue_url: "https://www.asplos-conference.org/asplos2024/"
+  url: "papers/isaria-asplos24.pdf"
+  links:
+    - text: "Paper (PDF)"
+      url: "papers/isaria-asplos24.pdf"
+
 - title: "Synthesis-Aided Crash Consistency for Storage Systems"
   authors: "Jacob Van Geffen, Xi Wang, Emina Torlak, and James Bornholt"
   type: conference
