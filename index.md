@@ -14,8 +14,7 @@ I work to make automated programming tools easier to [build][synapse] and [use][
 and deploy them [at scale][shardstore] on applications in [systems][ferrite] and [architecture][memsynth].
 
 I'm also a visiting researcher at [Amazon Web Services][aws],
-where I work on
-[automated reasoning][arg] for [Amazon S3][s3].
+where I work on the [Amazon S3][s3] object storage service.
 
 I received my PhD in 2019 from the [University of Washington][uw],
 where I was advised by [Emina Torlak][emina], [Dan Grossman][djg], and [Luis Ceze][luisceze].
