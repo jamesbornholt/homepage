@@ -111,6 +111,9 @@ teaching:
   - school: University of Texas at Austin
     course: "CS 345H/386L: Programming Languages"
     offerings:
+      - when: Spring 2024
+        role: Instructor
+        website: https://www.cs.utexas.edu/~bornholt/courses/cs345h-24sp/
       - when: Fall 2022
         role: Instructor
         website: https://www.cs.utexas.edu/~bornholt/courses/cs345h-22au/
