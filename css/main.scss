@@ -398,6 +398,21 @@ div.footnotes {
 /* CV */
 
 body.cv, body.cv-2p {
+    @mixin what-when-list {
+        li {
+            margin-bottom: 0.3rem;
+        }
+        li div {
+            display: flex;
+        }
+        p {
+            margin-bottom: 0;
+        }
+        p.cv-what {
+            flex: 1;
+        }
+    }
+
     #content {
         max-width: 38em;
     }
@@ -523,31 +538,21 @@ body.cv, body.cv-2p {
     }
 
     /* Students */
-    section#cv-students li {
-        margin-bottom: 0.3rem;
-    }
-    section#cv-students li div {
-        display: flex;
-    }
-    section#cv-students p {
-        margin-bottom: 0;
+    section#cv-students {
+        @include what-when-list;
     }
     section#cv-students p.cv-student {
         flex: 1;
     }
 
     /* Service */
-    section#cv-service li {
-        margin-bottom: 0.3rem;
+    section#cv-service {
+        @include what-when-list;
     }
-    section#cv-service li div {
-        display: flex;
-    }
-    section#cv-service p {
-        margin-bottom: 0;
-    }
-    section#cv-service p.cv-what {
-        flex: 1;
+
+    /* Funding */
+    section#cv-funding {
+        @include what-when-list;
     }
 
     /* Presentations */

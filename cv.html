@@ -236,3 +236,13 @@ title: CV
         {% endfor %}
     </ul>
 </section>
+
+{% comment %}
+<section id="cv-funding">
+    <h2>Funding</h2>
+
+    <ul>
+        {% for f in cv.funding %}<li><div><p class="cv-what">{{ f.title }}, {{ f.amount }}</p><p class="cv-when">{{ f.when }}</p></div></li>{% endfor %}
+    </ul>
+</section>
+{% endcomment %}

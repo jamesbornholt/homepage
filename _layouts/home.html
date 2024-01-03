@@ -30,7 +30,7 @@ layout: default
 </ul>
 
 <h2 class="sec">Students</h2>
-{% assign current = site.data.cv.students | where_exp:"student","student.alum != true" %}
+{% assign current = site.data.cv.students | where_exp:"student","student.alum != true and student.type == 'PhD'" %}
 {% assign alumni = site.data.cv.students | where_exp:"student","student.alum == true" %}
 <div class="students-block">
 <ul class="students">

@@ -138,10 +138,28 @@ students:
   - name: Dani Wang
     type: PhD
     when: "2021&ndash;"
+  - name: Julia Benginow
+    type: BS Honors
+    when: "2023&ndash;"
+  - name: Finn Frankis
+    type: BS Honors
+    when: "2022&ndash;2023"
+    alum: true
+  - name: Stefan Debruyn
+    type: BS Honors
+    when: "2021&ndash;2022"
+    alum: true
+  - name: Owen Graves
+    type: BS Honors
+    when: "2020&ndash;2021"
+    alum: true
 
 service:
   pc:
     - what: Programming Languages Design and Implementation (PLDI)
+      role: Program Committee
+      when: 2024
+    - what: European Conference on Computer Systems (EuroSys)
       role: Program Committee
       when: 2024
     - what: Architectural Support for Programming Languages and Operating Systems (ASPLOS)
@@ -226,12 +244,14 @@ service:
   students:
     - what: Sekwon Lee, PhD Dissertation Committee
       when: 2023
-    - what: Henrique Fingler, PhD Dissertation Committee
-      when: 2022
+    - what: Soujanya Ponnapalli, PhD Dissertation Committee
+      when: 2023
     - what: Aashaka Shah, PhD Dissertation Committee
-      when: 2022
+      when: 2023
     - what: Rohan Kadekodi, PhD Dissertation Committee
-      when: 2022
+      when: 2023
+    - what: Henrique Fingler, PhD Dissertation Committee
+      when: 2023
     - what: Mihir Mehta, PhD Dissertation Committee
       when: 2021
     - what: Kostas Ferlas, PhD Dissertation Committee
@@ -366,3 +386,14 @@ talks:
       - date: 2015-12-02
         where: "Dagstuhl Seminar 15491 (Approximate and Probabilistic Computing)"
         what: Invited Talk
+
+funding:
+  - title: NSF Formal Methods in the Field (FMiTF)
+    when: "2021&ndash;2025"
+    amount: $375k
+  - title: Google Research Scholar
+    when: 2022
+    amount: $60k
+  - title: Amazon
+    when: 2021
+    amount: $70k
