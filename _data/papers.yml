@@ -1,3 +1,11 @@
+- title: "SquirrelFS: using the Rust compiler to check file-system crash consistency"
+  authors: "Hayley LeBlanc, Nathan Taylor, James Bornholt and Vijay Chidambaram"
+  type: conference
+  venue: "OSDI 2024"
+  venue_url: "https://www.usenix.org/conference/osdi24"
+  links:
+    - text: "To appear."
+
 - title: "Automatic Generation of Vectorizing Compilers for Customizable Digital Signal Processors"
   authors: "Samuel Thomas and James Bornholt"
   type: conference
