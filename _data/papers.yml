@@ -12,6 +12,7 @@
   venue: "ASPLOS 2024"
   venue_url: "https://www.asplos-conference.org/asplos2024/"
   url: "papers/isaria-asplos24.pdf"
+  extra: "<b>Best Paper Award</b>."
   links:
     - text: "Paper (PDF)"
       url: "papers/isaria-asplos24.pdf"
