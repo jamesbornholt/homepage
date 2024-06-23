@@ -3,8 +3,12 @@
   type: conference
   venue: "OSDI 2024"
   venue_url: "https://www.usenix.org/conference/osdi24"
+  url: "papers/squirrelfs-osdi24.pdf"
   links:
-    - text: "To appear."
+    - text: "Paper (PDF)"
+      url: "papers/squirrelfs-osdi24.pdf"
+    - text: "Code"
+      url: "https://github.com/utsaslab/squirrelfs"
 
 - title: "Automatic Generation of Vectorizing Compilers for Customizable Digital Signal Processors"
   authors: "Samuel Thomas and James Bornholt"
