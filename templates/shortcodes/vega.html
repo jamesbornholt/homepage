@@ -1,0 +1,21 @@
+<div id="{{ name }}" class="blog-vega"></div>
+{% if not noload %}
+<script src="https://cdn.jsdelivr.net/npm/vega@4.2.0/build/vega.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@3.0.0-rc0/build/vega-lite.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@3.18.1/build/vega-embed.min.js"></script>
+{% endif %}
+<script src="{{ data }}"></script>
+<script>
+(function() {
+var elt = document.getElementById("{{ name }}");
+{{ name }}.width = Math.min(elt.clientWidth, {{name}}.width);
+elt.style.width = {{ name }}.width + "px";
+vegaEmbed("#{{ name }}", {{ name }}, {
+    "actions": false
+})})();
+</script>
+{% if alt %}
+<noscript>
+    <img src="{{ alt }}" class="blog-vega">
+</noscript>
+{% endif %}

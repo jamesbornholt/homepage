@@ -1,0 +1,41 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install Zola
+      uses: taiki-e/install-action@v2
+      with:
+        tool: zola
+    
+    - name: Build site
+      run: zola build
+    
+    - name: Login to AWS
+      uses: aws-actions/configure-aws-credentials@v3
+      with:
+        aws-region: us-west-2
+    
+    - name: Deploy to AWS
+      uses: reggionick/s3-deploy@v4
+      with:
+        folder: public
+        bucket: jamesbornholt.com
+        bucket-region: us-west-2
+        dist-id: E1CUWRTS66J82Y
+        invalidation: /
+        delete-removed: true

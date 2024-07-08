@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block main %}
+<h1>{{ section.title }}</h1>
+{{ section.content | safe }}
+<ol class="post-list">
+{% for post in section.pages %}
+<li>
+    <div class="post-date">{{ post.date | date(format="%e %B %Y") }}</div>
+    {% if post.extra["short_post"] %}
+    <div class="post-content">{{ post.content | safe }}</p>
+    {% else %}
+    <div class="post-title"><a href="{{ get_url(path=post.path) }}">{{ post.title }}</a></div>
+    <div class="post-excerpt">{{ post.extra["excerpt"] | markdown | safe }}</p>
+    {% endif %}
+</li>
+{% endfor %}
+</ol>
+{% endblock main %}

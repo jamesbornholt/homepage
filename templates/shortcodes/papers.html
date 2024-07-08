@@ -1,0 +1,22 @@
+<ul class="paper-list">
+{% set data = load_data(path="data/papers.yml") %}
+{% for paper in data %}{% if kind and paper.type != kind %}{% continue %}{% endif %}
+<li>
+    {% if paper.url %}<a class="paper-title" href="{{ paper.url }}">{% else %}<span class="paper-title">{% endif %}{{ paper.title }}{% if paper.url %}</a>{% else %}</span>{% endif %}.
+
+    {{ paper.authors }}.
+
+    <span class="paper-venue">
+        {% if paper.venue %}{% if paper.venue_url %}<a href="{{ paper.venue_url }}">{{ paper.venue }}</a>{% else %}{{ paper.venue }}{% endif %}{% if paper.volume %}, {{ paper.volume }}{% endif %}{% if paper.colocated_with %} (colocated with {% if paper.colocated_with_url %}<a href="{{ paper.colocated_with_url }}">{{ paper.colocated_with }}</a>{% else %}{{ paper.colocated_with }}{% endif %}){% endif %}.{% endif %}
+        {% if paper.extra %} {{ paper.extra | safe }}{% endif %}
+    </span>
+
+    {% if paper.links %}
+    <ul class="paper-links">
+    {% for link in paper.links %}
+        <li>{% if link.url %}<a href="{{ link.url }}">{% endif %}{{ link.text }}{% if link.url %}</a>{% endif %}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+{% endfor %}
+</ul>

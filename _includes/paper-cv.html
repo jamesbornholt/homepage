@@ -1,6 +1,0 @@
-<p>
-    <span class="paper-title">{% if paper.url %}<a href="{{ paper.url }}">{% endif %}{{ paper.title | escape }}{% if paper.url %}</a>{% endif %}</span>.
-    {{ paper.authors }}.
-    {% if paper.venue %}{{ paper.venue }}{% if paper.volume %}, {{ paper.volume }}{% endif %}{% if paper.colocated_with %} (colocated with {{ paper.colocated_with }}){% endif %}.{% endif %}
-    {% if paper.extra %}{{ paper.extra | safeHTML }}{% endif %}
-</p>
