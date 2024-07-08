@@ -1,1 +1,1 @@
-my boring academic homepage uses [jekyll](http://jekyllrb.com/).
+my boring academic homepage uses [zola](http://getzola.org/).
