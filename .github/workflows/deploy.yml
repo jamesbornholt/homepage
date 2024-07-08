@@ -29,6 +29,7 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v3
       with:
         aws-region: us-west-2
+        role-to-assume: arn:aws:iam::041926717335:role/GitHubActionsHomepageDeploy
     
     - name: Deploy to AWS
       uses: reggionick/s3-deploy@v4
