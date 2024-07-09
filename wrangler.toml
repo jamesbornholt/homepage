@@ -1,0 +1,9 @@
+name = "jamesbornholt"
+pages_build_output_dir = "public"
+compatibility_date = "2024-07-09"
+
+[env.production.vars]
+UNSTABLE_PRE_BUILD = "asdf plugin add zola https://github.com/salasrod/asdf-zola && asdf install zola 0.19.1 && asdf global zola 0.19.1"
+
+[env.preview.vars]
+UNSTABLE_PRE_BUILD = "asdf plugin add zola https://github.com/salasrod/asdf-zola && asdf install zola 0.19.1 && asdf global zola 0.19.1"
