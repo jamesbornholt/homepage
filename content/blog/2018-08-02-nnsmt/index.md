@@ -384,7 +384,7 @@ Here's the test-set accuracy of four different binary classifiers
 (for four different digits *k*)
 as a function of training time:
 
-{% include vega.html data="img/post/nnsmt/xnor_train.js" name="xnor_train" alt="img/post/nnsmt/xnor_train.png" %}
+{{ vega(data="/blog/nnsmt/xnor_train.js", name="xnor_train", alt="img/post/nnsmt/xnor_train.png") }}
 
 Each training line ends when the synthesizer proves that no
 better result is possible for the training set---in other words,
