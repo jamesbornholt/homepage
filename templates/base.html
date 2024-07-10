@@ -6,7 +6,7 @@
 
     {% set page_title = page.title | default(value=section.title | default(value="")) %}
     <title>{% if page_title %}{{ page_title }} — {% endif %}{{ config.title }}</title>
-    <meta name="description" content="{{ page.extra["excerpt"] | default(value=config.description) | markdown | spaceless | striptags | truncate(width=280) | escape }}">
+    <meta name="description" content="{{ page.extra["excerpt"] | default(value=config.description) | markdown | spaceless | striptags | truncate(width=280) }}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
