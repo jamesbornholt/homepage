@@ -20,6 +20,12 @@ body {
     margin: 0 auto;
     padding: 1em;
     max-width: $max-width;
+
+    @supports(padding: unquote('max(0px)')) {
+        padding-left: unquote('max(1em, env(safe-area-inset-left))');
+        padding-right: unquote('max(1em, env(safe-area-inset-right))');
+        padding-bottom: env(safe-area-inset-bottom);
+    }
 }
 
 b, strong, h1, h2, h3, h4 {
@@ -132,6 +138,7 @@ header {
 .icon-briefcase:before { content: '\e802'; }
 .icon-suitcase:before { content: '\f0f2'; }
 .icon-blog:before { content: '\e803'; }
+.icon-globe:before { content: '\e804'; }
 
 ul.paper-list {
     list-style-type: none;

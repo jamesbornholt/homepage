@@ -66,23 +66,25 @@
 <section id="cv-education">
     <h2>Education</h2>
     <ul>
-    {% for degree in cv.education %}
+    {% for school in cv.education %}
         <li>
             <div>
-                <p class="cv-school">{{ degree.school }}</p>
-                <p class="cv-where">{{ degree.where }}</p>
+                <p class="cv-school">{{ school.school }}</p>
+                <p class="cv-where">{{ school.where }}</p>
             </div>
+            {% for degree in school.degrees %}
             <div>
                 <p class="cv-degree">{{ degree.degree }}</p>
                 <p class="cv-when">{{ degree.when | safe }}</p>
             </div>
             {% if degree.notes %}
-            <ul>
+            <ul class="cv-degree-notes">
                 {% for n in degree.notes %}
                 <li>{{ n | markdown | safe }}</li>
                 {% endfor %}
             </ul>
             {% endif %}
+            {% endfor %}
         </li>
     {% endfor %}
     </ul>

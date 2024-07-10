@@ -1,3 +1,5 @@
+$font-weight-bold: 600;
+
 @mixin what-when-list {
     li {
         margin-bottom: 0.3rem;
@@ -71,7 +73,7 @@ section#cv-employment p.cv-job {
     flex: 1;
 }
 section#cv-employment p.cv-employer {
-    font-weight: 700;
+    font-weight: $font-weight-bold;
 }
 
 /* Education */
@@ -89,14 +91,15 @@ section#cv-education p.cv-degree {
     flex: 1;
 }
 section#cv-education p.cv-school {
-    font-weight: 700;
+    font-weight: $font-weight-bold;
 }
-section#cv-education li ul {
-    padding-left: 1rem;
-}
-section#cv-education li ul li {
-    list-style: disc;
-    margin-bottom: 0;
+section#cv-education ul.cv-degree-notes {
+    padding-left: 2rem;
+    
+    li {
+        list-style: disc;
+        margin-bottom: 0;
+    }
 }
 
 /* Papers */
@@ -134,7 +137,7 @@ section#cv-teaching p.cv-role {
     flex: 1;
 }
 section#cv-teaching p.cv-course {
-    font-weight: 700;
+    font-weight: $font-weight-bold;
 }
 
 /* Students */

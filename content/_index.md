@@ -5,17 +5,14 @@ I'm a Principal Applied Scientist at [Amazon Web Services][aws],
 where I work on the [Amazon S3][s3] object storage service.
 I lead development on S3's open-source projects,
 including [Mountpoint for Amazon S3][mountpoint].
-I also work on backend services like [ShardStore][shardstore],
-and the [Shuttle][shuttle] concurrency testing framework.
+I also work on backend services like [ShardStore][shardstore]
+and on the [Shuttle][shuttle] concurrency testing framework for Rust.
 
 Before AWS, I was a professor of computer science at the [University of Texas at Austin][utcs].
 My research spans formal methods, programming languages, and systems.
 I work to make systems software faster and safer to build
-by applying automated verification and synthesis techniques to systems at scale.
+by applying automated verification and synthesis techniques at scale.
 My work has received best paper awards from SOSP, OSDI, ASPLOS, and EuroSys.
-
-I got my PhD from the [University of Washington][uw],
-where I was advised by [Emina Torlak][emina], [Dan Grossman][djg], and [Luis Ceze][luisceze].
 
 [uw]: https://www.cs.washington.edu
 [luisceze]: https://homes.cs.washington.edu/~luisceze/
