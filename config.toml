@@ -1,5 +1,6 @@
 title = "James Bornholt"
 base_url = "https://jamesbornholt.com"
+description = "I'm a Principal Applied Scientist at Amazon Web Services, where I work on the Amazon S3 object storage service. My research spans formal methods, programming languages, and systems."
 compile_sass = true
 build_search_index = false
 
