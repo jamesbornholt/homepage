@@ -23,7 +23,7 @@
 
 {% macro render_paper(paper) %}
 <p>
-    <span class="paper-title">{% if paper.url %}<a href="{{ get_url(path=paper.url) }}">{% endif %}{{ paper.title | escape | safe }}{% if paper.url %}</a>{% endif %}</span>.
+    <span class="paper-title">{% if paper.url %}<a href="{% if paper.url is starting_with("http") %}{{ paper.url }}{% else %}{{ get_url(path=paper.url) }}{% endif %}">{% endif %}{{ paper.title | escape | safe }}{% if paper.url %}</a>{% endif %}</span>.
     {{ paper.authors }}.
     {% if paper.venue %}{{ paper.venue }}{% if paper.volume %}, {{ paper.volume }}{% endif %}{% if paper.colocated_with %} (colocated with {{ paper.colocated_with }}){% endif %}.{% endif %}
     {% if paper.extra %}{{ paper.extra | safe }}{% endif %}
