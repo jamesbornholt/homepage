@@ -144,6 +144,9 @@ students:
 
 service:
   pc:
+    - what: Symposium on Operating Systems Principles (SOSP)
+      role: Program Committee
+      when: 2024
     - what: Programming Languages Design and Implementation (PLDI)
       role: Program Committee
       when: 2024
